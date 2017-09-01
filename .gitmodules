@@ -1,0 +1,3 @@
+[submodule "files"]
+	path = files
+	url = https://github.com/OSVTAC/project-recommendations-files.git
