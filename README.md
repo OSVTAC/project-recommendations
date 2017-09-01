@@ -1,2 +1,31 @@
-# project-recommendations
-Source files for the open source voting project recommendations of San Francisco's Open Source Voting System Technical Advisory Committee.
+# Open Source Voting System Project Recommendations
+
+This repository contains the recommendations of San Francisco's [Open Source
+Voting System Technical Advisory Committee][osvtac] (OSVTAC, or TAC)
+for the City and County of San Francisco's open source voting system project.
+
+You can view the latest version of the recommendations
+[here][recommendations-rendered], and you can see a history of changes
+[here][recommendations-history].
+
+To provide comments to the committee, you can open an issue on the
+repository's [issue tracker][recommendations-issues]. To suggest specific
+wording for some portion of the document, you can open a pull request
+[here][recommendations-pulls]. Alternatively, you can email your feedback to
+the committee. Contact information for the committee can be found on the
+committee's [About page][osvtac-about].
+
+The committee may discuss and/or vote on your suggestions at a future
+meeting. Note that because of San Francisco's [Sunshine Ordinance] and other
+open government laws, the committee is limited in how it can collaborate
+outside of meetings on committee matters. Committee members are able to see
+and read your comments and suggestions, but they cannot necessarily respond
+publicly as individuals.
+
+[osvtac]: https://osvtac.github.io
+[osvtac-about]: https://osvtac.github.io/about
+[recommendations-history]: https://github.com/OSVTAC/project-recommendations/commits/master
+[recommendations-issues]: https://github.com/OSVTAC/project-recommendations/issues
+[recommendations-pulls]: https://github.com/OSVTAC/project-recommendations/pulls
+[recommendations-rendered]: https://osvtac.github.io/recommendations/index
+[Sunshine Ordinance]: https://www.sfcityattorney.org/good-government/sunshine/
