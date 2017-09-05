@@ -164,7 +164,7 @@ voting system project.” The Commission voted on the Committee's initial
 membership at its May meeting. The Committee was fully constituted on June 2,
 2017, when the appointment of the fifth member was made final.
 
-In May 2017, the Department of Elections [issued an RFP][rfp-business-case]
+In May 2017, the Department of Elections [issued an RFP][rfp-business-case-page]
 for a contractor to “prepare a business case for developing an accessible,
 open source voting system.” The RFP would use a portion of the $300,000
 budgeted in August 2016. The contractor's deliverable will be due in January
@@ -265,7 +265,30 @@ this document.
 This section contains links to other resources and documents that may be
 useful for the project.
 
-[TODO]
+1. San Francisco
+   * The San Francisco Department of Elections' RFP for the planning phase:
+     [REG RFP #2017‑01][rfp-business-case-page] ("Preparing a Business Case
+     for Developing an Accessible, Open Source Voting System"). In
+     particular, see the list of links in Section I.A. starting on page 5 of
+     the [RFP PDF][rfp-business-case-pdf].
+
+2. Procurement
+   * U.S. Digital Services' [TechFAR Handbook][techfar-handbook]
+   * 18F's [Modular Contracting][18f-modular-contracting] page
+
+3. Related Software Projects for US Government Elections
+   * [ColoradoRLA][colorado-rla-repo], Free & Fair
+   * [Voting Systems Assessment Project][la-vsap] (VSAP), Los Angeles County
+   * [Prime III][prime-iii], Dr. Juan E. Gilbert
+   * [STAR-Vote][star-vote], Travis County, TX
+
+4. Additional Links
+   * [GitHub][github]
+   * National Institute of Standards and Technology (NIST)
+     - [NIST Voting Public Working Groups][nist-voting]
+     - [VVSG Principles and Guidelines][nist-vvsg-principles]
+   * [Open Source Initiative][osi] (OSI)
+   * [OpenCount][open-count]
 
 
 ## 5. Recommendations
@@ -343,23 +366,35 @@ section below.
 [TODO]
 
 
+[18f-modular-contracting]: https://modularcontracting.18f.gov/
 [bill-ab-2252-2015]: https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201520160AB2252
 [bill-sb-450-2015]: http://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201520160SB450
 [board-of-supervisors]: http://sfbos.org/
 [bos-ordinance-vstf]: files/BOS_Ordinance_268-08_VSTF.pdf
 [bos-open-source-voting-res]: files/BOS_Resolution_460-14_Open_Source_Voting.pdf
+[colorado-rla-repo]: https://github.com/FreeAndFair/ColoradoRLA
 [commission-osvtac]: http://sfgov.org/electionscommission/osvtac
 [commission-resolutions]: http://sfgov.org/electionscommission/motions-and-resolutions
 [coit]: http://sfcoit.org/
 [elections-commission]: http://sfgov.org/electionscommission
+[github]: https://github.com/
 [ict-plan-2008]: files/SF_ICT_Plan_2018-22.pdf
+[la-vsap]: http://vsap.lavote.net/
 [lafco]: http://sfgov.org/lafco/
 [lafco-report]: files/LAFCo_Report_Open_Source_Voting.pdf
 [mayor-budget-press-release]: http://sfmayor.org/article/mayor-lee-signs-citys-balanced-budget-fiscal-years-2016-17-2017-18
+[nist-voting]: http://collaborate.nist.gov/voting/bin/view/Voting/WebHome
+[nist-vvsg-principles]: http://collaborate.nist.gov/voting/bin/view/Voting/VVSGPrinciplesAndGuidelines
+[open-count]: https://github.com/FreeAndFair/OpenCount
+[osi]: https://opensource.org/
 [osvtac]: https://osvtac.github.io
 [osvtac-recommendations-repo]: https://github.com/OSVTAC/project-recommendations
+[prime-iii]: http://www.primevotingsystem.com/
 [proposed-budget-2016]: files/SF_Mayor_Proposed_Budget_2016-18.pdf
-[rfp-business-case]: http://mission.sfgov.org/OCABidPublication/BidDetail.aspx?K=12141
+[rfp-business-case-page]: http://mission.sfgov.org/OCABidPublication/BidDetail.aspx?K=12141
+[rfp-business-case-pdf]: files/SF_Business_Case_RFP_FINAL.pdf
 [sf-digital-services]: https://digitalservices.sfgov.org/
+[star-vote]: https://www.usenix.org/conference/evtwote13/workshop-program/presentation/bell
+[techfar-handbook]: https://playbook.cio.gov/techfar/
 [vstf]: http://sfgov.org/ccsfgsa/voting-systems-task-force
 [vstf-report]: files/VSTF_Report.pdf
