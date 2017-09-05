@@ -2,7 +2,7 @@
 
 (Approved by OSVTAC on August 30, 2017.)
 
-Last update: September 4, 2017
+Last update: September 5, 2017
 
 **Note: these recommendations are a work in progress and not yet complete.**
 
