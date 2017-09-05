@@ -295,7 +295,33 @@ useful for the project.
 
 **Interim Voting System**
 
-[TODO]
+* The contract for the interim system (i.e. the system to be used after 2018)
+  should permit all possible combinations of phasing in an open-source system
+  alongside it. Examples of possible combinations include:
+
+  * using open-source components to scan vote-by-mail ballots and the interim
+    system to scan precinct ballots, or vice versa;
+
+  * using an open-source accessible voting device in conjunction with the
+    interim system’s precinct-based scanner, or vice versa;
+
+  * scanning the ballots of the interim system using an open-source scanner;
+
+  * tabulating ballots scanned by an open-source scanner using the interim
+    system’s tabulation software;
+
+  * using an open-source reporting and/or tabulation system with the output
+    from the interim system’s scanners;
+
+  * using open-source components alongside the interim system in some subset
+    of precincts (e.g. for a pilot rollout); or
+
+  * using open-source components alongside the interim system in all
+    precincts (e.g. for an incremental roll-out of the open source system).
+
+* The requirements for the interim system should include interoperability
+  with other systems, and the interoperability formats should be documented
+  so they don’t need to be reverse-engineered.
 
 **Requirements-gathering**
 
@@ -307,15 +333,59 @@ section below.
 
 **Requirements**
 
-[TODO]
+This section relates to specific requirements rather than the process of
+gathering or articulating requirements.
+
+* California [SB 450][bill-sb-450-2015] ("Elections: vote by mail voting and
+  mail ballot elections") authorizes counties to conduct elections using vote
+  centers. The Department of Elections should develop a sense as soon as
+  possible of the likelihood of using vote centers because that could affect
+  the requirements and design of the system. Making this decision earlier
+  could decrease costs since the design and development wouldn’t have to
+  cover multiple scenarios.
+
+* [TODO: think about ballot-marking device vs. manually marked ballots, and
+  ballot on-demand vs. pre-printed ballots.]
+
+* [TODO: should end-to-end verifiability be a requirement?]
 
 **Project Management**
 
-[TODO]
+* As soon as possible, the Department should
+  develop and publicize a rough project plan and timeline for the development
+  and certification of an open source system, for the case that the project
+  is funded. It is okay for this plan to be tentative. It can be refined over
+  time as more information becomes available. Articulating even a tentative
+  plan would also help in crafting an RFP for the interim system.
+
+* [TODO: think about the division of responsibilities between the City and
+  vendor. For example, who should be responsible for project management—the
+  City or a vendor?]
+
+* [TODO: brainstorm and document various incremental / phased roll-out
+  possibilities, and possibly recommend preferred options.]
+
+* [TODO: provide specific recommendations around agile.]
 
 **Open Source**
 
-[TODO]
+This section covers topics related to open source.
+
+* The development of the software should be done in public from the first day
+  of development.
+
+* All software should be licensed under an
+  [OSI-approved][osi-approved-licenses] software license from the first day
+  of development.
+
+* In addition to the software being open source, project documentation
+  should be openly licensed. This includes things like design documents,
+  installation and setup documents, user manuals, and testing documents.
+  [TODO: recommend particular licenses for documentation?]
+
+* [TODO: provide recommendations related to managing community feedback and
+  contributions during project development. Also think about whether
+  [contributor license agreements][cla] (CLA’s) should be required.]
 
 **Procurement**
 
@@ -372,6 +442,7 @@ section below.
 [board-of-supervisors]: http://sfbos.org/
 [bos-ordinance-vstf]: files/BOS_Ordinance_268-08_VSTF.pdf
 [bos-open-source-voting-res]: files/BOS_Resolution_460-14_Open_Source_Voting.pdf
+[cla]: https://en.wikipedia.org/wiki/Contributor_License_Agreement
 [colorado-rla-repo]: https://github.com/FreeAndFair/ColoradoRLA
 [commission-osvtac]: http://sfgov.org/electionscommission/osvtac
 [commission-resolutions]: http://sfgov.org/electionscommission/motions-and-resolutions
@@ -387,6 +458,7 @@ section below.
 [nist-vvsg-principles]: http://collaborate.nist.gov/voting/bin/view/Voting/VVSGPrinciplesAndGuidelines
 [open-count]: https://github.com/FreeAndFair/OpenCount
 [osi]: https://opensource.org/
+[osi-approved-licenses]: https://opensource.org/licenses
 [osvtac]: https://osvtac.github.io
 [osvtac-recommendations-repo]: https://github.com/OSVTAC/project-recommendations
 [prime-iii]: http://www.primevotingsystem.com/
