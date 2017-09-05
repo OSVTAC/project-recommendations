@@ -180,28 +180,85 @@ be issued as early as the fall of 2017.
 
 ## 2. Goals
 
-This section discusses the goals, scope, and priorities of this document.
+This section discusses the goals, scope, and priorities of this document and
+the Committee.
+
+The TAC’s Bylaws say that the TAC’s purpose is to “provide technical
+guidance, ideas, and support to the Elections Commission on ways to improve
+and help ensure the success of the City and County of San Francisco's open
+source voting system project.” The focus of TAC's effort will be on
+establishing parameters and recommendations to guide the future development
+of the voting system.
+
+The TAC will draw on its technical expertise, the expertise of other members
+in the community, and from similar efforts (including other open source
+voting efforts) to provide guidance in areas including but not limited to
+open source, requirements-gathering, design, architecture, development,
+documentation, security, testing, certification, manufacturing, deployment,
+system maintenance, strategies for procurement, and project management.
 
 **Scope**
 
-[TODO]
+* This document will limit itself to current laws that San Francisco must
+  satisfy, or to changes in law that San Francisco anticipates (e.g. possibly
+  transitioning to the “vote center” model allowed by [SB
+  450][bill-sb-450-2015] of 2015-2016). In particular, the document will
+  restrict itself to considering paper-ballot systems.
+
+* For the purposes of this document, “voting system” includes anything that
+  is currently the responsibility of the voting system in use today.
+  Responsibilities of a voting system include allowing voters to mark ballots
+  (if not using pen and paper), counting ballots, reporting election
+  results, and ensuring the integrity of the process.
+  In addition, it may include ballot design and layout, as well as
+  the functionality of a “remote accessible vote by mail system” as described
+  in [AB 2252][bill-ab-2252-2015] (2015-2016). It should also facilitate
+  auditing the results of an election. The responsibilities of a voting
+  system do not include the responsibilities of a voter registration system
+  (e.g. the Department’s election management system, or EMS). However, the
+  voting system should be able to interoperate with the EMS. If the ballots
+  are pre-printed, the voting system need not be capable of printing ballots.
 
 **Priorities**
 
-[TODO]
+* This document should prioritize high-level recommendations over low-level
+  recommendations.
+
+* This document should prioritize recommendations that are needed sooner
+  rather than later.
 
 **Non-goals**
 
-[TODO]
+* The Committee will not be designing or developing a voting system.
 
+* The Committee will not be drafting detailed, low-level specs that the
+  voting system should satisfy.
+
+* The Committee will not be drafting an exhaustive list of requirements.
+
+* The Committee will not make explicit attempts to accommodate internet
+  voting in any form, nor voting methods not used in San Francisco. This does
+  not preclude the Committee from recommending software designs or practices
+  that could make such things easier to accommodate as a side effect.
+
+* The Committee's recommendations will prioritize the voting system needs of
+  San Francisco without emphasizing the needs of other jurisdictions.
+  The needs of other
+  jurisdictions will be considered insofar as it could help to develop and
+  certify a system for use in San Francisco sooner (for example, if San
+  Francisco were to collaborate with another jurisdiction and share costs).
+  However, as stated in the previous point, this does not preclude
+  recommending designs and practices that could make it easier to accommodate
+  other jurisdictions.
 
 ## 3. Assumptions
 
 This section lists certain assumptions the committee has made while drafting
 this document.
 
-[TODO]
-
+* The Department of Elections does not have the expertise to conduct the
+  day-to-day management of the development and certification of an open
+  source voting system.
 
 ## 4. Resources
 
@@ -286,6 +343,8 @@ section below.
 [TODO]
 
 
+[bill-ab-2252-2015]: https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201520160AB2252
+[bill-sb-450-2015]: http://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201520160SB450
 [board-of-supervisors]: http://sfbos.org/
 [bos-ordinance-vstf]: files/BOS_Ordinance_268-08_VSTF.pdf
 [bos-open-source-voting-res]: files/BOS_Resolution_460-14_Open_Source_Voting.pdf
