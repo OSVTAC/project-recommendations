@@ -214,9 +214,9 @@ system maintenance, strategies for procurement, and project management.
   the functionality of a “remote accessible vote by mail system” as described
   in [AB 2252][bill-ab-2252-2015] (2015-2016). It should also facilitate
   auditing the results of an election. The responsibilities of a voting
-  system do not include the responsibilities of a voter registration system
-  (e.g. the Department’s election management system, or EMS). However, the
-  voting system should be able to interoperate with the EMS. If the ballots
+  system do not include the responsibilities of a voter registration system.
+  The voting system may need to interoperate with the Department’s election
+  management system (EMS). If the ballots
   are pre-printed, the voting system need not be capable of printing ballots.
 
 **Priorities**
