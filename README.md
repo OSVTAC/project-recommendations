@@ -1,11 +1,12 @@
 # Open Source Voting System Project Recommendations
 
-This repository contains the recommendations of San Francisco's [Open Source
-Voting System Technical Advisory Committee][osvtac] (OSVTAC, or TAC)
-for the City and County of San Francisco's open source voting system project.
+This repository contains the source files for the approved recommendations of
+San Francisco's [Open Source Voting System Technical Advisory
+Committee][osvtac] (OSVTAC, or TAC) for the City and County of San
+Francisco's open source voting system project.
 
-You can view the latest version of the recommendations
-[here][recommendations-rendered], and you can see a history of changes
+You can view the most recent rendered version of the recommendations
+[here][recommendations-rendered], and you can see a history of all changes
 [here][recommendations-history].
 
 To provide comments to the committee, you can open an issue on the
@@ -22,8 +23,21 @@ outside of meetings on committee matters. Committee members are able to see
 and read your comments and suggestions, but they cannot necessarily respond
 publicly as individuals.
 
+## Technical Notes
+
+The source files in this repository are written in [Markdown][markdown].
+
+Also, at least for the time being, this repository is written and structured
+so that it can be displayed within the committee's [website][osvtac] by
+including it as a Git [submodule][git-submodules] in the [repository for the
+site][osvtac-repo].
+
+
+[git-submodules]: https://git-scm.com/book/en/v2/Git-Tools-Submodules
+[markdown]: https://guides.github.com/features/mastering-markdown/
 [osvtac]: https://osvtac.github.io
 [osvtac-about]: https://osvtac.github.io/about
+[osvtac-repo]: https://github.com/OSVTAC/OSVTAC.github.io
 [recommendations-history]: https://github.com/OSVTAC/project-recommendations/commits/master
 [recommendations-issues]: https://github.com/OSVTAC/project-recommendations/issues
 [recommendations-pulls]: https://github.com/OSVTAC/project-recommendations/pulls

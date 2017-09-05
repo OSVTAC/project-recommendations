@@ -1,5 +1,7 @@
 # Open Source Voting System Project Recommendations
 
+(Approved by OSVTAC on August 30, 2017.)
+
 Last update: September 4, 2017
 
 **Note: these recommendations are a work in progress and not yet complete.**
@@ -14,8 +16,11 @@ to work on it over time.
 
 Substantive updates to this document occur by a vote of the committee at a
 committee meeting. Meetings occur approximately once a month. To learn more
-about the committee and how to suggest changes to this document, visit the
-committee's website at [https://osvtac.github.io][osvtac].
+about the committee, visit the committee's website at
+[https://osvtac.github.io][osvtac]. To learn how to suggest changes to this
+document, view the [README][osvtac-recommendations-repo] document in the
+GitHub repository containing the source files for these recommendations.
+
 
 ## 1. Background
 
@@ -121,7 +126,7 @@ In April 2017, the Board of Supervisors approved the City’s fourth Five-Year
 The plan included the open source voting system project among four major IT
 projects under consideration for the future, alongside projects like
 Universal Broadband and Voice over Internet Protocol (VoIP). For example, on
-page 11:
+page 11:
 
 > However, several future projects are currently being scoped out as
 potentially the City’s next Major IT Project, including:
@@ -293,6 +298,7 @@ section below.
 [lafco-report]: files/LAFCo_Report_Open_Source_Voting.pdf
 [mayor-budget-press-release]: http://sfmayor.org/article/mayor-lee-signs-citys-balanced-budget-fiscal-years-2016-17-2017-18
 [osvtac]: https://osvtac.github.io
+[osvtac-recommendations-repo]: https://github.com/OSVTAC/project-recommendations
 [proposed-budget-2016]: files/SF_Mayor_Proposed_Budget_2016-18.pdf
 [rfp-business-case]: http://mission.sfgov.org/OCABidPublication/BidDetail.aspx?K=12141
 [sf-digital-services]: https://digitalservices.sfgov.org/
