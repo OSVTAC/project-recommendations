@@ -18,8 +18,8 @@ Substantive updates to this document occur by a vote of the committee at a
 committee meeting. Meetings occur approximately once a month. To learn more
 about the committee, visit the committee's website at
 [https://osvtac.github.io][osvtac]. To learn how to suggest changes to this
-document, view the [README][osvtac-recommendations-repo] document in the
-GitHub repository containing the source files for these recommendations.
+document, view the "Project Recommendations" section of the [Documents
+page][osvtac-documents] of the committee's website.
 
 
 ## 1. Background
@@ -460,7 +460,7 @@ This section covers topics related to open source.
 [osi]: https://opensource.org/
 [osi-approved-licenses]: https://opensource.org/licenses
 [osvtac]: https://osvtac.github.io
-[osvtac-recommendations-repo]: https://github.com/OSVTAC/project-recommendations
+[osvtac-documents]: /documents
 [prime-iii]: http://www.primevotingsystem.com/
 [proposed-budget-2016]: files/SF_Mayor_Proposed_Budget_2016-18.pdf
 [rfp-business-case-page]: http://mission.sfgov.org/OCABidPublication/BidDetail.aspx?K=12141
