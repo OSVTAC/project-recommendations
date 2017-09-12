@@ -17,7 +17,11 @@ the committee. Contact information for the committee can be found on the
 committee's [About page][osvtac-about].
 
 The committee may discuss and/or vote on your suggestions at a future
-meeting. Note that because of San Francisco's [Sunshine Ordinance] and other
+meeting. **To be considered for the next meeting, please submit suggestions
+at least 10 days before the date of the next meeting.** This time is needed
+to prepare the agenda.
+
+Because of San Francisco's [Sunshine Ordinance] and other
 open government laws, the committee is limited in how it can collaborate
 outside of meetings on committee matters. Committee members are able to see
 and read your comments and suggestions, but they cannot necessarily respond
