@@ -9,12 +9,16 @@ You can view the most recent rendered version of the recommendations
 [here][recommendations-rendered], and you can see a history of all changes
 [here][recommendations-history].
 
-To provide comments to the committee, you can open an issue on the
-repository's [issue tracker][recommendations-issues]. To suggest specific
-wording for some portion of the document, you can open a pull request
-[here][recommendations-pulls]. Alternatively, you can email your feedback to
-the committee. Contact information for the committee can be found on the
-committee's [About page][osvtac-about].
+To provide comments to the committee, you can email your feedback. Contact
+information for the committee can be found on the committee's [About
+page][osvtac-about].
+
+Alternatively, if you have a GitHub account, you can open an issue on the
+repository's [issue tracker][recommendations-issues]. If you are familiar
+with Git and [Markdown][markdown], you can also suggest specific wording by
+opening a pull request [here][recommendations-pulls]. Information on
+preparing a pull request can be found in the repository's
+[`CONTRIBUTE`](CONTRIBUTE.md) file.
 
 The committee may discuss and/or vote on your suggestions at a future
 meeting. **To be considered for the next meeting, please submit suggestions
@@ -27,21 +31,10 @@ outside of meetings on committee matters. Committee members are able to see
 and read your comments and suggestions, but they cannot necessarily respond
 publicly as individuals.
 
-## Technical Notes
 
-The source files in this repository are written in [Markdown][markdown].
-
-Also, at least for the time being, this repository is written and structured
-so that it can be displayed within the committee's [website][osvtac] by
-including it as a Git [submodule][git-submodules] in the [repository for the
-site][osvtac-repo].
-
-
-[git-submodules]: https://git-scm.com/book/en/v2/Git-Tools-Submodules
 [markdown]: https://guides.github.com/features/mastering-markdown/
 [osvtac]: https://osvtac.github.io
 [osvtac-about]: https://osvtac.github.io/about
-[osvtac-repo]: https://github.com/OSVTAC/OSVTAC.github.io
 [recommendations-history]: https://github.com/OSVTAC/project-recommendations/commits/master
 [recommendations-issues]: https://github.com/OSVTAC/project-recommendations/issues
 [recommendations-pulls]: https://github.com/OSVTAC/project-recommendations/pulls
