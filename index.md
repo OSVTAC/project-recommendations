@@ -98,6 +98,9 @@ system maintenance, strategies for procurement, and project management.
 
 ## 2. Background
 
+
+### 2.1. History of Open Source Voting
+
 To provide context to the recommendations in this document, this section
 describes some of the history of the open source voting topic in San
 Francisco government.
@@ -252,6 +255,172 @@ voting system is developed and certified. The RFP for the interim system may
 be issued as early as the fall of 2017.
 
 
+### 2.2. Voting System
+
+
+#### 2.2.1. Definition
+
+The [Help America Vote Act][hava] (HAVA) of 2002 defines a voting system as
+follows (from 52 USC §21081: Voting systems standards):
+
+    (b) Voting system defined
+     In this section, the term "voting system" means—
+     (1) the total combination of mechanical, electromechanical,
+      or electronic equipment (including the software, firmware,
+      and documentation required to program, control, and support
+      the equipment) that is used—
+      (A) to define ballots;
+      (B) to cast and count votes;
+      (C) to report or display election results; and
+      (D) to maintain and produce any audit trail information; and
+     (2) the practices and associated documentation used—
+      (A) to identify system components and versions of such
+       components;
+      (B) to test the system during its development and maintenance;
+      (C) to maintain records of system errors and defects;
+      (D) to determine specific system changes to be made to a system
+       after the initial qualification of the system; and
+      (E) to make available any materials to the voter (such as
+       notices, instructions, forms, or paper ballots).
+
+
+[hava]: https://www.eac.gov/about/help-america-vote-act/
+
+
+#### 2.2.2. Components
+
+This section provides one possible way of listing the components of a
+“generic” optical-scan paper-ballot voting system. This list is not rigorous
+or exhaustive. Rather, it is meant for discussion purposes and to provide a
+sense of what functionalities are needed and how they are divided up, etc.
+
+For simplicity, we assume that the voting system uses pre-printed ballots, as
+opposed to being a ballot on-demand system. We also assume that in-precinct
+voters are allowed to mark their ballot with a pen, as opposed to being
+required to interact with an electronic device. Finally, we assume the voting
+system includes a precinct tally, which means the system tallies the
+in-precinct ballots at the precinct.
+
+The assumptions above are only for the purposes of the example illustration
+in this section. They should not be construed in any way as recommendations
+of the Committee or to constrain the type of voting system that San Francisco
+should develop.
+
+The components in this particular list are not necessarily independent. They
+may overlap or contain one another. For example, the precinct ballot scanner
+hardware component contains a scanner device driver, the ballot image
+interpreter, and the high-level scanner software components.
+
+Finally, note that there are many possible ways to divide a given voting
+system into components. For example, the granularity at which one views the
+system affects the number of components. We chose a mid-level granularity for
+this list. This lets us show how some software components are used in more
+than one hardware component. Differences can also result from where the
+“boundaries” are drawn between components (e.g. what functionalities one
+assigns to different components).
+
+
+##### 2.2.2.1. Hardware Components
+
+Each of the hardware components below also needs software to function. In
+most cases, we list this software in the “Software Components” section.
+
+**1\. Accessible Ballot-Marking Device**
+
+A device used in polling places that lets people with disabilities vote
+independently. It supports different accessible interfaces like audio,
+sip-and-puff, etc. If the computer is COTS, it may also need a custom casing
+or shell to increase durability and assist with polling-place transport and
+setup.
+
+**2\. Central Ballot Scanner**
+
+A device responsible for high-speed, high-volume ballot scanning (e.g. for
+vote-by-mail ballots). The scanning with these machines is done in a
+controlled environment under staff supervision.
+
+**3\. Precinct Ballot Scanner**
+
+A device used in polling places to scan and tabulate ballots cast in person.
+It has features like returning the ballot to the voter for possible
+correction if the ballot contains an overvote. Similar to the accessible
+device, this device may also need a custom casing or shell for durability and
+to facilitate polling-place use.
+
+**4\. Standard laptop or desktop computers**
+
+Standard computers will also be needed for administrative tasks like ballot
+layout, adjudicating digital images of ballots, aggregating and totaling
+votes, and generating results reports.
+
+
+##### 2.2.2.2. Software Components
+
+**1\. Voting System Database / Management**
+
+Central store (e.g. file system and/or database) storing and providing access
+to the voting-system information needed to conduct an election. This can
+include things like contest and ballot definitions, ballot images, cast vote
+records, and election results. A management interface can let staff perform
+tasks like import and export data in open data formats, digitally evaluate
+"out-stacked" ballots and ballots with write-in candidates, and perform other
+functions needed during the canvass. This software may support running other
+software components like EMS integration, tabulation, and results reporting.
+
+**2\. Election Definition EMS Integration.**
+
+Interfaces with the Department's Election Management System (EMS) to import
+and convert election definition information from the EMS into the voting
+system database. This can include things like what offices, candidates, and
+measures, etc. are in the election and in what precincts and districts, etc.
+
+**3\. Ballot Layout**
+
+This is a software application that lets staff generate paper-ballot layouts
+from the election definition for each ballot type in automated or
+semi-automated fashion, including support for multiple languages.
+
+**4\. Accessible Ballot-Marking Device Software**
+
+This is the software corresponding to the Accessible Ballot-Marking Device
+hardware component.
+
+**5\. Ballot Image Interpreter**
+
+This is a software library responsible for interpreting ballot images. It
+generates a cast vote record (CVR) from a digital image of a ballot. This
+software component could potentially be used in all of the precinct scanners,
+the central scanners, and a software-only ballot adjudication application.
+
+**6\. Scanner Device Drivers (one for precinct and one for central)**
+
+This is low-level software needed on both precinct and central ballot
+scanners that provides a software API to the basic hardware functionality of
+a ballot scanner (e.g. out-stacking a ballot, returning a ballot, advancing a
+ballot, etc.). This might come with COTS hardware. Separate versions are
+likely needed for the precinct and central scanners.
+
+**7\. High-level Scanner Software (one for precinct and one for central)**
+
+This is high-level software controlling the precinct and central ballot
+scanners. It interacts with the scanner device driver and ballot image
+interpreter components and is responsible for things like scanning and
+storing ballot images, detecting the ballot layout, interpreting and
+tabulating ballot markings, controlling the scanner in response to the
+markings on a ballot, and exporting ballot data after scanning is complete.
+Separate versions are likely needed for the precinct and central scanners.
+
+**8\. Vote Totaler**
+
+Aggregates and counts all vote totals and generates the results in an open
+data format. Includes the RCV tabulation algorithm.
+
+**9\. Results Reporter**
+
+Generates human-readable results reports from the results data from the vote
+totaler (e.g. printable results and results posted on the Department website).
+
+
 ## 3. Assumptions
 
 This section lists certain assumptions the committee has made while drafting
@@ -260,6 +429,7 @@ this document.
 * The Department of Elections does not have the expertise to conduct the
   day-to-day management of the development and certification of an open
   source voting system.
+
 
 ## 4. Resources
 
