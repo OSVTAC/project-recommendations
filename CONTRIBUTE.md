@@ -43,8 +43,15 @@ You can check what version of Ruby you are currently using by running:
 
     $ ruby --version
 
-We recommend using [rvm](https://rvm.io/) to install and manage the versions
-of Ruby installed on your machine. With rvm, you can list all of your
+We recommend using [RVM][rvm] to install and manage the versions
+of Ruby installed on your machine. Instructions for installing RVM are on
+the RVM [home page][rvm], with more detailed instructions (e.g. for different
+platforms) on the [Installing RVM][rvm-install] page.
+
+[rvm]: https://rvm.io/
+[rvm-install]: https://rvm.io/rvm/install
+
+With RVM, you can list all of your
 installed Ruby versions with:
 
     $ rvm list
