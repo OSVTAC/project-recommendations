@@ -529,6 +529,12 @@ gathering or articulating requirements.
   time as more information becomes available. Articulating even a tentative
   plan would also help in crafting an RFP for the interim system.
 
+* For deliverables, favor smaller deliverables that can be tested
+  independently of other components. For example, if developing a software
+  application, it may make sense for one or more of the underlying libraries
+  to be delivered separately and/or earlier, rather than the application as a
+  whole being the only software deliverable.
+
 * [TODO: think about the division of responsibilities between the City and
   vendor. For example, who should be responsible for project management—the
   City or a vendor?]
