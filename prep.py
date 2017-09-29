@@ -18,8 +18,7 @@ import re
 # Relative to the repository root.
 SOURCE_PATH = 'index.md'
 
-# Start with "#" to exclude the document title.
-HEADER_PATTERN = re.compile(r'#(?P<prefix>#+) (?P<remainder>.*)')
+HEADER_PATTERN = re.compile(r'(?P<prefix>#+) (?P<remainder>.*)')
 
 
 def recursive_replace(target, old, new):
@@ -37,23 +36,13 @@ def increment_coords(coords):
 
 def make_header(coords, title):
     prefix = (len(coords) + 1) * '#'
-
-    if coords == [1]:
-        assert title == 'Contents'
-        section = ''
-    else:
-        # Subtract one because we skipped numbering the Contents.
-        new_coords = [coords[0] - 1]
-        new_coords.extend(coords[1:])
-        section = '.'.join(str(number) for number in new_coords)
-        section += '. '
-
-    line = f'{prefix} {section}{title}'
+    section = '.'.join(str(number) for number in coords)
+    line = f'{prefix} {section}. {title}'
 
     return line
 
 
-def tranform_lines(lines):
+def tranform_lines(lines, header_lines):
     level = 0
     coords = []
     for line in lines:
@@ -68,7 +57,7 @@ def tranform_lines(lines):
         # Strip the dotted number portion from the beginning.
         title = remainder.lstrip(' 0123456789.\\')
 
-        new_level = len(prefix)
+        new_level = len(prefix) - 1
         if new_level > level:
             coords.append(1)
         else:
@@ -77,9 +66,26 @@ def tranform_lines(lines):
             increment_coords(coords)
         level = new_level
 
+        header_line = make_header(coords, title)
+        header_lines.append(header_line)
+
         # Precede a header line with two empty lines.
         yield ''
-        yield make_header(coords, title)
+        yield header_line
+
+
+def parse_sections(text):
+    """
+    Return (intro, contents, body).
+    """
+    divider = '\n## '
+    sections = text.split(divider)
+
+    intro = sections[0]
+    contents = '## ' + sections[1]
+    body = '## ' + divider.join(sections[2:])
+
+    return intro, contents, body
 
 
 def main():
@@ -91,11 +97,17 @@ def main():
     # Normalize to at most one empty line in a row.
     text = recursive_replace(text, '\n\n\n', '\n\n')
 
-    lines = text.splitlines()
-    lines = tranform_lines(lines)
-    text = '\n'.join(lines) + '\n'
+    intro, contents, body = parse_sections(text)
 
-    # TODO: automatically create the table of contents.
+    header_lines = []
+    lines = body.splitlines()
+
+    lines = list(tranform_lines(lines, header_lines))
+    body = '\n'.join(lines)
+
+    # TODO: automatically create the table of contents from header_pairs.
+
+    text = f'{intro}\n\n{contents}\n{body}\n'
 
     with open(SOURCE_PATH, 'w', encoding='utf-8') as f:
         f.write(text)
