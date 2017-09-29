@@ -76,16 +76,44 @@ def tranform_lines(lines, header_lines):
 
 def parse_sections(text):
     """
-    Return (intro, contents, body).
+    Return (intro, body).
     """
     divider = '\n## '
     sections = text.split(divider)
 
+    # Skip the current contents.
     intro = sections[0]
-    contents = '## ' + sections[1]
     body = '## ' + divider.join(sections[2:])
 
-    return intro, contents, body
+    return intro, body
+
+
+def make_contents_line(title, level):
+    label = title.lower()
+    # TODO: add more characters as needed.
+    label = label.replace('.', '')
+    label = label.replace(' ', '-')
+
+    line = f'* [{title}](#{label})'
+
+    return line
+
+
+# TODO: render more than just the top level.
+def make_contents(header_lines):
+    lines = ['## Contents', '']
+    for line in header_lines:
+        prefix, title = line.split(maxsplit=1)
+        level = len(prefix) - 1
+        if level > 1:
+            continue
+
+        line = make_contents_line(title, level=level)
+        lines.append(line)
+
+    contents = '\n'.join(lines)
+
+    return contents
 
 
 def main():
@@ -97,17 +125,16 @@ def main():
     # Normalize to at most one empty line in a row.
     text = recursive_replace(text, '\n\n\n', '\n\n')
 
-    intro, contents, body = parse_sections(text)
+    intro, body = parse_sections(text)
 
     header_lines = []
     lines = body.splitlines()
-
     lines = list(tranform_lines(lines, header_lines))
+
+    contents = make_contents(header_lines)
     body = '\n'.join(lines)
 
-    # TODO: automatically create the table of contents from header_pairs.
-
-    text = f'{intro}\n\n{contents}\n{body}\n'
+    text = '\n\n'.join((intro, contents, body)) + '\n'
 
     with open(SOURCE_PATH, 'w', encoding='utf-8') as f:
         f.write(text)
