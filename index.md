@@ -73,6 +73,7 @@ system maintenance, strategies for procurement, and project management.
   management system (EMS). If the ballots
   are pre-printed, the voting system need not be capable of printing ballots.
 
+
 ### 1.2. Priorities
 
 * This document should prioritize high-level recommendations over low-level
@@ -294,7 +295,6 @@ follows (from 52 USC §21081: Voting systems standards):
       (E) to make available any materials to the voter (such as
        notices, instructions, forms, or paper ballots).
 
-
 [hava]: https://www.eac.gov/about/help-america-vote-act/
 
 
@@ -444,7 +444,6 @@ this document.
   preference][directors-report-march-2017] for the GNU General Public License
   version 3 (GPLv3). This is consistent with the copyleft preference stated
   in the Elections Commission’s Open Source Voting Systems Resolution
-
 
 [directors-report-march-2017]: http://sfgov.org/electionscommission/sites/default/files/Documents/meetings/2017/2017-03-15-commission/March%202017%20Director%20Report.pdf
 
@@ -1223,7 +1222,6 @@ This section covers topics related to open source.
 ### 5.18. Hardware maintenance
 
 [TODO]
-
 
 [18f-modular-contracting]: https://modularcontracting.18f.gov/
 [bill-ab-2252-2015]: https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201520160AB2252
