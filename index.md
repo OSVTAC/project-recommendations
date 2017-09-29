@@ -22,6 +22,15 @@ document, view the "Project Recommendations" section of the [Documents
 page][osvtac-documents] of the committee's website.
 
 
+## Contents
+
+* [1. Goals](#1-goals)
+* [2. Background](#2-background)
+* [3. Assumptions](#3-assumptions)
+* [4. Resources](#4-resources)
+* [5. Recommendations](#5-recommendations)
+
+
 ## 1. Goals
 
 This section discusses the goals, scope, and priorities of this document and
@@ -41,7 +50,8 @@ open source, requirements-gathering, design, architecture, development,
 documentation, security, testing, certification, manufacturing, deployment,
 system maintenance, strategies for procurement, and project management.
 
-**Scope**
+
+### 1.1. Scope
 
 * This document will limit itself to current laws that San Francisco must
   satisfy, or to changes in law that San Francisco anticipates (e.g. possibly
@@ -63,7 +73,7 @@ system maintenance, strategies for procurement, and project management.
   management system (EMS). If the ballots
   are pre-printed, the voting system need not be capable of printing ballots.
 
-**Priorities**
+### 1.2. Priorities
 
 * This document should prioritize high-level recommendations over low-level
   recommendations.
@@ -71,7 +81,8 @@ system maintenance, strategies for procurement, and project management.
 * This document should prioritize recommendations that are needed sooner
   rather than later.
 
-**Non-goals**
+
+### 1.3. Non-goals
 
 * The Committee will not be designing or developing a voting system.
 
