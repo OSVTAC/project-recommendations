@@ -1,7 +1,8 @@
 """
 Script to normalize and prepare the Markdown files.
 
-The main usefulness of this script is to renumber the headers.
+The main usefulness of this script is to renumber the headers and
+auto-create the table of contents.
 
 Usage:
 
@@ -89,23 +90,25 @@ def parse_sections(text):
 
 
 def make_contents_line(title, level):
-    label = title.lower()
+    # Construct the anchor label.
+    anchor = title.lower()
     # TODO: add more characters as needed.
-    label = label.replace('.', '')
-    label = label.replace(' ', '-')
+    anchor = anchor.replace('.', '')
+    anchor = anchor.replace(' ', '-')
 
-    line = f'* [{title}](#{label})'
+    prefix = 2 * (level - 1) * ' '
+    line = f'{prefix}* [{title}](#{anchor})'
 
     return line
 
 
-# TODO: render more than just the top level.
 def make_contents(header_lines):
     lines = ['## Contents', '']
     for line in header_lines:
         prefix, title = line.split(maxsplit=1)
         level = len(prefix) - 1
-        if level > 1:
+        # Only render the first two levels.
+        if level > 2:
             continue
 
         line = make_contents_line(title, level=level)
@@ -130,9 +133,9 @@ def main():
     header_lines = []
     lines = body.splitlines()
     lines = list(tranform_lines(lines, header_lines))
+    body = '\n'.join(lines)
 
     contents = make_contents(header_lines)
-    body = '\n'.join(lines)
 
     text = '\n\n'.join((intro, contents, body)) + '\n'
 

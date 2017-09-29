@@ -2,7 +2,7 @@
 
 (Approved by OSVTAC on September 21, 2017.)
 
-Last update: September 29, 2017
+Last update: September 29, 2017 (2nd update)
 
 **Note: these recommendations are a work in progress and not yet complete.**
 
@@ -25,10 +25,33 @@ page][osvtac-documents] of the committee's website.
 ## Contents
 
 * [1. Goals](#1-goals)
+  * [1.1. Scope](#11-scope)
+  * [1.2. Priorities](#12-priorities)
+  * [1.3. Non-goals](#13-non-goals)
 * [2. Background](#2-background)
+  * [2.1. History of Open Source Voting](#21-history-of-open-source-voting)
+  * [2.2. Voting System](#22-voting-system)
 * [3. Assumptions](#3-assumptions)
 * [4. Resources](#4-resources)
 * [5. Recommendations](#5-recommendations)
+  * [5.1. Interim Voting System](#51-interim-voting-system)
+  * [5.2. Incremental Approach](#52-incremental-approach)
+  * [5.3. Requirements-gathering](#53-requirements-gathering)
+  * [5.4. Requirements](#54-requirements)
+  * [5.5. Project Management](#55-project-management)
+  * [5.6. Open Source](#56-open-source)
+  * [5.7. Procurement](#57-procurement)
+  * [5.8. Software architecture and design](#58-software-architecture-and-design)
+  * [5.9. Software development](#59-software-development)
+  * [5.10. Hardware design](#510-hardware-design)
+  * [5.11. Documentation](#511-documentation)
+  * [5.12. Security](#512-security)
+  * [5.13. Testing](#513-testing)
+  * [5.14. Certification](#514-certification)
+  * [5.15. Hardware manufacturing or assembly](#515-hardware-manufacturing-or-assembly)
+  * [5.16. Deployment](#516-deployment)
+  * [5.17. Software maintenance](#517-software-maintenance)
+  * [5.18. Hardware maintenance](#518-hardware-maintenance)
 
 
 ## 1. Goals
