@@ -455,16 +455,91 @@ useful for the project.
    * 18F's [Modular Contracting][18f-modular-contracting] page
 
 3. Related Software Projects for US Government Elections
-   * [ColoradoRLA][colorado-rla-repo], Free & Fair
-   * [Voting Systems Assessment Project][la-vsap] (VSAP), Los Angeles County
-   * [Prime III][prime-iii], Dr. Juan E. Gilbert
-   * [STAR-Vote][star-vote], Travis County, TX
+   * [ColoradoRLA][colorado-rla-home], (Risk Limiting Audit) Project. Colorado Secretary of State.
+     Software to upload electronic CVRs (cast-vote-records), randomly
+     select ballots to audit, then hand check hand selected paper ballots
+     against stored CVRs or re-scanned paper ballots.
+     
+     Contractor for open-source software is [Free & Fair][free-and-fair]
+     git: [ColoradoRLA][colorado-rla-repo], [OpenRLA][open-rla-repo].
+     
+     OpenCount now from Free & Fair \[[git][open-count]\] is software to
+     tabulate scanned ballots, used with RLA when original systems
+     do not store CVRs. \[[Presentation][open-count-pres]\].
 
-4. Additional Links
+   * [Voting Systems Assessment Project][la-vsap] (VSAP), Los Angeles County
+     Voting station design with tablet and printer-scanner. Blank ballot sheets
+     are inserted into printer-scanner, tablet used to make selections,
+     printer emits printed and marked ballot for review, scanner records
+     and feeds into collection box. Smartphone app allows pre-recorded
+     votes to be entered via QR code. Soliciting vendors for implementation.
+     
+   * [Prime III][prime-iii], Dr. Juan E. Gilbert (now hosted at University of Florida)
+     Tablet with docking station with keyboard and laser printer, open software.
+     Used by NH in 2016 for accessible voting (ballot marking device). Allows
+     home computer or phone to prepare QR code. \[[git][prime-iii-repo]\]
+     
+   * [STAR-Vote][star-vote], Travis County, TX
+     PDF paper and slides for presentation on Travis County TX proposed system.
+     Uses off the shelf tablet to produce printed ballot with only choices
+     made. Scanner only reads IDs of ballots placed in box to record which
+     ballots printed are cast. Electronic records separate. (No mail ballots.)
+     Voters can check receipt with QR code.
+     [Demo/prototype implementation by Free & Fair][prime-iii-faf-repo].
+     
+4. Open Source Voting Organizations
+   * [OSET Foundation][oset-foundation] 501c umbrella nonprofit to support [Trust the Vote][trust-the-vote],
+     site with actual software. \[Currently, mostly Ruby-On-Rails in ruby
+     using IEEE 1622 data models.\]
+     
+     Useful diagrams of voting software architecture: ([PDF][oset-arch-pdf], [broken interactive HTML][oset-arch-html]),
+     Simpler [diagram of modules][oset-modules].
+   
+   * [Open Voting Consortium][open-voting-consortium] Inactive (since 2011)
+     prior effort to develop open source software. Efforts moved to CAVO.
+     
+   * [California Association of Voting Officials][cavo] (CAVO)
+     Nonprofit organization to promote open source voting. Election officials
+     from several California counties are members, as well as other groups.
+
+   * [Verified Voting Foundation][verified-voting-foundation],
+     nonprofit to provide resources on election systems and equipment.
+     Has links and information on voting equipment and usage across the US.
+     
+5. Election Data Standards & Organizations
+   * Election Markup Language (EML), Original XML-based election data interchange format.
+     [Wikipedia Overview][eml-wikipedia], [Specifications][eml-specs]. \[2011\] (Obsolete)
+     
+   * [IEEE VSSC/1622: Common Data Format for Election Equipment][ieee-1622]
+     (Institute of Electrical and Electronic Engineers), Voting Systems
+     Standards Committee). Based on EML, Superceeded by NIST SP1500.
+     
+   * [NIST SP1500-10x Voting Common Data Format][nist-voting] standards.
+     Ongoing effort on XML standards for interoperable election information.
+     From the [NIST Voting section of the Information Technology Laboratory][nist-itl].
+     Coordinating and funded by EAC to produce new *Voluntary Voting Systems Guidelines*. 
+     
+     Includes a good [VVSG Principles and Guidelines][nist-vvsg-principles] summary.
+     
+   * [Election Assistance Commission][eac] established by the
+     Help America Vote Act of 2002 (HAVA) to develop guidance on HAVA
+     requirements. Works with NIST to sponsor Technical Guidelines
+     Development Committee (TGDC) working groups. 
+     Result will be [Voluntary Voting Systems Guidelines][eac-vvsg].
+     Also works to implement Military and Overseas Voting.
+     
+   * [Voting Information Project][vip-project] Google/Pew effort to develop
+     election data interchange standards, originally based on EML.
+     Project includes collecting data from election officials nationwide.
+     Used for Google's Civic API and third parties using Civic API.
+     In 2016, California Secretary of State collected data from all CA counties.
+     \[2016 original contributed data is not public/open--
+     private to Google/Pew except by special arrangement.\]
+     The VIP spec allows contest definitions, but in practice,
+     only used for poll lookup. [git][vip-repo]
+
+6. Additional Links
    * [GitHub][github]
-   * National Institute of Standards and Technology (NIST)
-     - [NIST Voting Public Working Groups][nist-voting]
-     - [VVSG Principles and Guidelines][nist-vvsg-principles]
    * [Open Source Initiative][osi] (OSI)
    * [OpenCount][open-count]
 
@@ -1146,31 +1221,53 @@ This section covers topics related to open source.
 [board-of-supervisors]: http://sfbos.org/
 [bos-ordinance-vstf]: files/BOS_Ordinance_268-08_VSTF.pdf
 [bos-open-source-voting-res]: files/BOS_Resolution_460-14_Open_Source_Voting.pdf
+[cavo]: http://www.cavo-us.org/index.html
 [cla]: https://en.wikipedia.org/wiki/Contributor_License_Agreement
+[colorado-rla-home]: http://bcn.boulder.co.us/~neal/elections/corla/
 [colorado-rla-repo]: https://github.com/FreeAndFair/ColoradoRLA
 [commission-osvtac]: http://sfgov.org/electionscommission/osvtac
 [commission-resolutions]: http://sfgov.org/electionscommission/motions-and-resolutions
 [coit]: http://sfcoit.org/
+[eac]: https://www.eac.gov/
+[eac-vvsg]: https://www.eac.gov/voting-equipment/voluntary-voting-system-guidelines/
 [elections-commission]: http://sfgov.org/electionscommission
+[eml-wikipedia]: https://en.wikipedia.org/wiki/Election_Markup_Language
+[eml-specs]: http://docs.oasis-open.org/election/eml/v7.0/eml-v7.0.html
+[free-and-fair]: http://freeandfair.us/blog/open-free-election-technology/
 [github]: https://github.com/
 [ict-plan-2008]: files/SF_ICT_Plan_2018-22.pdf
+[ieee-1622]: http://grouper.ieee.org/groups/1622/
 [la-vsap]: http://vsap.lavote.net/
 [lafco]: http://sfgov.org/lafco/
 [lafco-report]: files/LAFCo_Report_Open_Source_Voting.pdf
 [mayor-budget-press-release]: http://sfmayor.org/article/mayor-lee-signs-citys-balanced-budget-fiscal-years-2016-17-2017-18
 [nist-voting]: http://collaborate.nist.gov/voting/bin/view/Voting/WebHome
+[nist-itl]: https://www.nist.gov/itl/voting
 [nist-vvsg-principles]: http://collaborate.nist.gov/voting/bin/view/Voting/VVSGPrinciplesAndGuidelines
 [open-count]: https://github.com/FreeAndFair/OpenCount
+[open-count-pres]: https://www.usenix.org/conference/evtwote12/workshop-program/presentation/wang_kai
+[open-rla-repo]: https://github.com/FreeAndFair/OpenRLA
+[open-voting-consortium]: http://www.openvotingconsortium.org
+[oset-arch-html]: https://trustthevote.org/our-work/framework/
+[oset-arch-pdf]: http://www.dubberly.com/wp-content/uploads/2014/09/TTV_Framework_Book.pdf
+[oset-foundation]: http://www.osetfoundation.org/
+[oset-modules]: https://trustthevote.org/our-work/overview-2/
 [osi]: https://opensource.org/
 [osi-approved-licenses]: https://opensource.org/licenses
 [osvtac]: https://osvtac.github.io
 [osvtac-documents]: /documents
 [prime-iii]: http://www.primevotingsystem.com/
+[prime-iii-repo]: https://github.com/HXRL/Prime-III
+[prime-iii-faf-repo]: https://github.com/FreeAndFair/STAR-Vote
 [proposed-budget-2016]: files/SF_Mayor_Proposed_Budget_2016-18.pdf
 [rfp-business-case-page]: http://mission.sfgov.org/OCABidPublication/BidDetail.aspx?K=12141
 [rfp-business-case-pdf]: files/SF_Business_Case_RFP_FINAL.pdf
 [sf-digital-services]: https://digitalservices.sfgov.org/
 [star-vote]: https://www.usenix.org/conference/evtwote13/workshop-program/presentation/bell
 [techfar-handbook]: https://playbook.cio.gov/techfar/
+[trust-the-vote]: https://trustthevote.org
+[verified-voting-foundation]: https://www.verifiedvoting.org/
+[vip-repo]: https://github.com/votinginfoproject
+[vip-project]: https://votinginfoproject.org/
 [vstf]: http://sfgov.org/ccsfgsa/voting-systems-task-force
 [vstf-report]: files/VSTF_Report.pdf
