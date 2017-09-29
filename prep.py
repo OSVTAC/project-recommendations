@@ -95,6 +95,8 @@ def main():
     lines = tranform_lines(lines)
     text = '\n'.join(lines) + '\n'
 
+    # TODO: automatically create the table of contents.
+
     with open(SOURCE_PATH, 'w', encoding='utf-8') as f:
         f.write(text)
 
