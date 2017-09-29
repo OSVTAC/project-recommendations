@@ -277,16 +277,17 @@ useful for the project.
    * 18F's [Modular Contracting][18f-modular-contracting] page
 
 3. Related Software Projects for US Government Elections
-   * [ColoradoRLA][colorado-rla-home], (Risk Limiting Audit) Project.
+   * [ColoradoRLA][colorado-rla-home], (Risk Limiting Audit) Project. Colorado Secretary of State.
      Software to upload electronic CVRs (cast-vote-records), randomly
-     select ballots to audit, then check hand selected or re-scanned
-     paper ballots.
+     select ballots to audit, then hand check hand selected paper ballots
+     against stored CVRs or re-scanned paper ballots.
      
      Contractor for open-source software is [Free & Fair][free-and-fair]
      git: [ColoradoRLA][colorado-rla-repo], [OpenRLA][open-rla-repo].
      
      OpenCount now from Free & Fair \[[git][open-count]\] is software to
-     tabulate scanned ballots. \[[Presentation][open-count-pres]\].
+     tabulate scanned ballots, used with RLA when original systems
+     do not store CVRs. \[[Presentation][open-count-pres]\].
 
    * [Voting Systems Assessment Project][la-vsap] (VSAP), Los Angeles County
      Voting station design with tablet and printer-scanner. Blank ballot sheets
@@ -295,7 +296,7 @@ useful for the project.
      and feeds into collection box. Smartphone app allows pre-recorded
      votes to be entered via QR code. Soliciting vendors for implementation.
      
-   * [Prime III][prime-iii], Dr. Juan E. Gilbert
+   * [Prime III][prime-iii], Dr. Juan E. Gilbert (now hosted at University of Florida)
      Tablet with docking station with keyboard and laser printer, open software.
      Used by NH in 2016 for accessible voting (ballot marking device). Allows
      home computer or phone to prepare QR code. \[[git][prime-iii-repo]\]
@@ -351,9 +352,13 @@ useful for the project.
      
    * [Voting Information Project][vip-project] Google/Pew effort to develop
      election data interchange standards, originally based on EML.
-     Attempts to collect data from election officials to support Google's
-     Civic API. \[Contributed Data is not public/open-- private to Google/Pew.\]
-     In practice, only used for poll lookup. [git][vip-repo]
+     Project includes collecting data from election officials nationwide.
+     Used for Google's Civic API and third parties using Civic API.
+     In 2016, California Secretary of State collected data from all CA counties.
+     \[2016 original contributed data is not public/open--
+     private to Google/Pew except by special arrangement.\]
+     The VIP spec allows contest definitions, but in practice,
+     only used for poll lookup. [git][vip-repo]
 
 6. Additional Links
    * [GitHub][github]
