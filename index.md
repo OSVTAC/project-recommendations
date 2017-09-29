@@ -1,8 +1,8 @@
 # Open Source Voting System Project Recommendations
 
-(Approved by OSVTAC on August 30, 2017.)
+(Approved by OSVTAC on September 21, 2017.)
 
-Last update: September 5, 2017
+Last update: September 29, 2017
 
 **Note: these recommendations are a work in progress and not yet complete.**
 
@@ -459,10 +459,10 @@ useful for the project.
      Software to upload electronic CVRs (cast-vote-records), randomly
      select ballots to audit, then hand check hand selected paper ballots
      against stored CVRs or re-scanned paper ballots.
-     
+
      Contractor for open-source software is [Free & Fair][free-and-fair]
      git: [ColoradoRLA][colorado-rla-repo], [OpenRLA][open-rla-repo].
-     
+
      OpenCount now from Free & Fair \[[git][open-count]\] is software to
      tabulate scanned ballots, used with RLA when original systems
      do not store CVRs. \[[Presentation][open-count-pres]\].
@@ -473,12 +473,12 @@ useful for the project.
      printer emits printed and marked ballot for review, scanner records
      and feeds into collection box. Smartphone app allows pre-recorded
      votes to be entered via QR code. Soliciting vendors for implementation.
-     
+
    * [Prime III][prime-iii], Dr. Juan E. Gilbert (now hosted at University of Florida)
      Tablet with docking station with keyboard and laser printer, open software.
      Used by NH in 2016 for accessible voting (ballot marking device). Allows
      home computer or phone to prepare QR code. \[[git][prime-iii-repo]\]
-     
+
    * [STAR-Vote][star-vote], Travis County, TX
      PDF paper and slides for presentation on Travis County TX proposed system.
      Uses off the shelf tablet to produce printed ballot with only choices
@@ -486,18 +486,18 @@ useful for the project.
      ballots printed are cast. Electronic records separate. (No mail ballots.)
      Voters can check receipt with QR code.
      [Demo/prototype implementation by Free & Fair][prime-iii-faf-repo].
-     
+
 4. Open Source Voting Organizations
    * [OSET Foundation][oset-foundation] 501c umbrella nonprofit to support [Trust the Vote][trust-the-vote],
      site with actual software. \[Currently, mostly Ruby-On-Rails in ruby
      using IEEE 1622 data models.\]
-     
+
      Useful diagrams of voting software architecture: ([PDF][oset-arch-pdf], [broken interactive HTML][oset-arch-html]),
      Simpler [diagram of modules][oset-modules].
-   
+
    * [Open Voting Consortium][open-voting-consortium] Inactive (since 2011)
      prior effort to develop open source software. Efforts moved to CAVO.
-     
+
    * [California Association of Voting Officials][cavo] (CAVO)
      Nonprofit organization to promote open source voting. Election officials
      from several California counties are members, as well as other groups.
@@ -505,29 +505,29 @@ useful for the project.
    * [Verified Voting Foundation][verified-voting-foundation],
      nonprofit to provide resources on election systems and equipment.
      Has links and information on voting equipment and usage across the US.
-     
+
 5. Election Data Standards & Organizations
    * Election Markup Language (EML), Original XML-based election data interchange format.
      [Wikipedia Overview][eml-wikipedia], [Specifications][eml-specs]. \[2011\] (Obsolete)
-     
+
    * [IEEE VSSC/1622: Common Data Format for Election Equipment][ieee-1622]
      (Institute of Electrical and Electronic Engineers), Voting Systems
      Standards Committee). Based on EML, Superceeded by NIST SP1500.
-     
+
    * [NIST SP1500-10x Voting Common Data Format][nist-voting] standards.
      Ongoing effort on XML standards for interoperable election information.
      From the [NIST Voting section of the Information Technology Laboratory][nist-itl].
-     Coordinating and funded by EAC to produce new *Voluntary Voting Systems Guidelines*. 
-     
+     Coordinating and funded by EAC to produce new *Voluntary Voting Systems Guidelines*.
+
      Includes a good [VVSG Principles and Guidelines][nist-vvsg-principles] summary.
-     
+
    * [Election Assistance Commission][eac] established by the
      Help America Vote Act of 2002 (HAVA) to develop guidance on HAVA
      requirements. Works with NIST to sponsor Technical Guidelines
-     Development Committee (TGDC) working groups. 
+     Development Committee (TGDC) working groups.
      Result will be [Voluntary Voting Systems Guidelines][eac-vvsg].
      Also works to implement Military and Overseas Voting.
-     
+
    * [Voting Information Project][vip-project] Google/Pew effort to develop
      election data interchange standards, originally based on EML.
      Project includes collecting data from election officials nationwide.
