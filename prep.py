@@ -90,7 +90,15 @@ def parse_sections(text):
 
 def make_anchor(title):
     """
-    Create and return the anchor label.
+    Create and return the anchor label for a section header.
+
+    Args:
+      title: the section title, including the dotted section number (but
+        not including the header line prefix of the form "###").
+
+    This function was written to mimic Jekyll's / GitHub Pages'
+    auto-generation of element id's for header elements. For example,
+    "5.2. Incremental Approach" should return "52-incremental-approach".
     """
     anchor = title.lower()
     # TODO: add more characters as needed.
