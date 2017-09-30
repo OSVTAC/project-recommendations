@@ -35,8 +35,7 @@ def increment_coords(coords):
     coords.append(last)
 
 
-def make_header(coords, title):
-    prefix = (len(coords) + 1) * '#'
+def make_header_line(prefix, coords, title):
     section = '.'.join(str(number) for number in coords)
     line = f'{prefix} {section}. {title}'
 
@@ -67,7 +66,7 @@ def tranform_lines(lines, header_lines):
             increment_coords(coords)
         level = new_level
 
-        header_line = make_header(coords, title)
+        header_line = make_header_line(prefix, coords, title)
         header_lines.append(header_line)
 
         # Precede a header line with two empty lines.
