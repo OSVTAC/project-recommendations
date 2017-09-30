@@ -88,14 +88,21 @@ def parse_sections(text):
     return intro, body
 
 
-def make_contents_line(title, level):
-    # Construct the anchor label.
+def make_anchor(title):
+    """
+    Create and return the anchor label.
+    """
     anchor = title.lower()
     # TODO: add more characters as needed.
     anchor = anchor.replace('.', '')
     anchor = anchor.replace(' ', '-')
 
+    return anchor
+
+
+def make_contents_line(title, level):
     prefix = 2 * (level - 1) * ' '
+    anchor = make_anchor(title)
     line = f'{prefix}* [{title}](#{anchor})'
 
     return line
