@@ -19,7 +19,7 @@ import re
 # Relative to the repository root.
 SOURCE_PATH = 'index.md'
 
-HEADER_PATTERN = re.compile(r'(?P<prefix>#+) (?P<remainder>.*)')
+HEADER_PATTERN = re.compile(r'#+ ')
 
 
 def recursive_replace(target, old, new):
@@ -35,14 +35,28 @@ def increment_coords(coords):
     coords.append(last)
 
 
-def make_header_line(prefix, coords, title):
+def parse_header_line(line):
+    """
+    Return (level, header_text).
+
+    Args:
+      line: a line of the form "### 1.1. Scope".
+    """
+    prefix, text = line.split(maxsplit=1)
+    level = len(prefix) - 1
+
+    return level, text
+
+
+def make_header_line(level, coords, title):
+    prefix = (level + 1) * '#'
     section = '.'.join(str(number) for number in coords)
     line = f'{prefix} {section}. {title}'
 
     return line
 
 
-def tranform_lines(lines, header_lines):
+def transform_lines(lines, header_lines):
     level = 0
     coords = []
     for line in lines:
@@ -52,12 +66,11 @@ def tranform_lines(lines, header_lines):
             continue
 
         # Otherwise, we have a header line.
-        prefix = match['prefix']
-        remainder = match['remainder']
-        # Strip the dotted number portion from the beginning.
-        title = remainder.lstrip(' 0123456789.\\')
+        new_level, header_text = parse_header_line(line)
 
-        new_level = len(prefix) - 1
+        # Strip the dotted number portion from the beginning.
+        title = header_text.lstrip(' 0123456789.\\')
+
         if new_level > level:
             coords.append(1)
         else:
@@ -66,7 +79,7 @@ def tranform_lines(lines, header_lines):
             increment_coords(coords)
         level = new_level
 
-        header_line = make_header_line(prefix, coords, title)
+        header_line = make_header_line(level, coords, title)
         header_lines.append(header_line)
 
         # Precede a header line with two empty lines.
@@ -88,19 +101,20 @@ def parse_sections(text):
     return intro, body
 
 
-def make_anchor(title):
+def make_anchor(header_text):
     """
     Create and return the anchor label for a section header.
 
     Args:
-      title: the section title, including the dotted section number (but
-        not including the header line prefix of the form "###").
+      header_text: the text portion of a header line, which should include
+        the dotted section number and the title, but not the header line
+        prefix which has the form "###".
 
     This function was written to mimic Jekyll's / GitHub Pages'
     auto-generation of element id's for header elements. For example,
     "5.2. Incremental Approach" should return "52-incremental-approach".
     """
-    anchor = title.lower()
+    anchor = header_text.lower()
     # TODO: add more characters as needed.
     anchor = anchor.replace('.', '')
     anchor = anchor.replace(' ', '-')
@@ -108,10 +122,10 @@ def make_anchor(title):
     return anchor
 
 
-def make_contents_line(title, level):
+def make_contents_line(header_text, level):
     prefix = 2 * (level - 1) * ' '
-    anchor = make_anchor(title)
-    line = f'{prefix}* [{title}](#{anchor})'
+    anchor = make_anchor(header_text)
+    line = f'{prefix}* [{header_text}](#{anchor})'
 
     return line
 
@@ -119,13 +133,12 @@ def make_contents_line(title, level):
 def make_contents(header_lines):
     lines = ['## Contents', '']
     for line in header_lines:
-        prefix, title = line.split(maxsplit=1)
-        level = len(prefix) - 1
+        level, header_text = parse_header_line(line)
         # Only render the first two levels.
         if level > 2:
             continue
 
-        line = make_contents_line(title, level=level)
+        line = make_contents_line(header_text, level=level)
         lines.append(line)
 
     contents = '\n'.join(lines)
@@ -146,7 +159,7 @@ def main():
 
     header_lines = []
     lines = body.splitlines()
-    lines = list(tranform_lines(lines, header_lines))
+    lines = list(transform_lines(lines, header_lines))
     body = '\n'.join(lines)
 
     contents = make_contents(header_lines)
