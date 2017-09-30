@@ -84,6 +84,11 @@ Files in the repository are written in [Markdown][markdown].
 
 You should group unrelated changes separately in different branches.
 
+Also, do not modify the table of contents in your PR or try to update or fix
+the section numbering if your changes affect the section numbering.  If your
+PR is merged, the section numbers and table of contents will be updated
+automatically using a script.
+
 
 ## Suggesting Changes
 
