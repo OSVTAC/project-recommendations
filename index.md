@@ -1168,6 +1168,13 @@ This section covers topics related to open source.
   For programming languages and build tools, any OSI-approved license
   should be okay; they need not be copyleft.
 
+* Reuse of existing open source libraries, tools and software is encouraged.
+  Any such pre-existing third-party code used should be available under
+  an OSI-approved license, but need not be copyleft. If modifications to
+  third-party code are developed, and the original third-party code has
+  a different license than the main software's license, the modifications
+  should be dual-licensed under both licenses.
+
 * In addition to the software being open source, project documentation
   should be openly licensed. This includes things like design documents,
   installation and setup documents, user manuals, and testing documents.
