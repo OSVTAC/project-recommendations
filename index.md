@@ -279,9 +279,9 @@ membership at its May meeting. The Committee was fully constituted on June 2,
 In May 2017, the Department of Elections [issued an RFP][rfp-business-case-page]
 for a contractor to “prepare a business case for developing an accessible,
 open source voting system.” The RFP would use a portion of the $300,000
-budgeted in August 2016. The contractor's deliverable will be due in January
-2018, and it will inform the City's next budget process, which will begin
-around that time.
+budgeted in August 2016. In September 2017, Slalom was selected as the
+winning bidder. Slalom's deliverable will be due in January 2018, and it
+will inform the City's next budget process, which will begin around that time.
 
 The Department of Elections' contract for its current voting system expires
 at the end of December 2018. The Director of Elections is aiming to lease an
