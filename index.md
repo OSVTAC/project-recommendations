@@ -1147,8 +1147,8 @@ gathering or articulating requirements.
 This section covers topics related to open source.
 
 * Each software component being developed should be licensed under an
-  [OSI-approved][osi-approved-licenses] software license (see also the
-  Assumptions section).
+  [OSI-approved][osi-approved-licenses] software license, with a copyleft
+  license being preferred (see also the Assumptions section).
 
 * All software development should occur in public (e.g. on GitHub), rather
   than, for example, waiting for the software to reach a certain level of
