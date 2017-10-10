@@ -1168,7 +1168,8 @@ This section covers topics related to open source.
 * In addition to the software being open source, project documentation
   should be openly licensed. This includes things like design documents,
   installation and setup documents, user manuals, and testing documents.
-  [TODO: recommend particular licenses for documentation?]
+  The recommended license for documentation is the Creative Commons
+  Attribution-ShareAlike 4.0 license ([CC-BY-SA 4.0][cc-by-sa]).
 
 * [TODO: provide recommendations related to managing community feedback and
   contributions during project development. Also think about whether
@@ -1254,6 +1255,7 @@ This section covers topics related to open source.
 [bos-ordinance-vstf]: files/BOS_Ordinance_268-08_VSTF.pdf
 [bos-open-source-voting-res]: files/BOS_Resolution_460-14_Open_Source_Voting.pdf
 [cavo]: http://www.cavo-us.org/index.html
+[cc-by-sa]: https://creativecommons.org/licenses/by-sa/4.0/
 [cla]: https://en.wikipedia.org/wiki/Contributor_License_Agreement
 [colorado-rla-home]: http://bcn.boulder.co.us/~neal/elections/corla/
 [colorado-rla-repo]: https://github.com/FreeAndFair/ColoradoRLA
