@@ -1161,9 +1161,12 @@ This section covers topics related to open source.
   source. This would encourage members of the public to start contributing to
   the project as early as possible.
 
-* All software being developed should be developed using an open-source
-  programming language. For programming languages, any OSI-approved license
-  should be okay. The programming language itself need not be copyleft.
+* All software being developed should be developed using an open source
+  programming language and toolchain. This means an open source compiler
+  or runtime should be available for the language(s) used, and it should
+  be possible to build and run the software from source using only open source tools.
+  For programming languages and build tools, any OSI-approved license
+  should be okay; they need not be copyleft.
 
 * In addition to the software being open source, project documentation
   should be openly licensed. This includes things like design documents,
