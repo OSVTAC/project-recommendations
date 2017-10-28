@@ -48,8 +48,17 @@ def parse_header_line(line):
     return level, text
 
 
-def make_header_line(level, coords, title):
-    prefix = (level + 1) * '#'
+def make_header_line(coords, title):
+    """
+    Args:
+      coords: an iterable of integers representing a section number.
+        For example, [2, 3, 1] represents section 2.3.1.
+      title: the section title that should follow the section number in
+        the text.
+    """
+    # We precede top-level sections with "##" since we reserve "#" for
+    # the overall page header.  Thus, we need to add 1.
+    prefix = (len(coords) + 1) * '#'
     section = '.'.join(str(number) for number in coords)
     line = f'{prefix} {section}. {title}'
 
@@ -79,7 +88,7 @@ def transform_lines(lines, header_lines):
             increment_coords(coords)
         level = new_level
 
-        header_line = make_header_line(level, coords, title)
+        header_line = make_header_line(coords, title)
         header_lines.append(header_line)
 
         # Precede a header line with two empty lines.
