@@ -54,7 +54,7 @@ class HeaderInfo:
         """
         Args:
           coords: an iterable of integers representing a section number.
-            For example, [2, 3, 1] represents section 2.3.1.
+            For example, (2, 3, 1) represents section 2.3.1.
           title: the section title that should follow the section number in
             the rendered text.
         """
@@ -135,12 +135,15 @@ def parse_header_line(line):
     return level, text
 
 
-def transform_lines(lines, header_infos):
+def transform_lines(lines, header_infos, first_section=None):
     """
     This function appends to the header_infos list.
     """
-    level = 0
-    coords = []
+    if first_section is None:
+        first_section = 1
+
+    level = 1
+    coords = [first_section - 1]
     for line in lines:
         match = HEADER_PATTERN.match(line)
         if match is None:
