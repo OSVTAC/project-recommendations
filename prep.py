@@ -13,7 +13,6 @@ From the repository root, run:
 The script should be run with Python 3.6 or newer.
 """
 
-from collections import namedtuple
 import re
 
 
