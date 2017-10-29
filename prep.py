@@ -81,10 +81,6 @@ class HeaderInfo:
         return line
 
     def make_header_line(self):
-        """
-        Args:
-          header_info: a HeaderInfo object.
-        """
         level = self.get_level()
         header_text = self.make_header_text()
 
