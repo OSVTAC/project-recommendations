@@ -13,6 +13,7 @@ From the repository root, run:
 The script should be run with Python 3.6 or newer.
 """
 
+from collections import namedtuple
 import re
 
 
@@ -20,6 +21,92 @@ import re
 SOURCE_PATH = 'index.md'
 
 HEADER_PATTERN = re.compile(r'#+ ')
+
+
+def make_anchor(header_text):
+    """
+    Create and return the anchor label for a section header.
+
+    Args:
+      header_text: the text portion of a header line, which includes the
+        dotted section number and title, but not the header line prefix
+        which has the form "###".
+
+    This function was written to mimic Jekyll's / GitHub Pages'
+    auto-generation of element id's for header elements. For example,
+    "5.2. Incremental Approach" should return "52-incremental-approach".
+    """
+    anchor = header_text.lower()
+    # TODO: add more characters as needed.
+    anchor = anchor.replace('.', '')
+    anchor = anchor.replace(' ', '-')
+
+    return anchor
+
+
+class HeaderInfo:
+
+    """
+    Encapsulates the information needed to generate a section header line.
+    """
+
+    def __init__(self, coords, title):
+        """
+        Args:
+          coords: an iterable of integers representing a section number.
+            For example, [2, 3, 1] represents section 2.3.1.
+          title: the section title that should follow the section number in
+            the rendered text.
+        """
+        self.coords = coords
+        self.title = title
+
+    def __repr__(self):
+        return f'<HeaderInfo object coords={self.coords!r} title={self.title}>'
+
+    def __str__(self):
+        return self.make_header_text()
+
+    def get_level(self):
+        return len(self.coords)
+
+    def make_header_text(self):
+        """
+        Generate and return the text portion of a header line, which
+        includes the dotted section number and title, but not the header
+        line prefix which has the form "###".
+        """
+        section = '.'.join(str(number) for number in self.coords)
+        line = f'{section}. {self.title}'
+
+        return line
+
+    def make_header_line(self):
+        """
+        Args:
+          header_info: a HeaderInfo object.
+        """
+        level = self.get_level()
+        header_text = self.make_header_text()
+
+        # We precede top-level sections with "##" since we reserve "#" for
+        # the overall page header.  Thus, we need to add 1.
+        prefix = (level + 1) * '#'
+
+        line = f'{prefix} {header_text}'
+
+        return line
+
+    def make_contents_line(self):
+        level = self.get_level()
+        indent = 2 * (level - 1) * ' '
+
+        header_text = self.make_header_text()
+        anchor = make_anchor(header_text)
+
+        line = f'{indent}* [{header_text}](#{anchor})'
+
+        return line
 
 
 def recursive_replace(target, old, new):
@@ -48,24 +135,10 @@ def parse_header_line(line):
     return level, text
 
 
-def make_header_line(coords, title):
+def transform_lines(lines, header_infos):
     """
-    Args:
-      coords: an iterable of integers representing a section number.
-        For example, [2, 3, 1] represents section 2.3.1.
-      title: the section title that should follow the section number in
-        the text.
+    This function appends to the header_infos list.
     """
-    # We precede top-level sections with "##" since we reserve "#" for
-    # the overall page header.  Thus, we need to add 1.
-    prefix = (len(coords) + 1) * '#'
-    section = '.'.join(str(number) for number in coords)
-    line = f'{prefix} {section}. {title}'
-
-    return line
-
-
-def transform_lines(lines, header_lines):
     level = 0
     coords = []
     for line in lines:
@@ -88,8 +161,12 @@ def transform_lines(lines, header_lines):
             increment_coords(coords)
         level = new_level
 
-        header_line = make_header_line(coords, title)
-        header_lines.append(header_line)
+        # Apply tuple() to freeze the data since we are mutating coords
+        # in this function.
+        header_info = HeaderInfo(tuple(coords), title)
+        header_infos.append(header_info)
+
+        header_line = header_info.make_header_line()
 
         # Precede a header line with two empty lines.
         yield ''
@@ -110,44 +187,20 @@ def parse_sections(text):
     return intro, body
 
 
-def make_anchor(header_text):
+def make_contents(header_infos):
     """
-    Create and return the anchor label for a section header.
-
     Args:
-      header_text: the text portion of a header line, which should include
-        the dotted section number and the title, but not the header line
-        prefix which has the form "###".
-
-    This function was written to mimic Jekyll's / GitHub Pages'
-    auto-generation of element id's for header elements. For example,
-    "5.2. Incremental Approach" should return "52-incremental-approach".
+      header_infos: an iterable of HeaderInfo objects.
     """
-    anchor = header_text.lower()
-    # TODO: add more characters as needed.
-    anchor = anchor.replace('.', '')
-    anchor = anchor.replace(' ', '-')
-
-    return anchor
-
-
-def make_contents_line(header_text, level):
-    prefix = 2 * (level - 1) * ' '
-    anchor = make_anchor(header_text)
-    line = f'{prefix}* [{header_text}](#{anchor})'
-
-    return line
-
-
-def make_contents(header_lines):
     lines = ['## Contents', '']
-    for line in header_lines:
-        level, header_text = parse_header_line(line)
+    for header_info in header_infos:
+        level = header_info.get_level()
+
         # Only render the first two levels.
         if level > 2:
             continue
 
-        line = make_contents_line(header_text, level=level)
+        line = header_info.make_contents_line()
         lines.append(line)
 
     contents = '\n'.join(lines)
@@ -166,12 +219,13 @@ def main():
 
     intro, body = parse_sections(text)
 
-    header_lines = []
+    # A list of HeaderInfo objects.
+    header_infos = []
     lines = body.splitlines()
-    lines = list(transform_lines(lines, header_lines))
+    lines = list(transform_lines(lines, header_infos))
     body = '\n'.join(lines)
 
-    contents = make_contents(header_lines)
+    contents = make_contents(header_infos)
 
     text = '\n\n'.join((intro, contents, body)) + '\n'
 
