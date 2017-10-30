@@ -652,6 +652,27 @@ these components):
 3. Ballot Image Interpreter (Software)
 4. Central Ballot Scanner (Hardware & Software)
 
+Choosing the above as first components seems to mirror the approach that Los
+Angeles County is taking in its VSAP project. In particular, Los Angeles
+County developed and submitted its "Tally System" for certification even
+before its in-precinct Ballot Marking Device was engineered and manufactured.
+Los Angeles County's "RFP Phase 1: #17-008" defines its Tally System on page
+48 as--
+
+> A system of hardware and software that reads and captures the vote
+selections on ballots, applies required business rules and adjudications,
+tabulates the totals of votes, ballots cast, and other metrics, and publishes
+the results the election. The tally system also supports transparent auditing
+processes to ensure the accuracy and integrity of the election tally results.
+
+This seems to encompass the functionality of the four components listed above.
+
+Los Angeles County submitted its VSAP Tally Version 1.0 to the California
+Secretary of State for certification on September 19, 2017. Section 3.3
+(pages 25-28) of its Phase 1 RFP provides more detail on the completion of
+Los Angeles County's Tally System in relation to other components like their
+Ballot Marking Device.
+
 
 #### 5.2.2. Rationale
 
