@@ -475,7 +475,7 @@ the source code will be available for use in San Francisco's project.
 ### 2.2.2. Los Angeles County - VSAP
 
 Los Angeles County has been planning or working on its [Voting Systems
-Assessment Project](http://vsap.lavote.net) (VSAP) at least since 2009, when
+Assessment Project][la-vsap] (VSAP) at least since 2009, when
 it held an event at Caltech on September 16, 2009. VSAP is a project for Los
 Angeles County to develop its own voting system using a “voter-centered
 approach.“ The project is led by Los Angeles County Registrar-Recorder/County
@@ -490,7 +490,7 @@ tweet](https://twitter.com/LACountyRRCC/status/904871828799209472) he says,
 “Encouraging to see movement in this direction. #LACounty advances
 #opensource in #votingmodernization effort too.“
 
-Los Angeles County's April 24, 2017 RFI [internal link] also supports the
+Los Angeles County's April 24, 2017 [VSAP RFI #17-001][la-vsap-rfi] also supports the
 view that it will be open source. For example, on page 24, it says:
 
 > Accordingly, RR/CC is considering a Copyleft type of license such as GNU
@@ -506,7 +506,7 @@ intellectual property approach for VSAP.
 
 On the other hand, there is no obvious mention of open source on VSAP's main
 website (e.g. on its [“Principles“](http://vsap.lavote.net/principles/)
-page). Moreover, Los Angeles County's 54-page Phase 1 RFP [link internally],
+page). Moreover, Los Angeles County's 54-page [RFP Phase 1: #17-008][la-vsap-rfp-phase-1],
 which was issued five months after the RFI on September 18, 2017 to
 prequalify vendors, does not mention open source. The Phase 1 RFP also
 describes a new “Tally System“ the County is working on:
@@ -553,8 +553,8 @@ In 2012, Travis County, Texas started researching and designing a new voting
 system it called STAR-Vote™. The County spent over $330,000 in its research
 and design phase.
 
-In October 2016, Travis County issued a detailed 208-page RFP [link to the
-RFP] covering the first phase of STAR-Vote, which was the “in-person voting
+In October 2016, Travis County issued a detailed 208-page [RFP][star-vote-rfp]
+covering the first phase of STAR-Vote, which was the “in-person voting
 module of the STAR-Vote system.“ The RFP made frequent reference to open
 source software. For example, on page 5:
 
@@ -576,22 +576,19 @@ open source license that would allow and encourage preparation of third-party
 derivative work, recognizing that voting systems must be state and federally
 certified;
 
-The RFP was accompanied by an additional 16-page “Statement of Intent“
-document [link to the SOI] which sought $25 million (initially a minimum of
+The RFP was accompanied by an additional 16-page [“Statement of Intent“][star-vote-entity]
+document, which sought $25 million (initially a minimum of
 $15 million) for an entity (likely a non-profit) called the “STAR-Vote
 Entity.“
 
-On September 28, 2017, Travis County [announced][star-vote-press-release]
-that the County would not be pursuing STAR-Vote. From their Final Report
-[link to a copy of the final report] (6 pages):
+On September 28, 2017, Travis County announced via a [press
+release][star-vote-final-press-release] that the County would not be pursuing
+STAR-Vote. From their [Final Report][star-vote-final-report] (6 pages)--
 
 > In a nutshell, we have run into too many obstacles. There has not been
 enough funding, time, or support to bring STAR-Vote into the phase of being a
 start-up, through development and the legally-required certification process
 and then into use.
-
-
-[star-vote-press-release]: http://www.traviscountyclerk.org/eclerk/Content.do?code=star-vote-a-change-of-plans
 
 
 ## 3. Assumptions
@@ -651,7 +648,7 @@ useful for the project.
      Used by NH in 2016 for accessible voting (ballot marking device). Allows
      home computer or phone to prepare QR code. \[[git][prime-iii-repo]\]
 
-   * [STAR-Vote][star-vote], Travis County, TX
+   * [STAR-Vote][star-vote-usenix], Travis County, TX
      PDF paper and slides for presentation on Travis County TX proposed system.
      Uses off the shelf tablet to produce printed ballot with only choices
      made. Scanner only reads IDs of ballots placed in box to record which
@@ -1409,6 +1406,8 @@ This section covers topics related to open source.
 [ict-plan-2008]: files/SF_ICT_Plan_2018-22.pdf
 [ieee-1622]: http://grouper.ieee.org/groups/1622/
 [la-vsap]: http://vsap.lavote.net/
+[la-vsap-rfi]: files/LA_VSAP/LA_RFI_20170524.pdf
+[la-vsap-rfp-phase-1]: files/LA_VSAP/LA_RFP_20170918.pdf
 [lafco]: http://sfgov.org/lafco/
 [lafco-report]: files/LAFCo_Report_Open_Source_Voting.pdf
 [mayor-budget-press-release]: http://sfmayor.org/article/mayor-lee-signs-citys-balanced-budget-fiscal-years-2016-17-2017-18
@@ -1434,7 +1433,11 @@ This section covers topics related to open source.
 [rfp-business-case-page]: http://mission.sfgov.org/OCABidPublication/BidDetail.aspx?K=12141
 [rfp-business-case-pdf]: files/SF_Business_Case_RFP_FINAL.pdf
 [sf-digital-services]: https://digitalservices.sfgov.org/
-[star-vote]: https://www.usenix.org/conference/evtwote13/workshop-program/presentation/bell
+[star-vote-entity]: files/STAR-Vote/STAR-Vote_Statement_of_Intent.pdf
+[star-vote-final-press-release]: http://www.traviscountyclerk.org/eclerk/Content.do?code=star-vote-a-change-of-plans
+[star-vote-final-report]: files/STAR-Vote/STAR_Vote_Final_Report.pdf
+[star-vote-rfp]: files/STAR-Vote/RFP_STAR-Vote_Unofficial_Copy.pdf
+[star-vote-usenix]: https://www.usenix.org/conference/evtwote13/workshop-program/presentation/bell
 [techfar-handbook]: https://playbook.cio.gov/techfar/
 [trust-the-vote]: https://trustthevote.org
 [verified-voting-foundation]: https://www.verifiedvoting.org/
