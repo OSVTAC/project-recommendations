@@ -115,6 +115,9 @@ system maintenance, strategies for procurement, and project management.
 
 * The Committee will not be drafting an exhaustive list of requirements.
 
+* The Committee will not be recommending particular vendors. However, the
+  Committee may evaluate particular _systems_.
+
 * The Committee will not make explicit attempts to accommodate internet
   voting in any form, nor voting methods not used in San Francisco. This does
   not preclude the Committee from recommending software designs or practices
@@ -455,18 +458,45 @@ Generates human-readable results reports from the results data from the vote
 totaler (e.g. printable results and results posted on the Department website).
 
 
-## 3. Assumptions
+## 3. Facts & Assumptions
 
-This section lists certain assumptions the committee has made while drafting
-this document.
+This section lists certain facts and assumptions the committee has made while
+drafting this document.
 
-* The Department of Elections does not have the expertise to conduct the
-  day-to-day management of the development and certification of an open
-  source voting system.
-* The Department of Elections has [expressed a
-  preference][directors-report-march-2017] for the GNU General Public License
-  version 3 (GPLv3). This is consistent with the copyleft preference stated
-  in the Elections Commission’s Open Source Voting Systems Resolution
+
+### 3.1. Facts
+
+1. The Director of Elections' [March 2017 Director's
+   Report][directors-report-march-2017] began outlining characteristics of
+   the development plan for the open-source voting system. These included—
+
+   * For the system to be "Developed under version 3 of the GNU General
+     Public License where possible, otherwise preferring similar licenses
+     with copyleft characteristics." This is consistent with the
+     recommendation in the Commission’s Open Source Voting Systems Resolution
+     in its third "resolved" paragraph:
+     > (d) Express a preference for open source licenses
+     with copyleft characteristics so that San Francisco and other
+     jurisdictions can benefit from future improvements that others make to
+     the voting system components;
+
+   * To post the software developed for the new system "as it is written."
+     This is also consistent with the recommendations in the same "resolved"
+     paragraph of the Commission's resolution:
+     > (b) Incorporate openness and transparency into the project, for
+     example ... by releasing all development products, including software
+     source code and documentation, as they are developed;
+
+
+### 3.2. Assumptions
+
+1. The Department of Elections does not currently have the expertise to
+   conduct the day-to-day management of the development and certification of
+   an open source voting system.
+
+2. The voting system should not require counting the votes on ballots by
+   hand (not including hand-counting for audit or recount purposes).
+
 
 [directors-report-march-2017]: http://sfgov.org/electionscommission/sites/default/files/Documents/meetings/2017/2017-03-15-commission/March%202017%20Director%20Report.pdf
 
@@ -1245,6 +1275,46 @@ This section covers topics related to open source.
 ### 5.18. Hardware maintenance
 
 [TODO]
+
+
+## 6. FAQ
+
+**6.1. Is open-source software more or less secure than proprietary
+software?**
+
+The short answer is that, in general, open-source software is neither more
+secure nor less secure than proprietary software. Both secure and insecure
+open-source software can be written. Similarly, both secure and insecure
+proprietary software can be written.
+
+A key difference though is that, because it is publicly viewable, claims
+about the security of open-source software can be _independently verified_,
+and by _anyone_ (provided they have the necessary skills and time). With
+proprietary code, such claims can be based only on trusting those who are
+able to view the code.
+
+The security of a given piece of software is primarily a function of how well
+the software is written. It does not (and should not) depend on keeping the
+code secret. The idea that software can be made secure by keeping it secret
+is an idea known as "security by obscurity" and is widely rejected in the
+security community.
+
+Open source is already heavily used and relied upon throughout the world for
+security-critical applications. For example, much of the code that allows
+the secure transmission of information over the internet is open source.
+
+
+**6.2. How can members of the public be sure that the open-source code is
+what is actually running on the machine?**
+
+[TODO]
+
+
+**6.3. How much of the code must be open source for the voting system to
+be considered open source?**
+
+[TODO]
+
 
 [18f-modular-contracting]: https://modularcontracting.18f.gov/
 [bill-ab-2252-2015]: https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201520160AB2252
