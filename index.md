@@ -1406,8 +1406,8 @@ This section covers topics related to open source.
 [ict-plan-2008]: files/SF_ICT_Plan_2018-22.pdf
 [ieee-1622]: http://grouper.ieee.org/groups/1622/
 [la-vsap]: http://vsap.lavote.net/
-[la-vsap-rfi]: files/LA_VSAP/LA_RFI_20170524.pdf
-[la-vsap-rfp-phase-1]: files/LA_VSAP/LA_RFP_20170918.pdf
+[la-vsap-rfi]: files/la-vsap/LA_RFI_20170524.pdf
+[la-vsap-rfp-phase-1]: files/la-vsap/LA_RFP_20170918.pdf
 [lafco]: http://sfgov.org/lafco/
 [lafco-report]: files/LAFCo_Report_Open_Source_Voting.pdf
 [mayor-budget-press-release]: http://sfmayor.org/article/mayor-lee-signs-citys-balanced-budget-fiscal-years-2016-17-2017-18
@@ -1433,10 +1433,10 @@ This section covers topics related to open source.
 [rfp-business-case-page]: http://mission.sfgov.org/OCABidPublication/BidDetail.aspx?K=12141
 [rfp-business-case-pdf]: files/SF_Business_Case_RFP_FINAL.pdf
 [sf-digital-services]: https://digitalservices.sfgov.org/
-[star-vote-entity]: files/STAR-Vote/STAR-Vote_Statement_of_Intent.pdf
+[star-vote-entity]: files/star-vote/STAR-Vote_Statement_of_Intent.pdf
 [star-vote-final-press-release]: http://www.traviscountyclerk.org/eclerk/Content.do?code=star-vote-a-change-of-plans
-[star-vote-final-report]: files/STAR-Vote/STAR_Vote_Final_Report.pdf
-[star-vote-rfp]: files/STAR-Vote/RFP_STAR-Vote_Unofficial_Copy.pdf
+[star-vote-final-report]: files/star-vote/STAR_Vote_Final_Report.pdf
+[star-vote-rfp]: files/star-vote/RFP_STAR-Vote_Unofficial_Copy.pdf
 [star-vote-usenix]: https://www.usenix.org/conference/evtwote13/workshop-program/presentation/bell
 [techfar-handbook]: https://playbook.cio.gov/techfar/
 [trust-the-vote]: https://trustthevote.org
