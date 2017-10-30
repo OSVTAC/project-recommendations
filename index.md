@@ -655,12 +655,12 @@ City get confirmation earlier that the project is “on the right track”
 without necessarily having to commit funds for the entire project. It also
 builds in a way for the City to take corrective action (e.g. if a vendor
 developing a particular component isn’t performing to expectation). Finally,
-it eliminates the need to come up with an accurate estimate for the entire
-project before starting work.
+it eliminates the need to come up with accurate cost and time estimates for
+the entire project before starting work.
 
 For example, instead of committing $8 million up front for a single project
 to develop a full voting system, the City could instead start out by spending
-$2 million on three deliverables: one for $1.5 million and two for $250,000.
+$2 million on three deliverables, say: one for $1.5 million and two for $250,000.
 Based on the success or progress of the initial projects, the City could
 decide to move forward with additional sub-projects, or change its approach
 (even before the three deliverables are completed). In this way, the City
@@ -683,42 +683,29 @@ these components):
 3. Ballot Image Interpreter (Software)
 4. Central Ballot Scanner (Hardware & Software)
 
-These components can be developed in parallel. Their development can also be
-staggered in conjunction with other deliverables. For example, development on
-other components can be started before these are finished.
+Choosing the above as first components seems to mirror the approach that Los
+Angeles County is taking in its VSAP project. In particular, Los Angeles
+County developed and submitted its "Tally System" for certification even
+before its in-precinct Ballot Marking Device was engineered and manufactured.
+Los Angeles County's "RFP Phase 1: #17-008" defines its Tally System on page
+48 as--
+
+> A system of hardware and software that reads and captures the vote
+selections on ballots, applies required business rules and adjudications,
+tabulates the totals of votes, ballots cast, and other metrics, and publishes
+the results the election. The tally system also supports transparent auditing
+processes to ensure the accuracy and integrity of the election tally results.
+
+This seems to encompass the functionality of the four components listed above.
+
+Los Angeles County submitted its VSAP Tally Version 1.0 to the California
+Secretary of State for certification on September 19, 2017. Section 3.3
+(pages 25-28) of its Phase 1 RFP provides more detail on the completion of
+Los Angeles County's Tally System in relation to other components like their
+Ballot Marking Device.
 
 
-##### 5.2.1.1. Deployment Strategy
-
-The components above could be deployed and used in conjunction with a
-non-open-source interim system. For example, the results reporter could be
-used to report the election results of the interim system. The vote totaler
-could be used to compute the results of an election run with the interim
-system.
-
-There are a number of possibilities for an open-source central ballot scanner
-to be used in conjunction with a non-open-source interim system. For example—
-
-1. Open-source central ballots scanners could be responsible for scanning all
-vote-by-mail ballots, while the interim system could be responsible for
-counting in-precinct ballots. In addition, the interim system could even be
-used as a fail-safe backup in the first use in case of an unexpected issue in
-the open-source system.
-
-2. Before (1), open-source scanners could be responsible for scanning some of
-the vote-by-mail ballots (e.g. in a pilot of the open-source scanners that
-precedes a full-scale rollout). This option could possibly be done prior to
-certifying the scanners, by taking advantage of California bill [SB 360
-(2013-2014)][bill-sb-360-2013].
-
-3. Finally, before (2), open-source scanners could be used to scan
-vote-by-mail ballots in addition to the interim system scanning them. This
-could be used both to check or audit the interim system, as well as test the
-open-source scanners. This final option can likely even be done prior to
-certifying the scanners.
-
-
-##### 5.2.1.2. Rationale
+#### 5.2.2. Rationale
 
 Below are some reasons for selecting the components above:
 
@@ -729,13 +716,9 @@ Below are some reasons for selecting the components above:
 * The components are independently useful and so can help prove the value of
 open source.
 
-* The components can be worked on in parallel.
-
-* The components support incremental deployment. Each component can be
-deployed and used in conjunction with a non-open-source interim system
-relatively easily: replacing individual components of an interim system and
-working in conjunction with other components of the interim system via import
-and export processes.
+* The components can be worked on in parallel. Their development can also be
+staggered in conjunction with other deliverables. For example, development on
+other components can be started before these are finished.
 
 * In each case, there is open-source code that already exists that
 development of the components might be able to start from, or at least learn
@@ -743,6 +726,26 @@ from.
 
 * Working on the components will help to work through and resolve core issues
 that need to be worked out anyways
+
+* Each of these components supports incremental deployment. Each component
+  can be deployed and used by replacing the corresponding component of a
+  non-open-source interim system, and then interoperating with the other
+  components of the voting system (interim or not). This is true even without
+  requiring anything extra of the interim system. See the "Deployment
+  Strategies" sub-section below for further details.
+
+  In contrast, an example of a component that probably _wouldn't_ support
+  incremental deployment as easily is the ballot layout software application.
+  This is because an interim system's scanners probably can't be guaranteed
+  to scan ballots created by a third-party.
+
+  Similarly, it is probably more difficult to design an accessible
+  ballot-marking device that can mark another vendor's ballot than it is to
+  design a scanner that can interpret another vendor's ballot. This is
+  because marking a ballot is a harder problem to solve than interpreting a
+  ballot. While the latter is primarily a software problem (which would be
+  addressed by the ballot image interpreter component), the former leans more
+  towards being a hardware problem.
 
 For the Results Reporter:
 
@@ -828,7 +831,7 @@ the hardware, it is a strictly simpler component than the precinct-based
 scanner.
 
 
-##### 5.2.1.3. Component Details
+#### 5.2.3. Component Details
 
 This section lists more details about each of the four components we
 suggested above. For each of these deliverables, we provide—
@@ -939,6 +942,8 @@ digital images, independent of a hardware scanner.
 * the “ballot layout” data (e.g. where contests are located on each ballot
 card for each ballot type, etc.).
 
+* the digital ballot pictures themselves.
+
 Needs to output for each ballot:
 
 * a cast vote record (CVR) of the markings on the ballot.
@@ -992,6 +997,59 @@ spelled out.
 **Possible dependencies / pre-requisites.** Real data from past elections for
 proto-typing and testing. Samples of ballots from past elections and/or the
 interim voting system.
+
+
+#### 5.2.4. Deployment Strategies
+
+The components listed above can be deployed and used in conjunction with a
+non-open-source interim system even before a full open-source voting system
+is ready. This section provides more details about how this could be done.
+
+For example, an open-source results reporter could be used to report the
+election results of the non-open-source interim system. It would simply need
+to take in the aggregate, numeric results from the interim system. The output
+would not need to interact with the interim system.
+
+Similarly, an open-source vote totaler could be used to compute the numeric
+results of an election run with the interim system. It would only require
+taking in the non-aggregated numeric results from the interim system, and
+then feeding the aggregate results into the results reporter.
+
+
+##### 5.2.4.1. Central Ballot Scanner Phases
+
+For the central ballot scanner, there are a number of options for
+incrementally phasing in an open-source version.
+
+In chronological order, some of these possible phases are--
+
+1. Even before the scanner hardware is ready to be tested, the software-only
+ballot image interpreter component could be used to check the vote counts of
+the interim system from the information of the digital ballot pictures. In
+addition, if the pictures are made public during the canvass (along with the
+ballot image interpreter software), even members of the public could perform
+this "check."
+
+2. When the open-source central scanners are ready enough to test, the
+scanners could be used to scan vote-by-mail ballots _in addition_ to the
+interim system scanning them. This could be used both to check or audit the
+interim system, as well as to test the open-source scanners. This can likely
+be done even without certifying the scanners. This is essentially what the
+Humboldt County Elections Transparency Project did in the late 2000's.
+
+3. Once we have enough confidence in the open-source scanners, they could be
+used as the primary scanner for _some_ of the vote-by-mail ballots (e.g. in a
+pilot of the open-source scanners that precedes a full-scale rollout). This
+option could possibly be done prior to certifying the scanners, by taking
+advantage of California bill [SB 360 (2013-2014)][bill-sb-360-2013].
+
+4. Finally, once the open-source central scanners are certified, they could
+be used to scan _all_ of the vote-by-mail ballots (while the interim system
+could be responsible for counting in-precinct ballots). In this scenario, the
+interim system could perhaps even be used as a fail-safe backup in case of an
+unexpected issue with the open-source system (or else as a check, in the
+same way that the open-source scanners were used as a check in bullet point
+(2) above).
 
 
 ### 5.3. Requirements-gathering
@@ -1150,6 +1208,10 @@ gathering or articulating requirements.
 
 ### 5.5. Project Management
 
+* The Department should hire a staff person to be in charge of managing the
+  project. The person should have experience and expertise in managing
+  technical projects of a similar size and complexity.
+
 * As soon as possible, the Department should
   develop and publicize a rough project plan and timeline for the development
   and certification of an open source system, for the case that the project
@@ -1158,17 +1220,26 @@ gathering or articulating requirements.
   plan would also help in crafting an RFP for the interim system.
 
 * For deliverables, favor smaller deliverables that can be tested
-  independently of other components. For example, if developing a software
+  independently of other components. In particular, if developing a software
   application, it may make sense for one or more of the underlying libraries
   to be delivered separately and/or earlier, rather than the application as a
   whole being the only software deliverable.
 
+  One example is an application to tabulate the results of an RCV contest.
+  The code responsible for running the algorithm could be delivered and
+  tested as a stand-alone library separate from any user-interface.
+
+  Another example is an application to adjudicate ballots. The code for
+  automatically interpreting the digital ballot picture could be separated
+  out as its own library. Indeed, this corresponds to the Ballot Image
+  Interpreter software component.
+
+  [TODO: add a comment about the vendor providing a UI shim to support
+  the testing of software libraries.]
+
 * [TODO: think about the division of responsibilities between the City and
   vendor. For example, who should be responsible for project management—the
   City or a vendor?]
-
-* [TODO: brainstorm and document various incremental / phased roll-out
-  possibilities, and possibly recommend preferred options.]
 
 * [TODO: provide specific recommendations around agile.]
 
