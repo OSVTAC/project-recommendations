@@ -18,8 +18,8 @@ month.
 
 To learn more about the committee, visit the committee's website at
 [https://osvtac.github.io][osvtac]. To learn how to suggest changes to this
-document, view the "Project Recommendations" section of the [Documents
-page][osvtac-documents] of the committee's website.
+document, view the "Project Recommendations" section of the [About
+page][osvtac-about-recs] of the committee's website.
 
 
 ## Contents
@@ -1287,7 +1287,7 @@ This section covers topics related to open source.
 [osi]: https://opensource.org/
 [osi-approved-licenses]: https://opensource.org/licenses
 [osvtac]: https://osvtac.github.io
-[osvtac-documents]: /documents
+[osvtac-about-recs]: https://osvtac.github.io/about#project-recommendations
 [prime-iii]: http://www.primevotingsystem.com/
 [prime-iii-repo]: https://github.com/HXRL/Prime-III
 [prime-iii-faf-repo]: https://github.com/FreeAndFair/STAR-Vote
