@@ -145,10 +145,19 @@ passed a resolution that, among other things, established a policy that the
 Department of Elections give priority to voting systems that “provide the
 maximum level of security and transparency possible consistent with the
 principles of public disclosure.” However, like today, no certified open
-source voting systems were available at that time. In December 2007, the
-Department signed a contract for a new voting system that was proprietary.
-The Department still uses this system today. The contract for this system
-ends at the end of 2018.
+source voting systems were available at that time.
+
+In December 2007 the City, through the Department of Elections, entered into
+contract with Sequoia Voting Systems, Inc. for a new, proprietary voting
+system. In June 2010, [Dominion Voting Systems,
+Inc.](http://www.dominionvoting.com/) acquired Sequoia and assumed Sequoia's
+contract. The Department and City extended the contract with Dominion more
+than once. The current contract is scheduled to end at the end of 2018. The
+total cost of the extended contract over the eleven years (including hardware
+and hardware maintenance, software license fees, and election services) was
+approximately $22 million, with $9.6 million of that up front. This averages
+to around $2 million per year (see here [link to PDF spreadsheet] for a
+yearly breakdown).
 
 In November 2008, the [Board of Supervisors][board-of-supervisors] passed an
 [ordinance][bos-ordinance-vstf] creating a [Voting Systems Task Force][vstf]
@@ -336,9 +345,12 @@ system includes a precinct tally, which means the system tallies the
 in-precinct ballots at the precinct.
 
 The assumptions above are only for the purposes of the example illustration
-in this section. They should not be construed in any way as recommendations
-of the Committee or to constrain the type of voting system that San Francisco
-should develop.
+in this section. They were made partly because they reflect how San
+Francisco's voting system works today. However, they should not be construed
+in any way as recommendations of the Committee or to constrain the type of
+voting system that San Francisco should develop. See the "Key Decisions"
+section below for how this list of components could change depending on
+certain choices.
 
 The components in this particular list are not necessarily independent. They
 may overlap or contain one another. For example, the precinct ballot scanner
@@ -392,21 +404,27 @@ votes, and generating results reports.
 
 **1\. Voting System Database / Management**
 
-Central store (e.g. file system and/or database) storing and providing access
-to the voting-system information needed to conduct an election. This can
-include things like contest and ballot definitions, ballot images, cast vote
-records, and election results. A management interface can let staff perform
-tasks like import and export data in open data formats, digitally evaluate
-"out-stacked" ballots and ballots with write-in candidates, and perform other
-functions needed during the canvass. This software may support running other
-software components like EMS integration, tabulation, and results reporting.
+Central store (e.g. file system and/or database) and software application
+providing access to the voting-system information needed to conduct an
+election. This can include things like contest and ballot definitions, ballot
+images, cast vote records, and election results.
 
-**2\. Election Definition EMS Integration.**
+A management interface can let staff perform
+tasks like importing and exporting data in open data formats, adjudicating
+ballots that require manual inspection (e.g. ballots with write-in candidates
+or borderline marks)—but from the digital ballot picture rather than from
+the physical paper—and performing other
+functions needed during the canvass. This software could perhaps also
+provide an interface to running other software components and functions
+like the EIMS integration, tabulation, and results reporting.
 
-Interfaces with the Department's Election Management System (EMS) to import
-and convert election definition information from the EMS into the voting
-system database. This can include things like what offices, candidates, and
-measures, etc. are in the election and in what precincts and districts, etc.
+**2\. EIMS® Integration.**
+
+This component is responsible for interfacing with the Department's EIMS®
+software. It pulls or takes election definition information exported from
+EIMS and imports it into the voting system database. This information can
+include things like what offices and candidates are on the ballot, and
+in what precincts, districts, and ballot styles, etc.
 
 **3\. Ballot Layout**
 
@@ -434,15 +452,24 @@ a ballot scanner (e.g. out-stacking a ballot, returning a ballot, advancing a
 ballot, etc.). This might come with COTS hardware. Separate versions are
 likely needed for the precinct and central scanners.
 
-**7\. High-level Scanner Software (one for precinct and one for central)**
+**7\. Central Ballot Scanner Software**
 
-This is high-level software controlling the precinct and central ballot
-scanners. It interacts with the scanner device driver and ballot image
+This is high-level software controlling the central ballot
+scanner. It interacts with the scanner device driver and ballot image
 interpreter components and is responsible for things like scanning and
 storing ballot images, detecting the ballot layout, interpreting and
 tabulating ballot markings, controlling the scanner in response to the
 markings on a ballot, and exporting ballot data after scanning is complete.
-Separate versions are likely needed for the precinct and central scanners.
+
+**8\. Precinct Ballot Scanner Software**
+
+This component is similar to the central ballot scanner software component
+above and can likely share much software with it. However, it's different
+because it is for the case of an individual voter rather than for high-volume
+scanning. For example, unlike the central ballot scanner, this software will
+need to support returning a ballot back to the voter in the case of errors
+like an overvote. For the central scanner, such ballots might simply be
+outstacked.
 
 **8\. Vote Totaler**
 
@@ -1245,6 +1272,71 @@ This section covers topics related to open source.
 ### 5.18. Hardware maintenance
 
 [TODO]
+
+
+## 6. Glossary
+
+* **adjudicate**. [TODO]
+
+* **agile**. [TODO]
+
+* **ballot on-demand**. [TODO]
+
+* **cast-vote record (CVR)**. [TODO]
+
+* **central ballot scanner**. [TODO]
+
+* **commercial off-the-shelf (COTS)**. [TODO]
+
+* **comparison audit**. [TODO]
+
+* **component**. [TODO]
+
+* **digital ballot picture**. [TODO]
+
+* **EIMS®**. [EIMS®](http://www.dfmassociates.com/eims.asp) is the software
+  application that the Department of Elections uses for certain
+  election-related functions like maintaining voter registration data,
+  administering polling place information, defining ballot styles, and
+  tracking candidate filings for office (see Appendix A of the City's
+  contract with DFM for a detailed listing of the required capabilities
+  [link to the contract]). The Department signed a nine-year contract
+  with [DFM Associates](http://www.dfmassociates.com) for the software
+  in June 2011. The contract lists the per-year maintenance and support costs
+  as ranging between $170,820.00 and $274,299.60.
+
+* **end-to-end verifiability**. [TODO]
+
+* **firmware**. [TODO]
+
+* **free and open-source software (FOSS)**. [TODO]
+
+* **free software**. [TODO]
+
+* **hardware**. [TODO]
+
+* **hardware component**. [TODO]
+
+* **open hardware**. [TODO]
+
+* **open-source software**. [TODO]
+
+* **outstack**. [TODO]
+
+* **precinct ballot scanner**. [TODO]
+
+* **remake**. [TODO]
+
+* **risk-limiting audit (RLA)**. [TODO]
+
+* **software**. [TODO]
+
+* **software API**. [TODO]
+
+* **software application**. [TODO]
+
+* **software library**. [TODO]
+
 
 [18f-modular-contracting]: https://modularcontracting.18f.gov/
 [bill-ab-2252-2015]: https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201520160AB2252
