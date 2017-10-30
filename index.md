@@ -467,7 +467,7 @@ drafting this document.
 ### 3.1. Facts
 
 1. The Director of Elections' [March 2017 Director's
-   Report][directors-report-march-2017] began outlining characteristics of
+   Report][directors-report-march-2017-original] began outlining characteristics of
    the development plan for the open-source voting system. These included—
 
    * For the system to be "Developed under version 3 of the GNU General
@@ -498,7 +498,8 @@ drafting this document.
    hand (not including hand-counting for audit or recount purposes).
 
 
-[directors-report-march-2017]: http://sfgov.org/electionscommission/sites/default/files/Documents/meetings/2017/2017-03-15-commission/March%202017%20Director%20Report.pdf
+[directors-report-march-2017-local]: files/SF_Elections_March_2017_Director_Report.pdf
+[directors-report-march-2017-original]: http://sfgov.org/electionscommission/sites/default/files/Documents/meetings/2017/2017-03-15-commission/March%202017%20Director%20Report.pdf
 
 
 ## 4. Resources
@@ -1328,6 +1329,7 @@ be considered open source?**
 [colorado-rla-home]: http://bcn.boulder.co.us/~neal/elections/corla/
 [colorado-rla-repo]: https://github.com/FreeAndFair/ColoradoRLA
 [commission-osvtac]: http://sfgov.org/electionscommission/osvtac
+[commission-resolution-local]: files/SF_Elections_Comm_Open_Source_Voting_Res.pdf
 [commission-resolutions]: http://sfgov.org/electionscommission/motions-and-resolutions
 [coit]: http://sfcoit.org/
 [eac]: https://www.eac.gov/
