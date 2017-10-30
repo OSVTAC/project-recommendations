@@ -1283,10 +1283,12 @@ This section covers topics related to open source.
 **6.1. Is open-source software more or less secure than proprietary
 software?**
 
-The short answer is that, in general, open-source software is neither more
-secure nor less secure than proprietary software. Both secure and insecure
-open-source software can be written. Similarly, both secure and insecure
-proprietary software can be written.
+Independent studies have shown that, in general, open-source software is
+neither more secure nor less secure than proprietary software (see for
+example Synopsys's ["Coverity® Scan Open Source Report
+2014"][coverity-report-2014]). Both secure and insecure open-source software
+can be written. Similarly, both secure and insecure proprietary software can
+be written.
 
 A key difference though is that, because it is publicly viewable, claims
 about the security of open-source software can be _independently verified_,
@@ -1331,6 +1333,7 @@ be considered open source?**
 [commission-osvtac]: http://sfgov.org/electionscommission/osvtac
 [commission-resolution-local]: files/SF_Elections_Comm_Open_Source_Voting_Res.pdf
 [commission-resolutions]: http://sfgov.org/electionscommission/motions-and-resolutions
+[coverity-report-2014]: http://go.coverity.com/rs/157-LQW-289/images/2014-Coverity-Scan-Report.pdf
 [coit]: http://sfcoit.org/
 [eac]: https://www.eac.gov/
 [eac-vvsg]: https://www.eac.gov/voting-equipment/voluntary-voting-system-guidelines/
