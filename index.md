@@ -156,8 +156,8 @@ than once. The current contract is scheduled to end at the end of 2018. The
 total cost of the extended contract over the eleven years (including hardware
 and hardware maintenance, software license fees, and election services) was
 approximately $22 million, with $9.6 million of that up front. This averages
-to around $2 million per year (see here [link to PDF spreadsheet] for a
-yearly breakdown).
+to around $2 million per year (see [this table][dominion-costs-2008] for an
+annual breakdown).
 
 In November 2008, the [Board of Supervisors][board-of-supervisors] passed an
 [ordinance][bos-ordinance-vstf] creating a [Voting Systems Task Force][vstf]
@@ -1298,12 +1298,20 @@ This section covers topics related to open source.
   application that the Department of Elections uses for certain
   election-related functions like maintaining voter registration data,
   administering polling place information, defining ballot styles, and
-  tracking candidate filings for office (see Appendix A of the City's
-  contract with DFM for a detailed listing of the required capabilities
-  [link to the contract]). The Department signed a nine-year contract
+  tracking candidate filings for office (see
+  [Appendix A][dfm-contract-appendix-a] of the City's contract with DFM for
+  a detailed listing of the required capabilities).
+  The Department signed a nine-year contract
   with [DFM Associates](http://www.dfmassociates.com) for the software
-  in June 2011. The contract lists the per-year maintenance and support costs
-  as ranging between $170,820.00 and $274,299.60.
+  in June 2011 ([DFM contract][dfm-contract-main],
+  [Appendix A][dfm-contract-appendix-a],
+  [Appendix B][dfm-contract-appendix-b],
+  [Appendix C][dfm-contract-appendix-c],
+  [Appendix D][dfm-contract-appendix-d],
+  [Appendix E][dfm-contract-appendix-e]). The contract lists the per-year
+  maintenance and support costs as ranging between $170,820.00 and
+  $274,299.60 (see [Appendix D][dfm-contract-appendix-d] of the contract
+  for more detail).
 
 * **end-to-end verifiability**. [TODO]
 
@@ -1352,6 +1360,13 @@ This section covers topics related to open source.
 [commission-osvtac]: http://sfgov.org/electionscommission/osvtac
 [commission-resolutions]: http://sfgov.org/electionscommission/motions-and-resolutions
 [coit]: http://sfcoit.org/
+[dominion-costs-2008]: files/Dominion_System_Costs_2008_Jerdonek.pdf
+[dfm-contract-main]: files/dfm-contract/DFM_Contract_060111.pdf
+[dfm-contract-appendix-a]: files/dfm-contract/DFM_Contract_Appendix_A_Perf_Reqs.pdf
+[dfm-contract-appendix-b]: files/dfm-contract/DFM_Contract_Appendix_B_Scope.pdf
+[dfm-contract-appendix-c]: files/dfm-contract/DFM_Contract_Appendix_C_Maintenance.pdf
+[dfm-contract-appendix-d]: files/dfm-contract/DFM_Contract_Appendix_D_Fee_Schedule.pdf
+[dfm-contract-appendix-e]: files/dfm-contract/DFM_Contract_Appendix_E_Hardware_Specs.pdf
 [eac]: https://www.eac.gov/
 [eac-vvsg]: https://www.eac.gov/voting-equipment/voluntary-voting-system-guidelines/
 [elections-commission]: http://sfgov.org/electionscommission
