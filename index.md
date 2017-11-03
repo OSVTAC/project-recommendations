@@ -358,7 +358,7 @@ certain choices.
 
 The components in this particular list are not necessarily independent. They
 may overlap or contain one another. For example, the precinct ballot scanner
-hardware component contains a scanner device driver, the ballot image
+hardware component contains a scanner device driver, the ballot picture
 interpreter, and the high-level scanner software components.
 
 Finally, note that there are many possible ways to divide a given voting
@@ -400,7 +400,7 @@ to facilitate polling-place use.
 **4\. Standard laptop or desktop computers**
 
 Standard computers will also be needed for administrative tasks like ballot
-layout, adjudicating digital images of ballots, aggregating and totaling
+layout, adjudicating digital pictures of ballots, aggregating and totaling
 votes, and generating results reports.
 
 
@@ -410,8 +410,8 @@ votes, and generating results reports.
 
 Central store (e.g. file system and/or database) and software application
 providing access to the voting-system information needed to conduct an
-election. This can include things like contest and ballot definitions, ballot
-images, cast vote records, and election results.
+election. This can include things like contest and ballot definitions,
+digital ballot pictures, cast vote records, and election results.
 
 A management interface can let staff perform
 tasks like importing and exporting data in open data formats, adjudicating
@@ -441,10 +441,10 @@ semi-automated fashion, including support for multiple languages.
 This is the software corresponding to the Accessible Ballot-Marking Device
 hardware component.
 
-**5\. Ballot Image Interpreter**
+**5\. Ballot Picture Interpreter**
 
-This is a software library responsible for interpreting ballot images. It
-generates a cast vote record (CVR) from a digital image of a ballot. This
+This is a software library responsible for interpreting digital ballot pictures. It
+generates a cast vote record (CVR) from a digital picture of a ballot. This
 software component could potentially be used in all of the precinct scanners,
 the central scanners, and a software-only ballot adjudication application.
 
@@ -459,9 +459,9 @@ likely needed for the precinct and central scanners.
 **7\. Central Ballot Scanner Software**
 
 This is high-level software controlling the central ballot
-scanner. It interacts with the scanner device driver and ballot image
+scanner. It interacts with the scanner device driver and ballot picture
 interpreter components and is responsible for things like scanning and
-storing ballot images, detecting the ballot layout, interpreting and
+storing digital ballot pictures, detecting the ballot layout, interpreting and
 tabulating ballot markings, controlling the scanner in response to the
 markings on a ballot, and exporting ballot data after scanning is complete.
 
@@ -548,7 +548,11 @@ votes cast on BMD ballots at Vote Centers, as well as on Vote By Mail
 ballots. Similar to the ECBMS, RR/CC is currently developing the software
 required for the new Tally System in anticipation of a pilot in June 2018.
 
-However, even though the County is currently developing the Tally System, as
+Los Angeles County submitted its VSAP Tally Version 1.0 to the California
+Secretary of State on September 19, 2017 for certification.
+
+However, even though the County is developing the Tally System and submitted
+it for certification, as
 of October 2017, none of the code for the Tally System appears to be publicly
 available, let alone open source. In addition, on page 41 of the RFP in
 Section 6.2 “Non-Disclosure Agreement,“ the RFP says—
@@ -649,6 +653,7 @@ useful for the project.
      for Developing an Accessible, Open Source Voting System"). In
      particular, see the list of links in Section I.A. starting on page 5 of
      the [RFP PDF][rfp-business-case-pdf].
+   * [San Francisco Digital Services Team][sf-digital-services]
 
 2. Procurement
    * U.S. Digital Services' [TechFAR Handbook][techfar-handbook]
@@ -816,7 +821,7 @@ these components):
 
 1. Results Reporter (Software)
 2. Vote Totaler (Software)
-3. Ballot Image Interpreter (Software)
+3. Ballot Picture Interpreter (Software)
 4. Central Ballot Scanner (Hardware & Software)
 
 These components can be developed in parallel. Their development can also be
@@ -910,14 +915,14 @@ benefit from relatively easily (e.g. jurisdictions using RCV would be able to
 use the RCV algorithm functionality). In this way, other jurisdictions could
 start to understand the benefits of open source.
 
-For the Ballot Image Interpreter:
+For the Ballot Picture Interpreter:
 
 * This is a core software component that would be used in a number of
 different components, so it is natural to start working on it first.
 
 * Even in the absence of deployed open-source hardware components, it could
 be used by members of the public to “check” the scanning done by the interim
-system, provided the digital images are made public.
+system, provided the digital ballot pictures are made public.
 
 * The open-source software OpenCount might go a long way towards implementing
 this component.
@@ -1047,13 +1052,13 @@ spelled out.
 proto-typing and testing.
 
 
-###### 5.2.1.3.3. Ballot Image Interpreter (Software)
+###### 5.2.1.3.3. Ballot Picture Interpreter (Software)
 
 **Complexity:** Medium
 
 **Description.** This is a software-only component responsible for interpreting
-ballot images, namely by generating a cast vote record (CVR) given a digital
-image of a ballot. The component must support ballots from “third-parties”
+digital ballot pictures, namely by generating a cast vote record (CVR) given a digital
+picture of a ballot. The component must support ballots from “third-parties”
 (e.g. the interim voting system) to support incremental roll-outs like pilot
 and hybrid rollouts. The open-source software OpenCount developed at UC
 Berkeley could be a foundation for this.
@@ -1066,7 +1071,7 @@ components:
 * central ballot scanner
 
 * software application for adjudicating or auditing ballots using their
-digital images, independent of a hardware scanner.
+digital pictures, independent of a hardware scanner.
 
 **Interfaces / data formats.** Needs to accept as input:
 
@@ -1081,7 +1086,7 @@ Needs to output for each ballot:
 
 **Sub-components.** This component can possibly have the following sub-component:
 
-* a “contest-unaware” interpreter that accepts a digital image of a ballot
+* a “contest-unaware” interpreter that accepts a digital picture of a ballot
 and ballot layout data and outputs what markings are on the ballot (e.g. what
 bubbles are filled in, independent of their contest or candidate meaning).
 
@@ -1099,26 +1104,26 @@ proto-typing and testing.
 **Description.** This is a hardware component responsible for high-speed,
 high-volume ballot scanning in a controlled environment under staff
 supervision (e.g. vote-by-mail ballots). It should be capable of (1)
-exporting CVR’s and digital images of the ballots it scans, (2)
+exporting CVR’s and digital pictures of the ballots it scans, (2)
 “out-stacking” ballots that require manual inspection or handling, and (3)
 possibly printing unique identifiers on each ballot when scanning to support
 the auditing of individual ballots.
 
 **Interfaces / data formats.**
 
-* Same as for the Ballot Image Interpreter.
+* Same as for the Ballot Picture Interpreter.
 
-* Also needs to store digital images of ballots in a defined image format.
+* Also needs to store digital pictures of ballots in a defined image format.
 
 **Sub-components.**
 
 * Device drivers (software API’s to control low-level scanner functionality
 and, if present, the printer).
 
-* Ballot image interpreter (see component description above).
+* Ballot picture interpreter (see component description above).
 
 * High-level software to orchestrate calls between the device drivers and the
-ballot image interpreter.
+ballot picture interpreter.
 
 * Printer component to print unique identifiers (possibly required).
 
@@ -1350,8 +1355,8 @@ This section covers topics related to open source.
 ### 5.8. Software architecture and design
 
 * When defining software components to develop, favor designs that promote
-  reusing components. For example, a software library that can read a ballot
-  image and return the marked “votes” (what we are calling a “ballot image
+  reusing components. For example, a software library that can read a digital ballot
+  picture and return the marked “votes” (what we are calling a “ballot picture
   interpreter” component) can be used in both precinct scanners and central
   scanners (as well as software applications for adjudication or auditing).
   Favoring component reuse can mean having less code to write and test, which
