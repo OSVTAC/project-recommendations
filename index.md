@@ -148,10 +148,19 @@ passed a resolution that, among other things, established a policy that the
 Department of Elections give priority to voting systems that “provide the
 maximum level of security and transparency possible consistent with the
 principles of public disclosure.” However, like today, no certified open
-source voting systems were available at that time. In December 2007, the
-Department signed a contract for a new voting system that was proprietary.
-The Department still uses this system today. The contract for this system
-ends at the end of 2018.
+source voting systems were available at that time.
+
+In December 2007 the City, through the Department of Elections, entered into
+contract with Sequoia Voting Systems, Inc. for a new, proprietary voting
+system. In June 2010, [Dominion Voting Systems,
+Inc.](http://www.dominionvoting.com/) acquired Sequoia and assumed Sequoia's
+contract. The Department and City extended the contract with Dominion more
+than once. The current contract is scheduled to end at the end of 2018. The
+total cost of the extended contract over the eleven years (including hardware
+and hardware maintenance, software license fees, and election services) was
+approximately $22 million, with $9.6 million of that up front. This averages
+to around $2 million per year (see [this table][dominion-costs-2008] for an
+annual breakdown).
 
 In November 2008, the [Board of Supervisors][board-of-supervisors] passed an
 [ordinance][bos-ordinance-vstf] creating a [Voting Systems Task Force][vstf]
@@ -282,9 +291,13 @@ membership at its May meeting. The Committee was fully constituted on June 2,
 In May 2017, the Department of Elections [issued an RFP][rfp-business-case-page]
 for a contractor to “prepare a business case for developing an accessible,
 open source voting system.” The RFP would use a portion of the $300,000
-budgeted in August 2016. The contractor's deliverable will be due in January
-2018, and it will inform the City's next budget process, which will begin
-around that time.
+budgeted in August 2016. In September 2017, Slalom was selected as the
+winning bidder. Slalom's deliverable will be due in January 2018, and it
+will inform the City's next budget process, which will begin around that time.
+See here for [Slalom's RFP response][slalom-rfp-response], the City's
+[contract][slalom-contract] with Slalom, and
+[Appendix A][slalom-contract-appendix-a] and
+[Appendix B][slalom-contract-appendix-b] of the contract.
 
 The Department of Elections' contract for its current voting system expires
 at the end of December 2018. The Director of Elections is aiming to lease an
@@ -339,13 +352,16 @@ system includes a precinct tally, which means the system tallies the
 in-precinct ballots at the precinct.
 
 The assumptions above are only for the purposes of the example illustration
-in this section. They should not be construed in any way as recommendations
-of the Committee or to constrain the type of voting system that San Francisco
-should develop.
+in this section. They were made partly because they reflect how San
+Francisco's voting system works today. However, they should not be construed
+in any way as recommendations of the Committee or to constrain the type of
+voting system that San Francisco should develop. See the "Key Decisions"
+section below for how this list of components could change depending on
+certain choices.
 
 The components in this particular list are not necessarily independent. They
 may overlap or contain one another. For example, the precinct ballot scanner
-hardware component contains a scanner device driver, the ballot image
+hardware component contains a scanner device driver, the ballot picture
 interpreter, and the high-level scanner software components.
 
 Finally, note that there are many possible ways to divide a given voting
@@ -387,7 +403,7 @@ to facilitate polling-place use.
 **4\. Standard laptop or desktop computers**
 
 Standard computers will also be needed for administrative tasks like ballot
-layout, adjudicating digital images of ballots, aggregating and totaling
+layout, adjudicating digital pictures of ballots, aggregating and totaling
 votes, and generating results reports.
 
 
@@ -395,21 +411,27 @@ votes, and generating results reports.
 
 **1\. Voting System Database / Management**
 
-Central store (e.g. file system and/or database) storing and providing access
-to the voting-system information needed to conduct an election. This can
-include things like contest and ballot definitions, ballot images, cast vote
-records, and election results. A management interface can let staff perform
-tasks like import and export data in open data formats, digitally evaluate
-"out-stacked" ballots and ballots with write-in candidates, and perform other
-functions needed during the canvass. This software may support running other
-software components like EMS integration, tabulation, and results reporting.
+Central store (e.g. file system and/or database) and software application
+providing access to the voting-system information needed to conduct an
+election. This can include things like contest and ballot definitions,
+digital ballot pictures, cast vote records, and election results.
 
-**2\. Election Definition EMS Integration.**
+A management interface can let staff perform
+tasks like importing and exporting data in open data formats, adjudicating
+ballots that require manual inspection (e.g. ballots with write-in candidates
+or borderline marks)—but from the digital ballot picture rather than from
+the physical paper—and performing other
+functions needed during the canvass. This software could perhaps also
+provide an interface to running other software components and functions
+like the EIMS integration, tabulation, and results reporting.
 
-Interfaces with the Department's Election Management System (EMS) to import
-and convert election definition information from the EMS into the voting
-system database. This can include things like what offices, candidates, and
-measures, etc. are in the election and in what precincts and districts, etc.
+**2\. EIMS® Integration.**
+
+This component is responsible for interfacing with the Department's EIMS®
+software. It pulls or takes election definition information exported from
+EIMS and imports it into the voting system database. This information can
+include things like what offices and candidates are on the ballot, and
+in what precincts, districts, and ballot styles, etc.
 
 **3\. Ballot Layout**
 
@@ -422,10 +444,10 @@ semi-automated fashion, including support for multiple languages.
 This is the software corresponding to the Accessible Ballot-Marking Device
 hardware component.
 
-**5\. Ballot Image Interpreter**
+**5\. Ballot Picture Interpreter**
 
-This is a software library responsible for interpreting ballot images. It
-generates a cast vote record (CVR) from a digital image of a ballot. This
+This is a software library responsible for interpreting digital ballot pictures. It
+generates a cast vote record (CVR) from a digital picture of a ballot. This
 software component could potentially be used in all of the precinct scanners,
 the central scanners, and a software-only ballot adjudication application.
 
@@ -437,15 +459,24 @@ a ballot scanner (e.g. out-stacking a ballot, returning a ballot, advancing a
 ballot, etc.). This might come with COTS hardware. Separate versions are
 likely needed for the precinct and central scanners.
 
-**7\. High-level Scanner Software (one for precinct and one for central)**
+**7\. Central Ballot Scanner Software**
 
-This is high-level software controlling the precinct and central ballot
-scanners. It interacts with the scanner device driver and ballot image
+This is high-level software controlling the central ballot
+scanner. It interacts with the scanner device driver and ballot picture
 interpreter components and is responsible for things like scanning and
-storing ballot images, detecting the ballot layout, interpreting and
+storing digital ballot pictures, detecting the ballot layout, interpreting and
 tabulating ballot markings, controlling the scanner in response to the
 markings on a ballot, and exporting ballot data after scanning is complete.
-Separate versions are likely needed for the precinct and central scanners.
+
+**8\. Precinct Ballot Scanner Software**
+
+This component is similar to the central ballot scanner software component
+above and can likely share much software with it. However, it's different
+because it is for the case of an individual voter rather than for high-volume
+scanning. For example, unlike the central ballot scanner, this software will
+need to support returning a ballot back to the voter in the case of errors
+like an overvote. For the central scanner, such ballots might simply be
+outstacked.
 
 **8\. Vote Totaler**
 
@@ -456,6 +487,146 @@ data format. Includes the RCV tabulation algorithm.
 
 Generates human-readable results reports from the results data from the vote
 totaler (e.g. printable results and results posted on the Department website).
+
+
+### 2.2. Other Voting System Projects
+
+This section includes information about some of the other voting system
+projects that are either (1) open source and have been or plan to be used in
+a US jurisdiction, or (2) are or were being developed by a jurisdiction in
+the US.
+
+Special attention is paid in this section towards whether the various
+projects are open source because that determines whether and to what extent
+the source code will be available for use in San Francisco's project.
+
+
+### 2.2.1. New Hampshire - Prime III
+
+[TODO]
+
+
+### 2.2.2. Los Angeles County - VSAP
+
+Los Angeles County has been planning or working on its [Voting Systems
+Assessment Project][la-vsap] (VSAP) at least since 2009, when
+it held an event at Caltech on September 16, 2009. VSAP is a project for Los
+Angeles County to develop its own voting system using a “voter-centered
+approach.“ The project is led by Los Angeles County Registrar-Recorder/County
+Clerk (RR/CC) Dean Logan.
+
+There is conflicting evidence as to whether any of the VSAP system will be
+open source and, if so, how much. On the one hand, press coverage of the
+project frequently mentions that the system will be open source, and Mr.
+Logan says it will be open source when he speaks publicly and is quoted in
+the media. For example, in [this
+tweet](https://twitter.com/LACountyRRCC/status/904871828799209472) he says,
+“Encouraging to see movement in this direction. #LACounty advances
+#opensource in #votingmodernization effort too.“
+
+Los Angeles County's April 24, 2017 [VSAP RFI #17-001][la-vsap-rfi] also supports the
+view that it will be open source. For example, on page 24, it says:
+
+> Accordingly, RR/CC is considering a Copyleft type of license such as GNU
+General Public License (GPL) or OSET Public License (OPL), that promotes
+“forever free” provisions, however it has not ruled out the use of more
+“permissive” open source licenses, such as the Mozilla Public License Version
+2.0 (MPL), the Apache License, Version 2.0 (ALv2), the BSD 3.0 or MIT
+licenses. Whatever the chosen license, the transparency and ability to share
+the IP and the technology would need to be ensured.
+> ...
+> LA County is seeking candid feedback from the vendor community on the
+intellectual property approach for VSAP.
+
+On the other hand, there is no obvious mention of open source on VSAP's main
+website (e.g. on its [“Principles“](http://vsap.lavote.net/principles/)
+page). Moreover, Los Angeles County's 54-page [RFP Phase 1: #17-008][la-vsap-rfp-phase-1],
+which was issued five months after the RFI on September 18, 2017 to
+prequalify vendors, does not mention open source. The Phase 1 RFP also
+describes a new “Tally System“ the County is working on:
+
+> A new Tally System is required to capture and process ballot images so that
+vote selections on paper ballots can be digitally counted. This includes
+votes cast on BMD ballots at Vote Centers, as well as on Vote By Mail
+ballots. Similar to the ECBMS, RR/CC is currently developing the software
+required for the new Tally System in anticipation of a pilot in June 2018.
+
+Los Angeles County submitted its VSAP Tally Version 1.0 to the California
+Secretary of State on September 19, 2017 for certification.
+
+However, even though the County is developing the Tally System and submitted
+it for certification, as
+of October 2017, none of the code for the Tally System appears to be publicly
+available, let alone open source. In addition, on page 41 of the RFP in
+Section 6.2 “Non-Disclosure Agreement,“ the RFP says—
+
+> Prime Contractor-Led Teams who are prequalified as a result of this RFP
+Phase 1 will be required to sign a Non-Disclosure Agreement (NDA) as part of
+RFP Phase 2 prior to receiving County IP.
+
+The requirement to sign an NDA seems inconsistent with the technology being
+open source.
+
+Finally, in response to an October 5 question on Twitter about whether
+VSAP will be open source, Mr. Logan [replied](https://twitter.com/LACountyRRCC/status/916114599241330689):
+
+> Open source platform for UI and tally; publicly owned design specs and
+code. More detail in RFI docs at http://vsap.lavote.net
+
+And in a [second reply](https://twitter.com/LACountyRRCC/status/916381787605000192):
+
+> Tally stack is all open source; details of licensing for custom code will
+be in Phase II RFP & was discussed in RFI; all publicly owned.
+
+So if “platform“ and “stack“ refer to things like the operating system,
+database, programming language, etc. but not the code itself, it seems
+possible that none of the code will be open source but instead simply be
+“publicly owned.“ It would be helpful if Los Angeles County can provide a
+clearer guarantee if this interpretation isn't correct.
+
+
+### 2.2.3. Travis County, Texas - STAR-Vote™
+
+In 2012, Travis County, Texas started researching and designing a new voting
+system it called STAR-Vote™. The County spent over $330,000 in its research
+and design phase.
+
+In October 2016, Travis County issued a detailed 208-page [RFP][star-vote-rfp]
+covering the first phase of STAR-Vote, which was the “in-person voting
+module of the STAR-Vote system.“ The RFP made frequent reference to open
+source software. For example, on page 5:
+
+> The STAR-Vote system requirements were developed from the ground up with
+the purpose, among other objectives, of specifying an entire voting system
+developed under the open source code software model.
+
+However, the commitment to open source seemed uncertain because the RFP said
+the code would start out not as open source but as disclosed source,
+and possibly be made open source later. For example, on page 37 (note the
+phrase, “with a view toward ultimately ...“):
+
+> Source code for all modules would be published, but usage rights for actual
+elections as well as derivative rights (as in using the code to create a
+derivative voting system) would be controlled by Travis County (and/or
+consortium) with a view toward ultimately releasing usage and derivative
+rights under a “suitable” (as determined by Travis County and/or consortium)
+open source license that would allow and encourage preparation of third-party
+derivative work, recognizing that voting systems must be state and federally
+certified;
+
+The RFP was accompanied by an additional 16-page [“Statement of Intent“][star-vote-entity]
+document, which sought $25 million (initially a minimum of
+$15 million) for an entity (likely a non-profit) called the “STAR-Vote
+Entity.“
+
+On September 28, 2017, Travis County announced via a [press
+release][star-vote-final-press-release] that the County would not be pursuing
+STAR-Vote. From their [Final Report][star-vote-final-report] (6 pages)--
+
+> In a nutshell, we have run into too many obstacles. There has not been
+enough funding, time, or support to bring STAR-Vote into the phase of being a
+start-up, through development and the legally-required certification process
+and then into use.
 
 
 ## 3. Facts & Assumptions
@@ -513,6 +684,7 @@ useful for the project.
      for Developing an Accessible, Open Source Voting System"). In
      particular, see the list of links in Section I.A. starting on page 5 of
      the [RFP PDF][rfp-business-case-pdf].
+   * [San Francisco Digital Services Team][sf-digital-services]
 
 2. Procurement
    * U.S. Digital Services' [TechFAR Handbook][techfar-handbook]
@@ -543,7 +715,7 @@ useful for the project.
      Used by NH in 2016 for accessible voting (ballot marking device). Allows
      home computer or phone to prepare QR code. \[[git][prime-iii-repo]\]
 
-   * [STAR-Vote][star-vote], Travis County, TX
+   * [STAR-Vote][star-vote-usenix], Travis County, TX
      PDF paper and slides for presentation on Travis County TX proposed system.
      Uses off the shelf tablet to produce printed ballot with only choices
      made. Scanner only reads IDs of ballots placed in box to record which
@@ -680,7 +852,7 @@ these components):
 
 1. Results Reporter (Software)
 2. Vote Totaler (Software)
-3. Ballot Image Interpreter (Software)
+3. Ballot Picture Interpreter (Software)
 4. Central Ballot Scanner (Hardware & Software)
 
 Choosing the above as first components seems to mirror the approach that Los
@@ -777,14 +949,14 @@ benefit from relatively easily (e.g. jurisdictions using RCV would be able to
 use the RCV algorithm functionality). In this way, other jurisdictions could
 start to understand the benefits of open source.
 
-For the Ballot Image Interpreter:
+For the Ballot Picture Interpreter:
 
 * This is a core software component that would be used in a number of
 different components, so it is natural to start working on it first.
 
 * Even in the absence of deployed open-source hardware components, it could
 be used by members of the public to “check” the scanning done by the interim
-system, provided the digital images are made public.
+system, provided the digital ballot pictures are made public.
 
 * The open-source software OpenCount might go a long way towards implementing
 this component.
@@ -914,13 +1086,13 @@ spelled out.
 proto-typing and testing.
 
 
-###### 5.2.1.3.3. Ballot Image Interpreter (Software)
+###### 5.2.1.3.3. Ballot Picture Interpreter (Software)
 
 **Complexity:** Medium
 
 **Description.** This is a software-only component responsible for interpreting
-ballot images, namely by generating a cast vote record (CVR) given a digital
-image of a ballot. The component must support ballots from “third-parties”
+digital ballot pictures, namely by generating a cast vote record (CVR) given a digital
+picture of a ballot. The component must support ballots from “third-parties”
 (e.g. the interim voting system) to support incremental roll-outs like pilot
 and hybrid rollouts. The open-source software OpenCount developed at UC
 Berkeley could be a foundation for this.
@@ -933,7 +1105,7 @@ components:
 * central ballot scanner
 
 * software application for adjudicating or auditing ballots using their
-digital images, independent of a hardware scanner.
+digital pictures, independent of a hardware scanner.
 
 **Interfaces / data formats.** Needs to accept as input:
 
@@ -950,7 +1122,7 @@ Needs to output for each ballot:
 
 **Sub-components.** This component can possibly have the following sub-component:
 
-* a “contest-unaware” interpreter that accepts a digital image of a ballot
+* a “contest-unaware” interpreter that accepts a digital picture of a ballot
 and ballot layout data and outputs what markings are on the ballot (e.g. what
 bubbles are filled in, independent of their contest or candidate meaning).
 
@@ -968,26 +1140,26 @@ proto-typing and testing.
 **Description.** This is a hardware component responsible for high-speed,
 high-volume ballot scanning in a controlled environment under staff
 supervision (e.g. vote-by-mail ballots). It should be capable of (1)
-exporting CVR’s and digital images of the ballots it scans, (2)
+exporting CVR’s and digital pictures of the ballots it scans, (2)
 “out-stacking” ballots that require manual inspection or handling, and (3)
 possibly printing unique identifiers on each ballot when scanning to support
 the auditing of individual ballots.
 
 **Interfaces / data formats.**
 
-* Same as for the Ballot Image Interpreter.
+* Same as for the Ballot Picture Interpreter.
 
-* Also needs to store digital images of ballots in a defined image format.
+* Also needs to store digital pictures of ballots in a defined image format.
 
 **Sub-components.**
 
 * Device drivers (software API’s to control low-level scanner functionality
 and, if present, the printer).
 
-* Ballot image interpreter (see component description above).
+* Ballot picture interpreter (see component description above).
 
 * High-level software to orchestrate calls between the device drivers and the
-ballot image interpreter.
+ballot picture interpreter.
 
 * Printer component to print unique identifiers (possibly required).
 
@@ -1285,8 +1457,8 @@ This section covers topics related to open source.
 ### 5.8. Software architecture and design
 
 * When defining software components to develop, favor designs that promote
-  reusing components. For example, a software library that can read a ballot
-  image and return the marked “votes” (what we are calling a “ballot image
+  reusing components. For example, a software library that can read a digital ballot
+  picture and return the marked “votes” (what we are calling a “ballot picture
   interpreter” component) can be used in both precinct scanners and central
   scanners (as well as software applications for adjudication or auditing).
   Favoring component reuse can mean having less code to write and test, which
@@ -1387,7 +1559,77 @@ what is actually running on the machine?**
 **6.3. How much of the code must be open source for the voting system to
 be considered open source?**
 
-[TODO]
+
+## 6. Glossary
+
+* **adjudicate**. [TODO]
+
+* **agile**. [TODO]
+
+* **ballot on-demand**. [TODO]
+
+* **cast-vote record (CVR)**. [TODO]
+
+* **central ballot scanner**. [TODO]
+
+* **commercial off-the-shelf (COTS)**. [TODO]
+
+* **comparison audit**. [TODO]
+
+* **component**. [TODO]
+
+* **digital ballot picture**. [TODO]
+
+* **EIMS®**. [EIMS®](http://www.dfmassociates.com/eims.asp) is the software
+  application that the Department of Elections uses for certain
+  election-related functions like maintaining voter registration data,
+  administering polling place information, defining ballot styles, and
+  tracking candidate filings for office (see
+  [Appendix A][dfm-contract-appendix-a] of the City's contract with DFM for
+  a detailed listing of the required capabilities).
+  The Department signed a nine-year contract
+  with [DFM Associates](http://www.dfmassociates.com) for the software
+  in June 2011 ([DFM contract][dfm-contract-main],
+  [Appendix A][dfm-contract-appendix-a],
+  [Appendix B][dfm-contract-appendix-b],
+  [Appendix C][dfm-contract-appendix-c],
+  [Appendix D][dfm-contract-appendix-d],
+  [Appendix E][dfm-contract-appendix-e]). The contract lists the per-year
+  maintenance and support costs as ranging between $170,820.00 and
+  $274,299.60 (see [Appendix D][dfm-contract-appendix-d] of the contract
+  for more detail).
+
+* **end-to-end verifiability**. [TODO]
+
+* **firmware**. [TODO]
+
+* **free and open-source software (FOSS)**. [TODO]
+
+* **free software**. [TODO]
+
+* **hardware**. [TODO]
+
+* **hardware component**. [TODO]
+
+* **open hardware**. [TODO]
+
+* **open-source software**. [TODO]
+
+* **outstack**. [TODO]
+
+* **precinct ballot scanner**. [TODO]
+
+* **remake**. [TODO]
+
+* **risk-limiting audit (RLA)**. [TODO]
+
+* **software**. [TODO]
+
+* **software API**. [TODO]
+
+* **software application**. [TODO]
+
+* **software library**. [TODO]
 
 
 [18f-modular-contracting]: https://modularcontracting.18f.gov/
@@ -1406,6 +1648,13 @@ be considered open source?**
 [commission-resolutions]: http://sfgov.org/electionscommission/motions-and-resolutions
 [coverity-report-2014]: http://go.coverity.com/rs/157-LQW-289/images/2014-Coverity-Scan-Report.pdf
 [coit]: http://sfcoit.org/
+[dominion-costs-2008]: files/Dominion_System_Costs_2008_Jerdonek.pdf
+[dfm-contract-main]: files/dfm-contract/DFM_Contract_060111.pdf
+[dfm-contract-appendix-a]: files/dfm-contract/DFM_Contract_Appendix_A_Perf_Reqs.pdf
+[dfm-contract-appendix-b]: files/dfm-contract/DFM_Contract_Appendix_B_Scope.pdf
+[dfm-contract-appendix-c]: files/dfm-contract/DFM_Contract_Appendix_C_Maintenance.pdf
+[dfm-contract-appendix-d]: files/dfm-contract/DFM_Contract_Appendix_D_Fee_Schedule.pdf
+[dfm-contract-appendix-e]: files/dfm-contract/DFM_Contract_Appendix_E_Hardware_Specs.pdf
 [eac]: https://www.eac.gov/
 [eac-vvsg]: https://www.eac.gov/voting-equipment/voluntary-voting-system-guidelines/
 [elections-commission]: http://sfgov.org/electionscommission
@@ -1416,6 +1665,8 @@ be considered open source?**
 [ict-plan-2008]: files/SF_ICT_Plan_2018-22.pdf
 [ieee-1622]: http://grouper.ieee.org/groups/1622/
 [la-vsap]: http://vsap.lavote.net/
+[la-vsap-rfi]: files/la-vsap/LA_RFI_20170524.pdf
+[la-vsap-rfp-phase-1]: files/la-vsap/LA_RFP_20170918.pdf
 [lafco]: http://sfgov.org/lafco/
 [lafco-report]: files/LAFCo_Report_Open_Source_Voting.pdf
 [mayor-budget-press-release]: http://sfmayor.org/article/mayor-lee-signs-citys-balanced-budget-fiscal-years-2016-17-2017-18
@@ -1441,7 +1692,15 @@ be considered open source?**
 [rfp-business-case-page]: http://mission.sfgov.org/OCABidPublication/BidDetail.aspx?K=12141
 [rfp-business-case-pdf]: files/SF_Business_Case_RFP_FINAL.pdf
 [sf-digital-services]: https://digitalservices.sfgov.org/
-[star-vote]: https://www.usenix.org/conference/evtwote13/workshop-program/presentation/bell
+[slalom-rfp-response]: files/slalom/REG_RFP_2017-01_Slalom_Response.pdf
+[slalom-contract]: files/slalom/contract/Business_Case_Contract.pdf
+[slalom-contract-appendix-a]: files/slalom/contract/Business_Case_Appendix_A.pdf
+[slalom-contract-appendix-b]: files/slalom/contract/Business_Case_Appendix_B.pdf
+[star-vote-entity]: files/star-vote/STAR-Vote_Statement_of_Intent.pdf
+[star-vote-final-press-release]: http://www.traviscountyclerk.org/eclerk/Content.do?code=star-vote-a-change-of-plans
+[star-vote-final-report]: files/star-vote/STAR_Vote_Final_Report.pdf
+[star-vote-rfp]: files/star-vote/RFP_STAR-Vote_Unofficial_Copy.pdf
+[star-vote-usenix]: https://www.usenix.org/conference/evtwote13/workshop-program/presentation/bell
 [techfar-handbook]: https://playbook.cio.gov/techfar/
 [trust-the-vote]: https://trustthevote.org
 [verified-voting-foundation]: https://www.verifiedvoting.org/
