@@ -1119,9 +1119,10 @@ This section lists some of the requirements the system should satisfy.
 * In addition to an audio component and touchscreen, the voting system should
   support accessible features including, but not limited to: sip and puff
   input, a keyboard for write-in votes, voice activation, synchronized audio
-  and video, joystick input, Tecla switch, and tactile buttons. These two
-  letters [add link] from Mr. Fred Nisen (Supervising Attorney for Voting
-  Rights, Disability Rights California) provide more detail.
+  and video, joystick input, Tecla switch, and tactile buttons. These
+  [two letters][disability-rights-ca-letters] from Mr. Fred Nisen
+  (Supervising Attorney for Voting Rights, Disability Rights California)
+  provide more detail.
 
 
 ### 5.4.2. Other
@@ -1287,6 +1288,7 @@ This section covers topics related to open source.
 [commission-osvtac]: http://sfgov.org/electionscommission/osvtac
 [commission-resolutions]: http://sfgov.org/electionscommission/motions-and-resolutions
 [coit]: http://sfcoit.org/
+[disability-rights-ca-letters]: files/Disability_Rights_Letters_Nisen.pdf
 [eac]: https://www.eac.gov/
 [eac-vvsg]: https://www.eac.gov/voting-equipment/voluntary-voting-system-guidelines/
 [elections-commission]: http://sfgov.org/electionscommission
