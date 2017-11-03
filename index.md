@@ -486,6 +486,142 @@ Generates human-readable results reports from the results data from the vote
 totaler (e.g. printable results and results posted on the Department website).
 
 
+### 2.2. Other Voting System Projects
+
+This section includes information about some of the other voting system
+projects that are either (1) open source and have been or plan to be used in
+a US jurisdiction, or (2) are or were being developed by a jurisdiction in
+the US.
+
+Special attention is paid in this section towards whether the various
+projects are open source because that determines whether and to what extent
+the source code will be available for use in San Francisco's project.
+
+
+### 2.2.1. New Hampshire - Prime III
+
+[TODO]
+
+
+### 2.2.2. Los Angeles County - VSAP
+
+Los Angeles County has been planning or working on its [Voting Systems
+Assessment Project][la-vsap] (VSAP) at least since 2009, when
+it held an event at Caltech on September 16, 2009. VSAP is a project for Los
+Angeles County to develop its own voting system using a “voter-centered
+approach.“ The project is led by Los Angeles County Registrar-Recorder/County
+Clerk (RR/CC) Dean Logan.
+
+There is conflicting evidence as to whether any of the VSAP system will be
+open source and, if so, how much. On the one hand, press coverage of the
+project frequently mentions that the system will be open source, and Mr.
+Logan says it will be open source when he speaks publicly and is quoted in
+the media. For example, in [this
+tweet](https://twitter.com/LACountyRRCC/status/904871828799209472) he says,
+“Encouraging to see movement in this direction. #LACounty advances
+#opensource in #votingmodernization effort too.“
+
+Los Angeles County's April 24, 2017 [VSAP RFI #17-001][la-vsap-rfi] also supports the
+view that it will be open source. For example, on page 24, it says:
+
+> Accordingly, RR/CC is considering a Copyleft type of license such as GNU
+General Public License (GPL) or OSET Public License (OPL), that promotes
+“forever free” provisions, however it has not ruled out the use of more
+“permissive” open source licenses, such as the Mozilla Public License Version
+2.0 (MPL), the Apache License, Version 2.0 (ALv2), the BSD 3.0 or MIT
+licenses. Whatever the chosen license, the transparency and ability to share
+the IP and the technology would need to be ensured.
+> ...
+> LA County is seeking candid feedback from the vendor community on the
+intellectual property approach for VSAP.
+
+On the other hand, there is no obvious mention of open source on VSAP's main
+website (e.g. on its [“Principles“](http://vsap.lavote.net/principles/)
+page). Moreover, Los Angeles County's 54-page [RFP Phase 1: #17-008][la-vsap-rfp-phase-1],
+which was issued five months after the RFI on September 18, 2017 to
+prequalify vendors, does not mention open source. The Phase 1 RFP also
+describes a new “Tally System“ the County is working on:
+
+> A new Tally System is required to capture and process ballot images so that
+vote selections on paper ballots can be digitally counted. This includes
+votes cast on BMD ballots at Vote Centers, as well as on Vote By Mail
+ballots. Similar to the ECBMS, RR/CC is currently developing the software
+required for the new Tally System in anticipation of a pilot in June 2018.
+
+However, even though the County is currently developing the Tally System, as
+of October 2017, none of the code for the Tally System appears to be publicly
+available, let alone open source. In addition, on page 41 of the RFP in
+Section 6.2 “Non-Disclosure Agreement,“ the RFP says—
+
+> Prime Contractor-Led Teams who are prequalified as a result of this RFP
+Phase 1 will be required to sign a Non-Disclosure Agreement (NDA) as part of
+RFP Phase 2 prior to receiving County IP.
+
+The requirement to sign an NDA seems inconsistent with the technology being
+open source.
+
+Finally, in response to an October 5 question on Twitter about whether
+VSAP will be open source, Mr. Logan [replied](https://twitter.com/LACountyRRCC/status/916114599241330689):
+
+> Open source platform for UI and tally; publicly owned design specs and
+code. More detail in RFI docs at http://vsap.lavote.net
+
+And in a [second reply](https://twitter.com/LACountyRRCC/status/916381787605000192):
+
+> Tally stack is all open source; details of licensing for custom code will
+be in Phase II RFP & was discussed in RFI; all publicly owned.
+
+So if “platform“ and “stack“ refer to things like the operating system,
+database, programming language, etc. but not the code itself, it seems
+possible that none of the code will be open source but instead simply be
+“publicly owned.“ It would be helpful if Los Angeles County can provide a
+clearer guarantee if this interpretation isn't correct.
+
+
+### 2.2.3. Travis County, Texas - STAR-Vote™
+
+In 2012, Travis County, Texas started researching and designing a new voting
+system it called STAR-Vote™. The County spent over $330,000 in its research
+and design phase.
+
+In October 2016, Travis County issued a detailed 208-page [RFP][star-vote-rfp]
+covering the first phase of STAR-Vote, which was the “in-person voting
+module of the STAR-Vote system.“ The RFP made frequent reference to open
+source software. For example, on page 5:
+
+> The STAR-Vote system requirements were developed from the ground up with
+the purpose, among other objectives, of specifying an entire voting system
+developed under the open source code software model.
+
+However, the commitment to open source seemed uncertain because the RFP said
+the code would start out not as open source but as disclosed source,
+and possibly be made open source later. For example, on page 37 (note the
+phrase, “with a view toward ultimately ...“):
+
+> Source code for all modules would be published, but usage rights for actual
+elections as well as derivative rights (as in using the code to create a
+derivative voting system) would be controlled by Travis County (and/or
+consortium) with a view toward ultimately releasing usage and derivative
+rights under a “suitable” (as determined by Travis County and/or consortium)
+open source license that would allow and encourage preparation of third-party
+derivative work, recognizing that voting systems must be state and federally
+certified;
+
+The RFP was accompanied by an additional 16-page [“Statement of Intent“][star-vote-entity]
+document, which sought $25 million (initially a minimum of
+$15 million) for an entity (likely a non-profit) called the “STAR-Vote
+Entity.“
+
+On September 28, 2017, Travis County announced via a [press
+release][star-vote-final-press-release] that the County would not be pursuing
+STAR-Vote. From their [Final Report][star-vote-final-report] (6 pages)--
+
+> In a nutshell, we have run into too many obstacles. There has not been
+enough funding, time, or support to bring STAR-Vote into the phase of being a
+start-up, through development and the legally-required certification process
+and then into use.
+
+
 ## 3. Assumptions
 
 This section lists certain assumptions the committee has made while drafting
@@ -543,7 +679,7 @@ useful for the project.
      Used by NH in 2016 for accessible voting (ballot marking device). Allows
      home computer or phone to prepare QR code. \[[git][prime-iii-repo]\]
 
-   * [STAR-Vote][star-vote], Travis County, TX
+   * [STAR-Vote][star-vote-usenix], Travis County, TX
      PDF paper and slides for presentation on Travis County TX proposed system.
      Uses off the shelf tablet to produce printed ballot with only choices
      made. Scanner only reads IDs of ballots placed in box to record which
@@ -1381,6 +1517,8 @@ This section covers topics related to open source.
 [ict-plan-2008]: files/SF_ICT_Plan_2018-22.pdf
 [ieee-1622]: http://grouper.ieee.org/groups/1622/
 [la-vsap]: http://vsap.lavote.net/
+[la-vsap-rfi]: files/la-vsap/LA_RFI_20170524.pdf
+[la-vsap-rfp-phase-1]: files/la-vsap/LA_RFP_20170918.pdf
 [lafco]: http://sfgov.org/lafco/
 [lafco-report]: files/LAFCo_Report_Open_Source_Voting.pdf
 [mayor-budget-press-release]: http://sfmayor.org/article/mayor-lee-signs-citys-balanced-budget-fiscal-years-2016-17-2017-18
@@ -1410,7 +1548,11 @@ This section covers topics related to open source.
 [slalom-contract]: files/slalom/contract/Business_Case_Contract.pdf
 [slalom-contract-appendix-a]: files/slalom/contract/Business_Case_Appendix_A.pdf
 [slalom-contract-appendix-b]: files/slalom/contract/Business_Case_Appendix_B.pdf
-[star-vote]: https://www.usenix.org/conference/evtwote13/workshop-program/presentation/bell
+[star-vote-entity]: files/star-vote/STAR-Vote_Statement_of_Intent.pdf
+[star-vote-final-press-release]: http://www.traviscountyclerk.org/eclerk/Content.do?code=star-vote-a-change-of-plans
+[star-vote-final-report]: files/star-vote/STAR_Vote_Final_Report.pdf
+[star-vote-rfp]: files/star-vote/RFP_STAR-Vote_Unofficial_Copy.pdf
+[star-vote-usenix]: https://www.usenix.org/conference/evtwote13/workshop-program/presentation/bell
 [techfar-handbook]: https://playbook.cio.gov/techfar/
 [trust-the-vote]: https://trustthevote.org
 [verified-voting-foundation]: https://www.verifiedvoting.org/
