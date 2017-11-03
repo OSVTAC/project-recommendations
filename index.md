@@ -282,6 +282,10 @@ open source voting system.” The RFP would use a portion of the $300,000
 budgeted in August 2016. In September 2017, Slalom was selected as the
 winning bidder. Slalom's deliverable will be due in January 2018, and it
 will inform the City's next budget process, which will begin around that time.
+See here for [Slalom's RFP response][slalom-rfp-response], the City's
+[contract][slalom-contract] with Slalom, and
+[Appendix A][slalom-contract-appendix-a] and
+[Appendix B][slalom-contract-appendix-b] of the contract.
 
 The Department of Elections' contract for its current voting system expires
 at the end of December 2018. The Director of Elections is aiming to lease an
@@ -1295,6 +1299,10 @@ This section covers topics related to open source.
 [rfp-business-case-page]: http://mission.sfgov.org/OCABidPublication/BidDetail.aspx?K=12141
 [rfp-business-case-pdf]: files/SF_Business_Case_RFP_FINAL.pdf
 [sf-digital-services]: https://digitalservices.sfgov.org/
+[slalom-rfp-response]: files/slalom/REG_RFP_2017-01_Slalom_Response.pdf
+[slalom-contract]: files/slalom/contract/Business_Case_Contract.pdf
+[slalom-contract-appendix-a]: files/slalom/contract/Business_Case_Appendix_A.pdf
+[slalom-contract-appendix-b]: files/slalom/contract/Business_Case_Appendix_B.pdf
 [star-vote]: https://www.usenix.org/conference/evtwote13/workshop-program/presentation/bell
 [techfar-handbook]: https://playbook.cio.gov/techfar/
 [trust-the-vote]: https://trustthevote.org
