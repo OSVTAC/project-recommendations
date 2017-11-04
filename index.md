@@ -1,8 +1,8 @@
 # Open Source Voting System Project Recommendations
 
-(Approved by OSVTAC on September 21, 2017.)
+(Approved by OSVTAC on October 19, 2017.)
 
-Last update: September 29, 2017 (2nd update)
+Last update: November 4, 2017
 
 **Note: these recommendations are a work in progress and not yet complete.**
 
