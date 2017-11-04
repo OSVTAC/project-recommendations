@@ -1148,11 +1148,13 @@ This section covers topics related to open source.
 
 * Each software component being developed should be licensed under an
   [OSI-approved][osi-approved-licenses] software license, with a copyleft
-  license being preferred (see also the Assumptions section).
+  license being preferred (see also the Facts & Assumptions section).
 
 * All software development should occur in public (e.g. on GitHub), rather
   than, for example, waiting for the software to reach a certain level of
   completion before becoming public.
+  (See also item (b) of the third "resolved" paragraph of the Commission's
+  [Open Source Voting Resolution][commission-resolution-local].)
 
 * All software being developed in public should have an open source license
   when development first starts, rather than, for example, adding a license
@@ -1174,12 +1176,17 @@ This section covers topics related to open source.
   third-party code are developed, and the original third-party code has
   a different license than the main software's license, the modifications
   should be dual-licensed under both licenses, if possible.
+  (See also item (e) of the third "resolved" paragraph of the Commission's
+  [Open Source Voting Resolution][commission-resolution-local].)
 
 * In addition to the software being open source, project documentation
   should be openly licensed. This includes things like design documents,
   installation and setup documents, user manuals, and testing documents.
   The recommended license for documentation is the Creative Commons
   Attribution-ShareAlike 4.0 license ([CC-BY-SA 4.0][cc-by-sa]).
+  (See also the reference to ”freely and openly licensed” documentation
+  in the Commission's
+  [Open Source Voting Resolution][commission-resolution-local].)
 
 * [TODO: provide recommendations related to managing community feedback and
   contributions during project development. Also think about whether
@@ -1270,6 +1277,7 @@ This section covers topics related to open source.
 [colorado-rla-home]: http://bcn.boulder.co.us/~neal/elections/corla/
 [colorado-rla-repo]: https://github.com/FreeAndFair/ColoradoRLA
 [commission-osvtac]: http://sfgov.org/electionscommission/osvtac
+[commission-resolution-local]: files/SF_Elections_Comm_Open_Source_Voting_Res.pdf
 [commission-resolutions]: http://sfgov.org/electionscommission/motions-and-resolutions
 [coit]: http://sfcoit.org/
 [eac]: https://www.eac.gov/
