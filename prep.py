@@ -13,6 +13,7 @@ From the repository root, run:
 The script should be run with Python 3.6 or newer.
 """
 
+import os
 import re
 
 
@@ -28,6 +29,40 @@ ANCHOR_TRANS = {
     '.': None,
     '&': None,
 }
+
+
+def get_source_path(name):
+    return os.path.join('_source', f'{name}.md')
+
+
+def read_file(path):
+    with open(path, encoding='utf-8') as f:
+        text = f.read()
+
+    return text
+
+
+def write_file(text, path):
+    with open(path, 'w', encoding='utf-8') as f:
+        f.write(text)
+
+
+def read_source_file(name):
+    path = get_source_path(name)
+    with open(path, encoding='utf-8') as f:
+        text = f.read()
+
+    return text
+
+
+def lines_to_text(lines):
+    text = '\n'.join(lines)
+    text = text.strip()
+
+    # End with a trailing newline.
+    text += '\n'
+
+    return text
 
 
 def make_anchor(header_text):
@@ -178,20 +213,6 @@ def transform_lines(lines, header_infos, first_section=None):
         yield header_line
 
 
-def parse_sections(text):
-    """
-    Return (intro, body).
-    """
-    divider = '\n## '
-    sections = text.split(divider)
-
-    # Skip the current contents.
-    intro = sections[0]
-    body = '## ' + divider.join(sections[2:])
-
-    return intro, body
-
-
 def make_contents(header_infos):
     """
     Args:
@@ -208,34 +229,42 @@ def make_contents(header_infos):
         line = header_info.make_contents_line()
         lines.append(line)
 
-    contents = '\n'.join(lines)
+    contents = lines_to_text(lines)
 
     return contents
 
 
-def main():
-    with open(SOURCE_PATH, encoding='utf-8') as f:
-        text = f.read()
+def process_section_file(name):
+    path = get_source_path(name)
+    text = read_file(path)
 
     # TODO: eliminate trailing whitespace.
 
     # Normalize to at most one empty line in a row.
-    text = recursive_replace(text, '\n\n\n', '\n\n')
-
-    intro, body = parse_sections(text)
+    body = recursive_replace(text, '\n\n\n', '\n\n')
 
     # A list of HeaderInfo objects.
     header_infos = []
     lines = body.splitlines()
     lines = list(transform_lines(lines, header_infos))
-    body = '\n'.join(lines)
+    body = lines_to_text(lines)
+
+    write_file(body, path)
+
+    return body, header_infos
+
+
+def main():
+    intro = read_source_file('intro')
+    reference_links = read_source_file('reference-links')
+
+    body, header_infos = process_section_file('body')
 
     contents = make_contents(header_infos)
 
-    text = '\n\n'.join((intro, contents, body)) + '\n'
+    text = '\n\n'.join((intro, contents, body, reference_links))
 
-    with open(SOURCE_PATH, 'w', encoding='utf-8') as f:
-        f.write(text)
+    write_file(text, 'index.md')
 
 
 if __name__ == '__main__':
