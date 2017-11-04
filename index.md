@@ -501,12 +501,12 @@ projects are open source because that determines whether and to what extent
 the source code will be available for use in San Francisco's project.
 
 
-### 2.2.1. New Hampshire - Prime III
+#### 2.2.1. New Hampshire - Prime III
 
 [TODO]
 
 
-### 2.2.2. Los Angeles County - VSAP
+#### 2.2.2. Los Angeles County - VSAP
 
 Los Angeles County has been planning or working on its [Voting Systems
 Assessment Project][la-vsap] (VSAP) at least since 2009, when
@@ -585,7 +585,7 @@ possible that none of the code will be open source but instead simply be
 clearer guarantee if this interpretation isn't correct.
 
 
-### 2.2.3. Travis County, Texas - STAR-Vote™
+#### 2.2.3. Travis County, Texas - STAR-Vote™
 
 In 2012, Travis County, Texas started researching and designing a new voting
 system it called STAR-Vote™. The County spent over $330,000 in its research
@@ -1375,7 +1375,7 @@ from the beginning?
 This section lists some of the requirements the system should satisfy.
 
 
-### 5.4.1. Accessibility
+#### 5.4.1. Accessibility
 
 * In addition to an audio component and touchscreen, the voting system should
   support accessible features including, but not limited to: sip and puff
@@ -1386,7 +1386,7 @@ This section lists some of the requirements the system should satisfy.
   provide more detail.
 
 
-### 5.4.2. Other
+#### 5.4.2. Other
 
 * [TODO: should we recommend (1) supporting manually marked ballots in the
   polling place, or (2) requiring the use of a computer ballot-marking and/or
