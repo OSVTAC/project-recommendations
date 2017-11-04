@@ -3,4 +3,8 @@ title: OSVTAC Recommendations
 description: San Francisco Open Source Voting System Technical Advisory
   Committee (OSVTAC) Recommendations
 # Only render the README and CONTRIBUTE files on GitHub.
-exclude: [CONTRIBUTE.md, README.md]
+exclude:
+ - CONTRIBUTE.md
+ - README.md
+ - Gemfile
+ - prep.py
