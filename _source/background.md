@@ -1,7 +1,7 @@
 ## 2. Background
 
 
-### 2.1. History of Open Source Voting
+### 2.1. History of Open Source Voting in San Francisco
 
 To provide context to the recommendations in this document, this section
 describes some of the history of the open source voting topic in San
