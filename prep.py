@@ -38,8 +38,11 @@ SECTION_NAMES = [
 ]
 
 
-TOC_LINK = "* [Introduction & Table of Contents](index) (for multi-page version)"
-SINGLE_PAGE_LINK = "* [Single-page version](single-page)"
+TOC_LINK = """\
+* [Introduction & Table of Contents](index) (for multi-page version)"""
+
+SINGLE_PAGE_LINK = """\
+* [Single-page version](single-page) (long, can be used for printing)"""
 
 
 def get_source_path(name):

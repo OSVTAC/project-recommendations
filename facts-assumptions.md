@@ -7,7 +7,7 @@ Last update: November 4, 2017
 
 * [Introduction & Table of Contents](index) (for multi-page version)
 
-* [Single-page version](single-page)
+* [Single-page version](single-page) (long, can be used for printing)
 
 ## 3. Facts & Assumptions
 

@@ -23,7 +23,7 @@ document, view the "Project Recommendations" section of the [About
 page][osvtac-about-recs] of the committee's website.
 
 
-* [Single-page version](single-page)
+* [Single-page version](single-page) (long, can be used for printing)
 
 ## Contents
 
