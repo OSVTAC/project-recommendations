@@ -5,61 +5,88 @@
 Last update: November 4, 2017
 
 
-**Note: these recommendations are a work in progress and not yet complete.**
-
-This document contains the recommendations of San Francisco's [Open Source
-Voting System Technical Advisory Committee][osvtac] (OSVTAC, or TAC) for
-the City and County of San Francisco's open source voting system project, as
-of the version date that appears above.
-
-The committee started this document on August 30, 2017 and will continue to
-work on it over time. Substantive updates to this document occur by a vote of
-the committee at a committee meeting. Meetings occur approximately once a
-month.
-
-To learn more about the committee, visit the committee's website at
-[https://osvtac.github.io][osvtac]. To learn how to suggest changes to this
-document, view the "Project Recommendations" section of the [About
-page][osvtac-about-recs] of the committee's website.
-
+* [Introduction & Table of Contents](index) (for multi-page version)
 
 * [Single-page version](single-page)
 
-## Contents
+## 1. Goals
 
-* [1. Goals](goals#1-goals)
-  * [1.1. Scope](goals#11-scope)
-  * [1.2. Priorities](goals#12-priorities)
-  * [1.3. Non-goals](goals#13-non-goals)
-* [2. Background](background#2-background)
-  * [2.1. History of Open Source Voting](background#21-history-of-open-source-voting)
-  * [2.2. Voting System](background#22-voting-system)
-  * [2.3. Other Voting System Projects](background#23-other-voting-system-projects)
-  * [2.4. Resources](background#24-resources)
-* [3. Facts & Assumptions](facts-assumptions#3-facts--assumptions)
-  * [3.1. Facts](facts-assumptions#31-facts)
-  * [3.2. Assumptions](facts-assumptions#32-assumptions)
-* [4. Recommendations](recommendations#4-recommendations)
-  * [4.1. Interim Voting System](recommendations#41-interim-voting-system)
-  * [4.2. Incremental Approach](recommendations#42-incremental-approach)
-  * [4.3. Requirements-gathering](recommendations#43-requirements-gathering)
-  * [4.4. Requirements](recommendations#44-requirements)
-  * [4.5. Project Management](recommendations#45-project-management)
-  * [4.6. Open Source](recommendations#46-open-source)
-  * [4.7. Procurement](recommendations#47-procurement)
-  * [4.8. Software architecture and design](recommendations#48-software-architecture-and-design)
-  * [4.9. Software development](recommendations#49-software-development)
-  * [4.10. Hardware design](recommendations#410-hardware-design)
-  * [4.11. Documentation](recommendations#411-documentation)
-  * [4.12. Security](recommendations#412-security)
-  * [4.13. Testing](recommendations#413-testing)
-  * [4.14. Certification](recommendations#414-certification)
-  * [4.15. Hardware manufacturing or assembly](recommendations#415-hardware-manufacturing-or-assembly)
-  * [4.16. Deployment](recommendations#416-deployment)
-  * [4.17. Software maintenance](recommendations#417-software-maintenance)
-  * [4.18. Hardware maintenance](recommendations#418-hardware-maintenance)
-* [5. FAQ](faq#5-faq)
-* [6. Glossary](glossary#6-glossary)
+This section discusses the goals, scope, and priorities of this document and
+the Committee.
+
+The TAC’s Bylaws say that the TAC’s purpose is to “provide technical
+guidance, ideas, and support to the Elections Commission on ways to improve
+and help ensure the success of the City and County of San Francisco's open
+source voting system project.” The focus of TAC's effort will be on
+establishing parameters and recommendations to guide the future development
+of the voting system.
+
+The TAC will draw on its technical expertise, the expertise of other members
+in the community, and from similar efforts (including other open source
+voting efforts) to provide guidance in areas including but not limited to
+open source, requirements-gathering, design, architecture, development,
+documentation, security, testing, certification, manufacturing, deployment,
+system maintenance, strategies for procurement, and project management.
+
+
+### 1.1. Scope
+
+* This document will limit itself to current laws that San Francisco must
+  satisfy, or to changes in law that San Francisco anticipates (e.g. possibly
+  transitioning to the “vote center” model allowed by [SB
+  450][bill-sb-450-2015] of 2015-2016). In particular, the document will
+  restrict itself to considering paper-ballot systems.
+
+* For the purposes of this document, “voting system” includes anything that
+  is currently the responsibility of the voting system in use today.
+  Responsibilities of a voting system include allowing voters to mark ballots
+  (if not using pen and paper), counting ballots, reporting election
+  results, and ensuring the integrity of the process.
+  In addition, it may include ballot design and layout, as well as
+  the functionality of a “remote accessible vote by mail system” as described
+  in [AB 2252][bill-ab-2252-2015] (2015-2016). It should also facilitate
+  auditing the results of an election. The responsibilities of a voting
+  system do not include the responsibilities of a voter registration system.
+  The voting system may need to interoperate with the Department’s EIMS®
+  application. If the ballots
+  are pre-printed, the voting system need not be capable of printing ballots.
+
+
+### 1.2. Priorities
+
+* This document should prioritize high-level recommendations over low-level
+  recommendations.
+
+* This document should prioritize recommendations that are needed sooner
+  rather than later.
+
+
+### 1.3. Non-goals
+
+* The Committee will not be designing or developing a voting system.
+
+* The Committee will not be drafting detailed, low-level specs that the
+  voting system should satisfy.
+
+* The Committee will not be drafting an exhaustive list of requirements.
+
+* The Committee will not be recommending particular vendors. However, the
+  Committee may evaluate particular _systems_.
+
+* The Committee will not make explicit attempts to accommodate internet
+  voting in any form, nor voting methods not used in San Francisco. This does
+  not preclude the Committee from recommending software designs or practices
+  that could make such things easier to accommodate as a side effect.
+
+* The Committee's recommendations will prioritize the voting system needs of
+  San Francisco without emphasizing the needs of other jurisdictions.
+  The needs of other
+  jurisdictions will be considered insofar as it could help to develop and
+  certify a system for use in San Francisco sooner (for example, if San
+  Francisco were to collaborate with another jurisdiction and share costs).
+  However, as stated in the previous point, this does not preclude
+  recommending designs and practices that could make it easier to accommodate
+  other jurisdictions.
 
 
 [18f-modular-contracting]: https://modularcontracting.18f.gov/

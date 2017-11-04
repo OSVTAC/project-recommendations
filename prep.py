@@ -38,6 +38,10 @@ SECTION_NAMES = [
 ]
 
 
+TOC_LINK = "* [Introduction & Table of Contents](index) (for multi-page version)"
+SINGLE_PAGE_LINK = "* [Single-page version](single-page)"
+
+
 def get_source_path(name):
     return os.path.join('_source', f'{name}.md')
 
@@ -98,19 +102,21 @@ class HeaderInfo:
     Encapsulates the information needed to generate a section header line.
     """
 
-    def __init__(self, coords, title):
+    def __init__(self, coords, title, page):
         """
         Args:
           coords: an iterable of integers representing a section number.
             For example, (2, 3, 1) represents section 2.3.1.
           title: the section title that should follow the section number in
             the rendered text.
+          page: the name of the source page containing the header.
         """
         self.coords = coords
+        self.page = page
         self.title = title
 
     def __repr__(self):
-        return f'<HeaderInfo object coords={self.coords!r} title={self.title}>'
+        return f'<HeaderInfo object coords={self.coords!r} title={self.title}, page={self.page}>'
 
     def __str__(self):
         return self.make_header_text()
@@ -141,14 +147,17 @@ class HeaderInfo:
 
         return line
 
-    def make_contents_line(self):
+    def make_contents_line(self, page_name=None):
+        if page_name is None:
+            page_name = self.page
+
         level = self.get_level()
         indent = 2 * (level - 1) * ' '
 
         header_text = self.make_header_text()
         anchor = make_anchor(header_text)
 
-        line = f'{indent}* [{header_text}](#{anchor})'
+        line = f'{indent}* [{header_text}]({page_name}#{anchor})'
 
         return line
 
@@ -179,7 +188,7 @@ def parse_header_line(line):
     return level, text
 
 
-def transform_lines(lines, header_infos, first_section):
+def transform_lines(lines, header_infos, first_section, page_name):
     """
     This function appends to the header_infos list.
     """
@@ -207,7 +216,7 @@ def transform_lines(lines, header_infos, first_section):
 
         # Apply tuple() to freeze the data since we are mutating coords
         # in this function.
-        header_info = HeaderInfo(tuple(coords), title)
+        header_info = HeaderInfo(tuple(coords), title, page_name)
         header_infos.append(header_info)
 
         header_line = header_info.make_header_line()
@@ -217,7 +226,7 @@ def transform_lines(lines, header_infos, first_section):
         yield header_line
 
 
-def make_contents(header_infos):
+def make_contents(header_infos, page_name=None):
     """
     Args:
       header_infos: an iterable of HeaderInfo objects.
@@ -230,7 +239,7 @@ def make_contents(header_infos):
         if level > 2:
             continue
 
-        line = header_info.make_contents_line()
+        line = header_info.make_contents_line(page_name=page_name)
         lines.append(line)
 
     contents = lines_to_text(lines)
@@ -238,8 +247,8 @@ def make_contents(header_infos):
     return contents
 
 
-def process_section_file(name, header_infos, first_section):
-    path = get_source_path(name)
+def process_section_file(page_name, header_infos, first_section):
+    path = get_source_path(page_name)
     text = read_file(path)
 
     # TODO: eliminate trailing whitespace.
@@ -248,7 +257,7 @@ def process_section_file(name, header_infos, first_section):
     body = recursive_replace(text, '\n\n\n', '\n\n')
 
     lines = body.splitlines()
-    lines = list(transform_lines(lines, header_infos, first_section))
+    lines = list(transform_lines(lines, header_infos, first_section, page_name=page_name))
     body = lines_to_text(lines)
 
     write_file(body, path)
@@ -256,9 +265,40 @@ def process_section_file(name, header_infos, first_section):
     return body
 
 
-def main():
-    intro = read_source_file('intro')
+def write_rendered_file(sections, name):
+    """
+    Args:
+      sections: an iterable of strings, one for each section.  Each section
+        text should end in a single trailing newline.
+    """
+    page_intro = read_source_file('page-intro')
     reference_links = read_source_file('reference-links')
+
+    sections = [page_intro] + sections + [reference_links]
+    text = '\n\n'.join(sections)
+
+    write_file(text, f'{name}.md')
+
+
+def render_section_page(name, text):
+    write_rendered_file([TOC_LINK, SINGLE_PAGE_LINK, text], name)
+
+
+def render_index_page(header_infos):
+    intro = read_source_file('intro')
+    contents = make_contents(header_infos)
+
+    write_rendered_file([intro, SINGLE_PAGE_LINK, contents], 'index')
+
+
+def render_single_page_version(sections, header_infos):
+    contents = make_contents(header_infos, page_name='')
+    sections = [TOC_LINK, contents] + sections
+
+    write_rendered_file(sections, 'single-page')
+
+
+def main():
 
     # A list of HeaderInfo objects.
     header_infos = []
@@ -268,12 +308,10 @@ def main():
         section = process_section_file(name, header_infos, section_number)
         sections.append(section)
 
-    contents = make_contents(header_infos)
+        render_section_page(name, section)
 
-    sections = [intro, contents] + sections + [reference_links]
-    text = '\n\n'.join(sections)
-
-    write_file(text, 'index.md')
+    render_index_page(header_infos)
+    render_single_page_version(sections, header_infos)
 
 
 if __name__ == '__main__':

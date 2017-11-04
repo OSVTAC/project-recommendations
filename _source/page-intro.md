@@ -3,6 +3,3 @@
 (Approved by OSVTAC on October 19, 2017.)
 
 Last update: November 4, 2017
-
-* [Introduction & Table of Contents](index) (for multi-page version)
-* [Single-page version](single-page)

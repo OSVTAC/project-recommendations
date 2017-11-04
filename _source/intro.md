@@ -1,9 +1,3 @@
-# Open Source Voting System Project Recommendations
-
-(Approved by OSVTAC on October 19, 2017.)
-
-Last update: November 4, 2017
-
 **Note: these recommendations are a work in progress and not yet complete.**
 
 This document contains the recommendations of San Francisco's [Open Source

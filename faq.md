@@ -5,61 +5,47 @@
 Last update: November 4, 2017
 
 
-**Note: these recommendations are a work in progress and not yet complete.**
-
-This document contains the recommendations of San Francisco's [Open Source
-Voting System Technical Advisory Committee][osvtac] (OSVTAC, or TAC) for
-the City and County of San Francisco's open source voting system project, as
-of the version date that appears above.
-
-The committee started this document on August 30, 2017 and will continue to
-work on it over time. Substantive updates to this document occur by a vote of
-the committee at a committee meeting. Meetings occur approximately once a
-month.
-
-To learn more about the committee, visit the committee's website at
-[https://osvtac.github.io][osvtac]. To learn how to suggest changes to this
-document, view the "Project Recommendations" section of the [About
-page][osvtac-about-recs] of the committee's website.
-
+* [Introduction & Table of Contents](index) (for multi-page version)
 
 * [Single-page version](single-page)
 
-## Contents
+## 5. FAQ
 
-* [1. Goals](goals#1-goals)
-  * [1.1. Scope](goals#11-scope)
-  * [1.2. Priorities](goals#12-priorities)
-  * [1.3. Non-goals](goals#13-non-goals)
-* [2. Background](background#2-background)
-  * [2.1. History of Open Source Voting](background#21-history-of-open-source-voting)
-  * [2.2. Voting System](background#22-voting-system)
-  * [2.3. Other Voting System Projects](background#23-other-voting-system-projects)
-  * [2.4. Resources](background#24-resources)
-* [3. Facts & Assumptions](facts-assumptions#3-facts--assumptions)
-  * [3.1. Facts](facts-assumptions#31-facts)
-  * [3.2. Assumptions](facts-assumptions#32-assumptions)
-* [4. Recommendations](recommendations#4-recommendations)
-  * [4.1. Interim Voting System](recommendations#41-interim-voting-system)
-  * [4.2. Incremental Approach](recommendations#42-incremental-approach)
-  * [4.3. Requirements-gathering](recommendations#43-requirements-gathering)
-  * [4.4. Requirements](recommendations#44-requirements)
-  * [4.5. Project Management](recommendations#45-project-management)
-  * [4.6. Open Source](recommendations#46-open-source)
-  * [4.7. Procurement](recommendations#47-procurement)
-  * [4.8. Software architecture and design](recommendations#48-software-architecture-and-design)
-  * [4.9. Software development](recommendations#49-software-development)
-  * [4.10. Hardware design](recommendations#410-hardware-design)
-  * [4.11. Documentation](recommendations#411-documentation)
-  * [4.12. Security](recommendations#412-security)
-  * [4.13. Testing](recommendations#413-testing)
-  * [4.14. Certification](recommendations#414-certification)
-  * [4.15. Hardware manufacturing or assembly](recommendations#415-hardware-manufacturing-or-assembly)
-  * [4.16. Deployment](recommendations#416-deployment)
-  * [4.17. Software maintenance](recommendations#417-software-maintenance)
-  * [4.18. Hardware maintenance](recommendations#418-hardware-maintenance)
-* [5. FAQ](faq#5-faq)
-* [6. Glossary](glossary#6-glossary)
+**1. Is open-source software more or less secure than proprietary
+software?**
+
+Independent studies have shown that, in general, open-source software is
+neither more secure nor less secure than proprietary software (see for
+example Synopsys's ["Coverity® Scan Open Source Report
+2014"][coverity-report-2014]). Both secure and insecure open-source software
+can be written. Similarly, both secure and insecure proprietary software can
+be written.
+
+A key difference though is that, because it is publicly viewable, claims
+about the security of open-source software can be _independently verified_,
+and by _anyone_ (provided they have the necessary skills and time). With
+proprietary code, such claims can be based only on trusting those who are
+able to view the code.
+
+The security of a given piece of software is primarily a function of how well
+the software is written. It does not (and should not) depend on keeping the
+code secret. The idea that software can be made secure by keeping it secret
+is an idea known as "security by obscurity" and is widely rejected in the
+security community.
+
+Open source is already heavily used and relied upon throughout the world for
+security-critical applications. For example, much of the code that allows
+the secure transmission of information over the internet is open source.
+
+**2. How can members of the public be sure that the open-source code is
+what is actually running on the machine?**
+
+[TODO]
+
+**3. How much of the code must be open source for the voting system to
+be considered open source?**
+
+[TODO]
 
 
 [18f-modular-contracting]: https://modularcontracting.18f.gov/

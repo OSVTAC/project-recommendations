@@ -5,61 +5,80 @@
 Last update: November 4, 2017
 
 
-**Note: these recommendations are a work in progress and not yet complete.**
-
-This document contains the recommendations of San Francisco's [Open Source
-Voting System Technical Advisory Committee][osvtac] (OSVTAC, or TAC) for
-the City and County of San Francisco's open source voting system project, as
-of the version date that appears above.
-
-The committee started this document on August 30, 2017 and will continue to
-work on it over time. Substantive updates to this document occur by a vote of
-the committee at a committee meeting. Meetings occur approximately once a
-month.
-
-To learn more about the committee, visit the committee's website at
-[https://osvtac.github.io][osvtac]. To learn how to suggest changes to this
-document, view the "Project Recommendations" section of the [About
-page][osvtac-about-recs] of the committee's website.
-
+* [Introduction & Table of Contents](index) (for multi-page version)
 
 * [Single-page version](single-page)
 
-## Contents
+## 6. Glossary
 
-* [1. Goals](goals#1-goals)
-  * [1.1. Scope](goals#11-scope)
-  * [1.2. Priorities](goals#12-priorities)
-  * [1.3. Non-goals](goals#13-non-goals)
-* [2. Background](background#2-background)
-  * [2.1. History of Open Source Voting](background#21-history-of-open-source-voting)
-  * [2.2. Voting System](background#22-voting-system)
-  * [2.3. Other Voting System Projects](background#23-other-voting-system-projects)
-  * [2.4. Resources](background#24-resources)
-* [3. Facts & Assumptions](facts-assumptions#3-facts--assumptions)
-  * [3.1. Facts](facts-assumptions#31-facts)
-  * [3.2. Assumptions](facts-assumptions#32-assumptions)
-* [4. Recommendations](recommendations#4-recommendations)
-  * [4.1. Interim Voting System](recommendations#41-interim-voting-system)
-  * [4.2. Incremental Approach](recommendations#42-incremental-approach)
-  * [4.3. Requirements-gathering](recommendations#43-requirements-gathering)
-  * [4.4. Requirements](recommendations#44-requirements)
-  * [4.5. Project Management](recommendations#45-project-management)
-  * [4.6. Open Source](recommendations#46-open-source)
-  * [4.7. Procurement](recommendations#47-procurement)
-  * [4.8. Software architecture and design](recommendations#48-software-architecture-and-design)
-  * [4.9. Software development](recommendations#49-software-development)
-  * [4.10. Hardware design](recommendations#410-hardware-design)
-  * [4.11. Documentation](recommendations#411-documentation)
-  * [4.12. Security](recommendations#412-security)
-  * [4.13. Testing](recommendations#413-testing)
-  * [4.14. Certification](recommendations#414-certification)
-  * [4.15. Hardware manufacturing or assembly](recommendations#415-hardware-manufacturing-or-assembly)
-  * [4.16. Deployment](recommendations#416-deployment)
-  * [4.17. Software maintenance](recommendations#417-software-maintenance)
-  * [4.18. Hardware maintenance](recommendations#418-hardware-maintenance)
-* [5. FAQ](faq#5-faq)
-* [6. Glossary](glossary#6-glossary)
+* **adjudicate**. [TODO]
+
+* **agile**. [TODO]
+
+* **ballot on-demand**. [TODO]
+
+* **cast-vote record (CVR)**. [TODO]
+
+* **central ballot scanner**. [TODO]
+
+* **commercial off-the-shelf (COTS)**. [TODO]
+
+* **comparison audit**. [TODO]
+
+* **component**. [TODO]
+
+* **digital ballot picture**. [TODO]
+
+* **EIMS®**. [EIMS®](http://www.dfmassociates.com/eims.asp) is the software
+  application that the Department of Elections uses for certain
+  election-related functions like maintaining voter registration data,
+  administering polling place information, defining ballot styles, and
+  tracking candidate filings for office (see
+  [Appendix A][dfm-contract-appendix-a] of the City's contract with DFM for
+  a detailed listing of the required capabilities).
+  The Department signed a nine-year contract
+  with [DFM Associates](http://www.dfmassociates.com) for the software
+  in June 2011 ([DFM contract][dfm-contract-main],
+  [Appendix A][dfm-contract-appendix-a],
+  [Appendix B][dfm-contract-appendix-b],
+  [Appendix C][dfm-contract-appendix-c],
+  [Appendix D][dfm-contract-appendix-d],
+  [Appendix E][dfm-contract-appendix-e]). The contract lists the per-year
+  maintenance and support costs as ranging between $170,820.00 and
+  $274,299.60 (see [Appendix D][dfm-contract-appendix-d] of the contract
+  for more detail).
+
+* **end-to-end verifiability**. [TODO]
+
+* **firmware**. [TODO]
+
+* **free and open-source software (FOSS)**. [TODO]
+
+* **free software**. [TODO]
+
+* **hardware**. [TODO]
+
+* **hardware component**. [TODO]
+
+* **open hardware**. [TODO]
+
+* **open-source software**. [TODO]
+
+* **outstack**. [TODO]
+
+* **precinct ballot scanner**. [TODO]
+
+* **remake**. [TODO]
+
+* **risk-limiting audit (RLA)**. [TODO]
+
+* **software**. [TODO]
+
+* **software API**. [TODO]
+
+* **software application**. [TODO]
+
+* **software library**. [TODO]
 
 
 [18f-modular-contracting]: https://modularcontracting.18f.gov/
