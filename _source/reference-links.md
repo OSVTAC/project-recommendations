@@ -22,6 +22,8 @@
 [dfm-contract-appendix-c]: files/dfm-contract/DFM_Contract_Appendix_C_Maintenance.pdf
 [dfm-contract-appendix-d]: files/dfm-contract/DFM_Contract_Appendix_D_Fee_Schedule.pdf
 [dfm-contract-appendix-e]: files/dfm-contract/DFM_Contract_Appendix_E_Hardware_Specs.pdf
+[directors-report-march-2017-local]: files/SF_Elections_March_2017_Director_Report.pdf
+[directors-report-march-2017-original]: http://sfgov.org/electionscommission/sites/default/files/Documents/meetings/2017/2017-03-15-commission/March%202017%20Director%20Report.pdf
 [dominion-costs-2008]: files/Dominion_System_Costs_2008_Jerdonek.pdf
 [eac]: https://www.eac.gov/
 [eac-vvsg]: https://www.eac.gov/voting-equipment/voluntary-voting-system-guidelines/
