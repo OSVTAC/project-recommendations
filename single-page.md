@@ -14,7 +14,7 @@ Last update: November 4, 2017
   * [1.2. Priorities](#12-priorities)
   * [1.3. Non-goals](#13-non-goals)
 * [2. Background](#2-background)
-  * [2.1. History of Open Source Voting](#21-history-of-open-source-voting)
+  * [2.1. History of Open Source Voting in San Francisco](#21-history-of-open-source-voting-in-san-francisco)
   * [2.2. Voting System](#22-voting-system)
   * [2.3. Other Voting System Projects](#23-other-voting-system-projects)
   * [2.4. Resources](#24-resources)
@@ -66,13 +66,13 @@ system maintenance, strategies for procurement, and project management.
 
 ### 1.1. Scope
 
-* This document will limit itself to current laws that San Francisco must
+1. This document will limit itself to current laws that San Francisco must
   satisfy, or to changes in law that San Francisco anticipates (e.g. possibly
   transitioning to the “vote center” model allowed by [SB
   450][bill-sb-450-2015] of 2015-2016). In particular, the document will
   restrict itself to considering paper-ballot systems.
 
-* For the purposes of this document, “voting system” includes anything that
+2. For the purposes of this document, “voting system” includes anything that
   is currently the responsibility of the voting system in use today.
   Responsibilities of a voting system include allowing voters to mark ballots
   (if not using pen and paper), counting ballots, reporting election
@@ -89,31 +89,31 @@ system maintenance, strategies for procurement, and project management.
 
 ### 1.2. Priorities
 
-* This document should prioritize high-level recommendations over low-level
+1. This document should prioritize high-level recommendations over low-level
   recommendations.
 
-* This document should prioritize recommendations that are needed sooner
+2. This document should prioritize recommendations that are needed sooner
   rather than later.
 
 
 ### 1.3. Non-goals
 
-* The Committee will not be designing or developing a voting system.
+1. The Committee will not be designing or developing a voting system.
 
-* The Committee will not be drafting detailed, low-level specs that the
+2. The Committee will not be drafting detailed, low-level specs that the
   voting system should satisfy.
 
-* The Committee will not be drafting an exhaustive list of requirements.
+3. The Committee will not be drafting an exhaustive list of requirements.
 
-* The Committee will not be recommending particular vendors. However, the
+4. The Committee will not be recommending particular vendors. However, the
   Committee may evaluate particular _systems_.
 
-* The Committee will not make explicit attempts to accommodate internet
+5. The Committee will not make explicit attempts to accommodate internet
   voting in any form, nor voting methods not used in San Francisco. This does
   not preclude the Committee from recommending software designs or practices
   that could make such things easier to accommodate as a side effect.
 
-* The Committee's recommendations will prioritize the voting system needs of
+6. The Committee's recommendations will prioritize the voting system needs of
   San Francisco without emphasizing the needs of other jurisdictions.
   The needs of other
   jurisdictions will be considered insofar as it could help to develop and
@@ -127,7 +127,7 @@ system maintenance, strategies for procurement, and project management.
 ## 2. Background
 
 
-### 2.1. History of Open Source Voting
+### 2.1. History of Open Source Voting in San Francisco
 
 To provide context to the recommendations in this document, this section
 describes some of the history of the open source voting topic in San
@@ -624,7 +624,9 @@ and then into use.
 This section contains links to other resources and documents that may be
 useful for the project.
 
-1. San Francisco
+
+#### 2.4.1. San Francisco
+
    * The San Francisco Department of Elections' RFP for the planning phase:
      [REG RFP #2017‑01][rfp-business-case-page] ("Preparing a Business Case
      for Developing an Accessible, Open Source Voting System"). In
@@ -632,11 +634,15 @@ useful for the project.
      the [RFP PDF][rfp-business-case-pdf].
    * [San Francisco Digital Services Team][sf-digital-services]
 
-2. Procurement
+
+#### 2.4.2. Procurement
+
    * U.S. Digital Services' [TechFAR Handbook][techfar-handbook]
    * 18F's [Modular Contracting][18f-modular-contracting] page
 
-3. Related Software Projects for US Government Elections
+
+#### 2.4.3. Related Software Projects for US Government Elections
+
    * [ColoradoRLA][colorado-rla-home], (Risk Limiting Audit) Project. Colorado Secretary of State.
      Software to upload electronic CVRs (cast-vote-records), randomly
      select ballots to audit, then hand check hand selected paper ballots
@@ -669,7 +675,9 @@ useful for the project.
      Voters can check receipt with QR code.
      [Demo/prototype implementation by Free & Fair][prime-iii-faf-repo].
 
-4. Open Source Voting Organizations
+
+#### 2.4.4. Open Source Voting Organizations
+
    * [OSET Foundation][oset-foundation] 501c umbrella nonprofit to support [Trust the Vote][trust-the-vote],
      site with actual software. \[Currently, mostly Ruby-On-Rails in ruby
      using IEEE 1622 data models.\]
@@ -688,7 +696,9 @@ useful for the project.
      nonprofit to provide resources on election systems and equipment.
      Has links and information on voting equipment and usage across the US.
 
-5. Election Data Standards & Organizations
+
+#### 2.4.5. Election Data Standards & Organizations
+
    * Election Markup Language (EML), Original XML-based election data interchange format.
      [Wikipedia Overview][eml-wikipedia], [Specifications][eml-specs]. \[2011\] (Obsolete)
 
@@ -720,7 +730,9 @@ useful for the project.
      The VIP spec allows contest definitions, but in practice,
      only used for poll lookup. [git][vip-repo]
 
-6. Additional Links
+
+#### 2.4.6. Additional Links
+
    * [GitHub][github]
    * [Open Source Initiative][osi] (OSI)
    * [OpenCount][open-count]
@@ -1409,7 +1421,7 @@ This section lists some of the requirements the system should satisfy.
 
   Another example is an application to adjudicate ballots. The code for
   automatically interpreting the digital ballot picture could be separated
-  out as its own library. Indeed, this corresponds to the Ballot Image
+  out as its own library. Indeed, this corresponds to the Ballot Picture
   Interpreter software component.
 
   [TODO: add a comment about the vendor providing a UI shim to support

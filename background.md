@@ -12,7 +12,7 @@ Last update: November 4, 2017
 ## 2. Background
 
 
-### 2.1. History of Open Source Voting
+### 2.1. History of Open Source Voting in San Francisco
 
 To provide context to the recommendations in this document, this section
 describes some of the history of the open source voting topic in San
@@ -509,7 +509,9 @@ and then into use.
 This section contains links to other resources and documents that may be
 useful for the project.
 
-1. San Francisco
+
+#### 2.4.1. San Francisco
+
    * The San Francisco Department of Elections' RFP for the planning phase:
      [REG RFP #2017‑01][rfp-business-case-page] ("Preparing a Business Case
      for Developing an Accessible, Open Source Voting System"). In
@@ -517,11 +519,15 @@ useful for the project.
      the [RFP PDF][rfp-business-case-pdf].
    * [San Francisco Digital Services Team][sf-digital-services]
 
-2. Procurement
+
+#### 2.4.2. Procurement
+
    * U.S. Digital Services' [TechFAR Handbook][techfar-handbook]
    * 18F's [Modular Contracting][18f-modular-contracting] page
 
-3. Related Software Projects for US Government Elections
+
+#### 2.4.3. Related Software Projects for US Government Elections
+
    * [ColoradoRLA][colorado-rla-home], (Risk Limiting Audit) Project. Colorado Secretary of State.
      Software to upload electronic CVRs (cast-vote-records), randomly
      select ballots to audit, then hand check hand selected paper ballots
@@ -554,7 +560,9 @@ useful for the project.
      Voters can check receipt with QR code.
      [Demo/prototype implementation by Free & Fair][prime-iii-faf-repo].
 
-4. Open Source Voting Organizations
+
+#### 2.4.4. Open Source Voting Organizations
+
    * [OSET Foundation][oset-foundation] 501c umbrella nonprofit to support [Trust the Vote][trust-the-vote],
      site with actual software. \[Currently, mostly Ruby-On-Rails in ruby
      using IEEE 1622 data models.\]
@@ -573,7 +581,9 @@ useful for the project.
      nonprofit to provide resources on election systems and equipment.
      Has links and information on voting equipment and usage across the US.
 
-5. Election Data Standards & Organizations
+
+#### 2.4.5. Election Data Standards & Organizations
+
    * Election Markup Language (EML), Original XML-based election data interchange format.
      [Wikipedia Overview][eml-wikipedia], [Specifications][eml-specs]. \[2011\] (Obsolete)
 
@@ -605,7 +615,9 @@ useful for the project.
      The VIP spec allows contest definitions, but in practice,
      only used for poll lookup. [git][vip-repo]
 
-6. Additional Links
+
+#### 2.4.6. Additional Links
+
    * [GitHub][github]
    * [Open Source Initiative][osi] (OSI)
    * [OpenCount][open-count]

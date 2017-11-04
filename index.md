@@ -32,7 +32,7 @@ page][osvtac-about-recs] of the committee's website.
   * [1.2. Priorities](goals#12-priorities)
   * [1.3. Non-goals](goals#13-non-goals)
 * [2. Background](background#2-background)
-  * [2.1. History of Open Source Voting](background#21-history-of-open-source-voting)
+  * [2.1. History of Open Source Voting in San Francisco](background#21-history-of-open-source-voting-in-san-francisco)
   * [2.2. Voting System](background#22-voting-system)
   * [2.3. Other Voting System Projects](background#23-other-voting-system-projects)
   * [2.4. Resources](background#24-resources)
