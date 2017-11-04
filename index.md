@@ -18,8 +18,8 @@ month.
 
 To learn more about the committee, visit the committee's website at
 [https://osvtac.github.io][osvtac]. To learn how to suggest changes to this
-document, view the "Project Recommendations" section of the [Documents
-page][osvtac-documents] of the committee's website.
+document, view the "Project Recommendations" section of the [About
+page][osvtac-about-recs] of the committee's website.
 
 
 ## Contents
@@ -1237,6 +1237,17 @@ The following are some key decisions about requirements that need to be made
 at some point when designing and developing the voting system.
 
 
+##### 5.3.1.1. Vote Centers
+
+California [SB 450][bill-sb-450-2015] ("Elections: vote by mail voting and
+mail ballot elections") authorizes counties to conduct elections using vote
+centers. The Department of Elections should develop a sense as soon as
+possible of the likelihood of using vote centers because that could affect
+the requirements and design of the system. Making this decision earlier could
+decrease costs since the design and development wouldn’t have to cover
+multiple scenarios.
+
+
 ##### 5.3.1.1. Pre-printed versus on-demand ballots, including how selections are marked
 
 For in-person voting, the question of pre-printed ballots versus on-demand
@@ -1361,21 +1372,30 @@ from the beginning?
 
 ### 5.4. Requirements
 
-This section relates to specific requirements rather than the process of
-gathering or articulating requirements.
+This section lists some of the requirements the system should satisfy.
 
-* California [SB 450][bill-sb-450-2015] ("Elections: vote by mail voting and
-  mail ballot elections") authorizes counties to conduct elections using vote
-  centers. The Department of Elections should develop a sense as soon as
-  possible of the likelihood of using vote centers because that could affect
-  the requirements and design of the system. Making this decision earlier
-  could decrease costs since the design and development wouldn’t have to
-  cover multiple scenarios.
 
-* [TODO: think about ballot-marking device vs. manually marked ballots, and
-  ballot on-demand vs. pre-printed ballots.]
+### 5.4.1. Accessibility
 
-* [TODO: should end-to-end verifiability be a requirement?]
+* In addition to an audio component and touchscreen, the voting system should
+  support accessible features including, but not limited to: sip and puff
+  input, a keyboard for write-in votes, voice activation, synchronized audio
+  and video, joystick input, Tecla switch, and tactile buttons. These
+  [two letters][disability-rights-ca-letters] from Mr. Fred Nisen
+  (Supervising Attorney for Voting Rights, Disability Rights California)
+  provide more detail.
+
+
+### 5.4.2. Other
+
+* [TODO: should we recommend (1) supporting manually marked ballots in the
+  polling place, or (2) requiring the use of a computer ballot-marking and/or
+  ballot-printing device?]
+
+* [TODO: should we recommend (1) pre-printed ballots at polling places, or
+  (2) printing ballots on-demand?]
+
+* [TODO: should we recommend for or against end-to-end verifiability?]
 
 
 ### 5.5. Project Management
@@ -1421,12 +1441,14 @@ gathering or articulating requirements.
 This section covers topics related to open source.
 
 * Each software component being developed should be licensed under an
-  [OSI-approved][osi-approved-licenses] software license (see also the
-  Assumptions section).
+  [OSI-approved][osi-approved-licenses] software license, with a copyleft
+  license being preferred (see also the Facts & Assumptions section).
 
 * All software development should occur in public (e.g. on GitHub), rather
   than, for example, waiting for the software to reach a certain level of
   completion before becoming public.
+  (See also item (b) of the third "resolved" paragraph of the Commission's
+  [Open Source Voting Resolution][commission-resolution-local].)
 
 * All software being developed in public should have an open source license
   when development first starts, rather than, for example, adding a license
@@ -1435,14 +1457,34 @@ This section covers topics related to open source.
   source. This would encourage members of the public to start contributing to
   the project as early as possible.
 
-* All software being developed should be developed using an open-source
-  programming language. For programming languages, any OSI-approved license
-  should be okay. The programming language itself need not be copyleft.
+* All software being developed should be developed using an open source
+  programming language and toolchain. This means an open source compiler
+  or runtime should be available for the language(s) used, and it should
+  be possible to build and run the software from source using only open source tools.
+  For programming languages and build tools, any OSI-approved license
+  should be okay; they need not be copyleft.
+
+* Reuse of existing open source libraries, tools and software is encouraged.
+  Any such pre-existing third-party code used should be available under
+  an OSI-approved license, but need not be copyleft. If modifications to
+  third-party code are developed, and the original third-party code has
+  a different license than the main software's license, the modifications
+  should be dual-licensed under both licenses, if possible.
+  (See also item (e) of the third "resolved" paragraph of the Commission's
+  [Open Source Voting Resolution][commission-resolution-local].)
+
+* The aggregate system (including the infrastructure, stack, and services)
+  should be open source. This includes but is not limited to things like
+  the operating system, database, web server, etc, if present.
 
 * In addition to the software being open source, project documentation
   should be openly licensed. This includes things like design documents,
   installation and setup documents, user manuals, and testing documents.
-  [TODO: recommend particular licenses for documentation?]
+  The recommended license for documentation is the Creative Commons
+  Attribution-ShareAlike 4.0 license ([CC-BY-SA 4.0][cc-by-sa]).
+  (See also the reference to ”freely and openly licensed” documentation
+  in the Commission's
+  [Open Source Voting Resolution][commission-resolution-local].)
 
 * [TODO: provide recommendations related to managing community feedback and
   contributions during project development. Also think about whether
@@ -1518,7 +1560,13 @@ This section covers topics related to open source.
 
 ### 5.18. Hardware maintenance
 
-[TODO]
+* The City should prefer professional, commercial support for
+  maintaining the aggregate system (including the operating system, stack,
+  and software services, etc.) over “in-house“ maintenance -- even though
+  the components are open source. This will make it easier, for example,
+  to ensure that security patches are applied on a timely basis. An example
+  of such a provider is [Red Hat](https://www.redhat.com).
+
 
 
 ## 6. FAQ
@@ -1640,6 +1688,7 @@ be considered open source?**
 [bos-ordinance-vstf]: files/BOS_Ordinance_268-08_VSTF.pdf
 [bos-open-source-voting-res]: files/BOS_Resolution_460-14_Open_Source_Voting.pdf
 [cavo]: http://www.cavo-us.org/index.html
+[cc-by-sa]: https://creativecommons.org/licenses/by-sa/4.0/
 [cla]: https://en.wikipedia.org/wiki/Contributor_License_Agreement
 [colorado-rla-home]: http://bcn.boulder.co.us/~neal/elections/corla/
 [colorado-rla-repo]: https://github.com/FreeAndFair/ColoradoRLA
@@ -1648,13 +1697,14 @@ be considered open source?**
 [commission-resolutions]: http://sfgov.org/electionscommission/motions-and-resolutions
 [coverity-report-2014]: http://go.coverity.com/rs/157-LQW-289/images/2014-Coverity-Scan-Report.pdf
 [coit]: http://sfcoit.org/
-[dominion-costs-2008]: files/Dominion_System_Costs_2008_Jerdonek.pdf
+[disability-rights-ca-letters]: files/Disability_Rights_Letters_Nisen.pdf
 [dfm-contract-main]: files/dfm-contract/DFM_Contract_060111.pdf
 [dfm-contract-appendix-a]: files/dfm-contract/DFM_Contract_Appendix_A_Perf_Reqs.pdf
 [dfm-contract-appendix-b]: files/dfm-contract/DFM_Contract_Appendix_B_Scope.pdf
 [dfm-contract-appendix-c]: files/dfm-contract/DFM_Contract_Appendix_C_Maintenance.pdf
 [dfm-contract-appendix-d]: files/dfm-contract/DFM_Contract_Appendix_D_Fee_Schedule.pdf
 [dfm-contract-appendix-e]: files/dfm-contract/DFM_Contract_Appendix_E_Hardware_Specs.pdf
+[dominion-costs-2008]: files/Dominion_System_Costs_2008_Jerdonek.pdf
 [eac]: https://www.eac.gov/
 [eac-vvsg]: https://www.eac.gov/voting-equipment/voluntary-voting-system-guidelines/
 [elections-commission]: http://sfgov.org/electionscommission
@@ -1684,7 +1734,7 @@ be considered open source?**
 [osi]: https://opensource.org/
 [osi-approved-licenses]: https://opensource.org/licenses
 [osvtac]: https://osvtac.github.io
-[osvtac-documents]: /documents
+[osvtac-about-recs]: https://osvtac.github.io/about#project-recommendations
 [prime-iii]: http://www.primevotingsystem.com/
 [prime-iii-repo]: https://github.com/HXRL/Prime-III
 [prime-iii-faf-repo]: https://github.com/FreeAndFair/STAR-Vote
