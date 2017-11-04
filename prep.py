@@ -21,6 +21,14 @@ SOURCE_PATH = 'index.md'
 
 HEADER_PATTERN = re.compile(r'#+ ')
 
+# See make_anchor() for the purpose of this dict.
+# TODO: add more characters as needed.
+ANCHOR_TRANS = {
+    ' ': '-',
+    '.': None,
+    '&': None,
+}
+
 
 def make_anchor(header_text):
     """
@@ -36,9 +44,8 @@ def make_anchor(header_text):
     "5.2. Incremental Approach" should return "52-incremental-approach".
     """
     anchor = header_text.lower()
-    # TODO: add more characters as needed.
-    anchor = anchor.replace('.', '')
-    anchor = anchor.replace(' ', '-')
+    trans = str.maketrans(ANCHOR_TRANS)
+    anchor = anchor.translate(trans)
 
     return anchor
 
