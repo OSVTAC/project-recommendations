@@ -27,7 +27,8 @@ ANCHOR_TRANS = {
     '&': None,
 }
 
-# These names correspond to files in the _source directory.
+# These names correspond to files in the _source directory, in the
+# order they should appear in the final document.
 SECTION_NAMES = [
     'goals',
     'background',
@@ -46,6 +47,9 @@ SINGLE_PAGE_LINK = """\
 
 
 def get_source_path(name):
+    """
+    Return the path to a Markdown file in the _source directory.
+    """
     return os.path.join('_source', f'{name}.md')
 
 
@@ -62,9 +66,11 @@ def write_file(text, path):
 
 
 def read_source_file(name):
+    """
+    Read a Markdown file in the _source directory.
+    """
     path = get_source_path(name)
-    with open(path, encoding='utf-8') as f:
-        text = f.read()
+    text = read_file(path)
 
     return text
 
@@ -302,7 +308,6 @@ def render_single_page_version(sections, header_infos):
 
 
 def main():
-
     # A list of HeaderInfo objects.
     header_infos = []
     sections = []
