@@ -17,9 +17,6 @@ import os
 import re
 
 
-# Relative to the repository root.
-SOURCE_PATH = 'index.md'
-
 HEADER_PATTERN = re.compile(r'#+ ')
 
 # See make_anchor() for the purpose of this dict.
@@ -29,6 +26,16 @@ ANCHOR_TRANS = {
     '.': None,
     '&': None,
 }
+
+# These names correspond to files in the _source directory.
+SECTION_NAMES = [
+    'goals',
+    'background',
+    'facts-assumptions',
+    'recommendations',
+    'faq',
+    'glossary',
+]
 
 
 def get_source_path(name):
@@ -172,13 +179,10 @@ def parse_header_line(line):
     return level, text
 
 
-def transform_lines(lines, header_infos, first_section=None):
+def transform_lines(lines, header_infos, first_section):
     """
     This function appends to the header_infos list.
     """
-    if first_section is None:
-        first_section = 1
-
     level = 1
     coords = [first_section - 1]
     for line in lines:
@@ -234,7 +238,7 @@ def make_contents(header_infos):
     return contents
 
 
-def process_section_file(name):
+def process_section_file(name, header_infos, first_section):
     path = get_source_path(name)
     text = read_file(path)
 
@@ -243,26 +247,31 @@ def process_section_file(name):
     # Normalize to at most one empty line in a row.
     body = recursive_replace(text, '\n\n\n', '\n\n')
 
-    # A list of HeaderInfo objects.
-    header_infos = []
     lines = body.splitlines()
-    lines = list(transform_lines(lines, header_infos))
+    lines = list(transform_lines(lines, header_infos, first_section))
     body = lines_to_text(lines)
 
     write_file(body, path)
 
-    return body, header_infos
+    return body
 
 
 def main():
     intro = read_source_file('intro')
     reference_links = read_source_file('reference-links')
 
-    body, header_infos = process_section_file('body')
+    # A list of HeaderInfo objects.
+    header_infos = []
+    sections = []
+
+    for section_number, name in enumerate(SECTION_NAMES, start=1):
+        section = process_section_file(name, header_infos, section_number)
+        sections.append(section)
 
     contents = make_contents(header_infos)
 
-    text = '\n\n'.join((intro, contents, body, reference_links))
+    sections = [intro, contents] + sections + [reference_links]
+    text = '\n\n'.join(sections)
 
     write_file(text, 'index.md')
 

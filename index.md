@@ -780,9 +780,6 @@ drafting this document.
 2. The voting system should not require counting the votes on ballots by
    hand (not including hand-counting for audit or recount purposes).
 
-[directors-report-march-2017-local]: files/SF_Elections_March_2017_Director_Report.pdf
-[directors-report-march-2017-original]: http://sfgov.org/electionscommission/sites/default/files/Documents/meetings/2017/2017-03-15-commission/March%202017%20Director%20Report.pdf
-
 
 ## 4. Recommendations
 
@@ -1574,7 +1571,7 @@ This section covers topics related to open source.
 
 ## 5. FAQ
 
-**6.1. Is open-source software more or less secure than proprietary
+**1. Is open-source software more or less secure than proprietary
 software?**
 
 Independent studies have shown that, in general, open-source software is
@@ -1600,12 +1597,12 @@ Open source is already heavily used and relied upon throughout the world for
 security-critical applications. For example, much of the code that allows
 the secure transmission of information over the internet is open source.
 
-**6.2. How can members of the public be sure that the open-source code is
+**2. How can members of the public be sure that the open-source code is
 what is actually running on the machine?**
 
 [TODO]
 
-**6.3. How much of the code must be open source for the voting system to
+**3. How much of the code must be open source for the voting system to
 be considered open source?**
 
 
@@ -1705,6 +1702,8 @@ be considered open source?**
 [dfm-contract-appendix-c]: files/dfm-contract/DFM_Contract_Appendix_C_Maintenance.pdf
 [dfm-contract-appendix-d]: files/dfm-contract/DFM_Contract_Appendix_D_Fee_Schedule.pdf
 [dfm-contract-appendix-e]: files/dfm-contract/DFM_Contract_Appendix_E_Hardware_Specs.pdf
+[directors-report-march-2017-local]: files/SF_Elections_March_2017_Director_Report.pdf
+[directors-report-march-2017-original]: http://sfgov.org/electionscommission/sites/default/files/Documents/meetings/2017/2017-03-15-commission/March%202017%20Director%20Report.pdf
 [dominion-costs-2008]: files/Dominion_System_Costs_2008_Jerdonek.pdf
 [eac]: https://www.eac.gov/
 [eac-vvsg]: https://www.eac.gov/voting-equipment/voluntary-voting-system-guidelines/
