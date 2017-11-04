@@ -38,7 +38,6 @@ SECTION_NAMES = [
     'glossary',
 ]
 
-
 TOC_LINK = """\
 * [Introduction & Table of Contents](index) (for multi-page version)"""
 
@@ -118,7 +117,8 @@ class HeaderInfo:
             For example, (2, 3, 1) represents section 2.3.1.
           title: the section title that should follow the section number in
             the rendered text.
-          page: the name of the source page containing the header.
+          page: the name of the source Markdown file containing the header
+            (e.g. "background" for "background.md").
         """
         self.coords = coords
         self.page = page
@@ -257,6 +257,16 @@ def make_contents(header_infos, page_name=None):
 
 
 def process_section_file(page_name, header_infos, first_section):
+    """
+    Parse and fix the section numbers in a source Markdown file.
+
+    Args:
+      page_name: the name of the page (e.g. "background" for "background.md").
+      header_infos: a list of HeaderInfo objects to which this function
+        will add the headers it finds in the source file.
+      first_section: an integer representing the first section appearing
+        in the file.
+    """
     path = get_source_path(page_name)
     text = read_file(path)
 
@@ -313,7 +323,7 @@ def main():
     sections = []
 
     for section_number, name in enumerate(SECTION_NAMES, start=1):
-        section = process_section_file(name, header_infos, section_number)
+        section = process_section_file(name, header_infos, first_section=section_number)
         sections.append(section)
 
         render_section_page(name, section)
