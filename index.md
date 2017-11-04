@@ -1185,8 +1185,9 @@ This section covers topics related to open source.
   programming language. For programming languages, any OSI-approved license
   should be okay. The programming language itself need not be copyleft.
 
-* The software "stack" should be open source as much as possible, including
-  things like the operating system, database (if any), web server, etc.
+* The aggregate system (including the infrastructure, stack, and services)
+  should be open source. This includes but is not limited to things like
+  the operating system, database, web server, etc, if present.
 
 * In addition to the software being open source, project documentation
   should be openly licensed. This includes things like design documents,
@@ -1267,9 +1268,10 @@ This section covers topics related to open source.
 
 ### 5.18. Hardware maintenance
 
-* The City should prefer professional, commercial support for the operating
-  systems the software is running on (even if the operating system is open
-  source) over "in-house" maintenance. This will make it easier, for example,
+* The City should prefer professional, commercial support for
+  maintaining the aggregate system (including the operating system, stack,
+  and software services, etc.) over “in-house“ maintenance -- even though
+  the components are open source. This will make it easier, for example,
   to ensure that security patches are applied on a timely basis. An example
   of such a provider is [Red Hat](https://www.redhat.com).
 
