@@ -21,20 +21,24 @@ The `git submodule` command is present because the repository uses a Git
 recommendations (e.g. PDF's).
 
 
-## Previewing Locally
+## System Setup
 
-You can preview the repository (including any changes you are working on) on
-your local machine through your browser using the command-line tool
-[Jekyll][jekyll-github], which we describe below. Jekyll is what GitHub uses
-to render [GitHub Pages](https://pages.github.com/).
+Previewing the files in your browser requires (1) having a recent version
+of [Python](https://www.python.org/) to _build_ the final Markdown files,
+and (2) using [Jekyll][jekyll-github] to _render_ those Markdown files for
+viewing in your browser.
 
-The repository is configured in the [`_config.yml`](_config.yml) file to use
-GitHub's ["slate"](https://github.com/pages-themes/slate) theme locally. This
-theme was chosen because it is very similar to the theme of OSVTAC's site,
-which OSVTAC uses to display these recommendations.
+We explain how to install these two things below.
 
 
-### Setup
+### Python
+
+You must have Python 3.6 or greater installed to run the build script.
+Instructions for installing Python can be found
+[here](https://www.python.org/downloads/).
+
+
+### Ruby & Jekyll
 
 Running Jekyll requires [Ruby][ruby], so first install a current version of
 Ruby. As of August 2017, the latest stable version of Ruby was 2.4.1.
@@ -66,10 +70,34 @@ dependencies), using the version numbers specified in
 [`Gemfile.lock`](Gemfile.lock).
 
 
-### Running Locally
+## Building the Markdown Files
 
-To run and preview the site locally, run the following from the
-repo root:
+From the repository root:
+
+    $ python prep.py
+
+This will read the Markdown files in the `_source` directory of the
+repository and generate new Markdown files in the top-level directory
+of the repository.
+
+**Running the script above also rewrites the Markdown files in the `_source`
+directory with new section numbers, so you should commit your changes
+locally before running the script.**
+
+
+## Previewing Locally
+
+After running the build script above, you can use the [Jekyll][jekyll-github]
+command-line tool and preview your changes locally in your browser.  Jekyll
+is what GitHub uses to render [GitHub Pages](https://pages.github.com/).
+We describe more on this below.
+
+The repository is configured in the [`_config.yml`](_config.yml) file to use
+GitHub's ["slate"](https://github.com/pages-themes/slate) theme locally. This
+theme was chosen because it is very similar to the theme of OSVTAC's site,
+which OSVTAC uses to display these recommendations.
+
+To run and preview the site locally, run the following from the repo root:
 
     $ bundle exec jekyll serve
 
@@ -84,10 +112,11 @@ Files in the repository are written in [Markdown][markdown].
 
 You should group unrelated changes separately in different branches.
 
-Also, do not modify the table of contents in your PR or try to update or fix
-the section numbering if your changes affect the section numbering.  If your
-PR is merged, the section numbers and table of contents will be updated
-automatically using a script.
+When proposing changes, you should **only modify the files in the `_source`
+directory**.  Moreover, do not attempt to update or fix the section numbers
+if your changes affect the section numbering.  If your PR is merged, the
+section numbers and table of contents will be updated automatically using
+the `prep.py` script.
 
 
 ## Suggesting Changes
