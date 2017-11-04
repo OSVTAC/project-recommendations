@@ -1173,7 +1173,7 @@ This section covers topics related to open source.
   an OSI-approved license, but need not be copyleft. If modifications to
   third-party code are developed, and the original third-party code has
   a different license than the main software's license, the modifications
-  should be dual-licensed under both licenses.
+  should be dual-licensed under both licenses, if possible.
 
 * In addition to the software being open source, project documentation
   should be openly licensed. This includes things like design documents,
