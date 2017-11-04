@@ -33,7 +33,7 @@ page][osvtac-about-recs] of the committee's website.
   * [2.2. Voting System](#22-voting-system)
   * [2.3. Other Voting System Projects](#23-other-voting-system-projects)
   * [2.4. Resources](#24-resources)
-* [3. Facts & Assumptions](#3-facts-&-assumptions)
+* [3. Facts & Assumptions](#3-facts--assumptions)
   * [3.1. Facts](#31-facts)
   * [3.2. Assumptions](#32-assumptions)
 * [4. Recommendations](#4-recommendations)
