@@ -641,7 +641,7 @@ This section lists some of the requirements the system should satisfy.
 
   Another example is an application to adjudicate ballots. The code for
   automatically interpreting the digital ballot picture could be separated
-  out as its own library. Indeed, this corresponds to the Ballot Image
+  out as its own library. Indeed, this corresponds to the Ballot Picture
   Interpreter software component.
 
   [TODO: add a comment about the vendor providing a UI shim to support
