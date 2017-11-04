@@ -976,6 +976,17 @@ The following are some key decisions about requirements that need to be made
 at some point when designing and developing the voting system.
 
 
+##### 5.3.1.1. Vote Centers
+
+California [SB 450][bill-sb-450-2015] ("Elections: vote by mail voting and
+mail ballot elections") authorizes counties to conduct elections using vote
+centers. The Department of Elections should develop a sense as soon as
+possible of the likelihood of using vote centers because that could affect
+the requirements and design of the system. Making this decision earlier could
+decrease costs since the design and development wouldn’t have to cover
+multiple scenarios.
+
+
 ##### 5.3.1.1. Pre-printed versus on-demand ballots, including how selections are marked
 
 For in-person voting, the question of pre-printed ballots versus on-demand
@@ -1100,21 +1111,30 @@ from the beginning?
 
 ### 5.4. Requirements
 
-This section relates to specific requirements rather than the process of
-gathering or articulating requirements.
+This section lists some of the requirements the system should satisfy.
 
-* California [SB 450][bill-sb-450-2015] ("Elections: vote by mail voting and
-  mail ballot elections") authorizes counties to conduct elections using vote
-  centers. The Department of Elections should develop a sense as soon as
-  possible of the likelihood of using vote centers because that could affect
-  the requirements and design of the system. Making this decision earlier
-  could decrease costs since the design and development wouldn’t have to
-  cover multiple scenarios.
 
-* [TODO: think about ballot-marking device vs. manually marked ballots, and
-  ballot on-demand vs. pre-printed ballots.]
+### 5.4.1. Accessibility
 
-* [TODO: should end-to-end verifiability be a requirement?]
+* In addition to an audio component and touchscreen, the voting system should
+  support accessible features including, but not limited to: sip and puff
+  input, a keyboard for write-in votes, voice activation, synchronized audio
+  and video, joystick input, Tecla switch, and tactile buttons. These
+  [two letters][disability-rights-ca-letters] from Mr. Fred Nisen
+  (Supervising Attorney for Voting Rights, Disability Rights California)
+  provide more detail.
+
+
+### 5.4.2. Other
+
+* [TODO: should we recommend (1) supporting manually marked ballots in the
+  polling place, or (2) requiring the use of a computer ballot-marking and/or
+  ballot-printing device?]
+
+* [TODO: should we recommend (1) pre-printed ballots at polling places, or
+  (2) printing ballots on-demand?]
+
+* [TODO: should we recommend for or against end-to-end verifiability?]
 
 
 ### 5.5. Project Management
@@ -1178,6 +1198,10 @@ This section covers topics related to open source.
   should be dual-licensed under both licenses, if possible.
   (See also item (e) of the third "resolved" paragraph of the Commission's
   [Open Source Voting Resolution][commission-resolution-local].)
+
+* The aggregate system (including the infrastructure, stack, and services)
+  should be open source. This includes but is not limited to things like
+  the operating system, database, web server, etc, if present.
 
 * In addition to the software being open source, project documentation
   should be openly licensed. This includes things like design documents,
@@ -1262,7 +1286,13 @@ This section covers topics related to open source.
 
 ### 5.18. Hardware maintenance
 
-[TODO]
+* The City should prefer professional, commercial support for
+  maintaining the aggregate system (including the operating system, stack,
+  and software services, etc.) over “in-house“ maintenance -- even though
+  the components are open source. This will make it easier, for example,
+  to ensure that security patches are applied on a timely basis. An example
+  of such a provider is [Red Hat](https://www.redhat.com).
+
 
 [18f-modular-contracting]: https://modularcontracting.18f.gov/
 [bill-ab-2252-2015]: https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201520160AB2252
@@ -1280,6 +1310,7 @@ This section covers topics related to open source.
 [commission-resolution-local]: files/SF_Elections_Comm_Open_Source_Voting_Res.pdf
 [commission-resolutions]: http://sfgov.org/electionscommission/motions-and-resolutions
 [coit]: http://sfcoit.org/
+[disability-rights-ca-letters]: files/Disability_Rights_Letters_Nisen.pdf
 [eac]: https://www.eac.gov/
 [eac-vvsg]: https://www.eac.gov/voting-equipment/voluntary-voting-system-guidelines/
 [elections-commission]: http://sfgov.org/electionscommission
