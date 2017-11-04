@@ -157,6 +157,23 @@ class HeaderInfo:
         return line
 
     def make_contents_line(self, page_name=None):
+        """
+        Makes a table of contents line for the current header.
+
+        Args:
+          page_name: the name of the page to which the contents entry
+            should link.  Defaults to the name of the page that originally
+            contained the header.
+
+        An example with page_name None could be--
+
+          "  * [2.2. Voting System](background#22-voting-system)"
+
+        With page_name '', this same example would be--
+
+          "  * [2.2. Voting System](#22-voting-system)"
+
+        """
         if page_name is None:
             page_name = self.page
 
@@ -311,6 +328,8 @@ def render_index_page(header_infos):
 
 
 def render_single_page_version(sections, header_infos):
+    # Pass '' for the page_name so that section links will point to
+    # the same page that is being viewed.
     contents = make_contents(header_infos, page_name='')
     sections = [TOC_LINK, contents] + sections
 
