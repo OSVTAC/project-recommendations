@@ -74,7 +74,7 @@ dependencies), using the version numbers specified in
 
 From the repository root:
 
-    $ python prep.py
+    $ python _scripts/prep.py
 
 This will read the Markdown files in the `_source` directory of the
 repository and generate new Markdown files in the top-level directory

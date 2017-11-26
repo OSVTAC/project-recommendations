@@ -8,9 +8,10 @@ Usage:
 
 From the repository root, run:
 
-    $ python prep.py
+    $ python _scripts/prep.py
 
-The script should be run with Python 3.6 or newer.
+The script should be run with Python 3.6 or newer (because it uses
+f-strings, for example).
 """
 
 import os

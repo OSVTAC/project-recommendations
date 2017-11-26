@@ -7,4 +7,3 @@ exclude:
  - CONTRIBUTE.md
  - README.md
  - Gemfile
- - prep.py
