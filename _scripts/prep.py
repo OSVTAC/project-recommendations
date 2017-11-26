@@ -1,8 +1,12 @@
 """
-Script to normalize and prepare the Markdown files.
+Script to normalize and prepare the Markdown files for publication.
 
-The main usefulness of this script is to renumber the headers and
-auto-create the table of contents.
+Some of the things this script does are--
+
+1. generate the correct section numbers for each section,
+2. generate the table of contents with hyperlinks to each section, and
+3. generate both "single-page" and "multi-page" versions of the
+   document.
 
 Usage:
 
