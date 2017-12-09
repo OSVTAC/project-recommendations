@@ -330,39 +330,43 @@ def process_section_file(page_name, header_infos, first_section):
     return body
 
 
-def write_rendered_file(sections, name):
+def write_rendered_file(name, intro_sections, main_sections):
     """
     Args:
-      sections: an iterable of strings, one for each section.  Each section
-        text should end in a single trailing newline.
+      intro_sections, main_sections: the intro sections and main sections,
+        respectively.  Each value should be an iterable of strings, one for
+        each section.  Moreover, each string section should end in a single
+        trailing newline.
+      name: the base portion of the file name, for example "index" for
+        index.md.
     """
     page_intro = read_source_file('page-intro')
     reference_links = read_source_file('reference-links')
 
-    sections = [page_intro] + sections + [reference_links]
+    sections = [page_intro, *intro_sections, *main_sections, reference_links]
     text = '\n\n'.join(sections)
 
     write_file(text, f'{name}.md')
 
 
-def render_section_page(name, text):
-    write_rendered_file([TOC_LINK, SINGLE_PAGE_LINK, text], name)
+def render_section_page(name, body_text):
+    write_rendered_file(name, [TOC_LINK, SINGLE_PAGE_LINK], [body_text])
 
 
 def render_index_page(header_infos):
     intro = read_source_file('intro')
     contents = make_contents(header_infos)
 
-    write_rendered_file([intro, SINGLE_PAGE_LINK, contents], 'index')
+    write_rendered_file('index', [intro, SINGLE_PAGE_LINK], [contents])
 
 
 def render_single_page_version(sections, header_infos):
     # Pass '' for the page_name so that section links will point to
     # the same page that is being viewed.
     contents = make_contents(header_infos, page_name='')
-    sections = [TOC_LINK, contents] + sections
+    main_sections = [contents] + sections
 
-    write_rendered_file(sections, 'single-page')
+    write_rendered_file('single-page', [TOC_LINK], main_sections)
 
 
 def main():
