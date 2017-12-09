@@ -74,6 +74,17 @@ SINGLE_PAGE_LINK = """\
 * [Single-page version](single-page) (long, can be used for printing)"""
 
 
+# This html was copied from https://creativecommons.org in the instructions
+# for using CC BY-SA 4.0 for your own material.
+CC_LICENSE = """\
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+</a><br />This work is licensed under a
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+Commons Attribution-ShareAlike 4.0 International License</a>.
+"""
+
+
 def get_source_path(name):
     """
     Return the path to a Markdown file in the _source directory.
@@ -343,7 +354,14 @@ def write_rendered_file(name, intro_sections, main_sections):
     page_intro = read_source_file('page-intro')
     reference_links = read_source_file('reference-links')
 
-    sections = [page_intro, *intro_sections, *main_sections, reference_links]
+    sections = [
+        page_intro,
+        *intro_sections,
+        CC_LICENSE,
+        *main_sections,
+        reference_links,
+        CC_LICENSE,
+    ]
     text = '\n\n'.join(sections)
 
     write_file(text, f'{name}.md')
