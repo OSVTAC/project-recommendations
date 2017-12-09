@@ -341,53 +341,58 @@ def process_section_file(page_name, header_infos, first_section):
     return body
 
 
-def write_rendered_file(name, intro_sections, main_sections):
-    """
-    Args:
-      intro_sections, main_sections: the intro sections and main sections,
-        respectively.  Each value should be an iterable of strings, one for
-        each section.  Moreover, each string section should end in a single
-        trailing newline.
-      name: the base portion of the file name, for example "index" for
-        index.md.
-    """
-    page_intro = read_source_file('page-intro')
-    reference_links = read_source_file('reference-links')
+class Renderer:
 
-    sections = [
-        page_intro,
-        *intro_sections,
-        CC_LICENSE,
-        *main_sections,
-        reference_links,
-        CC_LICENSE,
-    ]
-    text = '\n\n'.join(sections)
+    def __init__(self, page_intro, reference_links):
+        self.license_text = CC_LICENSE
+        self.page_intro = page_intro
+        self.reference_links = reference_links
 
-    write_file(text, f'{name}.md')
+    def write_rendered_file(self, name, intro_sections, main_sections):
+        """
+        Args:
+          intro_sections, main_sections: the intro sections and main
+            sections, respectively.  Each value should be an iterable of
+            strings, one for each section.  Moreover, each string section
+            should end in a single trailing newline.
+          name: the base portion of the file name, for example "index" for
+            index.md.
+        """
+        sections = [
+            self.page_intro,
+            *intro_sections,
+            self.license_text,
+            *main_sections,
+            self.reference_links,
+            self.license_text,
+        ]
+        text = '\n\n'.join(sections)
 
+        write_file(text, f'{name}.md')
 
-def render_section_page(name, body_text):
-    write_rendered_file(name, [TOC_LINK, SINGLE_PAGE_LINK], [body_text])
+    def render_index_page(self, header_infos):
+        intro = read_source_file('intro')
+        contents = make_contents(header_infos)
 
+        self.write_rendered_file('index', [intro, SINGLE_PAGE_LINK], [contents])
 
-def render_index_page(header_infos):
-    intro = read_source_file('intro')
-    contents = make_contents(header_infos)
+    def render_section_page(self, name, body_text):
+        self.write_rendered_file(name, [TOC_LINK, SINGLE_PAGE_LINK], [body_text])
 
-    write_rendered_file('index', [intro, SINGLE_PAGE_LINK], [contents])
+    def render_single_page_version(self, sections, header_infos):
+        # Pass '' for the page_name so that section links will point to
+        # the same page that is being viewed.
+        contents = make_contents(header_infos, page_name='')
+        main_sections = [contents] + sections
 
-
-def render_single_page_version(sections, header_infos):
-    # Pass '' for the page_name so that section links will point to
-    # the same page that is being viewed.
-    contents = make_contents(header_infos, page_name='')
-    main_sections = [contents] + sections
-
-    write_rendered_file('single-page', [TOC_LINK], main_sections)
+        self.write_rendered_file('single-page', [TOC_LINK], main_sections)
 
 
 def main():
+    page_intro = read_source_file('page-intro')
+    reference_links = read_source_file('reference-links')
+    renderer = Renderer(page_intro, reference_links)
+
     # A list of HeaderInfo objects.
     header_infos = []
     sections = []
@@ -396,10 +401,10 @@ def main():
         section = process_section_file(name, header_infos, first_section=section_number)
         sections.append(section)
 
-        render_section_page(name, section)
+        renderer.render_section_page(name, section)
 
-    render_index_page(header_infos)
-    render_single_page_version(sections, header_infos)
+    renderer.render_index_page(header_infos)
+    renderer.render_single_page_version(sections, header_infos)
 
 
 if __name__ == '__main__':
