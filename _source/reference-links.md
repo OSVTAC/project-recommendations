@@ -34,6 +34,7 @@
 [github]: https://github.com/
 [ict-plan-2008]: files/SF_ICT_Plan_2018-22.pdf
 [ieee-1622]: http://grouper.ieee.org/groups/1622/
+[la-vsap-application-tally]: files/la-vsap/LA_Application_VSAP_Tally_1.0_2017-09-19.pdf
 [la-vsap-rfi]: files/la-vsap/LA_RFI_20170524.pdf
 [la-vsap-rfp-phase-1]: files/la-vsap/LA_RFP_20170918.pdf
 [la-vsap]: http://vsap.lavote.net/

@@ -417,7 +417,8 @@ ballots. Similar to the ECBMS, RR/CC is currently developing the software
 required for the new Tally System in anticipation of a pilot in June 2018.
 
 Los Angeles County submitted its VSAP Tally Version 1.0 to the California
-Secretary of State on September 19, 2017 for certification.
+Secretary of State for certification on September 19, 2017.  See their
+application for approval [here][la-vsap-application-tally] (PDF, 21 pages).
 
 However, even though the County is developing the Tally System and submitted
 it for certification, as
