@@ -20,6 +20,13 @@ opening a pull request [here][recommendations-pulls]. Information on
 preparing a pull request can be found in the repository's
 [`CONTRIBUTE`](CONTRIBUTE.md) file.
 
+At its November 2017 meeting, the committee voted that its recommendations
+document be licensed under a [Creative Commons Attribution-ShareAlike 4.0
+International License](http://creativecommons.org/licenses/by-sa/4.0/)
+(CC BY-SA 4.0). Thus, individuals suggesting specific wording must agree
+to their contributions being licensed under CC BY-SA 4.0 before the
+committee can include it.
+
 The committee may discuss and/or vote on your suggestions at a future
 meeting. **To be considered for the next meeting, please submit suggestions
 at least 10 days before the date of the next meeting.** This time is needed
