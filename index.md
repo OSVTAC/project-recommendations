@@ -30,6 +30,8 @@ page][osvtac-about-recs] of the committee's website.
 </a><br />This work is licensed under a
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
 Commons Attribution-ShareAlike 4.0 International License</a>.
+For copyright and attribution information for this work, see
+[this page](copyright).
 
 
 ## Contents
@@ -156,3 +158,5 @@ Commons Attribution-ShareAlike 4.0 International License</a>.
 </a><br />This work is licensed under a
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
 Commons Attribution-ShareAlike 4.0 International License</a>.
+For copyright and attribution information for this work, see
+[this page](copyright).
