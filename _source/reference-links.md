@@ -59,7 +59,6 @@
 [prime-iii-repo]: https://github.com/HXRL/Prime-III
 [prime-iii]: http://www.primevotingsystem.com/
 [proposed-budget-2016]: files/SF_Mayor_Proposed_Budget_2016-18.pdf
-[rfp-business-case-page]: http://mission.sfgov.org/OCABidPublication/BidDetail.aspx?K=12141
 [rfp-business-case-pdf]: files/SF_Business_Case_RFP_FINAL.pdf
 [sf-digital-services]: https://digitalservices.sfgov.org/
 [slalom-contract-appendix-a]: files/slalom/contract/Business_Case_Appendix_A.pdf

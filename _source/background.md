@@ -152,7 +152,8 @@ voting system project.” The Commission voted on the Committee's initial
 membership at its May meeting. The Committee was fully constituted on June 2,
 2017, when the appointment of the fifth member was made final.
 
-In May 2017, the Department of Elections [issued an RFP][rfp-business-case-page]
+In May 2017, the Department of Elections [issued an
+RFP][rfp-business-case-pdf] (REG RFP #2017‑01)
 for a contractor to “prepare a business case for developing an accessible,
 open source voting system.” The RFP would use a portion of the $300,000
 budgeted in August 2016. In September 2017, Slalom was selected as the
@@ -501,11 +502,10 @@ useful for the project.
 
 #### 2.4.1. San Francisco
 
-   * The San Francisco Department of Elections' RFP for the planning phase:
-     [REG RFP #2017‑01][rfp-business-case-page] ("Preparing a Business Case
-     for Developing an Accessible, Open Source Voting System"). In
-     particular, see the list of links in Section I.A. starting on page 5 of
-     the [RFP PDF][rfp-business-case-pdf].
+   * The San Francisco Department of Elections' [planning phase
+     RFP][rfp-business-case-pdf] (REG RFP #2017‑01, "Preparing a Business
+     Case for Developing an Accessible, Open Source Voting System"). In
+     particular, see the list of links in Section I.A. starting on page 5.
    * [San Francisco Digital Services Team][sf-digital-services]
 
 
