@@ -42,8 +42,12 @@ f-strings, for example).
 #   Christopher Jerdonek <chris.jerdonek@gmail.com>
 #
 
+import logging
 import os
 import re
+
+
+_log = logging.getLogger(__name__)
 
 
 HEADER_PATTERN = re.compile(r'#+ ')
@@ -100,8 +104,19 @@ def read_file(path):
 
 
 def write_file(text, path):
+    _log.info(f'writing file: {path}')
     with open(path, 'w', encoding='utf-8') as f:
         f.write(text)
+
+
+def write_sections(sections, name):
+    """
+    Args:
+      name: the base portion of the file name, for example "index" for
+        index.md.
+    """
+    text = '\n\n'.join(sections)
+    write_file(text, f'{name}.md')
 
 
 def read_source_file(name):
@@ -343,6 +358,10 @@ def process_section_file(page_name, header_infos, first_section):
 
 class Renderer:
 
+    """
+    Responsible for writing the top-level Markdown files.
+    """
+
     def __init__(self, page_intro, reference_links):
         self.license_text = CC_LICENSE
         self.page_intro = page_intro
@@ -366,9 +385,7 @@ class Renderer:
             self.reference_links,
             self.license_text,
         ]
-        text = '\n\n'.join(sections)
-
-        write_file(text, f'{name}.md')
+        write_sections(sections, name=name)
 
     def render_index_page(self, header_infos):
         intro = read_source_file('intro')
@@ -387,8 +404,19 @@ class Renderer:
 
         self.write_rendered_file('single-page', [TOC_LINK], main_sections)
 
+    def render_copyright_page(self):
+        copyright_text = read_source_file('copyright')
+
+        sections = [
+            self.page_intro,
+            copyright_text,
+        ]
+        write_sections(sections, name='copyright')
+
 
 def main():
+    logging.basicConfig(level=logging.INFO)
+
     page_intro = read_source_file('page-intro')
     reference_links = read_source_file('reference-links')
     renderer = Renderer(page_intro, reference_links)
@@ -405,6 +433,7 @@ def main():
 
     renderer.render_index_page(header_infos)
     renderer.render_single_page_version(sections, header_infos)
+    renderer.render_copyright_page()
 
 
 if __name__ == '__main__':
