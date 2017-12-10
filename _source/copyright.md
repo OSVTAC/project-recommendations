@@ -1,13 +1,12 @@
 This page contains the copyright and attribution information for
 the Open Source Voting System Technical Advisory Committee's (OSVTAC)
 [Open Source Voting System Project Recommendations](index).
+The recommendations document is licensed under a [Creative Commons
+Attribution-ShareAlike 4.0 International
+License](http://creativecommons.org/licenses/by-sa/4.0/).
 
-![Creative Commons
-License](http://creativecommons.org/licenses/by-sa/4.0/
+![Creative Commons License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png
 "Creative Commons Attribution-ShareAlike 4.0 International License")
-
-This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0
-International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
 
 ## Contributors

@@ -78,17 +78,6 @@ SINGLE_PAGE_LINK = """\
 * [Single-page version](single-page) (long, can be used for printing)"""
 
 
-# This html was copied from https://creativecommons.org in the instructions
-# for using CC BY-SA 4.0 for your own material.
-CC_LICENSE = """\
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
-</a><br />This work is licensed under a
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-Commons Attribution-ShareAlike 4.0 International License</a>.
-"""
-
-
 def get_source_path(name):
     """
     Return the path to a Markdown file in the _source directory.
@@ -362,8 +351,8 @@ class Renderer:
     Responsible for writing the top-level Markdown files.
     """
 
-    def __init__(self, page_intro, reference_links):
-        self.license_text = CC_LICENSE
+    def __init__(self, page_intro, reference_links, license_info):
+        self.license_info = license_info
         self.page_intro = page_intro
         self.reference_links = reference_links
 
@@ -380,10 +369,10 @@ class Renderer:
         sections = [
             self.page_intro,
             *intro_sections,
-            self.license_text,
+            self.license_info,
             *main_sections,
             self.reference_links,
-            self.license_text,
+            self.license_info,
         ]
         write_sections(sections, name=name)
 
@@ -417,9 +406,14 @@ class Renderer:
 def main():
     logging.basicConfig(level=logging.INFO)
 
-    page_intro = read_source_file('page-intro')
+    page_intro = read_source_file('snippets/page-intro')
     reference_links = read_source_file('reference-links')
-    renderer = Renderer(page_intro, reference_links)
+    # The html in the following file was copied from the instructions on
+    # https://creativecommons.org for using CC BY-SA 4.0 for your own
+    # material.
+    license_info = read_source_file('snippets/license-info')
+
+    renderer = Renderer(page_intro, reference_links, license_info=license_info)
 
     # A list of HeaderInfo objects.
     header_infos = []
