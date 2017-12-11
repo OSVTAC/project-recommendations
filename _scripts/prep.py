@@ -42,8 +42,12 @@ f-strings, for example).
 #   Christopher Jerdonek <chris.jerdonek@gmail.com>
 #
 
+import logging
 import os
 import re
+
+
+_log = logging.getLogger(__name__)
 
 
 HEADER_PATTERN = re.compile(r'#+ ')
@@ -89,8 +93,19 @@ def read_file(path):
 
 
 def write_file(text, path):
+    _log.info(f'writing file: {path}')
     with open(path, 'w', encoding='utf-8') as f:
         f.write(text)
+
+
+def write_sections(sections, name):
+    """
+    Args:
+      name: the base portion of the file name, for example "index" for
+        index.md.
+    """
+    text = '\n\n'.join(sections)
+    write_file(text, f'{name}.md')
 
 
 def read_source_file(name):
@@ -330,42 +345,76 @@ def process_section_file(page_name, header_infos, first_section):
     return body
 
 
-def write_rendered_file(sections, name):
+class Renderer:
+
     """
-    Args:
-      sections: an iterable of strings, one for each section.  Each section
-        text should end in a single trailing newline.
+    Responsible for writing the top-level Markdown files.
     """
-    page_intro = read_source_file('page-intro')
-    reference_links = read_source_file('reference-links')
 
-    sections = [page_intro] + sections + [reference_links]
-    text = '\n\n'.join(sections)
+    def __init__(self, page_intro, reference_links, license_info):
+        self.license_info = license_info
+        self.page_intro = page_intro
+        self.reference_links = reference_links
 
-    write_file(text, f'{name}.md')
+    def write_rendered_file(self, name, intro_sections, main_sections):
+        """
+        Args:
+          intro_sections, main_sections: the intro sections and main
+            sections, respectively.  Each value should be an iterable of
+            strings, one for each section.  Moreover, each string section
+            should end in a single trailing newline.
+          name: the base portion of the file name, for example "index" for
+            index.md.
+        """
+        sections = [
+            self.page_intro,
+            *intro_sections,
+            self.license_info,
+            *main_sections,
+            self.reference_links,
+            self.license_info,
+        ]
+        write_sections(sections, name=name)
 
+    def render_index_page(self, header_infos):
+        intro = read_source_file('intro')
+        contents = make_contents(header_infos)
 
-def render_section_page(name, text):
-    write_rendered_file([TOC_LINK, SINGLE_PAGE_LINK, text], name)
+        self.write_rendered_file('index', [intro, SINGLE_PAGE_LINK], [contents])
 
+    def render_section_page(self, name, body_text):
+        self.write_rendered_file(name, [TOC_LINK, SINGLE_PAGE_LINK], [body_text])
 
-def render_index_page(header_infos):
-    intro = read_source_file('intro')
-    contents = make_contents(header_infos)
+    def render_single_page_version(self, sections, header_infos):
+        # Pass '' for the page_name so that section links will point to
+        # the same page that is being viewed.
+        contents = make_contents(header_infos, page_name='')
+        main_sections = [contents] + sections
 
-    write_rendered_file([intro, SINGLE_PAGE_LINK, contents], 'index')
+        self.write_rendered_file('single-page', [TOC_LINK], main_sections)
 
+    def render_copyright_page(self):
+        copyright_text = read_source_file('copyright')
 
-def render_single_page_version(sections, header_infos):
-    # Pass '' for the page_name so that section links will point to
-    # the same page that is being viewed.
-    contents = make_contents(header_infos, page_name='')
-    sections = [TOC_LINK, contents] + sections
-
-    write_rendered_file(sections, 'single-page')
+        sections = [
+            self.page_intro,
+            copyright_text,
+        ]
+        write_sections(sections, name='copyright')
 
 
 def main():
+    logging.basicConfig(level=logging.INFO)
+
+    page_intro = read_source_file('snippets/page-intro')
+    reference_links = read_source_file('reference-links')
+    # The html in the following file was copied from the instructions on
+    # https://creativecommons.org for using CC BY-SA 4.0 for your own
+    # material.
+    license_info = read_source_file('snippets/license-info')
+
+    renderer = Renderer(page_intro, reference_links, license_info=license_info)
+
     # A list of HeaderInfo objects.
     header_infos = []
     sections = []
@@ -374,10 +423,11 @@ def main():
         section = process_section_file(name, header_infos, first_section=section_number)
         sections.append(section)
 
-        render_section_page(name, section)
+        renderer.render_section_page(name, section)
 
-    render_index_page(header_infos)
-    render_single_page_version(sections, header_infos)
+    renderer.render_index_page(header_infos)
+    renderer.render_single_page_version(sections, header_infos)
+    renderer.render_copyright_page()
 
 
 if __name__ == '__main__':
