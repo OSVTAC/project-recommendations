@@ -64,9 +64,6 @@ SECTION_NAMES = [
     'glossary',
 ]
 
-# The path to the files submodule.
-FILES_PATH = 'files'
-
 
 def get_source_path(name):
     """
