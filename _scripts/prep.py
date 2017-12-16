@@ -3,10 +3,10 @@ Script to normalize and prepare the Markdown files for publication.
 
 Some of the things this script does are--
 
-1. generate the correct section numbers for each section,
-2. generate the table of contents with hyperlinks to each section, and
-3. generate both "single-page" and "multi-page" versions of the
-   document.
+1. parse and update the section numbers of each section,
+2. read the "last-approved" date,
+3. read the sha of the "files" submodule, and
+4. report the headers and other information via stdout.
 
 Usage:
 
@@ -42,6 +42,7 @@ f-strings, for example).
 #   Christopher Jerdonek <chris.jerdonek@gmail.com>
 #
 
+import json
 import logging
 import os
 import re
@@ -52,16 +53,8 @@ _log = logging.getLogger(__name__)
 
 HEADER_PATTERN = re.compile(r'#+ ')
 
-# See make_anchor() for the purpose of this dict.
-# TODO: add more characters as needed.
-ANCHOR_TRANS = {
-    ' ': '-',
-    '.': None,
-    '&': None,
-}
-
-# These names correspond to files in the _source directory, in the
-# order they should appear in the final document.
+# The order of these names also controls the order in which the sections
+# should appear in the final document.
 SECTION_NAMES = [
     'goals',
     'background',
@@ -71,18 +64,15 @@ SECTION_NAMES = [
     'glossary',
 ]
 
-TOC_LINK = """\
-* [Introduction & Table of Contents](index) (for multi-page version)"""
-
-SINGLE_PAGE_LINK = """\
-* [Single-page version](single-page) (long, can be used for printing)"""
+# The path to the files submodule.
+FILES_PATH = 'files'
 
 
 def get_source_path(name):
     """
-    Return the path to a Markdown file in the _source directory.
+    Return the path to a Markdown file.
     """
-    return os.path.join('_source', f'{name}.md')
+    return os.path.join('pages', f'{name}.md')
 
 
 def read_file(path):
@@ -108,16 +98,6 @@ def write_sections(sections, name):
     write_file(text, f'{name}.md')
 
 
-def read_source_file(name):
-    """
-    Read a Markdown file in the _source directory.
-    """
-    path = get_source_path(name)
-    text = read_file(path)
-
-    return text
-
-
 def lines_to_text(lines):
     text = '\n'.join(lines)
     text = text.strip()
@@ -126,26 +106,6 @@ def lines_to_text(lines):
     text += '\n'
 
     return text
-
-
-def make_anchor(header_text):
-    """
-    Create and return the anchor label for a section header.
-
-    Args:
-      header_text: the text portion of a header line, which includes the
-        dotted section number and title, but not the header line prefix
-        which has the form "###".
-
-    This function was written to mimic Jekyll's / GitHub Pages'
-    auto-generation of element id's for header elements. For example,
-    "5.2. Incremental Approach" should return "52-incremental-approach".
-    """
-    anchor = header_text.lower()
-    trans = str.maketrans(ANCHOR_TRANS)
-    anchor = anchor.translate(trans)
-
-    return anchor
 
 
 class HeaderInfo:
@@ -174,6 +134,9 @@ class HeaderInfo:
     def __str__(self):
         return self.make_header_text()
 
+    def to_json(self):
+        return dict(coords=self.coords, page=self.page, title=self.title)
+
     def get_level(self):
         return len(self.coords)
 
@@ -197,37 +160,6 @@ class HeaderInfo:
         prefix = (level + 1) * '#'
 
         line = f'{prefix} {header_text}'
-
-        return line
-
-    def make_contents_line(self, page_name=None):
-        """
-        Makes a table of contents line for the current header.
-
-        Args:
-          page_name: the name of the page to which the contents entry
-            should link.  Defaults to the name of the page that originally
-            contained the header.
-
-        An example with page_name None could be--
-
-          "  * [2.2. Voting System](background#22-voting-system)"
-
-        With page_name '', this same example would be--
-
-          "  * [2.2. Voting System](#22-voting-system)"
-
-        """
-        if page_name is None:
-            page_name = self.page
-
-        level = self.get_level()
-        indent = 2 * (level - 1) * ' '
-
-        header_text = self.make_header_text()
-        anchor = make_anchor(header_text)
-
-        line = f'{indent}* [{header_text}]({page_name}#{anchor})'
 
         return line
 
@@ -296,30 +228,11 @@ def transform_lines(lines, header_infos, first_section, page_name):
         yield header_line
 
 
-def make_contents(header_infos, page_name=None):
-    """
-    Args:
-      header_infos: an iterable of HeaderInfo objects.
-    """
-    lines = ['## Contents', '']
-    for header_info in header_infos:
-        level = header_info.get_level()
-
-        # Only render the first two levels.
-        if level > 2:
-            continue
-
-        line = header_info.make_contents_line(page_name=page_name)
-        lines.append(line)
-
-    contents = lines_to_text(lines)
-
-    return contents
-
-
 def process_section_file(page_name, header_infos, first_section):
     """
     Parse and fix the section numbers in a source Markdown file.
+
+    Returns whether the file was changed.
 
     Args:
       page_name: the name of the page (e.g. "background" for "background.md").
@@ -338,96 +251,37 @@ def process_section_file(page_name, header_infos, first_section):
 
     lines = body.splitlines()
     lines = list(transform_lines(lines, header_infos, first_section, page_name=page_name))
-    body = lines_to_text(lines)
+    new_text = lines_to_text(lines)
 
-    write_file(body, path)
+    write_file(new_text, path)
 
-    return body
+    return (new_text != text)
 
 
-class Renderer:
+def read_last_approved():
+    last_approved = read_file('last-approved.txt')
+    last_approved = last_approved.strip()
 
-    """
-    Responsible for writing the top-level Markdown files.
-    """
-
-    def __init__(self, page_intro, reference_links, license_info):
-        self.license_info = license_info
-        self.page_intro = page_intro
-        self.reference_links = reference_links
-
-    def write_rendered_file(self, name, intro_sections, main_sections):
-        """
-        Args:
-          intro_sections, main_sections: the intro sections and main
-            sections, respectively.  Each value should be an iterable of
-            strings, one for each section.  Moreover, each string section
-            should end in a single trailing newline.
-          name: the base portion of the file name, for example "index" for
-            index.md.
-        """
-        sections = [
-            self.page_intro,
-            *intro_sections,
-            self.license_info,
-            *main_sections,
-            self.reference_links,
-            self.license_info,
-        ]
-        write_sections(sections, name=name)
-
-    def render_index_page(self, header_infos):
-        intro = read_source_file('intro')
-        contents = make_contents(header_infos)
-
-        self.write_rendered_file('index', [intro, SINGLE_PAGE_LINK], [contents])
-
-    def render_section_page(self, name, body_text):
-        self.write_rendered_file(name, [TOC_LINK, SINGLE_PAGE_LINK], [body_text])
-
-    def render_single_page_version(self, sections, header_infos):
-        # Pass '' for the page_name so that section links will point to
-        # the same page that is being viewed.
-        contents = make_contents(header_infos, page_name='')
-        main_sections = [contents] + sections
-
-        self.write_rendered_file('single-page', [TOC_LINK], main_sections)
-
-    def render_copyright_page(self):
-        copyright_text = read_source_file('copyright')
-
-        sections = [
-            self.page_intro,
-            copyright_text,
-        ]
-        write_sections(sections, name='copyright')
+    return last_approved
 
 
 def main():
     logging.basicConfig(level=logging.INFO)
 
-    page_intro = read_source_file('snippets/page-intro')
-    reference_links = read_source_file('reference-links')
-    # The html in the following file was copied from the instructions on
-    # https://creativecommons.org for using CC BY-SA 4.0 for your own
-    # material.
-    license_info = read_source_file('snippets/license-info')
-
-    renderer = Renderer(page_intro, reference_links, license_info=license_info)
-
     # A list of HeaderInfo objects.
     header_infos = []
-    sections = []
 
     for section_number, name in enumerate(SECTION_NAMES, start=1):
-        section = process_section_file(name, header_infos, first_section=section_number)
-        sections.append(section)
+        process_section_file(name, header_infos, first_section=section_number)
 
-        renderer.render_section_page(name, section)
+    last_approved = read_last_approved()
+    meta = dict(last_approved=last_approved, sections=SECTION_NAMES)
+    headers = [info.to_json() for info in header_infos]
 
-    renderer.render_index_page(header_infos)
-    renderer.render_single_page_version(sections, header_infos)
-    renderer.render_copyright_page()
+    # Print the data to stdout so the caller has programmatic access
+    # to the parsed header info.
+    data = dict(_meta=meta, headers=headers)
+    print(json.dumps(data, sort_keys=True, indent=4))
 
 
 if __name__ == '__main__':

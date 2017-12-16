@@ -1,10 +1,3 @@
-# Open Source Voting System Project Recommendations
-
-(Approved by OSVTAC on November 16, 2017.)
-
-Last update: December 11, 2017
-
-
 This page contains the copyright and attribution information for
 the Open Source Voting System Technical Advisory Committee's (OSVTAC)
 [Open Source Voting System Project Recommendations](index).
