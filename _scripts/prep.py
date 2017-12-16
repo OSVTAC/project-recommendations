@@ -55,6 +55,7 @@ HEADER_PATTERN = re.compile(r'#+ ')
 # The order of these names also controls the order in which the sections
 # should appear in the final document.
 SECTION_NAMES = [
+    'copyright',
     'goals',
     'background',
     'facts-assumptions',

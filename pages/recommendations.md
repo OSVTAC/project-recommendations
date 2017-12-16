@@ -1,7 +1,7 @@
-## 4. Recommendations
+## 5. Recommendations
 
 
-### 4.1. Interim Voting System
+### 5.1. Interim Voting System
 
 * The contract for the interim system (i.e. the system to be used after 2018)
   should permit all possible combinations of phasing in an open-source system
@@ -32,7 +32,7 @@
   so they don’t need to be reverse-engineered.
 
 
-### 4.2. Incremental Approach
+### 5.2. Incremental Approach
 
 To reduce project risk, complexity, and initial costs, it is important to
 have a strategy to break the open source voting system project up into
@@ -62,7 +62,7 @@ suggestions for how the Department can proceed incrementally in developing
 and deploying an open source voting system.
 
 
-#### 4.2.1. Possible First Components
+#### 5.2.1. Possible First Components
 
 The Committee suggests the following as components to start work on and
 deliver first (see the “Voting System” section for brief descriptions of
@@ -95,7 +95,7 @@ Los Angeles County's Tally System in relation to other components like their
 Ballot Marking Device.
 
 
-#### 4.2.2. Rationale
+#### 5.2.2. Rationale
 
 Below are some reasons for selecting the components above:
 
@@ -221,7 +221,7 @@ the hardware, it is a strictly simpler component than the precinct-based
 scanner.
 
 
-#### 4.2.3. Component Details
+#### 5.2.3. Component Details
 
 This section lists more details about each of the four components we
 suggested above. For each of these deliverables, we provide—
@@ -243,7 +243,7 @@ needed in advance), and
 * Other outcomes / deliverables associated with delivering the component.
 
 
-##### 4.2.3.1. Results Reporter (Software)
+##### 5.2.3.1. Results Reporter (Software)
 
 **Complexity:** Low
 
@@ -278,7 +278,7 @@ spelled out.
 proto-typing and testing.
 
 
-##### 4.2.3.2. Vote Totaler (Software)
+##### 5.2.3.2. Vote Totaler (Software)
 
 **Complexity:** Low
 
@@ -304,7 +304,7 @@ spelled out.
 proto-typing and testing.
 
 
-##### 4.2.3.3. Ballot Picture Interpreter (Software)
+##### 5.2.3.3. Ballot Picture Interpreter (Software)
 
 **Complexity:** Medium
 
@@ -351,7 +351,7 @@ spelled out.
 proto-typing and testing.
 
 
-##### 4.2.3.4. Central Ballot Scanner (Hardware & Software)
+##### 5.2.3.4. Central Ballot Scanner (Hardware & Software)
 
 **Complexity:** High
 
@@ -389,7 +389,7 @@ proto-typing and testing. Samples of ballots from past elections and/or the
 interim voting system.
 
 
-#### 4.2.4. Deployment Strategies
+#### 5.2.4. Deployment Strategies
 
 The components listed above can be deployed and used in conjunction with a
 non-open-source interim system even before a full open-source voting system
@@ -406,7 +406,7 @@ taking in the non-aggregated numeric results from the interim system, and
 then feeding the aggregate results into the results reporter.
 
 
-##### 4.2.4.1. Central Ballot Scanner Phases
+##### 5.2.4.1. Central Ballot Scanner Phases
 
 For the central ballot scanner, there are a number of options for
 incrementally phasing in an open-source version.
@@ -442,20 +442,20 @@ same way that the open-source scanners were used as a check in bullet point
 (2) above).
 
 
-### 4.3. Requirements-gathering
+### 5.3. Requirements-gathering
 
 This section contains recommendations related to gathering requirements. For
 committee recommendations of specific requirements, see the Requirements
 section below.
 
 
-#### 4.3.1. Key Decisions
+#### 5.3.1. Key Decisions
 
 The following are some key decisions about requirements that need to be made
 at some point when designing and developing the voting system.
 
 
-##### 4.3.1.1. Vote Centers
+##### 5.3.1.1. Vote Centers
 
 California [SB 450][bill-sb-450-2015] ("Elections: vote by mail voting and
 mail ballot elections") authorizes counties to conduct elections using vote
@@ -466,7 +466,7 @@ decrease costs since the design and development wouldn’t have to cover
 multiple scenarios.
 
 
-##### 4.3.1.2. Pre-printed versus on-demand ballots, including how selections are marked
+##### 5.3.1.2. Pre-printed versus on-demand ballots, including how selections are marked
 
 For in-person voting, the question of pre-printed ballots versus on-demand
 ballots, combined with how ballots are marked (for both accessible voting and
@@ -556,7 +556,7 @@ into the device. Conversely, if the accessible device prints the ballot with
 selections, fewer physical cards would be required.
 
 
-##### 4.3.1.3. Printing unique identifiers on ballots at scan-time
+##### 5.3.1.3. Printing unique identifiers on ballots at scan-time
 
 One key decision is whether a unique identifier should be printed on every
 ballot while it is being scanned.
@@ -578,7 +578,7 @@ Cons:
   another “moving part” that can break.
 
 
-##### 4.3.1.4. End-to-end verifiability
+##### 5.3.1.4. End-to-end verifiability
 
 It should be determined how much additional work would need to be done to
 make the voting process end-to-end verifiable, and whether and which designs
@@ -588,12 +588,12 @@ be incorporated later on in the process, or does it need to be incorporated
 from the beginning?
 
 
-### 4.4. Requirements
+### 5.4. Requirements
 
 This section lists some of the requirements the system should satisfy.
 
 
-#### 4.4.1. Accessibility
+#### 5.4.1. Accessibility
 
 * In addition to an audio component and touchscreen, the voting system should
   support accessible features including, but not limited to: sip and puff
@@ -604,7 +604,7 @@ This section lists some of the requirements the system should satisfy.
   provide more detail.
 
 
-#### 4.4.2. Other
+#### 5.4.2. Other
 
 * [TODO: should we recommend (1) supporting manually marked ballots in the
   polling place, or (2) requiring the use of a computer ballot-marking and/or
@@ -616,7 +616,7 @@ This section lists some of the requirements the system should satisfy.
 * [TODO: should we recommend for or against end-to-end verifiability?]
 
 
-### 4.5. Project Management
+### 5.5. Project Management
 
 * The Department should hire a staff person to be in charge of managing the
   project. The person should have experience and expertise in managing
@@ -654,7 +654,7 @@ This section lists some of the requirements the system should satisfy.
 * [TODO: provide specific recommendations around agile.]
 
 
-### 4.6. Open Source
+### 5.6. Open Source
 
 This section covers topics related to open source.
 
@@ -709,12 +709,12 @@ This section covers topics related to open source.
   [contributor license agreements][cla] (CLA’s) should be required.]
 
 
-### 4.7. Procurement
+### 5.7. Procurement
 
 [TODO]
 
 
-### 4.8. Software architecture and design
+### 5.8. Software architecture and design
 
 * When defining software components to develop, favor designs that promote
   reusing components. For example, a software library that can read a digital ballot
@@ -725,29 +725,29 @@ This section covers topics related to open source.
   in turn can reduce required time and costs.
 
 
-### 4.9. Software development
+### 5.9. Software development
 
 * The project should not depend on volunteers for the successful completion
   or security of the project. However, useful volunteer contributions should
   be encouraged and not turned away.
 
 
-### 4.10. Hardware design
+### 5.10. Hardware design
 
 [TODO]
 
 
-### 4.11. Documentation
+### 5.11. Documentation
 
 [TODO]
 
 
-### 4.12. Security
+### 5.12. Security
 
 [TODO]
 
 
-### 4.13. Testing
+### 5.13. Testing
 
 * Datasets of real election data (e.g. a couple past elections in San
   Francisco of different types) should be compiled in a structured format for
@@ -756,27 +756,27 @@ This section covers topics related to open source.
   requirements and designing the system.
 
 
-### 4.14. Certification
+### 5.14. Certification
 
 [TODO]
 
 
-### 4.15. Hardware manufacturing or assembly
+### 5.15. Hardware manufacturing or assembly
 
 [TODO]
 
 
-### 4.16. Deployment
+### 5.16. Deployment
 
 [TODO]
 
 
-### 4.17. Software maintenance
+### 5.17. Software maintenance
 
 [TODO]
 
 
-### 4.18. Hardware maintenance
+### 5.18. Hardware maintenance
 
 * The City should prefer professional, commercial support for
   maintaining the aggregate system (including the operating system, stack,

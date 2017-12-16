@@ -1,4 +1,4 @@
-## 5. FAQ
+## 6. FAQ
 
 **1. Is open-source software more or less secure than proprietary
 software?**

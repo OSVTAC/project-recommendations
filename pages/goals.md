@@ -1,4 +1,4 @@
-## 1. Goals
+## 2. Goals
 
 This section discusses the goals, scope, and priorities of this document and
 the Committee.
@@ -18,7 +18,7 @@ documentation, security, testing, certification, manufacturing, deployment,
 system maintenance, strategies for procurement, and project management.
 
 
-### 1.1. Scope
+### 2.1. Scope
 
 1. This document will limit itself to current laws that San Francisco must
   satisfy, or to changes in law that San Francisco anticipates (e.g. possibly
@@ -41,7 +41,7 @@ system maintenance, strategies for procurement, and project management.
   are pre-printed, the voting system need not be capable of printing ballots.
 
 
-### 1.2. Priorities
+### 2.2. Priorities
 
 1. This document should prioritize high-level recommendations over low-level
   recommendations.
@@ -50,7 +50,7 @@ system maintenance, strategies for procurement, and project management.
   rather than later.
 
 
-### 1.3. Non-goals
+### 2.3. Non-goals
 
 1. The Committee will not be designing or developing a voting system.
 

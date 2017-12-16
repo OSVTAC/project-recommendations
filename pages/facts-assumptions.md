@@ -1,10 +1,10 @@
-## 3. Facts & Assumptions
+## 4. Facts & Assumptions
 
 This section lists certain facts and assumptions the committee has made while
 drafting this document.
 
 
-### 3.1. Facts
+### 4.1. Facts
 
 1. The Director of Elections' [March 2017 Director's
    Report][directors-report-march-2017-original] began outlining characteristics of
@@ -28,7 +28,7 @@ drafting this document.
      source code and documentation, as they are developed;
 
 
-### 3.2. Assumptions
+### 4.2. Assumptions
 
 1. The Department of Elections does not currently have the expertise to
    conduct the day-to-day management of the development and certification of

@@ -1,4 +1,4 @@
-## 6. Glossary
+## 7. Glossary
 
 * **adjudicate**. [TODO]
 
