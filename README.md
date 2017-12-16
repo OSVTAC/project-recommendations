@@ -18,7 +18,7 @@ repository's [issue tracker][recommendations-issues]. If you are familiar
 with Git and [Markdown][markdown], you can also suggest specific wording by
 opening a pull request [here][recommendations-pulls]. Information on
 preparing a pull request can be found in the repository's
-[`CONTRIBUTE`](CONTRIBUTE.md) file.
+[`CONTRIBUTE.md`](CONTRIBUTE.md) file.
 
 At its November 2017 meeting, the committee voted that its recommendations
 document be licensed under a [Creative Commons Attribution-ShareAlike 4.0

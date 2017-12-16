@@ -44,7 +44,7 @@ You should put unrelated changes in different branches.
 Moreover, do not update or attempt to fix the section numbers if your changes
 affect the section numbering. If your PR is merged, the section numbers and
 table of contents will be updated after merging using this repository's
-`_scripts/prep.py` script.
+[`_scripts/prep.py`](_scripts/prep.py) script.
 
 
 ## Suggesting Changes

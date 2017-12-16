@@ -4,9 +4,8 @@ Script to normalize and prepare the Markdown files for publication.
 Some of the things this script does are--
 
 1. parse and update the section numbers of each section,
-2. read the "last-approved" date,
-3. read the sha of the "files" submodule, and
-4. report the headers and other information via stdout.
+2. read the "last-approved" date, and
+3. report the headers and other information via stdout.
 
 Usage:
 
@@ -18,7 +17,7 @@ The script should be run with Python 3.6 or newer (because it uses
 f-strings, for example).
 """
 
-# prep.py script to prepare Markdown files for publishing with Jekyll.
+# prep.py script to prepare the Markdown files for building.
 #
 # Copyright (C) 2017  Christopher Jerdonek
 #
