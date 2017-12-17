@@ -8,33 +8,47 @@ To do this you must be familiar with technologies like Git, GitHub,
 with these technologies, consult the [`README`](README.md) file for other
 ways of providing feedback to the committee.
 
+## Repo Organization
+
+Below is a description of how this repository is organized.
+
+* The [`pages`](pages) directory contains the document text.
+
+* The [`files`](files) directory is a [Git submodule][git-submodules] to a
+  repository containing copies of binary files that are referenced by the
+  recommendations document (e.g. PDF's):
+  <https://github.com/OSVTAC/project-recommendations-files>.
+
+* The [`_scripts`](_scripts) directory contains a Python script
+  [`prep.py`](_scripts/prep.py) for parsing the section headers, as well as
+  updating them in place (e.g. if a new section is inserted in the middle).
+  This script should only be run _after_ merging pull requests, so
+  contributors should not normally run this script. The script is licensed
+  under the GNU General Public License v3.0 or later ([SPDX][spdx-licenses]
+  identifier `GPL-3.0+`).
+
+* The [`reference-links.md`](reference-links.md) file contains all
+  "reference-style" links used throughout the recommendations. The build
+  script (which is not contained in this repository) appends this file to the
+  end of each generated Markdown file.
+
+Thus, pull requests will normally need to modify only files in the `pages`
+directory, as well as possibly the `reference-links.md` file.
+
 
 ## Previewing Locally
 
-If you would like to preview your changes locally through the browser before
-submitting them, it is recommended that you clone the
-[project-recommendations-site][repo-recommendations-site] repository and work
-on your changes as a submodule of that repository.
+If you would like to preview your changes locally before submitting them
+(e.g. to check that things are working), consult the
+[`README`][recommendations-site-repo] file of the
+`project-recommendations-site` repository. That file also contains an
+overview of how the Markdown files in this repository are built and rendered
+on the [OSVTAC website][osvtac-site], which can be seen
+[here][recommendations-site].
 
-As background, the [OSVTAC website][osvtac-site] displays OSVTAC's
-recommendations by including the project-recommendations-site repository as a
-[submodule][git-submodules] of the [OSVTAC website
-repository][repo-osvtac-site]. The project-recommendations-site repository
-contains Markdown files for displaying the recommendations. These Markdown
-files are auto-generated (aka "built") from the Markdown files in the
-project-recommendations repository, which are the "source" files.
-
-The project-recommendations-site repository contains a script for building
-the Markdown files from the source Markdown files. In addition, for
-convenience, the project-recommendations-site repository contains the
-project-recommendations repository as a submodule.
-
-Thus, to preview your changes to the recommendations locally, you can view
-the project-recommendations-site repository in your browser using
-[Jekyll][jekyll-github]. Make your changes to the project-recommendations
-submodule, and then run the build script to update the html files served
-locally by Jekyll. The `README` file in the project-recommendations-site
-repository contains detailed instructions on how to do this.
+**Note that the Markdown files checked into this repository are not
+necessarily viewable within GitHub's UI.** For example, Markdown hyperlinks
+will not necessarily display or work correctly.
 
 
 ## Organizing Your Changes
@@ -60,8 +74,8 @@ this repository for more details.
 
 [git-submodules]: https://git-scm.com/book/en/v2/Git-Tools-Submodules
 [github-pull-request]: https://help.github.com/articles/creating-a-pull-request/
-[jekyll-github]: https://jekyllrb.com/docs/github-pages/
 [markdown]: https://guides.github.com/features/mastering-markdown/
 [osvtac-site]: https://osvtac.github.io/
-[repo-osvtac-site]: https://github.com/OSVTAC/OSVTAC.github.io
-[repo-recommendations-site]: https://github.com/OSVTAC/project-recommendations-site
+[recommendations-site]: https://osvtac.github.io/recommendations/
+[recommendations-site-repo]: https://github.com/OSVTAC/project-recommendations-site
+[spdx-licenses]: https://spdx.org/licenses/
