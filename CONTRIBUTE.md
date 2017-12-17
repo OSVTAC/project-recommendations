@@ -19,8 +19,8 @@ Below is a description of how this repository is organized.
   recommendations document (e.g. PDF's):
   <https://github.com/OSVTAC/project-recommendations-files>.
 
-* The [`_scripts`](_scripts) directory contains a Python script
-  [`prep.py`](_scripts/prep.py) for parsing the section headers, as well as
+* The [`scripts`](scripts) directory contains a Python script
+  [`prep.py`](scripts/prep.py) for parsing the section headers, as well as
   updating them in place (e.g. if a new section is inserted in the middle).
   This script should only be run _after_ merging pull requests, so
   contributors should not normally run this script. The script is licensed
@@ -60,7 +60,7 @@ You should put unrelated changes in different branches.
 Moreover, do not update or attempt to fix the section numbers if your changes
 affect the section numbering. If your PR is merged, the section numbers and
 table of contents will be updated after merging using this repository's
-[`_scripts/prep.py`](_scripts/prep.py) script.
+[`scripts/prep.py`](scripts/prep.py) script.
 
 
 ## Suggesting Changes

@@ -11,7 +11,7 @@ Usage:
 
 From the repository root, run:
 
-    $ python _scripts/prep.py
+    $ python scripts/prep.py
 
 The script should be run with Python 3.6 or newer (because it uses
 f-strings, for example).
