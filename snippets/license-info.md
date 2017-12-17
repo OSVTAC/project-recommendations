@@ -4,4 +4,5 @@
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
 Commons Attribution-ShareAlike 4.0 International License</a>.
 For copyright and attribution information for this work, see
-[this section](copyright).
+[this section](copyright). The source files for the text can be found on
+GitHub [here](https://github.com/OSVTAC/project-recommendations).
