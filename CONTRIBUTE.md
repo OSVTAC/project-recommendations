@@ -14,8 +14,8 @@ Below is a description of how this repository is organized.
 
 * The [`pages`](pages) directory contains the document text.
 
-* The [`files`](files) directory is a [Git submodule][git-submodules] to a
-  repository containing copies of binary files that are referenced by the
+* The `files` directory is a [Git submodule][git-submodules] to a repository
+  containing copies of binary files that are referenced by the
   recommendations document (e.g. PDF's):
   <https://github.com/OSVTAC/project-recommendations-files>.
 
@@ -41,14 +41,16 @@ directory, as well as possibly the `reference-links.md` file.
 If you would like to preview your changes locally before submitting them
 (e.g. to check that things are working), consult the
 [`README`][recommendations-site-repo] file of the
-`project-recommendations-site` repository. That file also contains an
-overview of how the Markdown files in this repository are built and rendered
-on the [OSVTAC website][osvtac-site], which can be seen
+`project-recommendations-site` repository:
+<https://github.com/OSVTAC/project-recommendations-site>. That `README` file
+also contains an overview of how the Markdown files in this repository are
+built and rendered on the [OSVTAC website][osvtac-site], which can be seen
 [here][recommendations-site].
 
 **Note that the Markdown files checked into this repository are not
-necessarily viewable within GitHub's UI.** For example, Markdown hyperlinks
-will not necessarily display or work correctly.
+necessarily viewable within GitHub's UI / Markdown viewer.** For example,
+Markdown hyperlinks will not necessarily display or work correctly. To check
+that hyperlinks are correct, you must preview locally as referred to above.
 
 
 ## Organizing Your Changes
