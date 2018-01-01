@@ -53,6 +53,8 @@
 
 * **open-source software**. [TODO]
 
+* **operating system**. [TODO]
+
 * **outstack**. [TODO]
 
 * **precinct ballot scanner**. [TODO]
@@ -68,3 +70,9 @@
 * **software application**. [TODO]
 
 * **software library**. [TODO]
+
+* **software service**. [TODO]
+
+* **software stack**. [TODO]
+
+* **stack**. See ”software stack.”
