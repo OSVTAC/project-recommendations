@@ -574,6 +574,17 @@ useful for the project.
 
 #### 3.4.5. Election Data Standards & Organizations
 
+   * [Voluntary Voting System Guidelines][eac-vvsg] (VVSG). In January 2016,
+     the [U.S. Election Assistance Commission][eac] (EAC) adopted a plan
+     where, starting in July 2017, all new voting systems would be required
+     to be tested against the Voluntary Voting System Guidelines Version 1.1
+     (VVSG 1.1). The EAC approved the VVSG 1.1 in March 2015.
+
+     The EAC was established by the Help America Vote Act of 2002 (HAVA) to
+     develop guidance on HAVA requirements. The EAC works with NIST to
+     sponsor Technical Guidelines Development Committee (TGDC) working groups
+     for newer versions of the VVSG.
+
    * Election Markup Language (EML), Original XML-based election data interchange format.
      [Wikipedia Overview][eml-wikipedia], [Specifications][eml-specs]. \[2011\] (Obsolete)
 
@@ -587,13 +598,6 @@ useful for the project.
      Coordinating and funded by EAC to produce new *Voluntary Voting Systems Guidelines*.
 
      Includes a good [VVSG Principles and Guidelines][nist-vvsg-principles] summary.
-
-   * [Election Assistance Commission][eac] established by the
-     Help America Vote Act of 2002 (HAVA) to develop guidance on HAVA
-     requirements. Works with NIST to sponsor Technical Guidelines
-     Development Committee (TGDC) working groups.
-     Result will be [Voluntary Voting Systems Guidelines][eac-vvsg].
-     Also works to implement Military and Overseas Voting.
 
    * [Voting Information Project][vip-project] Google/Pew effort to develop
      election data interchange standards, originally based on EML.
