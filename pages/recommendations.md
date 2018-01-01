@@ -618,6 +618,15 @@ This section lists some of the requirements the system should satisfy.
 
 ### 5.5. Project Management
 
+* The Department should align itself with other efforts within the City to
+  use agile procurement and methods, and it should seek assistance where
+  possible. Notable parts of San Francisco government beginning to use agile
+  methods include the San Francisco [Mayor’s Office of Civic
+  Innovation][sf-moci] (MOCI) and the San Francisco [Digital Services
+  Team][sf-dst]. See also the City's "Digital Services Strategy" [link to PDF
+  found here:
+  <https://digitalservices.sfgov.org/assets/SF_DigitalServiceStrategy.pdf>].
+
 * The Department should hire a staff person to be in charge of managing the
   project. The person should have experience and expertise in managing
   technical projects of a similar size and complexity.

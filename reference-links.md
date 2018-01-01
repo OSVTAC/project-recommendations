@@ -62,6 +62,8 @@
 [proposed-budget-2016]: files/SF_Mayor_Proposed_Budget_2016-18.pdf
 [rfp-business-case-pdf]: files/SF_Business_Case_RFP_FINAL.pdf
 [sf-digital-services]: https://digitalservices.sfgov.org/
+[sf-dst]: https://digitalservices.sfgov.org/
+[sf-moci]: http://www.innovation.sfgov.org/
 [slalom-contract-appendix-a]: files/slalom/contract/Business_Case_Appendix_A.pdf
 [slalom-contract-appendix-b]: files/slalom/contract/Business_Case_Appendix_B.pdf
 [slalom-contract]: files/slalom/contract/Business_Case_Contract.pdf
