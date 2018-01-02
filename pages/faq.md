@@ -38,7 +38,7 @@ sure that the computer hardware itself can be trusted.
 
 Having said that, good auditing practices that involve randomly checking
 computer results by hand against the original paper ballots are an adequate
-counter-measure, provided the audits are done correctly. This is why good
+countermeasure, provided the audits are done correctly. This is why good
 audit procedures are important when computers are used to count ballots.
 
 **3. How much of the code must be open source for the voting system to
