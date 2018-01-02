@@ -123,7 +123,7 @@ potentially the City’s next Major IT Project, including:
 >
 > **Voting System Replacement:** The Department of Elections is currently
 investigating alternative voting systems, including the possibility of
-building an open-source system.
+building an open source system.
 
 And on page 53:
 
@@ -141,7 +141,7 @@ projects that may be considered as major investments, which include:
 set to expire in 2018. Without a long-term contract in place, the City has an
 opportunity to pursue alternative voting systems that could promote
 transparency and more security. The City is currently investigating
-alternative options, including the possibility of building an open-source
+alternative options, including the possibility of building an open source
 system.
 
 In April 2017, the Elections Commission voted to create an [Open Source Voting
@@ -523,7 +523,7 @@ useful for the project.
      select ballots to audit, then hand check hand selected paper ballots
      against stored CVRs or re-scanned paper ballots.
 
-     Contractor for open-source software is [Free & Fair][free-and-fair]
+     Contractor for open source software is [Free & Fair][free-and-fair]
      git: [ColoradoRLA][colorado-rla-repo], [OpenRLA][open-rla-repo].
 
      OpenCount now from Free & Fair \[[git][open-count]\] is software to
@@ -574,6 +574,19 @@ useful for the project.
 
 #### 3.4.5. Election Data Standards & Organizations
 
+   * [Voluntary Voting System Guidelines][eac-vvsg] (VVSG). In January 2016,
+     the [U.S. Election Assistance Commission][eac] (EAC) adopted a plan
+     where, starting in July 2017, all new voting systems would be required
+     to be tested against the Voluntary Voting System Guidelines Version 1.1
+     (VVSG 1.1). The EAC approved the VVSG 1.1 in March 2015.
+
+     The EAC was established by the Help America Vote Act of 2002 (HAVA) to
+     develop guidance on HAVA requirements. The EAC works with NIST to
+     sponsor Technical Guidelines Development Committee (TGDC) working groups
+     for newer versions of the VVSG.
+
+     _[Item edited: Dec. 14, 2017 meeting.]_
+
    * Election Markup Language (EML), Original XML-based election data interchange format.
      [Wikipedia Overview][eml-wikipedia], [Specifications][eml-specs]. \[2011\] (Obsolete)
 
@@ -587,13 +600,6 @@ useful for the project.
      Coordinating and funded by EAC to produce new *Voluntary Voting Systems Guidelines*.
 
      Includes a good [VVSG Principles and Guidelines][nist-vvsg-principles] summary.
-
-   * [Election Assistance Commission][eac] established by the
-     Help America Vote Act of 2002 (HAVA) to develop guidance on HAVA
-     requirements. Works with NIST to sponsor Technical Guidelines
-     Development Committee (TGDC) working groups.
-     Result will be [Voluntary Voting Systems Guidelines][eac-vvsg].
-     Also works to implement Military and Overseas Voting.
 
    * [Voting Information Project][vip-project] Google/Pew effort to develop
      election data interchange standards, originally based on EML.

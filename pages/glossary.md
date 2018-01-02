@@ -41,7 +41,7 @@
 
 * **firmware**. [TODO]
 
-* **free and open-source software (FOSS)**. [TODO]
+* **free and open source software (FOSS)**. [TODO]
 
 * **free software**. [TODO]
 
@@ -51,7 +51,9 @@
 
 * **open hardware**. [TODO]
 
-* **open-source software**. [TODO]
+* **open source software**. [TODO]
+
+* **operating system**. [TODO]
 
 * **outstack**. [TODO]
 
@@ -68,3 +70,9 @@
 * **software application**. [TODO]
 
 * **software library**. [TODO]
+
+* **software service**. [TODO]
+
+* **software stack**. [TODO]
+
+* **stack**. See ”software stack.”
