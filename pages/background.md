@@ -585,6 +585,8 @@ useful for the project.
      sponsor Technical Guidelines Development Committee (TGDC) working groups
      for newer versions of the VVSG.
 
+     _[Item edited: Dec. 14, 2017 meeting.]_
+
    * Election Markup Language (EML), Original XML-based election data interchange format.
      [Wikipedia Overview][eml-wikipedia], [Specifications][eml-specs]. \[2011\] (Obsolete)
 

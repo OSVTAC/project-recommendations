@@ -41,6 +41,8 @@ computer results by hand against the original paper ballots are an adequate
 countermeasure, provided the audits are done correctly. This is why good
 audit procedures are important when computers are used to count ballots.
 
+_[Answer added: Dec. 14, 2017 meeting.]_
+
 **3. How much of the code must be open source for the voting system to
 be considered open source?**
 
@@ -58,3 +60,5 @@ rather than required functionality.
 Also, if the eventual system does contain any non-open source code, in
 the spirit of agile, one could work to replace that code with an open source
 equivalent in later versions of the system.
+
+_[Answer added: Dec. 14, 2017 meeting.]_

@@ -423,6 +423,8 @@ formats should be spelled out.
 prototyping and testing. Samples of ballots from past elections and/or the
 interim voting system.
 
+_[Section added: Dec. 14, 2017 meeting.]_
+
 
 #### 5.2.4. Deployment Strategies
 
@@ -662,6 +664,8 @@ This section lists some of the requirements the system should satisfy.
   found here:
   <https://digitalservices.sfgov.org/assets/SF_DigitalServiceStrategy.pdf>].
 
+  _[Item added: Dec. 14, 2017 meeting.]_
+
 * The Department should hire a staff person to be in charge of managing the
   project. The person should have experience and expertise in managing
   technical projects of a similar size and complexity.
@@ -812,6 +816,8 @@ ballot design is different from what will eventually be used. Also, using
 real ballots can provide test cases that might not be thought of if trying to
 construct test cases manually.
 
+   _[Item added: Dec. 14, 2017 meeting.]_
+
 3. **Stand-alone test data.** In the course of developing the open source
 voting system, where possible, structure and store test data separate from
 the software application (e.g. in separate repositories) and in an
@@ -832,6 +838,8 @@ include things like (1) for the ballot picture interpreter component, a
 digital ballot picture as the input and the corresponding cast vote record as
 the output, and (2) for the RCV tabulator, the cast vote records for an RCV
 contest as the input and the round-by-round vote totals as the output.
+
+   _[Item added: Dec. 14, 2017 meeting.]_
 
 
 ### 5.14. Certification
