@@ -276,7 +276,7 @@ precinct).
 spelled out.
 
 **Possible dependencies / pre-requisites.** Real data from past elections for
-proto-typing and testing.
+prototyping and testing.
 
 
 ##### 5.2.3.2. Vote Totaler (Software)
@@ -302,7 +302,7 @@ component.
 spelled out.
 
 **Possible dependencies / pre-requisites.** Real data from past elections for
-proto-typing and testing.
+prototyping and testing.
 
 
 ##### 5.2.3.3. Ballot Picture Interpreter (Software)
@@ -349,7 +349,7 @@ bubbles are filled in, independent of their contest or candidate meaning).
 spelled out.
 
 **Possible dependencies / pre-requisites.** Real data from past elections for
-proto-typing and testing.
+prototyping and testing.
 
 
 ##### 5.2.3.4. Central Ballot Scanner (Hardware & Software)
@@ -386,7 +386,7 @@ ballot picture interpreter.
 spelled out.
 
 **Possible dependencies / pre-requisites.** Real data from past elections for
-proto-typing and testing. Samples of ballots from past elections and/or the
+prototyping and testing. Samples of ballots from past elections and/or the
 interim voting system.
 
 
@@ -420,7 +420,7 @@ Picture Interpreter component.
 formats should be spelled out.
 
 **Possible dependencies / pre-requisites.** Real data from past elections for
-proto-typing and testing. Samples of ballots from past elections and/or the
+prototyping and testing. Samples of ballots from past elections and/or the
 interim voting system.
 
 
