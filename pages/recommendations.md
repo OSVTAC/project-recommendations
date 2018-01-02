@@ -660,9 +660,8 @@ This section lists some of the requirements the system should satisfy.
   possible. Notable parts of San Francisco government beginning to use agile
   methods include the San Francisco [Mayor’s Office of Civic
   Innovation][sf-moci] (MOCI) and the San Francisco [Digital Services
-  Team][sf-dst]. See also the City's "Digital Services Strategy" [link to PDF
-  found here:
-  <https://digitalservices.sfgov.org/assets/SF_DigitalServiceStrategy.pdf>].
+  Team][sf-dst]. See also San Francisco's [_Digital Services
+  Strategy_][sf-digital-services-strategy] (PDF).
 
   _[Item added: Dec. 14, 2017 meeting.]_
 
