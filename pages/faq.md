@@ -1,17 +1,17 @@
 ## 6. FAQ
 
-**1. Is open-source software more or less secure than proprietary
+**1. Is open source software more or less secure than proprietary
 software?**
 
-Independent studies have shown that, in general, open-source software is
+Independent studies have shown that, in general, open source software is
 neither more secure nor less secure than proprietary software (see for
 example Synopsys's ["Coverity® Scan Open Source Report
-2014"][coverity-report-2014]). Both secure and insecure open-source software
+2014"][coverity-report-2014]). Both secure and insecure open source software
 can be written. Similarly, both secure and insecure proprietary software can
 be written.
 
 A key difference though is that, because it is publicly viewable, claims
-about the security of open-source software can be _independently verified_,
+about the security of open source software can be _independently verified_,
 and by _anyone_ (provided they have the necessary skills and time). With
 proprietary code, such claims can be based only on trusting those who are
 able to view the code.
@@ -26,7 +26,7 @@ Open source is already heavily used and relied upon throughout the world for
 security-critical applications. For example, much of the code that allows
 the secure transmission of information over the internet is open source.
 
-**2. How can members of the public be sure that the open-source code is
+**2. How can members of the public be sure that the open source code is
 what is actually running on the machine?**
 
 The short answer is that there is no way to be certain that the code

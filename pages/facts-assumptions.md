@@ -8,7 +8,7 @@ drafting this document.
 
 1. The Director of Elections' [March 2017 Director's
    Report][directors-report-march-2017-original] began outlining characteristics of
-   the development plan for the open-source voting system. These included—
+   the development plan for the open source voting system. These included—
 
    * For the system to be "Developed under version 3 of the GNU General
      Public License where possible, otherwise preferring similar licenses

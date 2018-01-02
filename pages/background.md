@@ -123,7 +123,7 @@ potentially the City’s next Major IT Project, including:
 >
 > **Voting System Replacement:** The Department of Elections is currently
 investigating alternative voting systems, including the possibility of
-building an open-source system.
+building an open source system.
 
 And on page 53:
 
@@ -141,7 +141,7 @@ projects that may be considered as major investments, which include:
 set to expire in 2018. Without a long-term contract in place, the City has an
 opportunity to pursue alternative voting systems that could promote
 transparency and more security. The City is currently investigating
-alternative options, including the possibility of building an open-source
+alternative options, including the possibility of building an open source
 system.
 
 In April 2017, the Elections Commission voted to create an [Open Source Voting
@@ -523,7 +523,7 @@ useful for the project.
      select ballots to audit, then hand check hand selected paper ballots
      against stored CVRs or re-scanned paper ballots.
 
-     Contractor for open-source software is [Free & Fair][free-and-fair]
+     Contractor for open source software is [Free & Fair][free-and-fair]
      git: [ColoradoRLA][colorado-rla-repo], [OpenRLA][open-rla-repo].
 
      OpenCount now from Free & Fair \[[git][open-count]\] is software to

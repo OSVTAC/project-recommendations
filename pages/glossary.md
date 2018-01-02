@@ -41,7 +41,7 @@
 
 * **firmware**. [TODO]
 
-* **free and open-source software (FOSS)**. [TODO]
+* **free and open source software (FOSS)**. [TODO]
 
 * **free software**. [TODO]
 
@@ -51,7 +51,7 @@
 
 * **open hardware**. [TODO]
 
-* **open-source software**. [TODO]
+* **open source software**. [TODO]
 
 * **operating system**. [TODO]
 

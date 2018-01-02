@@ -4,27 +4,27 @@
 ### 5.1. Interim Voting System
 
 * The contract for the interim system (i.e. the system to be used after 2018)
-  should permit all possible combinations of phasing in an open-source system
+  should permit all possible combinations of phasing in an open source system
   alongside it. Examples of possible combinations include:
 
-  * using open-source components to scan vote-by-mail ballots and the interim
+  * using open source components to scan vote-by-mail ballots and the interim
     system to scan precinct ballots, or vice versa;
 
-  * using an open-source accessible voting device in conjunction with the
+  * using an open source accessible voting device in conjunction with the
     interim system’s precinct-based scanner, or vice versa;
 
-  * scanning the ballots of the interim system using an open-source scanner;
+  * scanning the ballots of the interim system using an open source scanner;
 
-  * tabulating ballots scanned by an open-source scanner using the interim
+  * tabulating ballots scanned by an open source scanner using the interim
     system’s tabulation software;
 
-  * using an open-source reporting and/or tabulation system with the output
+  * using an open source reporting and/or tabulation system with the output
     from the interim system’s scanners;
 
-  * using open-source components alongside the interim system in some subset
+  * using open source components alongside the interim system in some subset
     of precincts (e.g. for a pilot rollout); or
 
-  * using open-source components alongside the interim system in all
+  * using open source components alongside the interim system in all
     precincts (e.g. for an incremental roll-out of the open source system).
 
 * The requirements for the interim system should include interoperability
@@ -111,7 +111,7 @@ open source.
 staggered in conjunction with other deliverables. For example, development on
 other components can be started before these are finished.
 
-* In each case, there is open-source code that already exists that
+* In each case, there is open source code that already exists that
 development of the components might be able to start from, or at least learn
 from.
 
@@ -120,7 +120,7 @@ that need to be worked out anyways
 
 * Each of these components supports incremental deployment. Each component
   can be deployed and used by replacing the corresponding component of a
-  non-open-source interim system, and then interoperating with the other
+  non-open source interim system, and then interoperating with the other
   components of the voting system (interim or not). This is true even without
   requiring anything extra of the interim system. See the "Deployment
   Strategies" sub-section below for further details.
@@ -145,7 +145,7 @@ has the least amount of risk, since it is responsible merely for formatting
 and presenting information. In this way, it would be a good warm-up project.
 
 * Since many members of the public view the Department’s election results
-pages online, it would nevertheless be a highly visible use of open-source
+pages online, it would nevertheless be a highly visible use of open source
 software.
 
 * It could also be a good public outreach / educational tool around open
@@ -154,7 +154,7 @@ feedback from the public on how the results pages could look or be improved,
 and the Department could implement the best suggestions (since the reporter
 would be open source).
 
-* Making the reporter open-source would also be inherently useful because it
+* Making the reporter open source would also be inherently useful because it
 would give the Department the ability to customize and improve the current
 format, and accept contributions from the public.
 
@@ -173,11 +173,11 @@ For the Ballot Picture Interpreter:
 * This is a core software component that would be used in a number of
 different components, so it is natural to start working on it first.
 
-* Even in the absence of deployed open-source hardware components, it could
+* Even in the absence of deployed open source hardware components, it could
 be used by members of the public to “check” the scanning done by the interim
 system, provided the digital ballot pictures are made public.
 
-* The open-source software OpenCount might go a long way towards implementing
+* The open source software OpenCount might go a long way towards implementing
 this component.
 
 For the Central Ballot Scanner:
@@ -186,7 +186,7 @@ For the Central Ballot Scanner:
 first, for reasons that will be described below.
 
 * Deploying this component alone would result in a majority of votes being
-counted by open-source software. For example, in the November 8, 2016
+counted by open source software. For example, in the November 8, 2016
 election 63% of ballots were vote-by-mail (263,091 out of 414,528 ballots in
 all). In this sense, this component provides the biggest “bang for the buck.”
 
@@ -313,7 +313,7 @@ proto-typing and testing.
 digital ballot pictures, namely by generating a cast vote record (CVR) given a digital
 picture of a ballot. The component must support ballots from “third-parties”
 (e.g. the interim voting system) to support incremental roll-outs like pilot
-and hybrid rollouts. The open-source software OpenCount developed at UC
+and hybrid rollouts. The open source software OpenCount developed at UC
 Berkeley could be a foundation for this.
 
 **Applicability.** This component can possibly be used in the following
@@ -397,9 +397,9 @@ interim voting system.
 **Description.** This is a software component to let one "reverse engineer"
 structured ballot layout data from existing paper ballots from another vendor.
 This component may be needed during a possible interim phase in which
-open-source components are used for scanning and interpreting ballots that are
+open source components are used for scanning and interpreting ballots that are
 generated by a different vendor (i.e. the City's vendor during the time
-when the open-source system is being developed).  This component will be
+when the open source system is being developed).  This component will be
 needed if that vendor is not able to provide structured ballot layout data
 along with the paper ballots.  It is likely that this component will
 not be completely automated, but rather will be semi-automated.
@@ -427,15 +427,15 @@ interim voting system.
 #### 5.2.4. Deployment Strategies
 
 The components listed above can be deployed and used in conjunction with a
-non-open-source interim system even before a full open-source voting system
+non-open source interim system even before a full open source voting system
 is ready. This section provides more details about how this could be done.
 
-For example, an open-source results reporter could be used to report the
-election results of the non-open-source interim system. It would simply need
+For example, an open source results reporter could be used to report the
+election results of the non-open source interim system. It would simply need
 to take in the aggregate, numeric results from the interim system. The output
 would not need to interact with the interim system.
 
-Similarly, an open-source vote totaler could be used to compute the numeric
+Similarly, an open source vote totaler could be used to compute the numeric
 results of an election run with the interim system. It would only require
 taking in the non-aggregated numeric results from the interim system, and
 then feeding the aggregate results into the results reporter.
@@ -444,7 +444,7 @@ then feeding the aggregate results into the results reporter.
 ##### 5.2.4.1. Central Ballot Scanner Phases
 
 For the central ballot scanner, there are a number of options for
-incrementally phasing in an open-source version.
+incrementally phasing in an open source version.
 
 In chronological order, some of these possible phases are--
 
@@ -455,25 +455,25 @@ addition, if the pictures are made public during the canvass (along with the
 ballot image interpreter software), even members of the public could perform
 this "check."
 
-2. When the open-source central scanners are ready enough to test, the
+2. When the open source central scanners are ready enough to test, the
 scanners could be used to scan vote-by-mail ballots _in addition_ to the
 interim system scanning them. This could be used both to check or audit the
-interim system, as well as to test the open-source scanners. This can likely
+interim system, as well as to test the open source scanners. This can likely
 be done even without certifying the scanners. This is essentially what the
 Humboldt County Elections Transparency Project did in the late 2000's.
 
-3. Once we have enough confidence in the open-source scanners, they could be
+3. Once we have enough confidence in the open source scanners, they could be
 used as the primary scanner for _some_ of the vote-by-mail ballots (e.g. in a
-pilot of the open-source scanners that precedes a full-scale rollout). This
+pilot of the open source scanners that precedes a full-scale rollout). This
 option could possibly be done prior to certifying the scanners, by taking
 advantage of California bill [SB 360 (2013-2014)][bill-sb-360-2013].
 
-4. Finally, once the open-source central scanners are certified, they could
+4. Finally, once the open source central scanners are certified, they could
 be used to scan _all_ of the vote-by-mail ballots (while the interim system
 could be responsible for counting in-precinct ballots). In this scenario, the
 interim system could perhaps even be used as a fail-safe backup in case of an
-unexpected issue with the open-source system (or else as a check, in the
-same way that the open-source scanners were used as a check in bullet point
+unexpected issue with the open source system (or else as a check, in the
+same way that the open source scanners were used as a check in bullet point
 (2) above).
 
 
@@ -812,13 +812,13 @@ ballot design is different from what will eventually be used. Also, using
 real ballots can provide test cases that might not be thought of if trying to
 construct test cases manually.
 
-3. **Stand-alone test data.** In the course of developing the open-source
+3. **Stand-alone test data.** In the course of developing the open source
 voting system, where possible, structure and store test data separate from
 the software application (e.g. in separate repositories) and in an
 application-agnostic form (e.g. using open data formats). The test data
 should include both test inputs and, when appropriate, test outputs (aka test
 expectations). Doing this allows the test data to be used by other
-applications and in particular could help facilitate additional open-source
+applications and in particular could help facilitate additional open source
 implementations of components. Making the test data independent and more
 easily available can also improve the quality and correctness of the test
 data, for example by making it easier for others to check or add more test
