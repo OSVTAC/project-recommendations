@@ -793,11 +793,44 @@ This section covers topics related to open source.
 
 ### 5.13. Testing
 
-* Datasets of real election data (e.g. a couple past elections in San
-  Francisco of different types) should be compiled in a structured format for
-  product prototyping and testing. This includes not just vote totals but
-  also candidate and contest data. This will help in establishing
-  requirements and designing the system.
+1. **Gather real election data.** Datasets of real election data (e.g. a
+couple past elections in San Francisco of different types) should be compiled
+in a structured format for product prototyping and testing. This includes not
+just vote totals but also candidate and contest data. This will help in
+establishing requirements and designing the system.
+
+2. **Gather real digital ballot pictures.** Starting with the June 2018
+election, during each election the Department should gather and save large
+numbers (e.g. thousands) of digital ballot pictures for future testing
+purposes. The Director has already expressed a willingness to do this in the
+case that the voting system supports it. The Department should do this during
+the canvass after each election because it may not be possible to obtain
+ballot pictures after the ballots are physically sealed and eventually
+destroyed. Having a variety of real-world digital ballot pictures will aid in
+developing and testing the ballot picture interpreter component, even if the
+ballot design is different from what will eventually be used. Also, using
+real ballots can provide test cases that might not be thought of if trying to
+construct test cases manually.
+
+3. **Stand-alone test data.** In the course of developing the open-source
+voting system, where possible, structure and store test data separate from
+the software application (e.g. in separate repositories) and in an
+application-agnostic form (e.g. using open data formats). The test data
+should include both test inputs and, when appropriate, test outputs (aka test
+expectations). Doing this allows the test data to be used by other
+applications and in particular could help facilitate additional open-source
+implementations of components. Making the test data independent and more
+easily available can also improve the quality and correctness of the test
+data, for example by making it easier for others to check or add more test
+cases.
+
+   This recommendation makes more sense for higher level end-to-end tests rather
+than lower-level tests like unit tests since unit tests are often tied to a
+particular implementation. Examples of test cases for higher-level tests
+include things like (1) for the ballot picture interpreter component, a
+digital ballot picture as the input and the corresponding cast vote record as
+the output, and (2) for the RCV tabulator, the cast vote records for an RCV
+contest as the input and the round-by-round vote totals as the output.
 
 
 ### 5.14. Certification
