@@ -815,7 +815,8 @@ construct test cases manually.
 3. **Stand-alone test data.** In the course of developing the open source
 voting system, where possible, structure and store test data separate from
 the software application (e.g. in separate repositories) and in an
-application-agnostic form (e.g. using open data formats). The test data
+application-agnostic form (e.g. using open data formats). These can be
+separate deliverables. The test data
 should include both test inputs and, when appropriate, test outputs (aka test
 expectations). Doing this allows the test data to be used by other
 applications and in particular could help facilitate additional open source
