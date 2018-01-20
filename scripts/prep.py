@@ -229,12 +229,13 @@ def transform_lines(lines, header_infos, first_section, page_name):
         yield header_line
 
 
-def process_section_file(page_name, header_infos, first_section):
+def process_section_file(file_base, header_infos, first_section):
     """
     Parse and compute updated section numbers for a source Markdown file.
 
     Args:
-      page_name: the name of the page (e.g. "background" for "background.md").
+      file_base: the base name of the file containing the section text
+        (e.g. "background" for "background.md").
       header_infos: a list of HeaderInfo objects to which this function
         will add the headers it finds in the source file.
       first_section: an integer representing the first section appearing
@@ -242,7 +243,8 @@ def process_section_file(page_name, header_infos, first_section):
 
     Returns: (new_text, path, has_changes).
     """
-    path = get_source_path(page_name)
+    path = get_source_path(file_base)
+    _log.info('reading: {}'.format(path))
     text = path.read_text()
 
     # TODO: eliminate trailing whitespace.
@@ -251,7 +253,7 @@ def process_section_file(page_name, header_infos, first_section):
     body = recursive_replace(text, '\n\n\n', '\n\n')
 
     lines = body.splitlines()
-    lines = list(transform_lines(lines, header_infos, first_section, page_name=page_name))
+    lines = list(transform_lines(lines, header_infos, first_section, page_name=file_base))
     new_text = lines_to_text(lines)
 
     return new_text, path, (new_text != text)
@@ -283,17 +285,25 @@ def main():
 
     ns = parse_args()
 
+    total_has_changes = False
     # A list of HeaderInfo objects.
     header_infos = []
+    # A dict mapping page name to page text.
+    sections = {}
 
     for section_number, name in enumerate(SECTION_NAMES, start=1):
         new_text, path, has_changes = process_section_file(name, header_infos,
                                                 first_section=section_number)
+        sections[name] = new_text
         if not ns.dry_run:
             write_file(new_text, path)
 
+        if has_changes:
+            total_has_changes = True
+
     last_approved = read_last_approved()
-    meta = dict(last_approved=last_approved, sections=SECTION_NAMES)
+    meta = dict(last_approved=last_approved, has_changes=total_has_changes,
+                section_names=SECTION_NAMES)
     headers = [info.to_json() for info in header_infos]
 
     if ns.suppress_stdout:
@@ -302,7 +312,7 @@ def main():
 
     # Print the data to stdout so the caller has programmatic access
     # to the parsed header info.
-    data = dict(_meta=meta, headers=headers)
+    data = dict(_meta=meta, headers=headers, sections=sections)
     print(json.dumps(data, sort_keys=True, indent=4))
 
 
