@@ -1,25 +1,3 @@
-"""
-Script to normalize and prepare the Markdown files prior to building.
-
-Some of the things this script does are--
-
-1. parse and update the section numbers of each section,
-2. read the "last-approved" date, and
-3. report the headers and other information via stdout.
-
-Usage:
-
-From the repository root, run:
-
-    $ python scripts/prep.py
-
-For command help, including command-line options:
-
-    $ python scripts/prep.py -h
-
-The script should be run with Python 3.5 or newer.
-"""
-
 # prep.py script to prepare the Markdown files for building.
 #
 # Copyright (C) 2017  Christopher Jerdonek
@@ -43,6 +21,29 @@ The script should be run with Python 3.5 or newer.
 #
 #   Christopher Jerdonek <chris.jerdonek@gmail.com>
 #
+
+"""
+Script to normalize and prepare the Markdown files prior to building.
+
+Some of the things this script does are--
+
+1. parse and update the section numbers of each section,
+2. read the "last-approved" date, and
+3. report the headers and other information via stdout.
+
+Usage:
+
+From the repository root, run:
+
+    $ python scripts/prep.py
+
+For command help, including command-line options:
+
+    $ python scripts/prep.py -h
+
+The script should be run with Python 3.5 or newer.
+"""
+
 
 import argparse
 import json
