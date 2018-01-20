@@ -268,6 +268,8 @@ def read_last_approved():
 def parse_args():
     desc = 'Prepare the Markdown files prior to building.'
     parser = argparse.ArgumentParser(description=desc)
+    parser.add_argument('--dry-run', dest='dry_run', action='store_true',
+        help="suppress overwriting the source files.")
     parser.add_argument('--no-stdout', dest='suppress_stdout', action='store_true',
         help='suppress writing to stdout.')
 
@@ -287,7 +289,8 @@ def main():
     for section_number, name in enumerate(SECTION_NAMES, start=1):
         new_text, path, has_changes = process_section_file(name, header_infos,
                                                 first_section=section_number)
-        write_file(new_text, path)
+        if not ns.dry_run:
+            write_file(new_text, path)
 
     last_approved = read_last_approved()
     meta = dict(last_approved=last_approved, sections=SECTION_NAMES)
