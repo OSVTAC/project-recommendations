@@ -13,8 +13,7 @@ From the repository root, run:
 
     $ python scripts/prep.py
 
-The script should be run with Python 3.6 or newer (because it uses
-f-strings, for example).
+The script should be run with Python 3.5 or newer.
 """
 
 # prep.py script to prepare the Markdown files for building.
@@ -44,6 +43,7 @@ f-strings, for example).
 import json
 import logging
 import os
+from pathlib import Path
 import re
 
 
@@ -67,22 +67,19 @@ SECTION_NAMES = [
 
 def get_source_path(name):
     """
-    Return the path to a Markdown file.
+    Return the path to a Markdown file as a path-like object.
     """
-    return os.path.join('pages', f'{name}.md')
-
-
-def read_file(path):
-    with open(path, encoding='utf-8') as f:
-        text = f.read()
-
-    return text
+    return Path('pages') / '{}.md'.format(name)
 
 
 def write_file(text, path):
-    _log.info(f'writing file: {path}')
-    with open(path, 'w', encoding='utf-8') as f:
-        f.write(text)
+    """
+    Args:
+      path: a path-like object.
+    """
+    path = Path(path)
+    _log.info('writing file: {}'.format(path))
+    path.write_text(text)
 
 
 def write_sections(sections, name):
@@ -92,7 +89,7 @@ def write_sections(sections, name):
         index.md.
     """
     text = '\n\n'.join(sections)
-    write_file(text, f'{name}.md')
+    write_file(text, '{}.md'.format(name))
 
 
 def lines_to_text(lines):
@@ -126,7 +123,8 @@ class HeaderInfo:
         self.title = title
 
     def __repr__(self):
-        return f'<HeaderInfo object coords={self.coords!r} title={self.title}, page={self.page}>'
+        return ('<HeaderInfo object coords={!r} title={}, page={}>'
+                .format(self.coords, self.title, self.page))
 
     def __str__(self):
         return self.make_header_text()
@@ -144,7 +142,7 @@ class HeaderInfo:
         line prefix which has the form "###".
         """
         section = '.'.join(str(number) for number in self.coords)
-        line = f'{section}. {self.title}'
+        line = '{section}. {title}'.format(section=section, title=self.title)
 
         return line
 
@@ -156,7 +154,7 @@ class HeaderInfo:
         # the overall page header.  Thus, we need to add 1.
         prefix = (level + 1) * '#'
 
-        line = f'{prefix} {header_text}'
+        line = '{prefix} {header}'.format(prefix=prefix, header=header_text)
 
         return line
 
@@ -239,7 +237,7 @@ def process_section_file(page_name, header_infos, first_section):
         in the file.
     """
     path = get_source_path(page_name)
-    text = read_file(path)
+    text = path.read_text()
 
     # TODO: eliminate trailing whitespace.
 
@@ -256,7 +254,8 @@ def process_section_file(page_name, header_infos, first_section):
 
 
 def read_last_approved():
-    last_approved = read_file('last-approved.txt')
+    path = Path('last-approved.txt')
+    last_approved = path.read_text()
     last_approved = last_approved.strip()
 
     return last_approved
