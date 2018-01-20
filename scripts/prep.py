@@ -272,8 +272,8 @@ def parse_args():
     parser = argparse.ArgumentParser(description=desc)
     parser.add_argument('--dry-run', dest='dry_run', action='store_true',
         help="suppress overwriting the source files.")
-    parser.add_argument('--no-stdout', dest='suppress_stdout', action='store_true',
-        help='suppress writing to stdout.')
+    parser.add_argument('--output-json', dest='output_json', action='store_true',
+        help='output json (used for building).')
 
     ns = parser.parse_args()
 
@@ -306,14 +306,13 @@ def main():
                 section_names=SECTION_NAMES)
     headers = [info.to_json() for info in header_infos]
 
-    if ns.suppress_stdout:
-        _log.info('suppressing stdout due to user option')
-        return
-
-    # Print the data to stdout so the caller has programmatic access
-    # to the parsed header info.
-    data = dict(_meta=meta, headers=headers, sections=sections)
-    print(json.dumps(data, sort_keys=True, indent=4))
+    if ns.output_json:
+        # Print the data to stdout so the caller has programmatic access
+        # to the parsed header info.
+        data = dict(_meta=meta, headers=headers, sections=sections)
+        print(json.dumps(data, sort_keys=True, indent=4))
+    else:
+        _log.info('not outputting json due to user option')
 
 
 if __name__ == '__main__':
