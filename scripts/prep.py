@@ -1,5 +1,5 @@
 """
-Script to normalize and prepare the Markdown files for publication.
+Script to normalize and prepare the Markdown files prior to building.
 
 Some of the things this script does are--
 
@@ -12,6 +12,10 @@ Usage:
 From the repository root, run:
 
     $ python scripts/prep.py
+
+For command help, including command-line options:
+
+    $ python scripts/prep.py -h
 
 The script should be run with Python 3.5 or newer.
 """
@@ -40,6 +44,7 @@ The script should be run with Python 3.5 or newer.
 #   Christopher Jerdonek <chris.jerdonek@gmail.com>
 #
 
+import argparse
 import json
 import logging
 import os
@@ -261,8 +266,21 @@ def read_last_approved():
     return last_approved
 
 
+def parse_args():
+    desc = 'Prepare the Markdown files prior to building.'
+    parser = argparse.ArgumentParser(description=desc)
+    parser.add_argument('--no-stdout', dest='suppress_stdout', action='store_true',
+        help='suppress writing to stdout.')
+
+    ns = parser.parse_args()
+
+    return ns
+
+
 def main():
     logging.basicConfig(level=logging.INFO)
+
+    ns = parse_args()
 
     # A list of HeaderInfo objects.
     header_infos = []
@@ -273,6 +291,10 @@ def main():
     last_approved = read_last_approved()
     meta = dict(last_approved=last_approved, sections=SECTION_NAMES)
     headers = [info.to_json() for info in header_infos]
+
+    if ns.suppress_stdout:
+        _log.info('suppressing stdout due to user option')
+        return
 
     # Print the data to stdout so the caller has programmatic access
     # to the parsed header info.
