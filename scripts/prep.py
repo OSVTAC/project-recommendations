@@ -231,9 +231,7 @@ def transform_lines(lines, header_infos, first_section, page_name):
 
 def process_section_file(page_name, header_infos, first_section):
     """
-    Parse and fix the section numbers in a source Markdown file.
-
-    Returns whether the file was changed.
+    Parse and compute updated section numbers for a source Markdown file.
 
     Args:
       page_name: the name of the page (e.g. "background" for "background.md").
@@ -241,6 +239,8 @@ def process_section_file(page_name, header_infos, first_section):
         will add the headers it finds in the source file.
       first_section: an integer representing the first section appearing
         in the file.
+
+    Returns: (new_text, path, has_changes).
     """
     path = get_source_path(page_name)
     text = path.read_text()
@@ -254,9 +254,7 @@ def process_section_file(page_name, header_infos, first_section):
     lines = list(transform_lines(lines, header_infos, first_section, page_name=page_name))
     new_text = lines_to_text(lines)
 
-    write_file(new_text, path)
-
-    return (new_text != text)
+    return new_text, path, (new_text != text)
 
 
 def read_last_approved():
@@ -287,7 +285,9 @@ def main():
     header_infos = []
 
     for section_number, name in enumerate(SECTION_NAMES, start=1):
-        process_section_file(name, header_infos, first_section=section_number)
+        new_text, path, has_changes = process_section_file(name, header_infos,
+                                                first_section=section_number)
+        write_file(new_text, path)
 
     last_approved = read_last_approved()
     meta = dict(last_approved=last_approved, sections=SECTION_NAMES)
