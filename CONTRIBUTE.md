@@ -5,8 +5,8 @@ recommendations using GitHub.
 
 To do this you must be familiar with technologies like Git, GitHub,
 [Markdown][markdown], and using the command-line. If you are not familiar
-with these technologies, consult the [`README`](README.md) file for other
-ways of providing feedback to the committee.
+with these technologies, consult the repository's [`README`](README.md) file
+for other ways of providing feedback to the committee.
 
 ## Repo Organization
 
@@ -36,30 +36,16 @@ Thus, pull requests will normally need to modify only files in the `pages`
 directory, as well as possibly the `reference-links.md` file.
 
 
-## Previewing Locally
-
-If you would like to preview your changes locally before submitting them
-(e.g. to check that things are working), consult the
-[`README`][recommendations-site-repo] file of the
-`project-recommendations-site` repository:
-<https://github.com/OSVTAC/project-recommendations-site>. That `README` file
-also contains an overview of how the Markdown files in this repository are
-built and rendered on the [OSVTAC website][osvtac-site], which can be seen
-[here][recommendations-site].
-
-**Note that the Markdown files checked into this repository are not
-necessarily viewable within GitHub's UI / Markdown viewer.** For example,
-Markdown hyperlinks will not necessarily display or work correctly. To check
-that hyperlinks are correct, you must preview locally as referred to above.
-
-
 ## Organizing Your Changes
 
-You should put unrelated changes in different branches.
+You should put unrelated changes in different branches, and submit them
+separately.
 
-Moreover, do not update or attempt to fix the section numbers if your changes
-affect the section numbering. If your PR is merged, the section numbers and
-table of contents will be updated after merging using this repository's
+Moreover, do not update or attempt to fix any of the section numbers if your
+changes affect the section numbering. Doing so makes it harder to locate only
+the textual changes, and can also introduce needless conflicts when merging.
+If your PR is merged, the section numbers and table of contents will be
+updated after merging using this repository's
 [`scripts/prep.py`](scripts/prep.py) script.
 
 
@@ -72,6 +58,45 @@ Note: don't expect responses from committee members on GitHub since by local
 and state law, committee members aren't allowed to collaborate as a group
 outside of in-person public meetings. See the [`README`](README.md) file of
 this repository for more details.
+
+
+## Local Workflows
+
+There are two possible workflows you can use when preparing pull requests.
+The first workflow is the simplest but doesn't let you "preview" how the
+Markdown will look in a browser and as part of the larger document. The
+second does let you preview your changes in a browser before submitting, but
+it requires significantly more setup. The subsections below instruct you how
+to follow both of these workflows.
+
+Note that if you start with Workflow #1, it will not necessarily be easy to
+"move" any changes you are working on into the Workflow #2 approach without
+advanced knowledge of Git.
+
+Finally, note that the Markdown files checked into this repository cannot
+faithfully be viewed from within GitHub's UI / Markdown viewer. For example,
+Markdown hyperlinks will not necessarily display or work correctly. To check
+that hyperlinks are working correctly, you must preview locally (e.g. using
+the second workflow described below).
+
+
+### Workflow #1 (no previewing)
+
+For this workflow, fork the repository using GitHub's UI, and follow the
+instructions on GitHub's UI for cloning. For example:
+
+    $ git clone https://github.com/<your-username>/project-recommendations.git
+
+
+### Workflow #2 (allows previewing)
+
+For this approach, follow the instructions in the
+[`README`][recommendations-site-repo] file of the
+`project-recommendations-site` repository:
+<https://github.com/OSVTAC/project-recommendations-site>. That `README` file
+also contains an overview of how the Markdown files in this repository are
+built and rendered on the [OSVTAC website][osvtac-site], which can be seen
+[here][recommendations-site].
 
 
 [git-submodules]: https://git-scm.com/book/en/v2/Git-Tools-Submodules
