@@ -63,7 +63,7 @@ from pathlib import Path
 import re
 
 
-_log = logging.getLogger(__name__)
+_log = logging.getLogger(__file__)
 
 
 HEADER_PATTERN = re.compile(r'#+ ')
