@@ -95,19 +95,22 @@ your personal fork. For example:
 
 ### Workflow #2 (allows previewing)
 
-For this approach, follow the instructions in the
+With this workflow, you will be cloning the repository that contains the
+"built" version of the files in this repository (called
+[`project-recommendations-site`][recommendations-site-repo]). That repository
+contains the repository you are currently viewing as a Git
+[submodule][git-submodules] (i.e. separate Git repository in a subdirectory).
+You will be working on this repository by working in the copy that sits as a
+subdirectory of that parent repository. You will be able to connect that copy
+to your personal fork using [`git remote add`][git-add-remote].
+
+To follow this approach, follow the instructions in the
 [`README`][recommendations-site-repo] file of the
 `project-recommendations-site` repository:
 <https://github.com/OSVTAC/project-recommendations-site>. That `README` file
 also contains an overview of how the Markdown files in this repository are
 built and rendered on the [OSVTAC website][osvtac-site], which can be seen
 [here][recommendations-site].
-
-With this workflow, you will be cloning the repository that contains the "built"
-version of the files in this repository. That repository contains the
-repository you are currently viewing as a Git [submodule][git-submodules]
-(i.e. separate Git repository in a subdirectory), which you will be able
-to connect to your personal fork using [`git remote add`][git-add-remote].
 
 
 [git-add-remote]: https://help.github.com/articles/adding-a-remote/
