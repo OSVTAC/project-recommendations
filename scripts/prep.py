@@ -1,6 +1,6 @@
 # prep.py script to prepare the Markdown files for building.
 #
-# Copyright (C) 2017  Christopher Jerdonek
+# Copyright (C) 2017, 2018  Christopher Jerdonek
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
