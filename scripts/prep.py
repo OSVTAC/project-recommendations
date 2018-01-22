@@ -66,6 +66,13 @@ import re
 _log = logging.getLogger(__file__)
 
 
+HELP_STRING = """\
+Prepare the Markdown files prior to building.
+
+This script will modify / overwrite files in your repository, so it is
+recommended that you commit any changes before running the script.
+"""
+
 HEADER_PATTERN = re.compile(r'#+ ')
 
 # The order of these names also controls the order in which the sections
@@ -278,10 +285,10 @@ def read_last_approved():
 
 
 def parse_args():
-    desc = 'Prepare the Markdown files prior to building.'
-    parser = argparse.ArgumentParser(description=desc)
+    parser = argparse.ArgumentParser(description=HELP_STRING,
+                formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--dry-run', dest='dry_run', action='store_true',
-        help="suppress overwriting the source files.")
+        help="suppress overwriting the source files (useful when previewing).")
     parser.add_argument('--output-json', dest='output_json', action='store_true',
         help='output json (used for building).')
 
