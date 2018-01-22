@@ -80,10 +80,15 @@ that hyperlinks are working correctly, you must preview locally (e.g. using
 the second workflow described below).
 
 
+### Both Workflows
+
+For both workflows, start out by forking the repository using GitHub's UI.
+
+
 ### Workflow #1 (no previewing)
 
-For this workflow, fork the repository using GitHub's UI, and follow the
-instructions on GitHub's UI for cloning. For example:
+For this workflow, follow the instructions on GitHub's UI for cloning from
+your personal fork. For example:
 
     $ git clone https://github.com/<your-username>/project-recommendations.git
 
@@ -98,7 +103,14 @@ also contains an overview of how the Markdown files in this repository are
 built and rendered on the [OSVTAC website][osvtac-site], which can be seen
 [here][recommendations-site].
 
+With this workflow, you will be cloning the repository that contains the "built"
+version of the files in this repository. That repository contains the
+repository you are currently viewing as a Git [submodule][git-submodules]
+(i.e. separate Git repository in a subdirectory), which you will be able
+to connect to your personal fork using [`git remote add`][git-add-remote].
 
+
+[git-add-remote]: https://help.github.com/articles/adding-a-remote/
 [git-submodules]: https://git-scm.com/book/en/v2/Git-Tools-Submodules
 [github-pull-request]: https://help.github.com/articles/creating-a-pull-request/
 [markdown]: https://guides.github.com/features/mastering-markdown/
