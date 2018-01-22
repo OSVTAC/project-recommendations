@@ -31,17 +31,27 @@ Some of the things this script does are--
 2. read the "last-approved" date, and
 3. report the headers and other information via stdout.
 
-Usage:
+
+Requirements
+------------
+
+The script requires Python 3.5 or higher.
+
+
+Usage
+-----
 
 From the repository root, run:
 
     $ python scripts/prep.py
 
+(You might need to substitute `python3` for `python` depending on your
+personal environment and setup.)
+
 For command help, including command-line options:
 
     $ python scripts/prep.py -h
 
-The script should be run with Python 3.5 or newer.
 """
 
 
