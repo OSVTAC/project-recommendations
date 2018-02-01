@@ -87,6 +87,10 @@ SECTION_NAMES = [
     'glossary',
 ]
 
+# All files use UTF-8, no matter what locale settings are (e.g. LC_ALL=C)
+# Some python libraries default to ASCII even with LANG=en_US.UTF-8
+ENCODING = 'utf-8'
+
 
 def get_source_path(name):
     """
@@ -102,7 +106,7 @@ def write_file(text, path):
     """
     path = Path(path)
     _log.info('writing file: {}'.format(path))
-    path.write_text(text)
+    path.write_text(text,encoding=ENCODING)
 
 
 def write_sections(sections, name):
@@ -262,7 +266,7 @@ def process_section_file(file_base, header_infos, first_section):
     """
     path = get_source_path(file_base)
     _log.info('reading: {}'.format(path))
-    text = path.read_text()
+    text = path.read_text(encoding=ENCODING)
 
     # TODO: eliminate trailing whitespace.
 
@@ -278,7 +282,7 @@ def process_section_file(file_base, header_infos, first_section):
 
 def read_last_approved():
     path = Path('last-approved.txt')
-    last_approved = path.read_text()
+    last_approved = path.read_text(encoding=ENCODING)
     last_approved = last_approved.strip()
 
     return last_approved
