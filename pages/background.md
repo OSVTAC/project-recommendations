@@ -251,6 +251,10 @@ sip-and-puff, etc. If the computer is COTS, it may also need a custom casing
 or shell to increase durability and assist with polling-place transport and
 setup.
 
+For a Remote Accessible Vote By Mail system (required by 2020), the
+hardware used would likely be the voter's personal electronic
+device and printer.
+
 **2\. Central Ballot Scanner**
 
 A device responsible for high-speed, high-volume ballot scanning (e.g. for
@@ -308,6 +312,12 @@ semi-automated fashion, including support for multiple languages.
 
 This is the software corresponding to the Accessible Ballot-Marking Device
 hardware component.
+
+A Remote Accessible Vote By Mail system would likely rely on a reasonably
+updated web browser rather than requiring installation of OS-specific
+software installation. Text to speech capabilities could be either the
+voter's own accessibility software or a web browser component provided
+with the ballot.
 
 **5\. Ballot Picture Interpreter**
 
@@ -551,7 +561,21 @@ useful for the project.
      [Demo/prototype implementation by Free & Fair][prime-iii-faf-repo].
 
 
-#### 3.4.4. Open Source Voting Organizations
+#### 3.4.4. Other Open Source Voting Projects and Research
+
+   * [Pvote][pvote], a model for an open source voting application where
+     sensitive software is minimized-- 460 lines of python code, audited
+     in a security review.
+
+   * [VoteBox][votebox], a prototype electronic voting machine based on
+     COTS hardware. Several technical publications are available with
+     detailed descriptions of the system components.
+
+   * [Low Error Voting Interface][levi] (LEVI), research paper of a voting
+     machine GUI designed to reduce user errors. Used by Prime-III.
+
+
+#### 3.4.5. Open Source Voting Organization
 
    * [OSET Foundation][oset-foundation] 501c umbrella nonprofit to support [Trust the Vote][trust-the-vote],
      site with actual software. \[Currently, mostly Ruby-On-Rails in ruby
@@ -560,8 +584,13 @@ useful for the project.
      Useful diagrams of voting software architecture: ([PDF][oset-arch-pdf], [broken interactive HTML][oset-arch-html]),
      Simpler [diagram of modules][oset-modules].
 
+     Prototype of [VoteStream][trust-the-vote-votestream] election results display.
+
    * [Open Voting Consortium][open-voting-consortium] Inactive (since 2011)
      prior effort to develop open source software. Efforts moved to CAVO.
+     A demo implementation was created and
+     [technical paper][open-voting-consortium-usenix-paper] with a
+     detailed description of the system using COTS hardware.
 
    * [California Association of Voting Officials][cavo] (CAVO)
      Nonprofit organization to promote open source voting. Election officials
@@ -572,7 +601,7 @@ useful for the project.
      Has links and information on voting equipment and usage across the US.
 
 
-#### 3.4.5. Election Data Standards & Organizations
+#### 3.4.6. Election Data Standards & Organizations
 
    * [Voluntary Voting System Guidelines][eac-vvsg] (VVSG). In January 2016,
      the [U.S. Election Assistance Commission][eac] (EAC) adopted a plan
@@ -612,7 +641,21 @@ useful for the project.
      only used for poll lookup. [git][vip-repo]
 
 
-#### 3.4.6. Additional Links
+#### 3.4.7. California Election Laws and Regulations
+
+   * [Advisories to County Election Officials][sos-advisories], announcements
+     from the California Secretary of State on new regulations, required
+     procedures, and notices on statewide propositions and elected offices.
+     Includes certifications of new equipment including remote accessible
+     vote by mail.
+
+   * [Elections Officers Digest][sos-digest], an annotated summary of election
+     laws prepared for local election officials, with procedures,
+     responsibilites and definitions of terms.
+     Includes references to code sections.
+
+
+#### 3.4.8. Additional Links
 
    * [GitHub][github]
    * [Open Source Initiative][osi] (OSI)

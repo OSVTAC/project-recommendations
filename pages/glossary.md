@@ -4,7 +4,11 @@
 
 * **agile**. [TODO]
 
+* **ballot**. [TODO]
+
 * **ballot on-demand**. [TODO]
+
+* **ballot type**. [TODO]
 
 * **cast-vote record (CVR)**. [TODO]
 
@@ -57,9 +61,18 @@
 
 * **outstack**. [TODO]
 
+* **paper cast vote record**. "an auditable document that corresponds to the
+  selection made on the voter's ballot and lists the contests on the ballot and
+  the voter's selections for those contests. A paper cast vote record is not a ballot."[\[CEC19271\]][cec-19271]
+
 * **precinct ballot scanner**. [TODO]
 
 * **remake**. [TODO]
+
+* **remote accessible vote by mail system**.
+  Software or electronic system that allows a voter with
+  disabilities or a military or overseas voter to print a ballot
+  (_paper cast vote record_) at home and return by mail.
 
 * **risk-limiting audit (RLA)**. [TODO]
 
@@ -76,3 +89,10 @@
 * **software stack**. [TODO]
 
 * **stack**. See ”software stack.”
+
+* **statement of vote**. [TODO]
+
+* **voter verified paper audit trail**. "a _paper cast vote record_ containing a
+  copy of each of the voter's selections that allows each voter to confirm his
+  or her selections before the voter casts his or her ballot for systems that
+  do not contain a paper ballot.'[\[CEC19271\]][cec-19271]
