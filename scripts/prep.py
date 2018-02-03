@@ -1,6 +1,7 @@
 # prep.py script to prepare the Markdown files for building.
 #
 # Copyright (C) 2017, 2018  Christopher Jerdonek
+# Copyright (C) 2018  Carl Hage
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,9 +18,11 @@
 #
 # Contact info:
 #
-# The author(s) can be reached at--
+# The author(s) can be reached at (listed in chronological order of
+# contributing)--
 #
 #   Christopher Jerdonek <chris.jerdonek@gmail.com>
+#   Carl Hage <ch@carlhage.com>
 #
 
 """
@@ -87,8 +90,8 @@ SECTION_NAMES = [
     'glossary',
 ]
 
-# All files use UTF-8, no matter what locale settings are (e.g. LC_ALL=C)
-# Some python libraries default to ASCII even with LANG=en_US.UTF-8
+# All files use UTF-8, no matter what locale settings are (e.g. LC_ALL=C).
+# Some python libraries default to ASCII even with LANG=en_US.UTF-8.
 ENCODING = 'utf-8'
 
 
