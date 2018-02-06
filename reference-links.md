@@ -7,6 +7,7 @@
 [bos-ordinance-vstf]: files/BOS_Ordinance_268-08_VSTF.pdf
 [cavo]: http://www.cavo-us.org/index.html
 [cc-by-sa]: https://creativecommons.org/licenses/by-sa/4.0/
+[cec-19271]:https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=ELEC&sectionNum=19271.
 [cla]: https://en.wikipedia.org/wiki/Contributor_License_Agreement
 [coit]: http://sfcoit.org/
 [colorado-rla-home]: http://bcn.boulder.co.us/~neal/elections/corla/
@@ -34,12 +35,14 @@
 [github]: https://github.com/
 [ict-plan-2008]: files/SF_ICT_Plan_2018-22.pdf
 [ieee-1622]: http://grouper.ieee.org/groups/1622/
+[jets-0202]: https://pdfs.semanticscholar.org/30c0/9a87a67516ce91a339d7059ff6a211872e41.pdf
 [la-vsap-application-tally]: files/la-vsap/LA_Application_VSAP_Tally_1.0_2017-09-19.pdf
 [la-vsap-rfi]: files/la-vsap/LA_RFI_20170524.pdf
 [la-vsap-rfp-phase-1]: files/la-vsap/LA_RFP_20170918.pdf
 [la-vsap]: http://vsap.lavote.net/
 [lafco-report]: files/LAFCo_Report_Open_Source_Voting.pdf
 [lafco]: http://sfgov.org/lafco/
+[levi]: https://dspace.mit.edu/handle/1721.1/96560
 [mayor-budget-press-release]: http://sfmayor.org/article/mayor-lee-signs-citys-balanced-budget-fiscal-years-2016-17-2017-18
 [nist-itl]: https://www.nist.gov/itl/voting
 [nist-voting]: http://collaborate.nist.gov/voting/bin/view/Voting/WebHome
@@ -48,6 +51,7 @@
 [open-count]: https://github.com/FreeAndFair/OpenCount
 [open-rla-repo]: https://github.com/FreeAndFair/OpenRLA
 [open-voting-consortium]: http://www.openvotingconsortium.org
+[open-voting-consortium-usenix-paper]: http://gnosis.cx/publish/voting/electronic-voting-machine.pdf
 [oset-arch-html]: https://trustthevote.org/our-work/framework/
 [oset-arch-pdf]: http://www.dubberly.com/wp-content/uploads/2014/09/TTV_Framework_Book.pdf
 [oset-foundation]: http://www.osetfoundation.org/
@@ -60,6 +64,7 @@
 [prime-iii-repo]: https://github.com/HXRL/Prime-III
 [prime-iii]: http://www.primevotingsystem.com/
 [proposed-budget-2016]: files/SF_Mayor_Proposed_Budget_2016-18.pdf
+[pvote]: http://pvote.org/
 [rfp-business-case-pdf]: files/SF_Business_Case_RFP_FINAL.pdf
 [sf-digital-services]: https://digitalservices.sfgov.org/
 [sf-digital-services-strategy]: files/SF_DigitalServiceStrategy.pdf
@@ -68,6 +73,8 @@
 [slalom-contract-appendix-a]: files/slalom/contract/Business_Case_Appendix_A.pdf
 [slalom-contract-appendix-b]: files/slalom/contract/Business_Case_Appendix_B.pdf
 [slalom-contract]: files/slalom/contract/Business_Case_Contract.pdf
+[sos-advisories]: http://www.sos.ca.gov/elections/advisories-county-elections-officials/
+[sos-digest]: http://www.sos.ca.gov/elections/publications-and-resources/elections-officers-digest-2018/
 [slalom-rfp-response]: files/slalom/REG_RFP_2017-01_Slalom_Response.pdf
 [star-vote-entity]: files/star-vote/STAR-Vote_Statement_of_Intent.pdf
 [star-vote-final-press-release]: http://www.traviscountyclerk.org/eclerk/Content.do?code=star-vote-a-change-of-plans
@@ -76,8 +83,10 @@
 [star-vote-usenix]: https://www.usenix.org/conference/evtwote13/workshop-program/presentation/bell
 [techfar-handbook]: https://playbook.cio.gov/techfar/
 [trust-the-vote]: https://trustthevote.org
+[trust-the-vote-votestream]:http://votestream.trustthevote.org/
 [verified-voting-foundation]: https://www.verifiedvoting.org/
 [vip-project]: https://votinginfoproject.org/
 [vip-repo]: https://github.com/votinginfoproject
+[votebox]: http://votebox.cs.rice.edu/
 [vstf-report]: files/VSTF_Report.pdf
 [vstf]: http://sfgov.org/ccsfgsa/voting-systems-task-force
