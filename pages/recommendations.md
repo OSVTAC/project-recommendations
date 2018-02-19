@@ -665,6 +665,26 @@ This section lists some of the requirements the system should satisfy.
 
   _[Item added: Dec. 14, 2017 meeting.]_
 
+* Developing user stories is an essential part of an agile development
+  process. We recommend that the development team create user stories for
+  each of the situations representing voter, Department staff, and other
+  activities. These user stories include, among others:
+
+  1. a registered voter voting at an assigned precinct on election day;
+
+  2. a registered voter voting at a vote center or early voting station;
+
+  3. a registered voter voting remotely and mailing in a marked ballot, and;
+
+  4. a registered voter with a disability in need of special accommodation
+     (several types).
+
+  In following an agile development process, the implementation team would
+  typically break down each user story into smaller stories as needed, and
+  handle one of those within a sprint.
+
+  _[Item added: Jan. 18, 2018 meeting.]_
+
 * The Department should hire a staff person to be in charge of managing the
   project. The person should have experience and expertise in managing
   technical projects of a similar size and complexity.
