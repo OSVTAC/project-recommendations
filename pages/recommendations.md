@@ -181,6 +181,8 @@ system, provided the digital ballot pictures are made public. The visually impai
 could use a ballot picture interpreter on their device with a speech synthesis
 application to validate/check a home printed or marked ballot.
 
+  _[Paragraph edited: Jan. 18, 2018 meeting.]_
+
 * The open source software OpenCount might go a long way towards implementing
 this component.
 
@@ -273,6 +275,8 @@ elections.
 * computer-readable equivalent to the Statement of Vote (e.g. in spreadsheet (xls),
 delimited text (tsv), and NIST-SP1500-100 (xml) formats),
 
+  _[Paragraph added: Jan. 18, 2018 meeting.]_
+
 * HTML pages for the Department website, and
 
 * Possibly also reports to facilitate the public observation and carrying out
@@ -295,6 +299,8 @@ vote data and generating election results in a machine-readable format. This
 includes running the RCV algorithm to generate round-by-round results. Normally
 votes have subtotals reported by consolidated precinct, and may separate
 election-day precinct voting and vote-by-mail ballot subtotals.
+
+_[Paragraph edited: Jan. 18, 2018 meeting.]_
 
 **Interfaces / data formats.** Needs to accept as input:
 
@@ -333,6 +339,8 @@ The presence of a significant amount of extraneous marks might require
 that ballot be identified for adjudication. Likewise, marks clearly not
 present or not fully marked must be identified for adjudication.
 
+_[Paragraph added: Jan. 18, 2018 meeting.]_
+
 **Applicability.** This component can possibly be used in the following
 components:
 
@@ -354,6 +362,8 @@ card for each ballot type, etc.).
 
 * batch header/footer pages and/or box label codes
 
+  _[Item added: Jan. 18, 2018 meeting.]_
+
 Needs to output for each ballot:
 
 * a cast vote record (CVR) of the markings on the ballot.
@@ -361,6 +371,8 @@ Needs to output for each ballot:
 * a report of extraneous or ambiguous marks requiring adjudication,
   with a data file referencing the CVR, ballot picture, and contest
   selections.
+
+  _[Item added: Jan. 18, 2018 meeting.]_
 
 **Sub-components.** This component can possibly have the following sub-component:
 
@@ -507,6 +519,8 @@ formats should be spelled out.
 need to be defined so batch IDs can be included with the Ballot Picture
 Interpreter output CVRs and used with the Vote Totaler.
 
+_[Subsection added: Jan. 18, 2018 meeting.]_
+
 
 ##### 5.2.3.7. Ballot Tabulation Audit Support (Software)
 
@@ -577,6 +591,8 @@ scan and picture interpreter would be required to perform an electronic
 recount of all ballots and generate matching CVRs. If the picture interpreter
 can run at the speed of the scanner, regenerating CVRs (for an electronic
 recount) adds no extra cost.
+
+_[Subsection added: Jan. 18, 2018 meeting.]_
 
 
 #### 5.2.4. Deployment Strategies

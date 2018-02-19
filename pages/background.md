@@ -255,6 +255,8 @@ For a Remote Accessible Vote By Mail system (required by 2020), the
 hardware used would likely be the voter's personal electronic
 device and printer.
 
+_[Item edited: Jan. 18, 2018 meeting.]_
+
 **2\. Central Ballot Scanner**
 
 A device responsible for high-speed, high-volume ballot scanning (e.g. for
@@ -318,6 +320,8 @@ updated web browser rather than requiring installation of OS-specific
 software installation. Text to speech capabilities could be either the
 voter's own accessibility software or a web browser component provided
 with the ballot.
+
+_[Item edited: Jan. 18, 2018 meeting.]_
 
 **5\. Ballot Picture Interpreter**
 
@@ -574,6 +578,8 @@ useful for the project.
    * [Low Error Voting Interface][levi] (LEVI), research paper of a voting
      machine GUI designed to reduce user errors. Used by Prime-III.
 
+_[Subsection added: Jan. 18, 2018 meeting.]_
+
 
 #### 3.4.5. Open Source Voting Organization
 
@@ -591,6 +597,8 @@ useful for the project.
      A demo implementation was created and
      [technical paper][open-voting-consortium-usenix-paper] with a
      detailed description of the system using COTS hardware.
+
+     _[Item edited: Jan. 18, 2018 meeting.]_
 
    * [California Association of Voting Officials][cavo] (CAVO)
      Nonprofit organization to promote open source voting. Election officials
@@ -653,6 +661,8 @@ useful for the project.
      laws prepared for local election officials, with procedures,
      responsibilites and definitions of terms.
      Includes references to code sections.
+
+_[Subsection added: Jan. 18, 2018 meeting.]_
 
 
 #### 3.4.8. Additional Links
