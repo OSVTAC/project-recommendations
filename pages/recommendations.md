@@ -73,6 +73,8 @@ most of these components):
 3. Ballot Picture Interpreter (Software)
 4. Central Ballot Scanner (Hardware & Software)
 5. Ballot Layout Analyzer (Software)
+6. Ballot Batch Management (Software)
+7. Ballot Tabulation Audit Support (Software)
 
 Choosing the above as first components seems to mirror the approach that Los
 Angeles County is taking in its VSAP project. In particular, Los Angeles
@@ -175,7 +177,11 @@ different components, so it is natural to start working on it first.
 
 * Even in the absence of deployed open source hardware components, it could
 be used by members of the public to “check” the scanning done by the interim
-system, provided the digital ballot pictures are made public.
+system, provided the digital ballot pictures are made public. The visually impaired
+could use a ballot picture interpreter on their device with a speech synthesis
+application to validate/check a home printed or marked ballot.
+
+  _[Paragraph edited: Jan. 18, 2018 meeting.]_
 
 * The open source software OpenCount might go a long way towards implementing
 this component.
@@ -266,6 +272,11 @@ elections.
 
 * tables for the Election Certification letter (e.g. in PDF format),
 
+* computer-readable equivalent to the Statement of Vote (e.g. in spreadsheet (xls),
+delimited text (tsv), and NIST-SP1500-100 (xml) formats),
+
+  _[Paragraph added: Jan. 18, 2018 meeting.]_
+
 * HTML pages for the Department website, and
 
 * Possibly also reports to facilitate the public observation and carrying out
@@ -285,7 +296,11 @@ prototyping and testing.
 
 **Description.** This is a software-only component responsible for aggregating
 vote data and generating election results in a machine-readable format. This
-includes running the RCV algorithm to generate round-by-round results.
+includes running the RCV algorithm to generate round-by-round results. Normally
+votes have subtotals reported by consolidated precinct, and may separate
+election-day precinct voting and vote-by-mail ballot subtotals.
+
+_[Paragraph edited: Jan. 18, 2018 meeting.]_
 
 **Interfaces / data formats.** Needs to accept as input:
 
@@ -313,8 +328,18 @@ prototyping and testing.
 digital ballot pictures, namely by generating a cast vote record (CVR) given a digital
 picture of a ballot. The component must support ballots from “third-parties”
 (e.g. the interim voting system) to support incremental roll-outs like pilot
-and hybrid rollouts. The open source software OpenCount developed at UC
+and hybrid rollouts, and possibly to support home-printed
+"remote accessible vote by mail"
+ballots. The open source software OpenCount developed at UC
 Berkeley could be a foundation for this.
+
+The picture interpreter should be able to identify and remove the base
+printing and watermarks so any remaining extraneous marks can be identified.
+The presence of a significant amount of extraneous marks might require
+that ballot be identified for adjudication. Likewise, marks clearly not
+present or not fully marked must be identified for adjudication.
+
+_[Paragraph added: Jan. 18, 2018 meeting.]_
 
 **Applicability.** This component can possibly be used in the following
 components:
@@ -335,9 +360,19 @@ card for each ballot type, etc.).
 
 * the digital ballot pictures themselves.
 
+* batch header/footer pages and/or box label codes
+
+  _[Item added: Jan. 18, 2018 meeting.]_
+
 Needs to output for each ballot:
 
 * a cast vote record (CVR) of the markings on the ballot.
+
+* a report of extraneous or ambiguous marks requiring adjudication,
+  with a data file referencing the CVR, ballot picture, and contest
+  selections.
+
+  _[Item added: Jan. 18, 2018 meeting.]_
 
 **Sub-components.** This component can possibly have the following sub-component:
 
@@ -408,7 +443,7 @@ not be completely automated, but rather will be semi-automated.
 
 * the “election definition” data (e.g. contests, candidates, districts, etc.).
 
-* the digital ballot pictures.
+* the digital ballot pictures (scanned images or PDF)
 
 Needs to output for each ballot type:
 
@@ -424,6 +459,140 @@ prototyping and testing. Samples of ballots from past elections and/or the
 interim voting system.
 
 _[Section added: Dec. 14, 2017 meeting.]_
+
+
+##### 5.2.3.6. Ballot Batch Management (Software)
+
+**Complexity:** Low
+
+**Description.** This is a software component that allows boxes of ballots
+to be organized into batches for scanning and auditing. Labels may be
+printed to be attached to ballot boxes collected, transported, and stored.
+Batches of ballots might include a scannable header page, marking the
+beginning of a batch of ballots, and a scannable footer page, marking the
+end of the batch. The header/footer pages mark the consolidated precinct
+and other information identifying the ballot batch, and might also include
+signatures from poll workers, and digital audit information, e.g.
+IDs, temporary digital signatures and keys, starting and ending hash chain
+codes from a precinct scanner. An additional header/footer page might be
+created to wrap and identify outstacked ballots.
+
+The batch management system would be used to:
+
+* create box labels and header/footer pages,
+
+* provide a database of batch IDs with associated precinct and grouping
+  IDs,
+
+* provide a means to scan box labels and log departure/arrival of ballot boxes
+  transported or stored/retrieved,
+
+* provide the input to the ballot picture interpreter identifying the
+  batch being processed, and associated information (e.g. precinct ID),
+
+* organize scan batches to associate CVR (Cast Vote Record) data
+  with ballot box storage ID and location, and
+
+* track progress of scanning, adjudication, and auditing of ballot batches.
+
+**Interfaces / data formats.** Needs to accept as input:
+
+* a definition of precincts, precinct consolidation, and ballot type
+  by precinct, used to organize batch collections.
+
+* bar code scans of box labels used for tracking
+
+* scans of batch header/footer pages
+
+Needs to output:
+
+* data files with batch IDs and associated precinct/group information
+
+* printable labels and header/footer pages
+
+* data with batch scan/audit status and transport logs
+
+**Other outcomes / deliverables.** The required input and output data and
+formats should be spelled out.
+
+**Possible dependencies / pre-requisites.** Batch management procedures
+need to be defined so batch IDs can be included with the Ballot Picture
+Interpreter output CVRs and used with the Vote Totaler.
+
+_[Subsection added: Jan. 18, 2018 meeting.]_
+
+
+##### 5.2.3.7. Ballot Tabulation Audit Support (Software)
+
+**Complexity:** Medium
+
+**Description.** This is a software component that manages an audit
+process that includes a manual count. A precinct-based audit might
+be performed, where all ballots in randomly selected precincts are
+hand-counted, or a RLA (Risk Limiting Audit) might be performed,
+where a randomly selected set of ballots among all precincts are
+selected for a hand-count. The number of ballot selected in an
+RLA is based on a statistical formula depending on the closeness of
+votes between top contenders.
+
+More general election auditing (like chain of custody) is outside
+the scope of this component.
+
+Audit support software could include the following:
+
+* Save manually generated random input (e.g. dice roll) for precinct selections
+  or RLA random number seed.
+
+* For an RLA, a public high-quality random number generator is used to randomly
+  select ballots to be pulled.
+
+* For ballots selected by order within a batch (does not have a printed
+  and sorted ID), a scanner might be used to sheet feed ballots, stopping
+  where a ballot needs to be pulled.
+
+* If the order in a stored ballot batch does not match the order on stored
+  CVRs (cast vote records) and no ballot IDs are available, a new central scan
+  and picture image analysis might be required.
+
+* Retrieve the CVRs for selected ballots and pass them to the vote totaler.
+
+* Enter hand-count results and compare totals with the official precinct
+  totals or the totaled CVR selection.
+
+**Interfaces / data formats.** Needs to accept as input:
+
+* the “election definition” data (e.g. contests, candidates, districts, etc.).
+
+* a definition of batches with precincts, precinct consolidation, and ballot type.
+
+* results of the vote totaler.
+
+* random number seed
+
+* Cast Vote Records (for an RLA)
+
+* Hand-count results
+
+Needs to output:
+
+* for an RLA, the randomly selected ballots with either ID or sequence in
+  a batch.
+
+* comparison of hand counts and machine counts
+
+* scanner controls if used to pull RLA selected ballots
+
+**Other outcomes / deliverables.** The required input and output data and
+formats should be spelled out.
+
+**Possible dependencies / pre-requisites.** If an RLA audit is performed
+and stored ballots might not match ordered CVRs, then the central ballot
+scan and picture interpreter would be required to perform an electronic
+recount of all ballots and generate matching CVRs. If the picture interpreter
+can run at the speed of the scanner, regenerating CVRs (for an electronic
+recount) adds no extra cost.
+
+_[Subsection added: Jan. 18, 2018 meeting.]_
 
 
 #### 5.2.4. Deployment Strategies
@@ -664,6 +833,26 @@ This section lists some of the requirements the system should satisfy.
   Strategy_][sf-digital-services-strategy] (PDF).
 
   _[Item added: Dec. 14, 2017 meeting.]_
+
+* Developing user stories is an essential part of an agile development
+  process. We recommend that the development team create user stories for
+  each of the situations representing voter, Department staff, and other
+  activities. These user stories include, among others:
+
+  1. a registered voter voting at an assigned precinct on election day;
+
+  2. a registered voter voting at a vote center or early voting station;
+
+  3. a registered voter voting remotely and mailing in a marked ballot, and;
+
+  4. a registered voter with a disability in need of special accommodation
+     (several types).
+
+  In following an agile development process, the implementation team would
+  typically break down each user story into smaller stories as needed, and
+  handle one of those within a sprint.
+
+  _[Item added: Jan. 18, 2018 meeting.]_
 
 * The Department should hire a staff person to be in charge of managing the
   project. The person should have experience and expertise in managing
