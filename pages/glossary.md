@@ -65,6 +65,8 @@
   selection made on the voter's ballot and lists the contests on the ballot and
   the voter's selections for those contests. A paper cast vote record is not a ballot."[\[CEC19271\]][cec-19271]
 
+  _[Item added: Jan. 18, 2018 meeting.]_
+
 * **precinct ballot scanner**. [TODO]
 
 * **remake**. [TODO]
@@ -73,6 +75,8 @@
   Software or electronic system that allows a voter with
   disabilities or a military or overseas voter to print a ballot
   (_paper cast vote record_) at home and return by mail.
+
+  _[Item added: Jan. 18, 2018 meeting.]_
 
 * **risk-limiting audit (RLA)**. [TODO]
 
@@ -96,3 +100,5 @@
   copy of each of the voter's selections that allows each voter to confirm his
   or her selections before the voter casts his or her ballot for systems that
   do not contain a paper ballot.'[\[CEC19271\]][cec-19271]
+
+  _[Item added: Jan. 18, 2018 meeting.]_
