@@ -40,6 +40,7 @@
 [la-vsap-rfi]: files/la-vsap/LA_RFI_20170524.pdf
 [la-vsap-rfp-phase-1]: files/la-vsap/LA_RFP_20170918.pdf
 [la-vsap]: http://vsap.lavote.net/
+[la-vsap-vbm-study]: http://vsap.lavote.net/wp-content/uploads/2016/06/Vox-VBM-Report-V1.3.pdf
 [lafco-report]: files/LAFCo_Report_Open_Source_Voting.pdf
 [lafco]: http://sfgov.org/lafco/
 [levi]: https://dspace.mit.edu/handle/1721.1/96560
@@ -47,6 +48,12 @@
 [nist-itl]: https://www.nist.gov/itl/voting
 [nist-voting]: http://collaborate.nist.gov/voting/bin/view/Voting/WebHome
 [nist-vvsg-principles]: http://collaborate.nist.gov/voting/bin/view/Voting/VVSGPrinciplesAndGuidelines
+[one4all-demo]: https://www.youtube.com/watch?v=g6jgmIdG56M
+[one4all-howto]: https://www.youtube.com/watch?v=3FSjzHVPAkQ
+[one4all-ppt]: http://bowencenterforpublicaffairs.org/wp-content/uploads/2016/06/NH-One4all-Technical-Overview-2016-06-15.pdf
+[one4all-vvf]: https://www.verifiedvoting.org/one4all/
+[one4all-setup]: https://www.youtube.com/watch?v=c2WXpQjihJI
+[one4all-ltr]: http://www.cavo-us.org/PDFS/Open_source_letter_from_Bill_Gardner.pdf
 [open-count-pres]: https://www.usenix.org/conference/evtwote12/workshop-program/presentation/wang_kai
 [open-count]: https://github.com/FreeAndFair/OpenCount
 [open-rla-repo]: https://github.com/FreeAndFair/OpenRLA
@@ -60,9 +67,10 @@
 [osi]: https://opensource.org/
 [osvtac-about-recs]: https://osvtac.github.io/about#project-recommendations
 [osvtac]: https://osvtac.github.io
-[prime-iii-faf-repo]: https://github.com/FreeAndFair/STAR-Vote
 [prime-iii-repo]: https://github.com/HXRL/Prime-III
 [prime-iii]: http://www.primevotingsystem.com/
+[prime-iii-demo]: https://hxr.cise.ufl.edu/PrimeIII/index.html
+[prime-iii-video]: https://www.youtube.com/watch?v=bM5DKP4c4aw
 [proposed-budget-2016]: files/SF_Mayor_Proposed_Budget_2016-18.pdf
 [pvote]: http://pvote.org/
 [rfp-business-case-pdf]: files/SF_Business_Case_RFP_FINAL.pdf
@@ -78,6 +86,7 @@
 [slalom-rfp-response]: files/slalom/REG_RFP_2017-01_Slalom_Response.pdf
 [star-vote-entity]: files/star-vote/STAR-Vote_Statement_of_Intent.pdf
 [star-vote-final-press-release]: http://www.traviscountyclerk.org/eclerk/Content.do?code=star-vote-a-change-of-plans
+[star-vote-faf-repo]: https://github.com/FreeAndFair/STAR-Vote
 [star-vote-final-report]: files/star-vote/STAR_Vote_Final_Report.pdf
 [star-vote-rfp]: files/star-vote/RFP_STAR-Vote_Unofficial_Copy.pdf
 [star-vote-usenix]: https://www.usenix.org/conference/evtwote13/workshop-program/presentation/bell
