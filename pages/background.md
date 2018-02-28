@@ -553,8 +553,20 @@ useful for the project.
 
    * [Prime III][prime-iii], Dr. Juan E. Gilbert (now hosted at University of Florida)
      Tablet with docking station with keyboard and laser printer, open software.
-     Used by NH in 2016 for accessible voting (ballot marking device). Allows
-     home computer or phone to prepare QR code. \[[git][prime-iii-repo]\]
+     Allows home computer or phone to prepare QR code.
+     \[[Video Demo][prime-iii-video]\] \[[Online Demo][prime-iii-demo]\]
+     \[[git][prime-iii-repo]\]
+
+     Used by NH in 2016 for accessible voting (ballot marking device) statewide.
+     NH revised version is known as [one4all][one4all-vvf]
+     (no known source code location). Can print OCR ballot or mark
+     ovals on preprinted ballot. A [slide presentation ][one4all-ppt]
+     describes the hardware (windows tablet, keyboard, and printer).
+     Videos: \[[Demo][one4all-demo]\], \[[How to Use][one4all-howto]\],
+     \[[Setup Instructions][one4all-setup]\].
+     The Secretary of State, William Gardner, sent a [letter][one4all-ltr]
+     to [CAVO][cavo] describing the program.
+
 
    * [STAR-Vote][star-vote-usenix], Travis County, TX
      PDF paper and slides for presentation on Travis County TX proposed system.
@@ -562,7 +574,7 @@ useful for the project.
      made. Scanner only reads IDs of ballots placed in box to record which
      ballots printed are cast. Electronic records separate. (No mail ballots.)
      Voters can check receipt with QR code.
-     [Demo/prototype implementation by Free & Fair][prime-iii-faf-repo].
+     [Demo/prototype implementation by Free & Fair][star-vote-faf-repo].
 
 
 #### 3.4.4. Other Open Source Voting Projects and Research
