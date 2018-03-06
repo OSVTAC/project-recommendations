@@ -567,6 +567,8 @@ useful for the project.
      The Secretary of State, William Gardner, sent a [letter][one4all-ltr]
      to [CAVO][cavo] describing the program.
 
+     _[Item edited: Feb. 8, 2018 meeting.]_
+
 
    * [STAR-Vote][star-vote-usenix], Travis County, TX
      PDF paper and slides for presentation on Travis County TX proposed system.

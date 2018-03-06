@@ -687,6 +687,8 @@ ordinary paper, but returned via special mail envelopes.
   + Vote with Provisional Ballots (enclosed in a special envelope for later
     qualification)
 
+_[Assumptions added: Feb. 8, 2018 meeting.]_
+
 
 ##### 5.3.1.1. Will Vote Centers be used for early and/or election day voting?
 
@@ -706,6 +708,8 @@ Vote Centers could be used for:
    1. Early voting only
    2. Election day voting at selected locations
    3. All election day polling locations
+
+_[Answer edited: Feb. 8, 2018 meeting.]_
 
 
 ##### 5.3.1.2. Should precinct polling and vote centers use the same paper ballots as those used in vote-by-mail?
@@ -736,6 +740,8 @@ Mail-Only Format Cons:
     special, possibly nonstandard, equipment. Sheets might need to be
     hand-inserted individually.
 
+_[Question added: Feb. 8, 2018 meeting.]_
+
 
 ##### 5.3.1.3. Should ballots to be hand-marked be preprinted or printed on demand?
 
@@ -759,6 +765,8 @@ Ballot on Demand Cons:
 * On site printers can fail and probably require AC power, stopping voting.
 * Printing on large mail ballot paper, usually double sided requires special,
   possibly nonstandard, equipment.
+
+_[Question & answer edited: Feb. 8, 2018 meeting.]_
 
 
 ##### 5.3.1.4. Should voting at a precinct or vote center be primarily based on paper ballots hand-marked with a pen, or voting machine with a printer?
@@ -802,6 +810,8 @@ Machines used by all non-mail voters Cons:
 * Voters need to be occupying a machine while voting.
 * Mail ballot processing is still a separate sizable operation.
 
+_[Question & answer edited: Feb. 8, 2018 meeting.]_
+
 
 ##### 5.3.1.5. If voting machines are used at a precinct, should there be one printer per voting station?
 
@@ -823,6 +833,9 @@ no association with a voter-- just a way to associate the ballot entered
 at a voting station with the ballot to be printed. Another form of token
 in use is an RFID chip.
 
+_[Question added: Feb. 8, 2018 meeting.]_
+
+
 ##### 5.3.1.5. If voters at precincts use hand-marked ballots, should ballots be scanned centrally or at the precinct/vote center?
 
 Precinct ballot scanner Pros:
@@ -837,6 +850,8 @@ Precinct ballot scanner Cons:
     into a ballot collection bin), custom equipment may be required.
 * Not required if all ballots are printed by a voting machine
 
+_[Question added: Feb. 8, 2018 meeting.]_
+
 
 ##### 5.3.1.6. If a precinct scanner is used, does the scanner need to be integrated with a ballot collection bin?
 
@@ -846,6 +861,8 @@ The scanner feeds the ballot into the collection box, or else reverses the paper
 feed in case of an error detected. Scanners may need multiple collection bins
 in case of ambiguous marks or write-in votes. An integrated device likely
 means custom hardware vs COTS equipment.
+
+_[Question added: Feb. 8, 2018 meeting.]_
 
 
 ##### 5.3.1.7. If a precinct scanner (or central scanner) is used, does it need to include an imprinter to record a ballot/scan ID?
@@ -873,6 +890,8 @@ Scanner Imprinter Cons:
   another “moving part” that can break, and may require consumables, e.g.
   printer ink or ribbon changes.
 
+_[Question & answer edited: Feb. 8, 2018 meeting.]_
+
 
 ##### 5.3.1.8. If a voting machine is used to print ballots, does the ballot collection box need to have an integrated scanner?
 
@@ -888,6 +907,8 @@ Additional ballot box scanner Pros: [TODO]
 
 Additional ballot box scanner Cons: [TODO]
 
+_[Question added: Feb. 8, 2018 meeting.]_
+
 
 ##### 5.3.1.9. Is voting equipment required to run off a battery (without outside AC power) for a set outage duration or all day?
 
@@ -900,6 +921,8 @@ No outside power Pros:
 No outside power Cons:
 * Limits the type of equipment used
 * Might require special external batteries and power conversion
+
+_[Question added: Feb. 8, 2018 meeting.]_
 
 
 ##### 5.3.1.10. What kind of printing technology should be used at a poll site or vote center?
@@ -951,6 +974,8 @@ Options Include:
     + Ribbon usage needs to be tracked and replaced
     + Not normally used for letter size printers
 
+_[Question added: Feb. 8, 2018 meeting.]_
+
 
 ##### 5.3.1.11. What size paper should be used for precinct voting and vote by mail?
 
@@ -968,6 +993,8 @@ a [usability study][la-vsap-vbm-study] of mail ballot design including
 If voting machines are used to print a _paper cast vote record_, then
 only the selections made are shown, so a single sheet could be used.
 
+_[Question added: Feb. 8, 2018 meeting.]_
+
 
 ##### 5.3.1.12. What options should be provided to people with disabilities?
 
@@ -976,6 +1003,8 @@ Accessible voting could be accomplished with:
 * Voting machines (BMD) at all precincts
 * Voting machines at selected precincts or vote centers with transportation provided
 * Vote by mail using home computer and printer
+
+_[Question added: Feb. 8, 2018 meeting.]_
 
 
 ##### 5.3.1.13. Should "remote accessible vote-by-mail" (RAVBM) printing used by voters with disabilities to vote by mail using home computers also be used for disability-access precinct voting?
@@ -990,6 +1019,8 @@ precincts.
 RAVBM used in precincts Pros: [TODO]
 
 RAVBM used in precincts Cons: [TODO]
+
+_[Question added: Feb. 8, 2018 meeting.]_
 
 
 ##### 5.3.1.14. Does ballot collection order or CVR recordings need to be randomized to protect voter privacy (be disassociated by order of appearance at a precinct)?
@@ -1006,6 +1037,8 @@ requiring adjudication, or in an audit. Otherwise, a randomly assigned
 unique ID could be imprinted, and stored electronic cast vote records
 could have order randomized.
 
+_[Question added: Feb. 8, 2018 meeting.]_
+
 
 ##### 5.3.1.14. Should scanned ballot images or compiled CVRs be an open public record, possibly electronically accessible?
 
@@ -1018,6 +1051,9 @@ to it?
 
 Ranked Choice Voting (RCV) might require a public set of cast vote records (CVR)
 to fully disclose voter choices and validate the elimination rounds.
+
+_[Question added: Feb. 8, 2018 meeting.]_
+
 
 ##### 5.3.1.15. End-to-end verifiability
 
@@ -1034,6 +1070,9 @@ Is it possible to have end-end verifiability without also being able to
 prove how one voted?
 
 [TODO: List current research on E2E voting.]
+
+_[Question & answer edited: Feb. 8, 2018 meeting.]_
+
 
 ### 5.4. Requirements
 
