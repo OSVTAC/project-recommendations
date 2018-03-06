@@ -324,14 +324,13 @@ prototyping and testing.
 
 **Complexity:** Medium
 
-**Description.** This is a software-only component responsible for interpreting
-digital ballot pictures, namely by generating a cast vote record (CVR) given a digital
-picture of a ballot. The component must support ballots from “third-parties”
-(e.g. the interim voting system) to support incremental roll-outs like pilot
-and hybrid rollouts, and possibly to support home-printed
-"remote accessible vote by mail"
-ballots. The open source software OpenCount developed at UC
-Berkeley could be a foundation for this.
+**Description.** This is a software-only component responsible for
+interpreting digital ballot pictures, namely by generating a cast vote record
+(CVR) given a digital picture of a ballot. The component must support ballots
+from “third-parties” (e.g. the interim voting system) to support incremental
+roll-outs like pilot and hybrid rollouts, and possibly to support
+home-printed "remote accessible vote by mail" ballots. The open source
+software OpenCount developed at UC Berkeley could be a foundation for this.
 
 The picture interpreter should be able to identify and remove the base
 printing and watermarks so any remaining extraneous marks can be identified.
@@ -668,9 +667,11 @@ discussion, not a particular recommendation.
 
 * Votes are cast (recorded, submitted, and stored) on paper in a human-readable form.
 
-* An electronic representation of ballots made either by voting machines or scanners serves only as a copy of the official paper ballot.
+* An electronic representation of ballots made either by voting machines or
+  scanners serves only as a copy of the official paper ballot.
 
-* Ballots marked are on paper that meets the California regulations for printing (counterfeit resistance).
+* Ballots marked are on paper that meets the California regulations for
+  printing (counterfeit resistance).
 
 * By 2020, CA [AB973][bill-ab-973-2017] requires support of _Remote Accessible
 Vote By Mail_ ballots ([AB2252][bill-ab-2252-2015]) for voters with disabilities
@@ -681,8 +682,10 @@ ordinary paper, but returned via special mail envelopes.
   + Vote by mail (preprinted and special accessible/overseas)
   + Vote on election day at a polling location (precinct voting)
   + Vote prior to election day at an early vote center
-  + Vote by people with disabilities requiring special equipment (ballot marking device)
-  + Vote with Provisional Ballots (enclosed in a special envelope for later qualification)
+  + Vote by people with disabilities requiring special equipment (ballot
+    marking device)
+  + Vote with Provisional Ballots (enclosed in a special envelope for later
+    qualification)
 
 
 ##### 5.3.1.1. Will Vote Centers be used for early and/or election day voting?
@@ -724,7 +727,8 @@ Mail-Only Format Pros:
     disabilities can use a "low-tech" solution of only a marker or pen
 * Central storage and recounting has all the same ballot size/type
 * Better ballot secrecy because all ballots look the same.
-* Reduced requirements for printers and possible problems with printer malfunction and paper jams.
+* Reduced requirements for printers and possible problems with printer
+  malfunction and paper jams.
 * Voting with hand-marked ballots could be done with no electric power.
 
 Mail-Only Format Cons:
@@ -753,7 +757,8 @@ Ballot on Demand Pros:
 
 Ballot on Demand Cons:
 * On site printers can fail and probably require AC power, stopping voting.
-* Printing on large mail ballot paper, usually double sided requires special, possibly nonstandard, equipment.
+* Printing on large mail ballot paper, usually double sided requires special,
+  possibly nonstandard, equipment.
 
 
 ##### 5.3.1.4. Should voting at a precinct or vote center be primarily based on paper ballots hand-marked with a pen, or voting machine with a printer?
@@ -770,14 +775,20 @@ prior to casting into a ballot box.
 
 
 Machines used by all non-mail voters Pros:
-* Paper+Electronic CVR has the highest security/integrity. Digital signatures can be printed on ballots to authenticate paper.
+* Paper+Electronic CVR has the highest security/integrity. Digital signatures
+  can be printed on ballots to authenticate paper.
 * Time to vote can be less than marking.
 * Mistakes can be undone without needing another ballot to mark.
-* Machines could read a QR code from a vote at home app to print a ballot immediately.
-* A separate non-mail ballot format from voting machines would be the same for ordinary voters and those with special needs.
+* Machines could read a QR code from a vote at home app to print a ballot
+  immediately.
+* A separate non-mail ballot format from voting machines would be the same
+  for ordinary voters and those with special needs.
 * Extra machines provide redundancy vs a single disability-access machine.
-* Vote centers could handle all ballot types without the need for a ballot on demand system.
-* Election-day machines could only allow authorized write-ins to be recorded, simplifying write-in voting and enabling end of day totals that include write-ins.
+* Vote centers could handle all ballot types without the need for a ballot
+  on demand system.
+* Election-day machines could only allow authorized write-ins to be recorded,
+  simplifying write-in voting and enabling end of day totals that include
+  write-ins.
 * A full precinct scanner is not required-- just a simple bar code scanner
     to track paper cast by entering into a ballot box. (The bar code is matched
     against the electronic CVR.)
@@ -833,16 +844,17 @@ Precinct ballot scanner Cons:
 usually include a ballot collection bin within same box containing the scanner.
 The scanner feeds the ballot into the collection box, or else reverses the paper
 feed in case of an error detected. Scanners may need multiple collection bins
-in case of ambiguous marks or write-in votes. An integrated device likely means custom hardware vs COTS equipment.
+in case of ambiguous marks or write-in votes. An integrated device likely
+means custom hardware vs COTS equipment.
 
 
 ##### 5.3.1.7. If a precinct scanner (or central scanner) is used, does it need to include an imprinter to record a ballot/scan ID?
 
   Background: To match a specific paper ballot in a ballot box with a scanned
 CVR, either the order of insertion must be maintained, or a unique identifier
-associated with the scan needs to be added to the ballot. Alternatively, ordered
-ballots could be rescanned centrally during a recount or audit and matched as a
-batch with the original scan.
+associated with the scan needs to be added to the ballot. Alternatively,
+ordered ballots could be rescanned centrally during a recount or audit and
+matched as a batch with the original scan.
 
 Scanner Imprinter Pros:
 
@@ -882,7 +894,8 @@ Additional ballot box scanner Cons: [TODO]
 No outside power Pros:
 * Eliminates extension cords and possible special power requirements.
 * Voting can continue in a power outage.
-* Some equipment (tablets and laptops) has a built in battery that can work during a power outage.
+* Some equipment (tablets and laptops) has a built in battery that can work
+  during a power outage.
 
 No outside power Cons:
 * Limits the type of equipment used
@@ -1140,10 +1153,10 @@ This section covers topics related to open source.
   the project as early as possible.
 
 * All software being developed should be developed using an open source
-  programming language and toolchain. This means an open source compiler
-  or runtime should be available for the language(s) used, and it should
-  be possible to build and run the software from source using only open source tools.
-  For programming languages and build tools, any OSI-approved license
+  programming language and toolchain. This means an open source compiler or
+  runtime should be available for the language(s) used, and it should be
+  possible to build and run the software from source using only open source
+  tools. For programming languages and build tools, any OSI-approved license
   should be okay; they need not be copyleft.
 
 * Reuse of existing open source libraries, tools and software is encouraged.
