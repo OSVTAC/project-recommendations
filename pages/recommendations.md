@@ -781,7 +781,6 @@ a ballot type code preprinted. When voters complete their selections, the
 paper is inserted into a printer, then they check the final printed ballot
 prior to casting into a ballot box.
 
-
 Machines used by all non-mail voters Pros:
 * Paper+Electronic CVR has the highest security/integrity. Digital signatures
   can be printed on ballots to authenticate paper.
@@ -836,7 +835,7 @@ in use is an RFID chip.
 _[Question added: Feb. 8, 2018 meeting.]_
 
 
-##### 5.3.1.5. If voters at precincts use hand-marked ballots, should ballots be scanned centrally or at the precinct/vote center?
+##### 5.3.1.6. If voters at precincts use hand-marked ballots, should ballots be scanned centrally or at the precinct/vote center?
 
 Precinct ballot scanner Pros:
 * Overvotes/Undervotes and invalid or ambiguous marks can be reported by the
@@ -853,7 +852,7 @@ Precinct ballot scanner Cons:
 _[Question added: Feb. 8, 2018 meeting.]_
 
 
-##### 5.3.1.6. If a precinct scanner is used, does the scanner need to be integrated with a ballot collection bin?
+##### 5.3.1.7. If a precinct scanner is used, does the scanner need to be integrated with a ballot collection bin?
 
   Background: Custom-built precinct ballot scanners sold by election vendors
 usually include a ballot collection bin within same box containing the scanner.
@@ -865,7 +864,7 @@ means custom hardware vs COTS equipment.
 _[Question added: Feb. 8, 2018 meeting.]_
 
 
-##### 5.3.1.7. If a precinct scanner (or central scanner) is used, does it need to include an imprinter to record a ballot/scan ID?
+##### 5.3.1.8. If a precinct scanner (or central scanner) is used, does it need to include an imprinter to record a ballot/scan ID?
 
   Background: To match a specific paper ballot in a ballot box with a scanned
 CVR, either the order of insertion must be maintained, or a unique identifier
@@ -893,7 +892,7 @@ Scanner Imprinter Cons:
 _[Question & answer edited: Feb. 8, 2018 meeting.]_
 
 
-##### 5.3.1.8. If a voting machine is used to print ballots, does the ballot collection box need to have an integrated scanner?
+##### 5.3.1.9. If a voting machine is used to print ballots, does the ballot collection box need to have an integrated scanner?
 
   Background: Using a voting machine with voter-verified ballot does not
 constitute casting a ballot-- the act of submitting the ballot after
@@ -910,7 +909,7 @@ Additional ballot box scanner Cons: [TODO]
 _[Question added: Feb. 8, 2018 meeting.]_
 
 
-##### 5.3.1.9. Is voting equipment required to run off a battery (without outside AC power) for a set outage duration or all day?
+##### 5.3.1.10. Is voting equipment required to run off a battery (without outside AC power) for a set outage duration or all day?
 
 No outside power Pros:
 * Eliminates extension cords and possible special power requirements.
@@ -925,7 +924,7 @@ No outside power Cons:
 _[Question added: Feb. 8, 2018 meeting.]_
 
 
-##### 5.3.1.10. What kind of printing technology should be used at a poll site or vote center?
+##### 5.3.1.11. What kind of printing technology should be used at a poll site or vote center?
 
 Background: [TODO]
 
@@ -977,7 +976,7 @@ Options Include:
 _[Question added: Feb. 8, 2018 meeting.]_
 
 
-##### 5.3.1.11. What size paper should be used for precinct voting and vote by mail?
+##### 5.3.1.12. What size paper should be used for precinct voting and vote by mail?
 
 Background: Vote-by-mail ballots are typically printed on wide paper
 stock (sometimes 11"x17") folded to fit within a mailing envelope.
@@ -996,7 +995,7 @@ only the selections made are shown, so a single sheet could be used.
 _[Question added: Feb. 8, 2018 meeting.]_
 
 
-##### 5.3.1.12. What options should be provided to people with disabilities?
+##### 5.3.1.13. What options should be provided to people with disabilities?
 
 Accessible voting could be accomplished with:
 
@@ -1007,7 +1006,7 @@ Accessible voting could be accomplished with:
 _[Question added: Feb. 8, 2018 meeting.]_
 
 
-##### 5.3.1.13. Should "remote accessible vote-by-mail" (RAVBM) printing used by voters with disabilities to vote by mail using home computers also be used for disability-access precinct voting?
+##### 5.3.1.14. Should "remote accessible vote-by-mail" (RAVBM) printing used by voters with disabilities to vote by mail using home computers also be used for disability-access precinct voting?
 
   Background: California Election code specifies that remote accessible vote by
 mail capability should be provided by 2020 for people with disabilities and
@@ -1023,7 +1022,7 @@ RAVBM used in precincts Cons: [TODO]
 _[Question added: Feb. 8, 2018 meeting.]_
 
 
-##### 5.3.1.14. Does ballot collection order or CVR recordings need to be randomized to protect voter privacy (be disassociated by order of appearance at a precinct)?
+##### 5.3.1.15. Does ballot collection order or CVR recordings need to be randomized to protect voter privacy (be disassociated by order of appearance at a precinct)?
 
 Background: To protect voter privacy, either the time and order of appearance
 of a voter must not be recorded, or else the order of scanned or submitted
@@ -1040,7 +1039,7 @@ could have order randomized.
 _[Question added: Feb. 8, 2018 meeting.]_
 
 
-##### 5.3.1.14. Should scanned ballot images or compiled CVRs be an open public record, possibly electronically accessible?
+##### 5.3.1.16. Should scanned ballot images or compiled CVRs be an open public record, possibly electronically accessible?
 
 In the interest of making the election process transparent, the electronic
 records of scanned ballots and/or CVRs could be made public (vs sealed
@@ -1055,7 +1054,7 @@ to fully disclose voter choices and validate the elimination rounds.
 _[Question added: Feb. 8, 2018 meeting.]_
 
 
-##### 5.3.1.15. End-to-end verifiability
+##### 5.3.1.17. End-to-end verifiability
 
 [TODO: Introduction - why we want it ...]
 

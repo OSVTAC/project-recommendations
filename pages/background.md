@@ -569,7 +569,6 @@ useful for the project.
 
      _[Item edited: Feb. 8, 2018 meeting.]_
 
-
    * [STAR-Vote][star-vote-usenix], Travis County, TX
      PDF paper and slides for presentation on Travis County TX proposed system.
      Uses off the shelf tablet to produce printed ballot with only choices
