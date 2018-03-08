@@ -28,10 +28,10 @@ suggestions for how the Department can proceed incrementally in developing
 and deploying an open source voting system.
 
 
-#### 5.2.1. Possible First Components
+### 7.1. Recommended First Components
 
-The Committee suggests the following as components to start work on and
-deliver first (see the “Voting System” section for brief descriptions of
+The Committee recommends the following as components to start work on and
+deliver first (see the “Components” section for brief descriptions of
 most of these components):
 
 1. Results Reporter (Software)
@@ -64,7 +64,7 @@ Los Angeles County's Tally System in relation to other components like their
 Ballot Marking Device.
 
 
-#### 5.2.2. Rationale
+### 7.2. Rationale
 
 Below are some reasons for selecting the components above:
 
@@ -106,7 +106,8 @@ that need to be worked out anyways
   addressed by the ballot image interpreter component), the former leans more
   towards being a hardware problem.
 
-For the Results Reporter:
+
+### 7.2.1. Results Reporter Rationale
 
 * The results reporter is probably the “easiest” component to implement and
 has the least amount of risk, since it is responsible merely for formatting
@@ -126,7 +127,8 @@ would be open source).
 would give the Department the ability to customize and improve the current
 format, and accept contributions from the public.
 
-For the Vote Totaler:
+
+### 7.2.2. Vote Totaler Rationale
 
 * This component is also one of the easiest components and so would be good
 to start with.
@@ -152,7 +154,8 @@ application to validate/check a home printed or marked ballot.
 * The open source software OpenCount might go a long way towards implementing
 this component.
 
-For the Central Ballot Scanner:
+
+### 7.2.3. Central Ballot Scanner Rationale
 
 * This is probably the “easiest” hardware component to work on and implement
 first, for reasons that will be described below.
@@ -194,7 +197,7 @@ the hardware, it is a strictly simpler component than the precinct-based
 scanner.
 
 
-#### 5.2.4. Deployment Strategies
+### 7.3. Deployment Strategies
 
 The components listed above can be deployed and used in conjunction with a
 non-open source interim system even before a full open source voting system
@@ -211,7 +214,7 @@ taking in the non-aggregated numeric results from the interim system, and
 then feeding the aggregate results into the results reporter.
 
 
-##### 5.2.4.1. Central Ballot Scanner Phases
+### 7.3.1. Central Ballot Scanner Phases
 
 For the central ballot scanner, there are a number of options for
 incrementally phasing in an open source version.

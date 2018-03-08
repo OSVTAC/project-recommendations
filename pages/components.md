@@ -1,9 +1,43 @@
 ## 5. Components
 
-This section provides one possible way of listing the components of a
-“generic” optical-scan paper-ballot voting system. This list is not rigorous
-or exhaustive. Rather, it is meant for discussion purposes and to provide a
-sense of what functionalities are needed and how they are divided up, etc.
+This section provides one possible way of dividing a “generic” optical-scan
+paper-ballot voting system into components or modules. This can be used as
+the starting point for an agile development plan (e.g. incremental
+implementation, modular contracting, etc).
+
+
+### 5.1. Component Listing
+
+This subsection contains the listing of components without detail. Caveats
+are discussed after. More detailed descriptions of each component are in the
+subsections that follow.
+
+**Hardware**
+
+1. Accessible Ballot-Marking Device
+2. Central Ballot Scanner
+3. Precinct Ballot Scanner
+4. Standard laptop or desktop computers
+
+**Software**
+
+1. Voting System Database / Management
+2. Ballot Batch Management
+3. EIMS® Integration
+4. Ballot Layout Creator
+5. Ballot Layout Encoder
+6. Accessible Ballot-Marking Device Software
+7. Ballot Picture Interpreter
+8. Scanner Device Drivers (one for precinct and one for central)
+9. Central Ballot Scanner Software
+10. Precinct Ballot Scanner Software
+11. Vote Totaler
+12. Results Reporter
+13. Ballot Tabulation Audit Support
+
+The lists above are not rigorous or exhaustive. Rather, they are meant for
+discussion purposes and to provide a sense of what functionalities are needed
+and how they are divided up, etc.
 
 For simplicity, we assume that the voting system uses pre-printed ballots, as
 opposed to being a ballot on-demand system. We also assume that in-precinct
@@ -34,7 +68,7 @@ than one hardware component. Differences can also result from where the
 assigns to different components).
 
 
-#### 5.2.3. Component Details
+### 5.2. Component Details
 
 This section lists more details about each of the four components we
 suggested above. For each of these deliverables, we provide—
@@ -56,12 +90,13 @@ needed in advance), and
 * Other outcomes / deliverables associated with delivering the component.
 
 
-##### 3.2.2.1. Hardware Components
+#### 5.2.1. Hardware Component Details
 
 Each of the hardware components below also needs software to function. In
 most cases, we list this software in the “Software Components” section.
 
-**1\. Accessible Ballot-Marking Device**
+
+##### 5.2.1.1. Accessible Ballot-Marking Device
 
 A device used in polling places that lets people with disabilities vote
 independently. It supports different accessible interfaces like audio,
@@ -75,7 +110,8 @@ device and printer.
 
 _[Item edited: Jan. 18, 2018 meeting.]_
 
-**2\. Central Ballot Scanner**
+
+##### 5.2.1.2. Central Ballot Scanner
 
 A device responsible for high-speed, high-volume ballot scanning (e.g. for
 vote-by-mail ballots). The scanning with these machines is done in a
@@ -117,7 +153,7 @@ prototyping and testing. Samples of ballots from past elections and/or the
 interim voting system.
 
 
-**3\. Precinct Ballot Scanner**
+##### 5.2.1.3. Precinct Ballot Scanner
 
 A device used in polling places to scan and tabulate ballots cast in person.
 It has features like returning the ballot to the voter for possible
@@ -125,16 +161,18 @@ correction if the ballot contains an overvote. Similar to the accessible
 device, this device may also need a custom casing or shell for durability and
 to facilitate polling-place use.
 
-**4\. Standard laptop or desktop computers**
+
+##### 5.2.1.4. Standard laptop or desktop computers
 
 Standard computers will also be needed for administrative tasks like ballot
 layout, adjudicating digital pictures of ballots, aggregating and totaling
 votes, and generating results reports.
 
 
-##### 3.2.2.2. Software Components
+#### 5.2.2. Software Component Details
 
-**1\. Voting System Database / Management**
+
+##### 5.2.2.1. Voting System Database / Management
 
 Central store (e.g. file system and/or database) and software application
 providing access to the voting-system information needed to conduct an
@@ -151,7 +189,7 @@ provide an interface to running other software components and functions
 like the EIMS integration, tabulation, and results reporting.
 
 
-**2\. Ballot Batch Management**
+##### 5.2.2.2. Ballot Batch Management
 
 **Complexity:** Low
 
@@ -212,7 +250,7 @@ Interpreter output CVRs and used with the Vote Totaler.
 _[Subsection added: Jan. 18, 2018 meeting.]_
 
 
-**2\. EIMS® Integration.**
+##### 5.2.2.3. EIMS® Integration
 
 This component is responsible for interfacing with the Department's EIMS®
 software. It pulls or takes election definition information exported from
@@ -220,14 +258,15 @@ EIMS and imports it into the voting system database. This information can
 include things like what offices and candidates are on the ballot, and
 in what precincts, districts, and ballot styles, etc.
 
-**3\. Ballot Layout**
+
+##### 5.2.2.4. Ballot Layout Creator
 
 This is a software application that lets staff generate paper-ballot layouts
 from the election definition for each ballot type in automated or
 semi-automated fashion, including support for multiple languages.
 
 
-**4\. Ballot Layout Analyzer**
+##### 5.2.2.5. Ballot Layout Encoder
 
 **Complexity:** Medium
 
@@ -263,7 +302,7 @@ interim voting system.
 _[Section added: Dec. 14, 2017 meeting.]_
 
 
-**4\. Accessible Ballot-Marking Device Software**
+##### 5.2.2.6. Accessible Ballot-Marking Device Software
 
 This is the software corresponding to the Accessible Ballot-Marking Device
 hardware component.
@@ -276,7 +315,8 @@ with the ballot.
 
 _[Item edited: Jan. 18, 2018 meeting.]_
 
-**5\. Ballot Picture Interpreter**
+
+##### 5.2.2.7. Ballot Picture Interpreter
 
 This is a software library responsible for interpreting digital ballot pictures. It
 generates a cast vote record (CVR) from a digital picture of a ballot. This
@@ -347,7 +387,7 @@ spelled out.
 prototyping and testing.
 
 
-**6\. Scanner Device Drivers (one for precinct and one for central)**
+##### 5.2.2.8. Scanner Device Drivers (one for precinct and one for central)
 
 This is low-level software needed on both precinct and central ballot
 scanners that provides a software API to the basic hardware functionality of
@@ -355,7 +395,8 @@ a ballot scanner (e.g. out-stacking a ballot, returning a ballot, advancing a
 ballot, etc.). This might come with COTS hardware. Separate versions are
 likely needed for the precinct and central scanners.
 
-**7\. Central Ballot Scanner Software**
+
+##### 5.2.2.9. Central Ballot Scanner Software
 
 This is high-level software controlling the central ballot
 scanner. It interacts with the scanner device driver and ballot picture
@@ -364,7 +405,8 @@ storing digital ballot pictures, detecting the ballot layout, interpreting and
 tabulating ballot markings, controlling the scanner in response to the
 markings on a ballot, and exporting ballot data after scanning is complete.
 
-**8\. Precinct Ballot Scanner Software**
+
+##### 5.2.2.10. Precinct Ballot Scanner Software
 
 This component is similar to the central ballot scanner software component
 above and can likely share much software with it. However, it's different
@@ -374,7 +416,8 @@ need to support returning a ballot back to the voter in the case of errors
 like an overvote. For the central scanner, such ballots might simply be
 outstacked.
 
-**8\. Vote Totaler**
+
+##### 5.2.2.11. Vote Totaler
 
 Aggregates and counts all vote totals and generates the results in an open
 data format. Includes the RCV tabulation algorithm.
@@ -407,7 +450,7 @@ spelled out.
 prototyping and testing.
 
 
-**9\. Results Reporter**
+##### 5.2.2.12. Results Reporter
 
 Generates human-readable results reports from the results data from the vote
 totaler (e.g. printable results and results posted on the Department website).
@@ -450,7 +493,7 @@ spelled out.
 prototyping and testing.
 
 
-**13\. Ballot Tabulation Audit Support**
+##### 5.2.2.13. Ballot Tabulation Audit Support
 
 **Complexity:** Medium
 
