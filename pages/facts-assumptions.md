@@ -13,8 +13,9 @@ drafting this document.
    * For the system to be "Developed under version 3 of the GNU General
      Public License where possible, otherwise preferring similar licenses
      with copyleft characteristics." This is consistent with the
-     recommendation in the Commission’s Open Source Voting Systems Resolution
-     in its third "resolved" paragraph:
+     recommendation in the Commission’s [Open Source Voting Systems
+     Resolution (PDF)][commission-res-pdf-local] in its third "resolved"
+     paragraph:
      > (d) Express a preference for open source licenses
      with copyleft characteristics so that San Francisco and other
      jurisdictions can benefit from future improvements that others make to

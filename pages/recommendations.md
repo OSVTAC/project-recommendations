@@ -1181,7 +1181,7 @@ This section covers topics related to open source.
   than, for example, waiting for the software to reach a certain level of
   completion before becoming public.
   (See also item (b) of the third "resolved" paragraph of the Commission's
-  [Open Source Voting Resolution][commission-resolution-local].)
+  [Open Source Voting Systems Resolution (PDF)][commission-res-pdf-local].)
 
 * All software being developed in public should have an open source license
   when development first starts, rather than, for example, adding a license
@@ -1204,7 +1204,7 @@ This section covers topics related to open source.
   a different license than the main software's license, the modifications
   should be dual-licensed under both licenses, if possible.
   (See also item (e) of the third "resolved" paragraph of the Commission's
-  [Open Source Voting Resolution][commission-resolution-local].)
+  [Open Source Voting Systems Resolution (PDF)][commission-res-pdf-local].)
 
 * The aggregate system (including the infrastructure, stack, and services)
   should be open source. This includes but is not limited to things like
@@ -1217,7 +1217,7 @@ This section covers topics related to open source.
   Attribution-ShareAlike 4.0 license ([CC-BY-SA 4.0][cc-by-sa]).
   (See also the reference to ”freely and openly licensed” documentation
   in the Commission's
-  [Open Source Voting Resolution][commission-resolution-local].)
+  [Open Source Voting Systems Resolution (PDF)][commission-res-pdf-local].)
 
 * [TODO: provide recommendations related to managing community feedback and
   contributions during project development. Also think about whether

@@ -60,7 +60,9 @@ Formation Commission][lafco] (LAFCo) conduct a feasibility study. In October
 Voting Systems” (37 pages).
 
 In November 2015, the Elections Commission unanimously passed an [Open Source
-Voting Systems Resolution][commission-resolutions] requesting that the Mayor
+Voting Systems Resolution (PDF)][commission-res-pdf-local] (also in
+[plain-text][commission-res-txt-local]; both from the [Commission's "Motions
+and Resolutions" page][commission-resolutions]) requesting that the Mayor
 and Board of Supervisors initiate and fund a project to develop and certify
 an open source voting system.
 
