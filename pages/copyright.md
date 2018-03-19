@@ -7,15 +7,15 @@ the Open Source Voting System Technical Advisory Committee's (OSVTAC)
 
 ### 1.1. Copyright
 
-Copyright (C) 2017 Larry Bafundo
+Copyright (C) 2017, 2018 Larry Bafundo
 
-Copyright (C) 2017 Carl Hage
+Copyright (C) 2017, 2018 Carl Hage
 
-Copyright (C) 2017 Christopher Jerdonek
+Copyright (C) 2017, 2018 Christopher Jerdonek
 
-Copyright (C) 2017 Roan Kattouw
+Copyright (C) 2017, 2018 Roan Kattouw
 
-Copyright (C) 2017 Tony Wasserman
+Copyright (C) 2017, 2018 Tony Wasserman
 
 
 ### 1.2. Contributors
