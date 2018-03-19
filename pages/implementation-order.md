@@ -107,7 +107,7 @@ that need to be worked out anyways
   towards being a hardware problem.
 
 
-### 7.2.1. Results Reporter Rationale
+### 7.3. Results Reporter Rationale
 
 * The results reporter is probably the “easiest” component to implement and
 has the least amount of risk, since it is responsible merely for formatting
@@ -128,7 +128,7 @@ would give the Department the ability to customize and improve the current
 format, and accept contributions from the public.
 
 
-### 7.2.2. Vote Totaler Rationale
+### 7.4. Vote Totaler Rationale
 
 * This component is also one of the easiest components and so would be good
 to start with.
@@ -155,7 +155,7 @@ application to validate/check a home printed or marked ballot.
 this component.
 
 
-### 7.2.3. Central Ballot Scanner Rationale
+### 7.5. Central Ballot Scanner Rationale
 
 * This is probably the “easiest” hardware component to work on and implement
 first, for reasons that will be described below.
@@ -197,7 +197,7 @@ the hardware, it is a strictly simpler component than the precinct-based
 scanner.
 
 
-### 7.3. Deployment Strategies
+### 7.6. Deployment Strategies
 
 The components listed above can be deployed and used in conjunction with a
 non-open source interim system even before a full open source voting system
@@ -214,7 +214,7 @@ taking in the non-aggregated numeric results from the interim system, and
 then feeding the aggregate results into the results reporter.
 
 
-### 7.3.1. Central Ballot Scanner Phases
+### 7.7. Central Ballot Scanner Phases
 
 For the central ballot scanner, there are a number of options for
 incrementally phasing in an open source version.

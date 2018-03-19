@@ -1,7 +1,7 @@
-## 5. Recommendations
+## 6. Recommendations
 
 
-### 5.1. Interim Voting System
+### 6.1. Interim Voting System
 
 * The contract for the interim system (i.e. the system to be used after 2018)
   should permit all possible combinations of phasing in an open source system
@@ -32,7 +32,7 @@
   so they don’t need to be reverse-engineered.
 
 
-### 5.3. Requirements-gathering
+### 6.2. Requirements-gathering
 
 This section contains recommendations related to gathering requirements. For
 committee recommendations of specific requirements, see the Requirements
@@ -41,12 +41,12 @@ section below.
 [TODO]
 
 
-### 5.4. Requirements
+### 6.3. Requirements
 
 This section lists some of the requirements the system should satisfy.
 
 
-#### 5.4.1. Accessibility
+#### 6.3.1. Accessibility
 
 * In addition to an audio component and touchscreen, the voting system should
   support accessible features including, but not limited to: sip and puff
@@ -57,7 +57,7 @@ This section lists some of the requirements the system should satisfy.
   provide more detail.
 
 
-#### 5.4.2. Other
+#### 6.3.2. Other
 
 * [TODO: should we recommend (1) supporting manually marked ballots in the
   polling place, or (2) requiring the use of a computer ballot-marking and/or
@@ -69,7 +69,7 @@ This section lists some of the requirements the system should satisfy.
 * [TODO: should we recommend for or against end-to-end verifiability?]
 
 
-### 5.5. Project Management
+### 6.4. Project Management
 
 * The Department should align itself with other efforts within the City to
   use agile procurement and methods, and it should seek assistance where
@@ -137,7 +137,7 @@ This section lists some of the requirements the system should satisfy.
 * [TODO: provide specific recommendations around agile.]
 
 
-### 5.6. Open Source
+### 6.5. Open Source
 
 This section covers topics related to open source.
 
@@ -192,12 +192,12 @@ This section covers topics related to open source.
   [contributor license agreements][cla] (CLA’s) should be required.]
 
 
-### 5.7. Procurement
+### 6.6. Procurement
 
 [TODO]
 
 
-### 5.8. Software architecture and design
+### 6.7. Software architecture and design
 
 * When defining software components to develop, favor designs that promote
   reusing components. For example, a software library that can read a digital ballot
@@ -208,29 +208,29 @@ This section covers topics related to open source.
   in turn can reduce required time and costs.
 
 
-### 5.9. Software development
+### 6.8. Software development
 
 * The project should not depend on volunteers for the successful completion
   or security of the project. However, useful volunteer contributions should
   be encouraged and not turned away.
 
 
-### 5.10. Hardware design
+### 6.9. Hardware design
 
 [TODO]
 
 
-### 5.11. Documentation
+### 6.10. Documentation
 
 [TODO]
 
 
-### 5.12. Security
+### 6.11. Security
 
 [TODO]
 
 
-### 5.13. Testing
+### 6.12. Testing
 
 1. **Gather real election data.** Datasets of real election data (e.g. a
 couple past elections in San Francisco of different types) should be compiled
@@ -277,27 +277,27 @@ contest as the input and the round-by-round vote totals as the output.
    _[Item added: Dec. 14, 2017 meeting.]_
 
 
-### 5.14. Certification
+### 6.13. Certification
 
 [TODO]
 
 
-### 5.15. Hardware manufacturing or assembly
+### 6.14. Hardware manufacturing or assembly
 
 [TODO]
 
 
-### 5.16. Deployment
+### 6.15. Deployment
 
 [TODO]
 
 
-### 5.17. Software maintenance
+### 6.16. Software maintenance
 
 [TODO]
 
 
-### 5.18. Hardware maintenance
+### 6.17. Hardware maintenance
 
 * The City should prefer professional, commercial support for
   maintaining the aggregate system (including the operating system, stack,
