@@ -85,10 +85,14 @@ SECTION_NAMES = [
     'goals',
     'background',
     'facts-assumptions',
+    'components',
     'recommendations',
+    'implementation-order',
+    'decisions',
     'faq',
     'glossary',
 ]
+
 
 # All files use UTF-8, no matter what locale settings are (e.g. LC_ALL=C).
 # Some python libraries default to ASCII even with LANG=en_US.UTF-8.
