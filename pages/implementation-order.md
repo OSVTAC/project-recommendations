@@ -38,7 +38,7 @@ most of these components):
 2. Vote Totaler (Software)
 3. Ballot Picture Interpreter (Software)
 4. Central Ballot Scanner (Hardware & Software)
-5. Ballot Layout Analyzer (Software)
+5. Ballot Layout Encoder (Software)
 6. Ballot Batch Management (Software)
 7. Ballot Tabulation Audit Support (Software)
 
