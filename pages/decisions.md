@@ -132,6 +132,7 @@ Machines used by all non-mail voters Pros:
   can be printed on ballots to authenticate paper.
 * Time to vote can be less than marking.
 * Mistakes can be undone without needing another ballot to mark.
+* Eliminates ambiguous marks that would otherwise require adjudication.
 * Machines could read a QR code from a vote at home app to print a ballot
   immediately.
 * A separate non-mail ballot format from voting machines would be the same
