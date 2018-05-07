@@ -127,11 +127,23 @@ a ballot type code preprinted. When voters complete their selections, the
 paper is inserted into a printer, then they check the final printed ballot
 prior to casting into a ballot box.
 
+The voting machine can compute a digital signature of the electronic cast
+vote record, printed as a QR code on the paper ballot, proving that the
+paper ballot was created by that machine on election day (or during early
+voting) and results must match the signed CVR. The CVRs could be stored
+by the machine creating them, and either used as an audit-trail, or used in
+lieu of scanning the paper cast ballots. Election-day precinct totals could
+be computed and printed from the voting machine CVRs as long as the IDs for
+cast ballots are recorded.
+
 Machines used by all non-mail voters Pros:
 * Paper+Electronic CVR has the highest security/integrity. Digital signatures
   can be printed on ballots to authenticate paper.
 * Time to vote can be less than marking.
 * Mistakes can be undone without needing another ballot to mark.
+* Eliminates errors like overvotes and ambiguous marks requiring adjudication.
+* Ranked Choice contests can have rankings for all candidates, not just 3,
+eliminating exhausted ballots.
 * Eliminates ambiguous marks that would otherwise require adjudication.
 * Machines could read a QR code from a vote at home app to print a ballot
   immediately.
@@ -243,7 +255,7 @@ _[Question & answer edited: Feb. 8, 2018 meeting.]_
 
 ### 8.9. If a voting machine is used to print ballots, does the ballot collection box need to have an integrated scanner?
 
-  Background: Using a voting machine with voter-verified ballot does not
+Background: Using a voting machine with voter-verified ballot does not
 constitute casting a ballot-- the act of submitting the ballot after
 verification is the cast ballot. Voters might choose to discard a ballot and
 revote, so a simple bar-code scanner is useful to match the electronic CVR with
@@ -251,11 +263,44 @@ paper ballots submitted (i.e. exclude discarded ballots). Discarded ballots
 could be scanned instead, but a voter could still walk off with a ballot, or a
 ballot might not print correctly.
 
-Additional ballot box scanner Pros: [TODO]
+(The LA County VSAP integrates the voting machine, printer, and ballot collection bin. The printer has a bar code scanner to read the ballot type on blank ballot paper and to re-read the ballot ID (to match with a CVR) as it enters the integrated ballot box.)
 
-Additional ballot box scanner Cons: [TODO]
+Even though an electronic CVR exists within the voting machine, it may still be
+useful to have a full scanner at the precinct, so all CVRs are derived from
+the scanned paper read by the voter, and scanned images are available immediately
+at the end of election day. However, without a full precinct scanner, vote
+totals would still be available at the end of the day, and a central scanner
+could be used after the election for a 100% audit of paper ballots (paper CVRs).
 
-_[Question added: Feb. 8, 2018 meeting.]_
+If only machine-printed ballots are collected (no undervote/overvote/ambiguous
+mark detection is required), then a simple plain COTS scanner could be used
+to feed the ballot paper in the collection bin, only recording the ballot images.
+
+Additional ballot box scanner Pros:
+
+* CVRs are derived from the paper verified by voters, not an indirect stored CVR (one criticism of "Voter Verified Paper Audit Trail" is that the human-read paper record is typically not 100% checked)
+
+* Scanned ballot images can be recorded during the election and available
+immediately afterwards.
+
+* Voting machines and scanners could use independent equipment and software,
+increasing security.
+
+* Precinct scanners for casting voting-machine printed ballots could also be
+used to scan vote-by-mail (hand-marked) ballots.
+
+* A precinct scanner could be used with text-to-speech to read back a ballot
+for the visually impaired.
+
+Additional ballot box scanner Cons:
+
+* Additional equipment is required which is in theory, unnecessary.
+
+* A full scanner capable of error detection on hand-marked ballots might
+require custom hardware (not COTS) for integration with a collection bin.
+A simplified scanner that only can feed into the ballot box could be COTS.
+
+_[Question & answer edited: April 12, 2018 meeting.]_
 
 
 ### 8.10. Is voting equipment required to run off a battery (without outside AC power) for a set outage duration or all day?
@@ -275,7 +320,15 @@ _[Question added: Feb. 8, 2018 meeting.]_
 
 ### 8.11. What kind of printing technology should be used at a poll site or vote center?
 
-Background: [TODO]
+Background: There are many options for COTS and custom printers, including
+several options for printing technology. Each option has different tradeoffs
+in power requirements, consumables (ink, toner, etc.), an types of paper
+supported.
+
+There is not necessarily a requirement that the printing technology be the
+same across all locations. For example, a vote center might use a laser printer
+for printing ballots on demand whereas a voting machine at a precinct might
+use a thermal printer running off a battery.
 
 Options Include:
 
@@ -322,7 +375,7 @@ Options Include:
     + Ribbon usage needs to be tracked and replaced
     + Not normally used for letter size printers
 
-_[Question added: Feb. 8, 2018 meeting.]_
+_[Question added: Feb. 8, edited April 12, 2018 meetings.]_
 
 
 ### 8.12. What size paper should be used for precinct voting and vote by mail?
@@ -366,11 +419,22 @@ principle be used at a precinct poll site or early vote center. Some states have
 used a similar system (e.g. Prime-III) for disability access voting at
 precincts.
 
-RAVBM used in precincts Pros: [TODO]
+RAVBM used in precincts Pros:
 
-RAVBM used in precincts Cons: [TODO]
+* Simplifies the software-- a single accessible voting software system is required
+both for accessible vote-by-mail and precinct voting. Likewise scanner software for
+reading RAVBM ballot paper would be reused for precinct voting.
 
-_[Question added: Feb. 8, 2018 meeting.]_
+* An RAVBM system inherently must use COTS hardware, so only COTS hardware would be needed to implement accessible precinct voting.
+
+
+RAVBM used in precincts Cons:
+
+* The hardware and software used by RAVBM would probably not be considered as secure as smaller and more specialized software running on a secure microcomputer.
+
+* RAVBM ballots probably need to use US letter size paper, so a different paper size might be required. (Although Prime-III as modified by NH could print on hand-marked ballot paper.)
+
+_[Question added: Feb. 8, edited April 12, 2018 meeting.]_
 
 
 ### 8.15. Does ballot collection order or CVR recordings need to be randomized to protect voter privacy (be disassociated by order of appearance at a precinct)?
