@@ -427,6 +427,12 @@ useful for the project.
    * [Low Error Voting Interface][levi] (LEVI), research paper of a voting
      machine GUI designed to reduce user errors. Used by Prime-III.
 
+   * [RCV package in CRAN][cran-rcv], a package for R that tabulates
+     ranked-choice elections. The README uses San Francisco's 2016 races as
+     examples, and it has been used by members of the public to
+     [visualize the RCV eliminations][fromira-twitter-rcv] in the June 2018
+     election.
+
 _[Subsection added: Jan. 18, 2018 meeting.]_
 
 
