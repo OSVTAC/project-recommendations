@@ -161,7 +161,7 @@ Machines used by all non-mail voters Cons:
 * Voters need to be occupying a machine while voting.
 * Mail ballot processing is still a separate sizable operation.
 
-_[Question & answer edited: Feb. 8, 2018 meeting.]_
+_[Question & answer edited: April 12, 2018 meeting.]_
 
 
 ### 8.5. If voting machines are used at a precinct, should there be one printer per voting station?
@@ -366,7 +366,7 @@ Options Include:
     + Ribbon usage needs to be tracked and replaced
     + Not normally used for letter size printers
 
-_[Question added: Feb. 8, edited April 12, 2018 meetings.]_
+_[Question added: Feb. 8, 2018 meeting; edited April 12, 2018 meeting.]_
 
 
 ### 8.12. What size paper should be used for precinct voting and vote by mail?
@@ -426,7 +426,7 @@ RAVBM used in precincts Cons:
 
 * RAVBM ballots might require a paper size different from other precinct ballots. (Although Prime-III as modified by NH could print on hand-marked ballot paper.)
 
-_[Question added: Feb. 8, edited April 12, 2018 meeting.]_
+_[Question added: Feb. 8, 2018 meeting; edited April 12, 2018 meeting.]_
 
 
 ### 8.15. Does ballot collection order or CVR recordings need to be randomized to protect voter privacy (be disassociated by order of appearance at a precinct)?
