@@ -436,7 +436,7 @@ useful for the project.
 _[Subsection added: Jan. 18, 2018 meeting.]_
 
 
-#### 3.4.5. Open Source Voting Organization
+#### 3.4.5. Open Source Voting Organizations
 
    * [OSET Foundation][oset-foundation] 501c umbrella nonprofit to support [Trust the Vote][trust-the-vote],
      site with actual software. \[Currently, mostly Ruby-On-Rails in ruby
