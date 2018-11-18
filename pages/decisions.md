@@ -419,7 +419,6 @@ reading RAVBM ballot paper would be reused for precinct voting.
 * An RAVBM system must be usable with home COTS hardware, so only COTS hardware
 would be needed to implement accessible precinct voting.
 
-
 RAVBM used in precincts Cons:
 
 * The hardware and software used by RAVBM would probably not be considered as secure as smaller and more specialized software running on a secure microcomputer.
