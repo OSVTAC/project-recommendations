@@ -433,7 +433,7 @@ useful for the project.
      [visualize the RCV eliminations][fromira-twitter-rcv] in the June 2018
      election.
 
-_[Subsection added: Jan. 18, 2018 meeting.]_
+_[Subsection added: Jan. 18, 2018 meeting; edited: June 14, 2018 meeting.]_
 
 
 #### 3.4.5. Open Source Voting Organizations

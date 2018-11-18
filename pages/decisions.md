@@ -166,7 +166,7 @@ Machines used by all non-mail voters Cons:
     is used.
 * Mail ballot processing is still a separate sizable operation.
 
-_[Question & answer edited: April 12, 2018 meeting.]_
+_[Question & answer edited: June 14, 2018 meeting.]_
 
 
 ### 8.5. If voters use machines to mark ballots, should the machine store CVRs of the marked selections?
