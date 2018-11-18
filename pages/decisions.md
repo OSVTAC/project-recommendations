@@ -190,6 +190,8 @@ Voting machine stored CVRs Cons:
 * Extra high-sensitivity software might be needed
 * More digital security required; not storing CVRs would mean not having to digitally secure them
 
+_[Question added: May 9, 2018 meeting.]_
+
 ### 8.4. Should a machine-marked ballot contain a bar code with a digital signature and/or CVR?
 
 Background: Machines that record voter selections and print a ballot can
@@ -214,6 +216,8 @@ Ballots with digital signature bar codes Pros:
 
 Ballots with digital signature bar codes Cons:
 * Some people dislike (do not trust) printing that is not human readable and verifiable
+
+_[Question added: May 9, 2018 meeting.]_
 
 ### 8.5. If voting machines are used at a precinct, should there be one printer per voting station?
 
