@@ -127,23 +127,14 @@ a ballot type code preprinted. When voters complete their selections, the
 paper is inserted into a printer, then they check the final printed ballot
 prior to casting into a ballot box.
 
-The voting machine can compute a digital signature of the electronic cast
-vote record, printed as a QR code on the paper ballot, proving that the
-paper ballot was created by that machine on election day (or during early
-voting) and results must match the signed CVR. The CVRs could be stored
-by the machine creating them, and either used as an audit-trail, or used in
-lieu of scanning the paper cast ballots. Election-day precinct totals could
-be computed and printed from the voting machine CVRs as long as the IDs for
-cast ballots are recorded.
-
 Machines used by all non-mail voters Pros:
 * Paper+Electronic CVR has the highest security/integrity. Digital signatures
   can be printed on ballots to authenticate paper.
 * Time to vote can be less than marking.
 * Mistakes can be undone without needing another ballot to mark.
 * Eliminates errors like overvotes and ambiguous marks requiring adjudication.
-* Ranked Choice contests can have rankings for all candidates, not just 3,
-eliminating exhausted ballots.
+* Ranked Choice contests can have rankings for all candidates, vs a limit
+on paper ballots, eliminating exhausted ballots (except from undervotes), while paper ballots typically have limits.
 * Eliminates ambiguous marks that would otherwise require adjudication.
 * Machines could read a QR code from a vote at home app to print a ballot
   immediately.
@@ -253,7 +244,7 @@ Scanner Imprinter Cons:
 _[Question & answer edited: Feb. 8, 2018 meeting.]_
 
 
-### 8.9. If a voting machine is used to print ballots, does the ballot collection box need to have an integrated scanner?
+### 8.9. If a voting machine is used to print all precinct ballots and possibly save CVRs, does the ballot collection box need to have an integrated scanner?
 
 Background: Using a voting machine with voter-verified ballot does not
 constitute casting a ballot-- the act of submitting the ballot after
@@ -265,7 +256,7 @@ ballot might not print correctly.
 
 (The LA County VSAP integrates the voting machine, printer, and ballot collection bin. The printer has a bar code scanner to read the ballot type on blank ballot paper and to re-read the ballot ID (to match with a CVR) as it enters the integrated ballot box.)
 
-Even though an electronic CVR exists within the voting machine, it may still be
+Whether or not an electronic CVR exists within the voting machine, it may still be
 useful to have a full scanner at the precinct, so all CVRs are derived from
 the scanned paper read by the voter, and scanned images are available immediately
 at the end of election day. However, without a full precinct scanner, vote
@@ -425,14 +416,15 @@ RAVBM used in precincts Pros:
 both for accessible vote-by-mail and precinct voting. Likewise scanner software for
 reading RAVBM ballot paper would be reused for precinct voting.
 
-* An RAVBM system inherently must use COTS hardware, so only COTS hardware would be needed to implement accessible precinct voting.
+* An RAVBM system must be usable with home COTS hardware, so only COTS hardware
+would be needed to implement accessible precinct voting.
 
 
 RAVBM used in precincts Cons:
 
 * The hardware and software used by RAVBM would probably not be considered as secure as smaller and more specialized software running on a secure microcomputer.
 
-* RAVBM ballots probably need to use US letter size paper, so a different paper size might be required. (Although Prime-III as modified by NH could print on hand-marked ballot paper.)
+* RAVBM ballots might require a paper size different from other precinct ballots. (Although Prime-III as modified by NH could print on hand-marked ballot paper.)
 
 _[Question added: Feb. 8, edited April 12, 2018 meeting.]_
 
