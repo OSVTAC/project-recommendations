@@ -164,6 +164,57 @@ Machines used by all non-mail voters Cons:
 _[Question & answer edited: April 12, 2018 meeting.]_
 
 
+### 8.4. If voters use machines to mark ballots, should the machine store CVRs of the marked selections?
+
+Background: When a machine is used by voters to select choices that are
+then printed on a voter verified ballot, the machine could save the
+printed choices as a Cast Vote Record. CVRs could then be used as an audit record
+or for unofficial election night results. (Actually the machine might
+store vote records with uncertain cast status, so they would need to be linked
+to a scan of an ID for a ballot when cast and inserted into the ballot box.)
+
+The recommendation is for the voter-verified paper ballot to be the
+official record counted. However, machine-stored CVRs could be used as
+official data if validated by a 100% scan of the cast paper record, or
+else a reliable audit of the paper record.
+
+Voting machine stored CVRs Pros:
+* Provides a separate audit record created on election day
+* Digital signatures can prove data was created by that machine on election day
+* Preliminary results can be obtained without needing to scan ballots
+* Combining electronic and paper records is more secure, because they authenticate each other
+
+Voting machine stored CVRs Cons:
+* Need ballot ID scan to distinguish a cast CVR from discarded CVR
+* Need to collect data from each machine, possible extra hardware
+* Extra high-sensitivity software might be needed
+* More digital security required; not storing CVRs would mean not having to digitally secure them
+
+### 8.4. Should a machine-marked ballot contain a bar code with a digital signature and/or CVR?
+
+Background: Machines that record voter selections and print a ballot can
+easily add a bar code (e.g. 2D QR code) that could contain a digital
+signature of the electronic representation of the printed choices,
+possibly with the electronic CVR. A digital signature would function
+as a check for accurate interpretation of a scanned ballot, and also
+could validate the printout as being created on a particular machine
+on election day (or early voting period). The signature prevents anyone
+from replacing the paper ballot with a substitute, provided appropriate
+digital signature protocols are implemented.
+
+The electronic CVR could be printed as a bar code as well, either as
+a separate check or to assist the optical scan interpretation.
+
+\[Note, a digital signature could be printed as text, e.g. base64 letters
+and numbers, but a pile of numbers is no more human readable than a bar code.]
+
+Ballots with digital signature bar codes Pros:
+* Prevents tampering of paper ballots, either alterations or substitution
+* Proves this paper was printed by a particular machine on particular day(s)
+
+Ballots with digital signature bar codes Cons:
+* Some people dislike (do not trust) printing that is not human readable and verifiable
+
 ### 8.5. If voting machines are used at a precinct, should there be one printer per voting station?
 
 Background: Each electronic voting station could be configured with a
