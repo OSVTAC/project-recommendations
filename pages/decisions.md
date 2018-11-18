@@ -164,7 +164,7 @@ Machines used by all non-mail voters Cons:
 _[Question & answer edited: April 12, 2018 meeting.]_
 
 
-### 8.4. If voters use machines to mark ballots, should the machine store CVRs of the marked selections?
+### 8.5. If voters use machines to mark ballots, should the machine store CVRs of the marked selections?
 
 Background: When a machine is used by voters to select choices that are
 then printed on a voter verified ballot, the machine could save the
@@ -192,7 +192,8 @@ Voting machine stored CVRs Cons:
 
 _[Question added: May 9, 2018 meeting.]_
 
-### 8.4. Should a machine-marked ballot contain a bar code with a digital signature and/or CVR?
+
+### 8.6. Should a machine-marked ballot contain a bar code with a digital signature and/or CVR?
 
 Background: Machines that record voter selections and print a ballot can
 easily add a bar code (e.g. 2D QR code) that could contain a digital
@@ -219,7 +220,8 @@ Ballots with digital signature bar codes Cons:
 
 _[Question added: May 9, 2018 meeting.]_
 
-### 8.5. If voting machines are used at a precinct, should there be one printer per voting station?
+
+### 8.7. If voting machines are used at a precinct, should there be one printer per voting station?
 
 Background: Each electronic voting station could be configured with a
 printer to create the ballots to be cast. Alternatively, there could be
@@ -242,7 +244,7 @@ in use is an RFID chip.
 _[Question added: Feb. 8, 2018 meeting.]_
 
 
-### 8.6. If voters at precincts use hand-marked ballots, should ballots be scanned centrally or at the precinct/vote center?
+### 8.8. If voters at precincts use hand-marked ballots, should ballots be scanned centrally or at the precinct/vote center?
 
 Precinct ballot scanner Pros:
 * Overvotes/Undervotes and invalid or ambiguous marks can be reported by the
@@ -259,7 +261,7 @@ Precinct ballot scanner Cons:
 _[Question added: Feb. 8, 2018 meeting.]_
 
 
-### 8.7. If a precinct scanner is used, does the scanner need to be integrated with a ballot collection bin?
+### 8.9. If a precinct scanner is used, does the scanner need to be integrated with a ballot collection bin?
 
   Background: Custom-built precinct ballot scanners sold by election vendors
 usually include a ballot collection bin within same box containing the scanner.
@@ -271,7 +273,7 @@ means custom hardware vs COTS equipment.
 _[Question added: Feb. 8, 2018 meeting.]_
 
 
-### 8.8. If a precinct scanner (or central scanner) is used, does it need to include an imprinter to record a ballot/scan ID?
+### 8.10. If a precinct scanner (or central scanner) is used, does it need to include an imprinter to record a ballot/scan ID?
 
   Background: To match a specific paper ballot in a ballot box with a scanned
 CVR, either the order of insertion must be maintained, or a unique identifier
@@ -299,7 +301,7 @@ Scanner Imprinter Cons:
 _[Question & answer edited: Feb. 8, 2018 meeting.]_
 
 
-### 8.9. If a voting machine is used to print all precinct ballots and possibly save CVRs, does the ballot collection box need to have an integrated scanner?
+### 8.11. If a voting machine is used to print all precinct ballots and possibly save CVRs, does the ballot collection box need to have an integrated scanner?
 
 Background: Using a voting machine with voter-verified ballot does not
 constitute casting a ballot-- the act of submitting the ballot after
@@ -349,7 +351,7 @@ A simplified scanner that only can feed into the ballot box could be COTS.
 _[Question & answer edited: April 12, 2018 meeting.]_
 
 
-### 8.10. Is voting equipment required to run off a battery (without outside AC power) for a set outage duration or all day?
+### 8.12. Is voting equipment required to run off a battery (without outside AC power) for a set outage duration or all day?
 
 No outside power Pros:
 * Eliminates extension cords and possible special power requirements.
@@ -364,7 +366,7 @@ No outside power Cons:
 _[Question added: Feb. 8, 2018 meeting.]_
 
 
-### 8.11. What kind of printing technology should be used at a poll site or vote center?
+### 8.13. What kind of printing technology should be used at a poll site or vote center?
 
 Background: There are many options for COTS and custom printers, including
 several options for printing technology. Each option has different tradeoffs
@@ -424,7 +426,7 @@ Options Include:
 _[Question added: Feb. 8, 2018 meeting; edited April 12, 2018 meeting.]_
 
 
-### 8.12. What size paper should be used for precinct voting and vote by mail?
+### 8.14. What size paper should be used for precinct voting and vote by mail?
 
 Background: Vote-by-mail ballots are typically printed on wide paper
 stock (sometimes 11"x17") folded to fit within a mailing envelope.
@@ -443,7 +445,7 @@ only the selections made are shown, so a single sheet could be used.
 _[Question added: Feb. 8, 2018 meeting.]_
 
 
-### 8.13. What options should be provided to people with disabilities?
+### 8.15. What options should be provided to people with disabilities?
 
 Accessible voting could be accomplished with:
 
@@ -456,7 +458,7 @@ Accessible voting could be accomplished with:
 _[Question added: Feb. 8, 2018 meeting.]_
 
 
-### 8.14. Should "remote accessible vote-by-mail" (RAVBM) printing used by voters with disabilities to vote by mail using home computers also be used for accessible precinct voting?
+### 8.16. Should "remote accessible vote-by-mail" (RAVBM) printing used by voters with disabilities to vote by mail using home computers also be used for accessible precinct voting?
 
   Background: California Election code specifies that remote accessible vote by
 mail capability should be provided by 2020 for people with disabilities and
@@ -483,7 +485,7 @@ RAVBM used in precincts Cons:
 _[Question added: Feb. 8, 2018 meeting; edited April 12, 2018 meeting.]_
 
 
-### 8.15. Does ballot collection order or CVR recordings need to be randomized to protect voter privacy (be disassociated by order of appearance at a precinct)?
+### 8.17. Does ballot collection order or CVR recordings need to be randomized to protect voter privacy (be disassociated by order of appearance at a precinct)?
 
 Background: To protect voter privacy, either the time and order of appearance
 of a voter must not be recorded, or else the order of scanned or submitted
@@ -500,7 +502,7 @@ could have order randomized.
 _[Question added: Feb. 8, 2018 meeting.]_
 
 
-### 8.16. Should scanned ballot images or compiled CVRs be an open public record, possibly electronically accessible?
+### 8.18. Should scanned ballot images or compiled CVRs be an open public record, possibly electronically accessible?
 
 In the interest of making the election process transparent, the electronic
 records of scanned ballots and/or CVRs could be made public (vs sealed
@@ -515,7 +517,7 @@ to fully disclose voter choices and validate the elimination rounds.
 _[Question added: Feb. 8, 2018 meeting.]_
 
 
-### 8.17. End-to-end verifiability
+### 8.19. End-to-end verifiability
 
 [TODO: Introduction - why we want it ...]
 
