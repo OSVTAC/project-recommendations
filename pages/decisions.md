@@ -155,13 +155,18 @@ on paper ballots, eliminating exhausted ballots (except from undervotes), while 
 stored electronic CVRs and end of day totals available.
 
 Machines used by all non-mail voters Cons:
-* Requires more equipment, with increased cost, complexity, and the possibility
-    of something going wrong. May require backup power.
+* Requires more equipment and more software, with increased cost, complexity,
+    attack surface, and the possibility of something going wrong. May require
+    backup power.
 * More possible problems with paper jams and printer malfunction.
-* Voters need to be occupying a machine while voting.
+* It is difficult for voters to accurately verify their machine-printed ballot,
+    especially when there are many contests on the ballot. For example, in the
+    November 2016 election, there were 52 contests.
+* Voters need to be occupying a machine while voting, unless a vote-at-home app
+    is used.
 * Mail ballot processing is still a separate sizable operation.
 
-_[Question & answer edited: April 12, 2018 meeting.]_
+_[Question & answer edited: June 14, 2018 meeting.]_
 
 
 ### 8.5. If voters use machines to mark ballots, should the machine store CVRs of the marked selections?

@@ -427,10 +427,16 @@ useful for the project.
    * [Low Error Voting Interface][levi] (LEVI), research paper of a voting
      machine GUI designed to reduce user errors. Used by Prime-III.
 
-_[Subsection added: Jan. 18, 2018 meeting.]_
+   * [RCV package in CRAN][cran-rcv], a package for R that tabulates
+     ranked-choice elections. The README uses San Francisco's 2016 races as
+     examples, and it has been used by members of the public to
+     [visualize the RCV eliminations][fromira-twitter-rcv] in the June 2018
+     election.
+
+_[Subsection added: Jan. 18, 2018 meeting; edited: June 14, 2018 meeting.]_
 
 
-#### 3.4.5. Open Source Voting Organization
+#### 3.4.5. Open Source Voting Organizations
 
    * [OSET Foundation][oset-foundation] 501c umbrella nonprofit to support [Trust the Vote][trust-the-vote],
      site with actual software. \[Currently, mostly Ruby-On-Rails in ruby
