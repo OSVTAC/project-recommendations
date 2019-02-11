@@ -86,6 +86,9 @@
 [slalom-contract]: files/slalom/contract/Business_Case_Contract.pdf
 [sos-advisories]: http://www.sos.ca.gov/elections/advisories-county-elections-officials/
 [sos-digest]: http://www.sos.ca.gov/elections/publications-and-resources/elections-officers-digest-2018/
+[south-carolina-audits]: https://www.scvotes.org/election-audits-south-carolina
+[south-carolina-json]: https://github.com/hodgesmr/south_carolina_2018_ballot_image_json
+[south-carolina-poster]: http://www.shirokuriwaki.com/papers/kuriwaki_scvotes.pdf
 [slalom-rfp-response]: files/slalom/REG_RFP_2017-01_Slalom_Response.pdf
 [star-vote-entity]: files/star-vote/STAR-Vote_Statement_of_Intent.pdf
 [star-vote-final-press-release]: http://www.traviscountyclerk.org/eclerk/Content.do?code=star-vote-a-change-of-plans
