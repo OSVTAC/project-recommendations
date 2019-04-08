@@ -162,6 +162,8 @@ Machines used by all non-mail voters Cons:
 * It is difficult for voters to accurately verify their machine-printed ballot,
     especially when there are many contests on the ballot. For example, in the
     November 2016 election, there were 52 contests.
+    A [2018 paper][ballot-verification-2018-paper] suggests voters struggle
+    with much smaller ballots than that.
 * Voters need to be occupying a machine while voting, unless a vote-at-home app
     is used.
 * Mail ballot processing is still a separate sizable operation.
