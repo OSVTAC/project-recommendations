@@ -521,6 +521,11 @@ to it?
 Ranked Choice Voting (RCV) might require a public set of cast vote records (CVR)
 to fully disclose voter choices and validate the elimination rounds.
 
+South Carolina publishes CVRs as part of its [election audit process][south-carolina-audits].
+This data has been [republished in alternate formats][south-carolina-json] by
+interested members of the public, and been used by political scientists to
+[research voting patterns][south-carolina-poster].
+
 _[Question added: Feb. 8, 2018 meeting.]_
 
 
