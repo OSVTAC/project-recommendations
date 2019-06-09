@@ -162,11 +162,13 @@ Machines used by all non-mail voters Cons:
 * It is difficult for voters to accurately verify their machine-printed ballot,
     especially when there are many contests on the ballot. For example, in the
     November 2016 election, there were 52 contests.
+    A [2018 paper][ballot-verification-2018-paper] suggests voters struggle
+    with much smaller ballots than that.
 * Voters need to be occupying a machine while voting, unless a vote-at-home app
     is used.
 * Mail ballot processing is still a separate sizable operation.
 
-_[Question & answer edited: June 14, 2018 meeting.]_
+_[Question & answer edited: March 14, 2019 meeting.]_
 
 
 ### 8.5. If voters use machines to mark ballots, should the machine store CVRs of the marked selections?
@@ -519,7 +521,12 @@ to it?
 Ranked Choice Voting (RCV) might require a public set of cast vote records (CVR)
 to fully disclose voter choices and validate the elimination rounds.
 
-_[Question added: Feb. 8, 2018 meeting.]_
+South Carolina publishes CVRs as part of its [election audit process][south-carolina-audits].
+This data has been [republished in alternate formats][south-carolina-json] by
+interested members of the public, and been used by political scientists to
+[research voting patterns][south-carolina-poster].
+
+_[Question added: Feb. 8, 2018 meeting; edited: March 14, 2019 meeting.]_
 
 
 ### 8.19. End-to-end verifiability
